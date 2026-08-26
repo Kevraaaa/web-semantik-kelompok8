@@ -20,3 +20,32 @@
 | Fakultas Ilmu Komputer dan Teknologi Informasi | Entitas | Merupakan unit organisasi akademik yang berdiri sendiri di bawah naungan universitas |
 | Situs Web Resmi (https://www.usu.ac.id) | Atribut | Memberikan informasi digital yang melekat pada Universitas Sumatera Utara |
 | Rektor -> Prof. Dr. Muryanto Amin | Relasi | Menghubungkan entitas Universitas Sumatera Utara dengan entitas individu yang menjabat sebagai rektornya |
+
+## 3. Eksplorasi Schema.org
+
+| Property | Fungsi | Contoh Nilai |
+| name | Menyatakan nama organisasi / universitas | "Universitas Sumatera Utara" |
+| email | Menyatakan alamat email organisasi / universitas | "usu@gmail.com" |
+| slogan | Menyatakan slogan atau motto suatu organisasi / universitas | "Always The Best Choice" |
+| address | Menjelaskan alamat atau lokasi berdirinya organisasi / universitas | "Jln. Dr. Mansyur No. 10, Medan" |
+| telephone | Menyatakan nomor telepon yang dapat dihubungi dan di kontak | "+62 812 8888 7777" |
+| openingHours | Menyatakan jam operasional dalam bentuk range waktu minggu, hari dimulai, lalu waktu per hari | "Selasa dan Kamis 16:00 - 20:00" |
+| latitude | Menyatakan latitude dari lokasi organisasi / universitas | "37.42242" |
+| longitude | Menyatakan longitude dari lokasi organisasi / universitas | "-122.08585" |
+
+## 4. Pertanyaan Evaluasi 
+
+### 1. Apa perbedaan web tradisional dengan Web Semantik ?
+Jawaban : 
+
+### 2. Mengapa entitas membutuhkan identifier unik ?
+Jawaban : 
+
+### 3. Jelaskan subject, predicate, dan object.
+Jawaban : 
+
+### 4. Apa keuntungan hubungan antarentitas ?
+Jawaban : 
+
+### 5. Bagaimana Knowledge Graph membantu AI ?
+Jawaban : 
