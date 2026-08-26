@@ -3,11 +3,12 @@
 ## 1. Eksplorasi Wikidata
 - Nama entitas: Universitas Sumatera Utara
 - Identifier Wikidata: Q4200341
-- Deskripsi: universitas di Indonesia
+- Deskripsi: Perguruan tinggi negeri atau universitas nasional yang berada di Sumatera Utara, Indonesia.
 - Negara: Indonesia
-- Lokasi: Jl. Dr. T. Mansyur No. 9, Kel. Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara, Indonesia
-- Tahun berdiri: 20 November 1957
-- Website: https://satu.usu.ac.id
+- Lokasi: Kec. Medan Tuntungan
+- Tahun berdiri: Universitas Sumatera Utara awalnya berdiri sebagai Yayasan Universitas Sumatera Utara pada 4 Juni 1952, kemudian diresmikan pada 20 November 1957.
+- Website: https://www.usu.ac.id
+- USU dijuluki sebagai _Green Campus_ karena komitmennya dalam mengintegrasikan prinsip keberlanjutan dan kepedulian terhadap lingkungan hidup ke dalam tata kelola, infrastruktur, serta kegiatan akademis
 
 ## 2. Entitas, Atribut, dan Relasi
 
