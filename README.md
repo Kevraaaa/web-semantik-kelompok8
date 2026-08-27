@@ -36,16 +36,18 @@
 ## 4. Pertanyaan Evaluasi 
 
 ### 1. Apa perbedaan web tradisional dengan Web Semantik ?
-Jawaban : 
+Jawaban : Perbedaan web tradisional dengan Web Semantik terletak pada cara informasi disimpan dan dipahami.Sedangkan pada Web Semantik, data dibuat dengan struktur dan hubungan yang lebih jelas sehingga komputer juga dapat memahami makna dari data tersebut.
 
 ### 2. Mengapa entitas membutuhkan identifier unik ?
-Jawaban : 
+Jawaban : Supaya setiap entitas bisa dibedakan dengan jelas dan tidak tertukar dengan entitas lain.
 
 ### 3. Jelaskan subject, predicate, dan object.
-Jawaban : 
+Jawaban : Subject adalah pihak atau objek yang dibicarakan, predicate menjelaskan hubungan atau sifat dari subject, sedangkan object adalah nilai atau objek yang menjadi tujuan dari hubungan tersebut.
 
 ### 4. Apa keuntungan hubungan antarentitas ?
-Jawaban : 
+Jawaban : Keuntungan hubungan antarentitas adalah membuat data menjadi lebih terhubung dan mudah dipahami. Dengan adanya hubungan tersebut, kita bisa mengetahui keterkaitan antara satu entitas dengan entitas lainnya.
 
 ### 5. Bagaimana Knowledge Graph membantu AI ?
-Jawaban : 
+Jawaban : Knowledge Graph membantu AI dengan cara menyimpan informasi beserta hubungan antar data secara terstruktur. Dengan begitu, AI lebih mudah memahami hubungan antara suatu informasi dengan informasi lainnya.
+
+
