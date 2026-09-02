@@ -7,9 +7,9 @@ Jelaskan secara singkat struktur XML yang Anda buat.
 
 | No | Bagian yang Salah | Alasan | Perbaikan |
 |---|---|---|---|
-| 1 | `<nama>Budi Santoso</Nama>` | Tag pembuka `<nama>` menggunakan huruf kecil, sedangkan tag penutup `</Nama>` menggunakan huruf kapital di awal. XML bersifat case-sensitive sehingga nama tag harus sama persis. | `<nama>Budi Santoso</nama>` |
+| 1 | `<nama>Budi Santoso</Nama>` | Tag pembuka `<nama>` beda kapitalisasi dengan tag penutup `</Nama>`. XML bersifat *case-sensitive*. | `<nama>Budi Santoso</nama>` |
 | 2 | `<angkatan>2024` | Tag `<angkatan>` tidak memiliki tag penutup, sehingga dokumen XML tidak *well-formed*. | `<angkatan>2024</angkatan>` |
-| 3 | ```xml<hobi>Programming</hobi><hobi>Membaca</hobi>``` | Elemen hobi ganda langsung berada di bawah root tanpa adanya parent pembungkus untuk mengelompokkan daftar hobi tersebut. | ```xml<hobi>  <hobi>Programming</hobi>  <hobi>Membaca</hobi></hobi>``` |
+| 3 | `<hobi>Programming</hobi>`<br>`<hobi>Membaca</hobi>` | Elemen hobi ganda langsung berada di bawah root tanpa adanya parent pembungkus. | `<hobi>`<br>`<hobi>Programming</hobi>`<br>`<hobi>Membaca</hobi>`<br>`</hobi>` |
 
 ## 3. Analisis XML Schema
 1. Root element: ...
