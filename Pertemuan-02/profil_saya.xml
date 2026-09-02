@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Profil mahasiswa Web Semantik -->
+
+<profil nim="251402104">
+    <nama>Aulia Syahfira</nama>
+    <angkatan>2025</angkatan>
+    <programStudi>Teknologi Informasi</programStudi>
+
+    <hobi>Crafting Accessories</hobi>
+    <hobi>Writing</hobi>
+
+    <deskripsi>
+        Saya adalah seorang mahasiswa yang memiliki minat dalam bidang teknologi informasi. 
+        Saya senang belajar hal-hal baru dan selalu berusaha untuk mengembangkan keterampilan saya. 
+        Selain itu, saya juga memiliki hobi dalam membuat aksesoris dan menulis, yang membantu saya mengekspresikan diri saya.
+    </deskripsi>
+</profil>
