@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<katalog>
+    <buku isbn="978-001">
+        <judul>Pengantar Web Semantik</judul>
+        <pengarang>Andi Wijaya</pengarang>
+        <tahun>2024</tahun>
+        <harga>125000</harga>
+    </buku>
+
+    <buku isbn="978-002">
+        <judul>Grafik Pengetahuan Dasar</judul>
+        <pengarang>Siti Rahma</pengarang>
+        <tahun>2023</tahun>
+        <harga>95000</harga>
+    </buku>
+
+    <buku isbn="978-623-09-3270-0">
+        <judul>Pengantar Teknologi Informasi dan Komunikasi</judul>
+        <pengarang>Dr. Drs. Didik Tristianto, S. Kom., M. Kom., M.Cs.</pengarang>
+        <tahun>2023</tahun>
+        <harga>150000</harga>
+    </buku>
+
+    <buku isbn="978-602-7619-20-3">
+        <judul>Pengantar Teknologi Informasi</judul>
+        <pengarang>Amir Hamzah</pengarang>
+        <tahun>2013</tahun>
+        <harga>60000</harga>
+    </buku>
+
+    <buku isbn="978-623-02-2314-3">
+        <judul>Dasar Pemrograman dalam Bahasa C</judul>
+        <pengarang>Farah Zakiyah Ramanti, S.ST., M.T.</pengarang>
+        <tahun>2021</tahun>
+        <harga>120000</harga>
+    </buku>
+
+    <buku isbn="978-623-7156-03-1">
+        <judul>Panduan Praktis dan Jitu Menguasai Pemrograman C++</judul>
+        <pengarang>Randi Adrika Putra</pengarang>
+        <tahun>2019</tahun>
+        <harga>115000</harga>
+    </buku>
+
+    <buku isbn="978-979-877-368-6">
+        <judul>Buku Pertama Belajar Pemrograman Java untuk Pemula</judul>
+        <pengarang>Abdul Kadir</pengarang>
+        <tahun>2014</tahun>
+        <harga>55000</harga>
+    </buku>
+
+</katalog>
