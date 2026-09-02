@@ -1,7 +1,8 @@
 # Pertemuan 2 - Format Dokumen XML
 
 ## 1. Profil XML
-Jelaskan secara singkat struktur XML yang Anda buat.
+XML yang dibuat berisi salah satu data profil mahasiswa TI, yang berisikan NIM, nama, angkatan, program studi, hobi, dan deskripsi diri. Struktur XML tersebut sudah well-formed karena setiap elemen memiliki tag pembuka dan penutup yang sesuai serta dapat ditampilkan dengan baik di browser tanpa adanya pesan error.
+
 
 ## 2. Analisis Kesalahan XML
 
