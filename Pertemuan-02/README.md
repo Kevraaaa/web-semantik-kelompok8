@@ -20,10 +20,17 @@ Jelaskan secara singkat struktur XML yang Anda buat.
 5. Atribut ISBN: ...
 
 ## 4. Analisis Namespace
-1. Mengapa kedua elemen title tidak sama? ...
-2. Fungsi prefix: ...
-3. Fungsi xmlns: ...
-4. Apakah URI namespace harus dapat dibuka? ...
+1. Mengapa kedua elemen title tidak sama?
+jawab: alasannya karena kedua title itu ada yg tunjuk seperti buku:title maka yg ditunjuk title itu ada lah buku dan begitu juga dengan web:title. tapi kalau `<title>` gkda menunjuk sesuatu maka elemen title itu dianggap sama
+
+2. Fungsi prefix buku: dan web:?
+jawab: gunanya agar elemen `<title>` dapat dibedakan antara menunjuk ke buku ataupun web. jika tidak ada prefix buku: ataupun web: nanti elemen title akan dianggap sama.
+
+3. Apa fungsi atribut xmlns?
+jawab: fungsinya supaya bisa meletakkan URI. jadi nanti komputer paham bahwa ketika ada jumpa data buku itu asalnya dari link "https://example.org/buku".
+
+4. Apakah URI namespace harus dapat dibuka sebagai halaman web? Jelaskan.
+jawab: tidak, karena URI itu hanya pembeda antar elemen. jadi kalau user ada membuat beberapa data salah satunya xmlns:buku="https://example.org/buku" maka komputer akan tau bahwa elemen buku tersebut menunjuk ke URI itu.
 
 ## 5. Pertanyaan Evaluasi
 
