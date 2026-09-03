@@ -1,25 +1,28 @@
 # Pertemuan 2 - Format Dokumen XML
 
 ## 1. Profil XML
-Jelaskan secara singkat struktur XML yang Anda buat.
+XML yang dibuat berisi salah satu data profil mahasiswa TI, yang berisikan NIM, nama, angkatan, program studi, hobi, dan deskripsi diri. Struktur XML tersebut sudah well-formed karena setiap elemen memiliki tag pembuka dan penutup yang sesuai serta dapat ditampilkan dengan baik di browser tanpa adanya pesan error.
+
 
 ## 2. Analisis Kesalahan XML
 
 | No | Bagian yang Salah | Alasan | Perbaikan |
 |---|---|---|---|
-| 1 | `<nama>Budi Santoso</Nama>` | Tag pembuka `<nama>` menggunakan huruf kecil, sedangkan tag penutup `</Nama>` menggunakan huruf kapital di awal. XML bersifat case-sensitive sehingga nama tag harus sama persis. | `<nama>Budi Santoso</nama>` |
+| 1 | `<nama>Budi Santoso</Nama>` | Tag pembuka `<nama>` beda kapitalisasi dengan tag penutup `</Nama>`. XML bersifat *case-sensitive*. | `<nama>Budi Santoso</nama>` |
 | 2 | `<angkatan>2024` | Tag `<angkatan>` tidak memiliki tag penutup, sehingga dokumen XML tidak *well-formed*. | `<angkatan>2024</angkatan>` |
-| 3 | `<hobi>Programming</hobi>`<br>`<hobi>Membaca</hobi>` | Elemen hobi ganda langsung berada di bawah root tanpa adanya parent pembungkus untuk mengelompokkan daftar hobi tersebut. | `<hobi>`<br>`<hobi>Programming</hobi>`<br>`<hobi>Membaca</hobi>`<br>`</hobi>` |
-
+| 3 | `<hobi>Programming</hobi>`<br>`<hobi>Membaca</hobi>` | Elemen hobi ganda langsung berada di bawah root tanpa adanya parent pembungkus. | `<hobi>`<br>`<hobi>Programming</hobi>`<br>`<hobi>Membaca</hobi>`<br>`</hobi>` |
 
 ## 3. Analisis XML Schema
-1. Root element: ...
-2. Tipe data judul: ...
-3. Tipe data tahun: ...
-4. Tipe data harga: ...
-5. Atribut ISBN: ...
+1. Root element: buku
+2. Tipe data judul: xs:string
+3. Tipe data tahun: xs:gYear
+4. Tipe data harga: xs:decimal
+5. Apakah atribut isbn boleh tidak dituliskan? Jelaskan
+= Tidak boleh, karena atribut isbn menggunakan use="required".
+jadi setiap elemen itu wajib punya atribut isbn, kalo tidak ditulis dokumen XML tidak sesuai sama aturan XSD.
 
 ## 4. Analisis Namespace
+<<<<<<< HEAD
 1. Mengapa kedua elemen title tidak sama?
 jawab: alasannya karena kedua title itu ada yg tunjuk seperti buku:title maka yg ditunjuk title itu ada lah buku dan begitu juga dengan web:title. tapi kalau `<title>` gkda menunjuk sesuatu maka elemen title itu dianggap sama
 
@@ -31,6 +34,16 @@ jawab: fungsinya supaya bisa meletakkan URI. jadi nanti komputer paham bahwa ket
 
 4. Apakah URI namespace harus dapat dibuka sebagai halaman web? Jelaskan.
 jawab: tidak, karena URI itu hanya pembeda antar elemen. jadi kalau user ada membuat beberapa data salah satunya xmlns:buku="https://example.org/buku" maka komputer akan tau bahwa elemen buku tersebut menunjuk ke URI itu.
+=======
+1. Mengapa kedua elemen title tidak sama? 
+= Karena kedua elemen tersebut berada pada namespace yang berbeda. Elemen buku:title menggunakan namespace https://example.org/buku, sedangkan web:title menggunakan namespace https://example.org/web. Jadi, walaupun sama-sama bernama `title`, keduanya dianggap sebagai elemen yang berbeda.
+2. Fungsi prefix: 
+=  Prefix digunakan sebagai penanda atau singkatan untuk namespace. refix `Pb
+3. Fungsi xmlns: 
+= Atribut xmlns digunakan untuk mendeklarasikan namespace dan menghubungkan prefix dengan URI namespace.
+4. Apakah URI namespace harus dapat dibuka? 
+= Gak harus, URI namespace hanya digunakan sebagai identitas unik untuk membedakan suatu namespace dengan namespace lainnya. Jadi, URI tersebut tidak wajib bisa dibuka melalui browser.
+>>>>>>> 0bf89a47df450d0d72dbd0abf6f56fa52639e04e
 
 ## 5. Pertanyaan Evaluasi
 
