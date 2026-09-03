@@ -22,7 +22,7 @@ XML yang dibuat berisi salah satu data profil mahasiswa TI, yang berisikan NIM, 
 jadi setiap elemen itu wajib punya atribut isbn, kalo tidak ditulis dokumen XML tidak sesuai sama aturan XSD.
 
 ## 4. Analisis Namespace
-<<<<<<< HEAD
+
 1. Mengapa kedua elemen title tidak sama?
 jawab: alasannya karena kedua title itu ada yg tunjuk seperti buku:title maka yg ditunjuk title itu ada lah buku dan begitu juga dengan web:title. tapi kalau `<title>` gkda menunjuk sesuatu maka elemen title itu dianggap sama
 
@@ -33,17 +33,7 @@ jawab: gunanya agar elemen `<title>` dapat dibedakan antara menunjuk ke buku ata
 jawab: fungsinya supaya bisa meletakkan URI. jadi nanti komputer paham bahwa ketika ada jumpa data buku itu asalnya dari link "https://example.org/buku".
 
 4. Apakah URI namespace harus dapat dibuka sebagai halaman web? Jelaskan.
-jawab: tidak, karena URI itu hanya pembeda antar elemen. jadi kalau user ada membuat beberapa data salah satunya xmlns:buku="https://example.org/buku" maka komputer akan tau bahwa elemen buku tersebut menunjuk ke URI itu.
-=======
-1. Mengapa kedua elemen title tidak sama? 
-= Karena kedua elemen tersebut berada pada namespace yang berbeda. Elemen buku:title menggunakan namespace https://example.org/buku, sedangkan web:title menggunakan namespace https://example.org/web. Jadi, walaupun sama-sama bernama `title`, keduanya dianggap sebagai elemen yang berbeda.
-2. Fungsi prefix: 
-=  Prefix digunakan sebagai penanda atau singkatan untuk namespace. refix `Pb
-3. Fungsi xmlns: 
-= Atribut xmlns digunakan untuk mendeklarasikan namespace dan menghubungkan prefix dengan URI namespace.
-4. Apakah URI namespace harus dapat dibuka? 
-= Gak harus, URI namespace hanya digunakan sebagai identitas unik untuk membedakan suatu namespace dengan namespace lainnya. Jadi, URI tersebut tidak wajib bisa dibuka melalui browser.
->>>>>>> 0bf89a47df450d0d72dbd0abf6f56fa52639e04e
+jawab: tidak, karena URI itu hanya pembeda antar elemen. jadi kalau user ada membuat beberapa data salah satunya xmlns:buku="https://example.org/buku" maka komputer akan tau bahwa elemen buku tersebut menunjuk ke URI itu. 
 
 ## 5. Pertanyaan Evaluasi
 
