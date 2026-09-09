@@ -1,0 +1,19 @@
+{
+    "@context" : "https://schema.org",
+    "@type" : "Person",
+    "@id" : "https://usu.ac.id/mhs/251402122",
+    "name" : "Ainuha Suraiya",
+    "alumniOf" : {
+        "@type" : "CollegeOrUniversity",
+        "name" : "Universitas Sumatera Utara"
+    },
+    "knowsAbout" : [
+        "Web Semantik",
+        "Manajemen Sistem Basis Data",
+        "Pemrograman Web",
+        "Pemrograman Berbasis Objek",
+        "Struktur Data dan Algoritma",
+        "Matematika Dasar",
+        "Matematika Diskrit"
+    ]
+}
