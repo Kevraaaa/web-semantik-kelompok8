@@ -40,17 +40,17 @@ Tuliskan satu baris N-Quads yang terbentuk:
 `[https://usu.ac.id/mhs/251402122](https://usu.ac.id/mhs/251402122) [http://schema.org/name](http://schema.org/name) "Ainuha Suraiya" .`
 
 ## 5. Hasil Validasi
-- Schema Markup Validator: tidak ada error dan tidak ada warning di file profil_saya.jsonld.
-- Rich Results Test: valid, tapi ada 8 masalah non kritis yaitu:
-1. Kolom "image" tidak ada (opsional) 
-2. Kolom "endDate" tidak ada (opsional) 
-3. Kolom "description" tidak ada (opsional) 
-4. Kolom "eventStatus" tidak ada (opsional) 
-5. Kolom "offers" tidak ada (opsional) 
-6. Kolom "performer" tidak ada (opsional) 
-7. Kolom "address" tidak ada (opsional) 
-8. Kolom "url" tidak ada (opsional) 
-- JSON-LD Playground: JSON-LD Playground berhasil membaca struktur data di file profil_saya.jsonld.
+1. Schema Markup Validator: tidak ada error dan tidak ada warning di file profil_saya.jsonld.
+2. Rich Results Test: valid, tapi ada 8 masalah non kritis yaitu:
+- Kolom "image" tidak ada (opsional) 
+- Kolom "endDate" tidak ada (opsional) 
+- Kolom "description" tidak ada (opsional) 
+- Kolom "eventStatus" tidak ada (opsional) 
+- Kolom "offers" tidak ada (opsional) 
+- Kolom "performer" tidak ada (opsional) 
+- Kolom "address" tidak ada (opsional) 
+- Kolom "url" tidak ada (opsional) 
+3. JSON-LD Playground: JSON-LD Playground berhasil membaca struktur data di file profil_saya.jsonld.
 
 ## 6. Refleksi
 1. Mengapa `@context` disebut jembatan menuju makna?
