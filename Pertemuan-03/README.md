@@ -11,9 +11,14 @@
 - folder `screenshots`
 
 ## 1. JSON Biasa dan JSON-LD
-1. Perbedaan fungsi kunci: ...
-2. Fungsi `@context`, `@type`, dan `@id`: ...
-3. Node tanpa `@id`: ...
+1. Perbedaan fungsi kunci: 
+    Ada JSON biasa, nama dan pekerjaan hanya berfungsi sebagai kunci untuk menyimpan data dan maknanya bergantung pada orang yang membuat data tersebut. Sedangkan name dan jobTitle pada JSON-LD mengikuti kosakata schema.org, sehingga maknanya sudah memiliki definisi yang dapat dipahami oleh mesin. Jadi, JSON-LD tidak hanya menyimpan data, tetapi juga memberikan makna pada data tersebut.
+
+2. Fungsi `@context`, `@type`, dan `@id`:
+    @context berfungsi sebagai kamus yang menghubungkan setiap kunci dalam JSON-LD dengan IRI dari kosakata global, seperti schema.org. @type digunakan untuk menunjukkan jenis entitas yang sedang dijelaskan, misalnya Person untuk menunjukkan bahwa data tersebut merupakan seseorang. Sementara itu, @id digunakan sebagai identitas atau IRI unik dari sebuah node agar entitas tersebut dapat dirujuk dari tempat lain.
+
+3. Node tanpa `@id`: 
+    Jika sebuah node tidak memiliki @id, node tersebut tetap dapat digunakan dalam JSON-LD, tetapi tidak mempunyai identitas yang bisa dirujuk secara langsung dari tempat lain. Node seperti ini disebut blank node atau node anonim. Jadi, @id tidak wajib, tetapi sebaiknya digunakan terutama jika data tersebut nantinya akan ditautkan atau dirujuk oleh entitas lain.
 
 ## 2. Pemeriksaan schema.org
 1. Alasan memilih tipe paling spesifik: Karena tipe yang lebih spesifik membuat makna data lebih jelas dan membuat mesin memahami informasi dengan lebih akurat. Selain itu, kita dianjurkan memilih tipe yang paling spesifik yang masih sesuai dengan entitas yang dimodelkan.
