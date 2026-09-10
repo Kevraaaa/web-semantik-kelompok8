@@ -37,20 +37,31 @@
 
 ## 4. Triple dari JSON-LD Playground
 Tuliskan satu baris N-Quads yang terbentuk:
-
-```text
-ISI_TRIPLE
-```
+`[https://usu.ac.id/mhs/251402122](https://usu.ac.id/mhs/251402122) [http://schema.org/name](http://schema.org/name) "Ainuha Suraiya" .`
 
 ## 5. Hasil Validasi
-- Schema Markup Validator: ...
-- Rich Results Test: ...
-- JSON-LD Playground: ...
+- Schema Markup Validator: tidak ada error dan tidak ada warning di file profil_saya.jsonld.
+- Rich Results Test: valid, tapi ada 8 masalah non kritis yaitu:
+| No. | Masalah Non Kritis |
+|---|---|
+| 1 | Kolom "image" tidak ada (opsional) |
+| 2 | Kolom "endDate" tidak ada (opsional) |
+| 3 | Kolom "description" tidak ada (opsional) |
+| 4 | Kolom "eventStatus" tidak ada (opsional) |
+| 5 | Kolom "offers" tidak ada (opsional) |
+| 6 | Kolom "performer" tidak ada (opsional) |
+| 7 | Kolom "address" tidak ada (opsional) |
+| 8 | Kolom "url" tidak ada (opsional) |
+- JSON-LD Playground: JSON-LD Playground berhasil membaca struktur data di file profil_saya.jsonld.
 
 ## 6. Refleksi
 1. Mengapa `@context` disebut jembatan menuju makna?
+jawab: `@context` berfungsi sebagai jembatan semantik yang mengubah teks biasa dalam JSON menjadi kosakata terstandarisasi global, sehingga nanti ia lebih ditemukan/dipahami oleh mesin mencari.
 2. Apa perbedaan fungsi Schema Markup Validator dan Rich Results Test?
+- Schema Markup Validator: fungsinya supaya memeriksa apakah syntax kodenya itu valid atau tidak.
+- Rich Results Test: fungsinya menguji sebuah kode apakah kode tersebut sudah memenuhi syarat untuk menampilkan rich results. di halaman pencarian google.
 3. Mengapa isi JSON-LD harus sama dengan konten yang terlihat pada halaman?
+jawab: ya, harus sama. supaya menjaga integritas data.
 
 ## Bukti
 ![Schema Markup Validator](screenshots/profil-schema-validator.png)
