@@ -26,13 +26,14 @@
 3. Manfaat array pada `knowsAbout`: Array pada knowsAbout digunakan ketika seseorang memiliki lebih dari satu bidang pengetahuan atau keahlian.
 
 ## 3. Perbaikan Lima Kesalahan
+
 | No. | Bagian Salah | Alasan | Perbaikan |
 |---|---|---|---|
-| 1 | ... | ... | ... |
-| 2 | ... | ... | ... |
-| 3 | ... | ... | ... |
-| 4 | ... | ... | ... |
-| 5 | ... | ... | ... |
+| 1 | `"@type": "person"` | Penulisan tipe harus sesuai dengan schema.org dan memperhatikan huruf besar/kecil. | `"@type": "Person"` |
+| 2 | `"birthDate": "12 September 2004"` | Format tanggal belum menggunakan standar ISO 8601. | `"birthDate": "2004-09-12"` |
+| 3 | `"nomorInduk"` | Properti tersebut tidak terdaftar dalam schema.org. | `"identifier"` |
+| 4 | Koma setelah `"nomorInduk": "221401001",` | Properti terakhir dalam JSON tidak boleh memiliki koma di akhir. | Hapus koma terakhir. |
+| 5 | Tanda kutip pada nilai `@context` | JSON harus menggunakan tanda kutip ganda (`"`). | `"@context": "https://schema.org"` |
 
 ## 4. Triple dari JSON-LD Playground
 Tuliskan satu baris N-Quads yang terbentuk:
