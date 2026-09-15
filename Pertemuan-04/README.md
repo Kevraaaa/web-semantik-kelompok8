@@ -1,10 +1,15 @@
 # Pertemuan 4 — Metadata dan Interoperabilitas
 
 ## Identitas sumber
-- Judul: [isi judul]
-- Pembuat: [isi pembuat]
-- URI sumber: [isi URI yang dipakai di Turtle dan JSON-LD]
-- Jenis sumber: [isi jenis]
+- Judul : Is It Bad or Good Habits : Bagaimana Rutinitas dan Kebiasaan Dapat Memengaruhi Kehidupan
+- Pembuat : Sabrina Ara
+- URI sumber : (https://kevraaaa.github.io/web-semantik-kelompok8/pertemuan-04/sumber-belajar.html)
+- Jenis sumber : Text
+- Deskripsi : Otak manusia telah merekam memori tentang peristiwa-peristiwa serupa dalam kehidupan di alam bawah sadar dimana itu terbentuk dalam rutinitas yang dijalani sehari-hari, yakni kebiasaan. Oleh karena itu, buku ini membahas bagaimana proses manusia berpikir, mengenali diri, dan melangkah dari kebiasaan kecil hingga pada kebiasaan-kebiasaan yang membawa kesuksesan untuk membentuk tujuan baru, kebiasaan baru, serta mengubah jalan yang lama.
+- Tanggal : 2022
+- Bahasa : id
+- Hak : Hak Cipta dilindungi Undang-Undang Hak Cipta
+- ISBN : 978-623-97672-3-5
 
 ## Pemetaan Dublin Core Terms
 | Properti | Nilai | Alasan pemilihan |
