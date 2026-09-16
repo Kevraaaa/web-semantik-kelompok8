@@ -14,13 +14,13 @@
 ## Pemetaan Dublin Core Terms
 | Properti | Nilai | Alasan pemilihan |
 | --- | --- | --- |
-| dcterms:title | [Is It Bad or Good Habits: Bagaimana Rutinitas dan Kebiasaan Dapat Memengaruhi Kehidupan] | [Digunakan untuk menunjukkan identitas buku secara unik.] |
-| dcterms:creator | [Sabrina Ara] | [Digunakan untuk menunjukkan pihak yang membuat atau menulis buku agar jelas siapa yang bertanggung jawab atas isi buku ini.] |
-| dcterms:description | [Otak manusia telah merekam memori tentang peristiwa-peristiwa serupa dalam kehidupan di alam bawah sadar dimana itu terbentuk dalam rutinitas yang dijalani sehari-hari, yakni kebiasaan. Oleh karena itu, buku ini membahas bagaimana proses manusia berpikir, mengenali diri, dan melangkah dari kebiasaan kecil hingga pada kebiasaan-kebiasaan yang membawa kesuksesan untuk membentuk tujuan baru, kebiasaan baru, serta mengubah jalan yang lama.] | [Memberikan ringkasan isi buku agar pengguna memahami topik yang dibahas.] |
-| dcterms:created | [2022] | [Menunjukkan tahun terbit sebagai penanda kapan buku pertama kali diterbitkan.] |
-| dcterms:type | [Text] | [Menunjukkan bahwa sumber yang dideskripsikan berupa teks atau buku, bukan gambar, video, atau jenis media lain.] |
-| dcterms:language | [id] | [Menunjukkan bahasa yang digunakan dalam buku, yaitu Bahasa Indonesia.] |
-| dcterms:rights | [Hak Cipta dilindungi Undang-Undang Hak Cipta] | [Menjelaskan bahwa buku ini punya perlindungan hukum dan tidak bebas digandakan sembarangan.] |
+| dcterms:title | Is It Bad or Good Habits: Bagaimana Rutinitas dan Kebiasaan Dapat Memengaruhi Kehidupan | Digunakan untuk menunjukkan identitas buku secara unik. |
+| dcterms:creator | Sabrina Ara | Digunakan untuk menunjukkan pihak yang membuat atau menulis buku agar jelas siapa yang bertanggung jawab atas isi buku ini. |
+| dcterms:description | Otak manusia telah merekam memori tentang peristiwa-peristiwa serupa dalam kehidupan di alam bawah sadar dimana itu terbentuk dalam rutinitas yang dijalani sehari-hari, yakni kebiasaan. Oleh karena itu, buku ini membahas bagaimana proses manusia berpikir, mengenali diri, dan melangkah dari kebiasaan kecil hingga pada kebiasaan-kebiasaan yang membawa kesuksesan untuk membentuk tujuan baru, kebiasaan baru, serta mengubah jalan yang lama. | Memberikan ringkasan isi buku agar pengguna memahami topik yang dibahas. |
+| dcterms:created | 2022 | Menunjukkan tahun terbit sebagai penanda kapan buku pertama kali diterbitkan. |
+| dcterms:type | Text | Menunjukkan bahwa sumber yang dideskripsikan berupa teks atau buku, bukan gambar, video, atau jenis media lain. |
+| dcterms:language | id | Menunjukkan bahasa yang digunakan dalam buku, yaitu Bahasa Indonesia. |
+| dcterms:rights | Hak Cipta dilindungi Undang-Undang Hak Cipta | Menjelaskan bahwa buku ini punya perlindungan hukum dan tidak bebas digandakan sembarangan. |
 
 ## Hasil validasi
 - JSON-LD Playground: [ringkasan hasil]
