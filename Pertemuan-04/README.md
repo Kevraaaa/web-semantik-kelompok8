@@ -23,13 +23,23 @@
 | dcterms:rights | Hak Cipta dilindungi Undang-Undang Hak Cipta | Menjelaskan bahwa buku ini punya perlindungan hukum dan tidak bebas digandakan sembarangan. |
 
 ## Hasil validasi
-- JSON-LD Playground: [ringkasan hasil]
-- Schema Markup Validator: [ringkasan hasil]
+## Hasil validasi
+- JSON-LD Playground: Validasi berhasil tanpa galat dan URI subjek cocok. 
+  ![Hasil JSON-LD](screenshots/jsonld-playground.png)
+- Schema Markup Validator: Validasi berhasil dengan 0 ERRORS.
+  ![Hasil Schema Validator](screenshots/schema-validator.png)
 
 ## Refleksi
 1. Mengapa URI yang sama penting untuk Turtle dan JSON-LD?
+URI di sini gunanya sebagai identitas unik (seperti nomor KTP) untuk suatu objek di internet. Penggunaan URI yang sama pada format Turtle dan JSON-LD sangat penting supaya browser bisa memahami bahwa kedua file tersebut mendeskripsikan satu materi belajar yang sama, bukan dua materi yang beda.
 2. Apa perbedaan peran DC Terms dan schema.org pada pekerjaan ini?
+- DC Terms (Dublin Core): Berperan sebagai metadata deskriptif umum (misalnya judul, pencipta, tanggal) untuk kebutuhan pengarsipan dokumen.
+- Schema.org: Menyediakan struktur data spesifik (contohnya tipe LearningResource) agar materi lebih mudah dibaca dan diindeks oleh mesin pencari modern seperti Google.
 3. Sebutkan satu risiko jika metadata HTML, Turtle, dan JSON-LD tidak konsisten.
+Risiko Inkonsistensi Data:
+- Kebingungan pada Parser / Mesin Pencari: Jika data di HTML berbeda dengan JSON-LD (misalnya nama pembuat tidak sinkron), sistem kesulitan menentukan data yang valid.
+- Gagal Indeks: Informasi berpotensi tidak tampil dengan benar di hasil pencarian Google (Search Engine).
+- Penolakan Sistem: Data bisa ditolak oleh sistem pengarsipan otomatis karena dianggap tidak konsisten.
 
 ## Catatan akhir
-[Tulis catatan singkat tentang konsistensi metadata Anda.]
+Berdasarkan pengecekan manual pada kode HTML meta, Turtle, dan JSON-LD, seluruh metadata udah dipastikan konsisten. semua informasi utama(judul, pembuat, deskripsi, tanggal, bahasa, dan hak cipta) ada maknanya dan nilai data yang sama di tiga format itu, supaya datanya bisa saling nyambung dan kebaca dengan lancar di platform mana saja.
