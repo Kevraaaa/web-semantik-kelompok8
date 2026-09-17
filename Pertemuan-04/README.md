@@ -31,7 +31,7 @@
 
 ## Refleksi
 1. Mengapa URI yang sama penting untuk Turtle dan JSON-LD?
-URI di sini gunanya sebagai identitas unik (seperti nomor KTP) untuk suatu objek di internet. Penggunaan URI yang sama pada format Turtle dan JSON-LD sangat penting supaya browser bisa memahami bahwa kedua file tersebut mendeskripsikan satu materi belajar yang sama, bukan dua materi yang beda.
+karen URI di sini gunanya sebagai identitas unik (seperti nomor KTP) untuk suatu objek di internet. Penggunaan URI yang sama pada format Turtle dan JSON-LD sangat penting supaya browser bisa memahami bahwa kedua file tersebut mendeskripsikan satu materi belajar yang sama, bukan dua materi yang beda.
 2. Apa perbedaan peran DC Terms dan schema.org pada pekerjaan ini?
 - DC Terms (Dublin Core): Berperan sebagai metadata deskriptif umum (misalnya judul, pencipta, tanggal) untuk kebutuhan pengarsipan dokumen.
 - Schema.org: Menyediakan struktur data spesifik (contohnya tipe LearningResource) agar materi lebih mudah dibaca dan diindeks oleh mesin pencari modern seperti Google.
