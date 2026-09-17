@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "title": "dcterms:title",
+    "creator": "dcterms:creator",
+    "description": "dcterms:description",
+    "created": "dcterms:created",
+    "type": "dcterms:type",
+    "language": "dcterms:language",
+    "rights": "dcterms:rights"
+  },
+  "@id": "https://kevraaaa.github.io/web-semantik-kelompok8/pertemuan-04/sumber-belajar.html",
+  "title": "Is It Bad or Good Habits: Bagaimana Rutinitas dan Kebiasaan Dapat Memengaruhi Kehidupan",
+  "creator": "Sabrina Ara",
+  "description": "Otak manusia telah merekam memori tentang peristiwa-peristiwa serupa dalam kehidupan dalam bawah sadar. Materi ini membahas bagaimana rutinitas dan kebiasaan sehari-hari dapat memengaruhi manusia dalam berpikir, mengenali diri, dan membentuk tujuan serta kebiasaan baru.",
+  "created": "2022",
+  "type": "Text",
+  "language": "id",
+  "rights": "Hak Cipta dilindungi Undang-Undang Hak Cipta"
+}

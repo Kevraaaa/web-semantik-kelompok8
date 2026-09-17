@@ -1,0 +1,11 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://kevraaaa.github.io/web-semantik-kelompok8/pertemuan-04/sumber-belajar.html>
+    dcterms:title "Is It Bad or Good Habits: Bagaimana Rutinitas dan Kebiasaan Dapat Memengaruhi Kehidupan" ;
+    dcterms:creator "Sabrina Ara" ;
+    dcterms:description "Otak manusia telah merekam memori tentang peristiwa-peristiwa serupa dalam kehidupan dalam bawah sadar. Materi ini membahas bagaimana rutinitas dan kebiasaan sehari-hari dapat memengaruhi manusia dalam berpikir, mengenali diri, dan membentuk tujuan serta kebiasaan baru." ;
+    dcterms:created "2022" ;
+    dcterms:type "Text" ;
+    dcterms:language "id" ;
+    dcterms:rights "Hak Cipta dilindungi Undang-Undang Hak Cipta" .
