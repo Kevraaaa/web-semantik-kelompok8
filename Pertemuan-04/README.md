@@ -22,7 +22,7 @@
 | dcterms:language | id | Menunjukkan bahasa yang digunakan dalam buku, yaitu Bahasa Indonesia. |
 | dcterms:rights | Hak Cipta dilindungi Undang-Undang Hak Cipta | Menjelaskan bahwa buku ini punya perlindungan hukum dan tidak bebas digandakan sembarangan. |
 
-## Hasil validasi
+
 ## Hasil validasi
 - JSON-LD Playground: Validasi berhasil tanpa galat dan URI subjek cocok. 
   ![Hasil JSON-LD](screenshots/jsonld-playground.png)
