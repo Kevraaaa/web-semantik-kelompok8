@@ -7,12 +7,12 @@
 ## Komponen ontology
 | Komponen | Isi yang dibuat |
 | --- | --- |
-| Class | Person, Student, Lecturer, Course, Department |
-| Subclass | Student dan Lecturer adalah subclass dari Person |
-| Object property | takesCourse, teachesCourse, belongsToDepartment |
-| Datatype property | hasNIM, hasName |
-| Individual | Dosen_Muhammad_Isa, Mahasiswa_Hadziq_Naufal, Mahasiswa_Muhammad_Kevin, Matkul_Web_Semantik, Matkul_Matematika_Diskrit |
-| Axiom/disjointness | Lecturer disjointWith Student |
+| Class | LudoGame, Board, Dice, Piece, Player |
+| Subclass | Pawn, Blue, Green, Yellow, Red, ComputerPlayer, HumanPlayer |
+| Object property | hasColor, hasPiece, hasPlayer, usesDice |
+| Datatype property | diceValue, pieceNumber, playerName |
+| Individual | blueColor1, redColor1, yellowColor1, greenColor1, bluePawn1, greenPawn1, yellowPawn1, redPawn1, LudoGame1, playerAinuha, playerAulia, playerAliyah, playerHadziq |
+| Axiom/disjointness | HumanPlayer disjointWith ComputerPlayer |
 
 ## Layer Cake
 Jelaskan posisi ontology dalam Semantic Web Layer Cake: [isi jawaban]

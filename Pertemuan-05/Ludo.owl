@@ -1,0 +1,558 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="urn:webprotege:ontology:8141fe65-e5b8-4b55-beff-cb871a796b90"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="urn:webprotege:ontology:8141fe65-e5b8-4b55-beff-cb871a796b90">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/Blue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/Pawn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/R7778HI37XYp8nNVMynfubX"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/R7AsPOioy0vcWKk05hnpDh7"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/R7bLrWcZgMoFRwPWJVdtVBW"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/R7u8ZVUM8bX11av46PO9h8c"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/R8cvNvPpoplv2OTTi9mn8Tz"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/R9TL594LYyMcsbZOpu3OUSV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/RBnRqvjx1G9GdL8xhqaSlJZ"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/RIzV1C0OfLumvPNMCPBHCI"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/RsoEVPWNlLz5LPX5721Dq"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/usesDice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/diceValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/pieceNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/playerName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/LudoGame1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/blueColor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/bluePawn1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenColor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenPawn1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAinuha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAliyah"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAulia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerHadziq"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redColor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redPawn1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowColor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowPawn1"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/Blue"/>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/Pawn"/>
+        <Class IRI="http://webprotege.stanford.edu/R7u8ZVUM8bX11av46PO9h8c"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/R7778HI37XYp8nNVMynfubX"/>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/R7bLrWcZgMoFRwPWJVdtVBW"/>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO"/>
+        <Class IRI="http://webprotege.stanford.edu/R8cvNvPpoplv2OTTi9mn8Tz"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/RIzV1C0OfLumvPNMCPBHCI"/>
+        <Class IRI="http://webprotege.stanford.edu/R8cvNvPpoplv2OTTi9mn8Tz"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://webprotege.stanford.edu/RsoEVPWNlLz5LPX5721Dq"/>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/Blue"/>
+        <Class IRI="http://webprotege.stanford.edu/R7778HI37XYp8nNVMynfubX"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/Blue"/>
+        <Class IRI="http://webprotege.stanford.edu/R7bLrWcZgMoFRwPWJVdtVBW"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/Blue"/>
+        <Class IRI="http://webprotege.stanford.edu/RsoEVPWNlLz5LPX5721Dq"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/R7778HI37XYp8nNVMynfubX"/>
+        <Class IRI="http://webprotege.stanford.edu/R7bLrWcZgMoFRwPWJVdtVBW"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/R7778HI37XYp8nNVMynfubX"/>
+        <Class IRI="http://webprotege.stanford.edu/RsoEVPWNlLz5LPX5721Dq"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/R7bLrWcZgMoFRwPWJVdtVBW"/>
+        <Class IRI="http://webprotege.stanford.edu/RsoEVPWNlLz5LPX5721Dq"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO"/>
+        <Class IRI="http://webprotege.stanford.edu/RIzV1C0OfLumvPNMCPBHCI"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RBnRqvjx1G9GdL8xhqaSlJZ"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/LudoGame1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://webprotege.stanford.edu/usesDice"/>
+            <Class IRI="http://webprotege.stanford.edu/R9TL594LYyMcsbZOpu3OUSV"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/LudoGame1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/blueColor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/Pawn"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/bluePawn1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenColor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/Pawn"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenPawn1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAinuha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAliyah"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAulia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerHadziq"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redColor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/Pawn"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redPawn1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowColor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/Pawn"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowPawn1"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/LudoGame1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAinuha"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/LudoGame1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAliyah"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/LudoGame1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAulia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/LudoGame1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerHadziq"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/blueColor1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/blueColor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/bluePawn1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/blueColor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenColor1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenColor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenPawn1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenColor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAinuha"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redPawn1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAliyah"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowPawn1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerAulia"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/bluePawn1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/playerHadziq"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/greenPawn1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redColor1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redColor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redPawn1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/redColor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowColor1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowColor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowPawn1"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/yellowColor1"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/usesDice"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <Class IRI="http://webprotege.stanford.edu/R7u8ZVUM8bX11av46PO9h8c"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+        <Class IRI="http://webprotege.stanford.edu/R8cvNvPpoplv2OTTi9mn8Tz"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+        <Class IRI="http://webprotege.stanford.edu/RBnRqvjx1G9GdL8xhqaSlJZ"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/usesDice"/>
+        <Class IRI="http://webprotege.stanford.edu/RBnRqvjx1G9GdL8xhqaSlJZ"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasColor"/>
+        <Class IRI="http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPiece"/>
+        <Class IRI="http://webprotege.stanford.edu/R7u8ZVUM8bX11av46PO9h8c"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasPlayer"/>
+        <Class IRI="http://webprotege.stanford.edu/R8cvNvPpoplv2OTTi9mn8Tz"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/usesDice"/>
+        <Class IRI="http://webprotege.stanford.edu/R9TL594LYyMcsbZOpu3OUSV"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://webprotege.stanford.edu/diceValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://webprotege.stanford.edu/pieceNumber"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://webprotege.stanford.edu/playerName"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://webprotege.stanford.edu/diceValue"/>
+        <Class IRI="http://webprotege.stanford.edu/R9TL594LYyMcsbZOpu3OUSV"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://webprotege.stanford.edu/pieceNumber"/>
+        <Class IRI="http://webprotege.stanford.edu/R7u8ZVUM8bX11av46PO9h8c"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://webprotege.stanford.edu/playerName"/>
+        <Class IRI="http://webprotege.stanford.edu/R8cvNvPpoplv2OTTi9mn8Tz"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://webprotege.stanford.edu/diceValue"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://webprotege.stanford.edu/pieceNumber"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://webprotege.stanford.edu/playerName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/Blue</IRI>
+        <Literal>Blue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/LudoGame1</IRI>
+        <Literal>LudoGame1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/Pawn</IRI>
+        <Literal>Pawn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R7778HI37XYp8nNVMynfubX</IRI>
+        <Literal>Green</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R7AsPOioy0vcWKk05hnpDh7</IRI>
+        <Literal>Board</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R7bLrWcZgMoFRwPWJVdtVBW</IRI>
+        <Literal>Yellow</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R7u8ZVUM8bX11av46PO9h8c</IRI>
+        <Literal>Piece</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R8EyAkO2stRrsTfERtNfa85</IRI>
+        <Literal>PieceColor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R8cvNvPpoplv2OTTi9mn8Tz</IRI>
+        <Literal>Player</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R9TL594LYyMcsbZOpu3OUSV</IRI>
+        <Literal>Dice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/RB3uHmmP6Vu3jI1VR8QzOAO</IRI>
+        <Literal>HumanPlayer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/RBnRqvjx1G9GdL8xhqaSlJZ</IRI>
+        <Literal>LudoGame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/RIzV1C0OfLumvPNMCPBHCI</IRI>
+        <Literal>ComputerPlayer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/RsoEVPWNlLz5LPX5721Dq</IRI>
+        <Literal>Red</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/blueColor1</IRI>
+        <Literal>blueColor1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/bluePawn1</IRI>
+        <Literal>bluePawn1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/greenColor1</IRI>
+        <Literal>greenColor1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/greenPawn1</IRI>
+        <Literal>greenPawn1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/hasColor</IRI>
+        <Literal>hasColor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/hasPiece</IRI>
+        <Literal>hasPiece</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/hasPlayer</IRI>
+        <Literal>hasPlayer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/pieceNumber</IRI>
+        <Literal>pieceNumber</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/playerAinuha</IRI>
+        <Literal>playerAinuha</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/playerAliyah</IRI>
+        <Literal>playerAliyah</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/playerAulia</IRI>
+        <Literal>playerAulia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/playerHadziq</IRI>
+        <Literal>playerHadziq</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/playerName</IRI>
+        <Literal>playerName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/redColor1</IRI>
+        <Literal>redColor1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/redPawn1</IRI>
+        <Literal>redPawn1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/usesDice</IRI>
+        <Literal>usesDice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/yellowColor1</IRI>
+        <Literal>yellowColor1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/yellowPawn1</IRI>
+        <Literal>yellowPawn1</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
