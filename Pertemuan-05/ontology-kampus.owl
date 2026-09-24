@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://contoh.github.io/web-semantik/251402095/kampus#"
+     xml:base="https://contoh.github.io/web-semantik/251402095/kampus"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    
+    <owl:Ontology rdf:about="https://contoh.github.io/web-semantik/251402095/kampus"/>
+
+    <owl:ObjectProperty rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#takesCourse"/>
+    <owl:ObjectProperty rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#teachesCourse"/>
+    <owl:ObjectProperty rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#belongsToDepartment"/>
+
+    <owl:DatatypeProperty rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#hasNIM"/>
+    <owl:DatatypeProperty rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#hasName"/>
+
+    <owl:Class rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Course"/>
+    <owl:Class rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Department"/>
+    <owl:Class rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Person"/>
+    
+    <owl:Class rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Lecturer">
+        <rdfs:subClassOf rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Person"/>
+        <owl:disjointWith rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Student"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Student">
+        <rdfs:subClassOf rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Person"/>
+    </owl:Class>
+
+    <owl:NamedIndividual rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Dosen_Muhammad_Isa">
+        <rdf:type rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Lecturer"/>
+        <teachesCourse rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Matkul_Web_Semantik"/>
+        <hasName>Muhammad Isa Dadi Hasibuan S.Kom., M.Kom</hasName>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Mahasiswa_Hadziq_Naufal">
+        <rdf:type rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Student"/>
+        <takesCourse rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Matkul_Web_Semantik"/>
+        <takesCourse rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Matkul_Matematika_Diskrit"/>
+        <hasName>Hadziq Naufal Sinaga</hasName>
+        <hasNIM>251402095</hasNIM>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Mahasiswa_Muhammad_Kevin">
+        <rdf:type rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Student"/>
+        <takesCourse rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Matkul_Web_Semantik"/>
+        <hasName>Muhammad Kevin Ramadhan</hasName>
+        <hasNIM>251402013</hasNIM>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Matkul_Web_Semantik">
+        <rdf:type rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Course"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="https://contoh.github.io/web-semantik/251402095/kampus#Matkul_Matematika_Diskrit">
+        <rdf:type rdf:resource="https://contoh.github.io/web-semantik/251402095/kampus#Course"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
