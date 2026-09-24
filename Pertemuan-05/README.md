@@ -18,11 +18,24 @@
 Jelaskan posisi ontology dalam Semantic Web Layer Cake: [isi jawaban]
 
 ## Perbandingan serialisasi
-- Turtle: [dua pengamatan sintaks]
-- RDF/XML: [dua pengamatan sintaks]
-- Kesamaan makna: [isi]
+- Turtle:
+  - Menggunakan `@prefix` sehingga IRI dapat ditulis lebih singkat.
+  - Menggunakan `;` dan `.` untuk menyusun triple.
+
+- RDF/XML:
+  - Menggunakan tag XML seperti `<rdf:RDF>` dan `<owl:Class>`.
+  - Penulisan IRI menggunakan atribut atau elemen XML sehingga lebih panjang.
+
+- Kesamaan makna:
+  Kedua file merepresentasikan ontology yang sama, sehingga class, property, individual, dan IRI dasar tetap memiliki makna yang sama.
 
 ## Refleksi
+
 1. Apa perbedaan ontology dan taksonomi?
+Ontology menjelaskan konsep dalam suatu domain beserta hubungan dan aturan antar konsep, sedangkan taksonomi lebih fokus pada pengelompokan konsep secara bertingkat berdasarkan kategori atau hierarki.
+
 2. Mengapa domain pada OWL bukan constraint database?
+Karena domain pada OWL digunakan untuk menyimpulkan kelas dari suatu resource berdasarkan property yang digunakan, bukan untuk membatasi data agar hanya boleh memiliki tipe tertentu seperti constraint pada database.
+
 3. Mengapa kosakata yang sudah ada sebaiknya dipakai kembali sebelum membuat yang baru?
+Karena menggunakan kosakata yang sudah ada membuat data lebih mudah dipahami, terhubung, dan digunakan bersama oleh sistem lain. Selain itu, kita tidak perlu membuat istilah baru jika istilah yang sesuai sudah tersedia.
