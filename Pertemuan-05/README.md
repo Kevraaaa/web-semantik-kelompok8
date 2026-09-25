@@ -4,6 +4,15 @@
 - IRI dasar: https://contoh.github.io/web-semantik/251402095/kampus
 - Domain: Kampus
 
+## Mengenali Anatomi Ontology
+| Komponen | Makna | Contoh domain Ludo |
+|-----------|----------------------------------------------|-------------------------------------------------------------|
+| **Class** | Konsep atau kelompok abstrak | LudoGame, Board, Dice, Piece, Player |
+| **Subclass** | Class yang lebih khusus dari class lain | Pawn, HumanPlayer, ComputerPlayer, Blue, Green, Yellow, Red |
+| **Individual** | Instance konkret dari suatu class | LudoGame1, playerAulia, playerAinuh, bluePawn1, redPawn1 |
+| **Property** | Hubungan atau nilai yang dimiliki suatu entitas | hasColor, hasPiece, hasPlayer, usesDice, diceValue, pieceNumber, playerName |
+| **Axiom** | Pernyataan yang memberikan aturan atau batasan dalam ontology | HumanPlayer disjointWith ComputerPlayer |
+
 ## Komponen ontology
 | Komponen | Isi yang dibuat |
 | --- | --- |
