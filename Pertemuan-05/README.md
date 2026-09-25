@@ -15,7 +15,8 @@
 | Axiom/disjointness | HumanPlayer disjointWith ComputerPlayer |
 
 ## Layer Cake
-Jelaskan posisi ontology dalam Semantic Web Layer Cake: [isi jawaban]
+Jelaskan posisi ontology dalam Semantic Web Layer Cake: Ontology berada di atas RDF/RDFS karena ontology seperti OWL menggunakan dasar RDF/RDFS untuk memberikan makna yang lebih detail dan hubungan yang lebih kompleks pada data. Dengan ontology, kita dapat mendefinisikan class, individual, property, serta aturan atau batasan dalam suatu domain.
+Ontology berada sebelum SPARQL karena data dan hubungan yang dimodelkan menggunakan ontology dapat menjadi dasar untuk melakukan pencarian atau query menggunakan SPARQL. Jadi, secara sederhana, RDF/RDFS digunakan untuk membentuk struktur dasar data, ontology memperkaya makna dan hubungan data, sedangkan SPARQL digunakan untuk mengambil informasi dari data tersebut.
 
 ## Perbandingan serialisasi
 - Turtle:
