@@ -7,13 +7,13 @@
 | Mata Kuliah itu memiliki nama "Web Semantik". | ex:web_semantik | foaf:name   | "Web Semantik"  |
 
 ## IRI, Literal, Blank Node, dan Prefix
-1. Identifikasi jenis node untuk ex:ida, "Ida Adi"@id, dan [ ex:kota "Medan" ].
+### 1. Identifikasi jenis node untuk ex:ida, "Ida Adi"@id, dan [ ex:kota "Medan" ].
 ex:ida merupakan IRI, "Ida Adi"@id merupakan literal, sedangkan [ ex:kota "Medan" ] merupakan blank node.
-2. Mengapa literal tidak boleh menjadi subject RDF?
+### 2. Mengapa literal tidak boleh menjadi subject RDF?
 Literal tidak boleh menjadi subject karena literal hanya digunakan untuk menyimpan nilai/data, bukan sebagai identitas suatu resource.
-3. Buat IRI dasar untuk graf Anda dengan pola HTTP, misalnya https://contoh.github.io/web-semantik/ISI_NIM/kampus#.
+### 3. Buat IRI dasar untuk graf Anda dengan pola HTTP, misalnya https://contoh.github.io/web-semantik/ISI_NIM/kampus#.
 Contoh IRI dasar: https://contoh.github.io/web-semantik/251402104/kampus#
-4. Tuliskan kepanjangan namespace rdf, rdfs, xsd, dan foaf.
+### 4. Tuliskan kepanjangan namespace rdf, rdfs, xsd, dan foaf.
 rdf = Resource Description Framework, rdfs = RDF Schema, xsd = XML Schema Definition, dan foaf = Friend of a Friend.
 
 ## IRI dasar graf
