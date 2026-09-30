@@ -9,7 +9,7 @@ g.bind("foaf", FOAF)
 
 # Dosen dan mata kuliah
 g.add((EX.ida, RDF.type, EX.Lecturer))
-g.add((EX.ida, FOAF.name, Literal("Isa Dadi", lang="id")))
+g.add((EX.ida, FOAF.name, Literal("Ida Adi", lang="id")))
 g.add((EX.web_semantik, RDF.type, EX.Course))
 g.add((EX.web_semantik, FOAF.name, Literal("Web Semantik", lang="id")))
 g.add((EX.ida, EX.mengajar, EX.web_semantik))

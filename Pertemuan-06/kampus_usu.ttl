@@ -7,7 +7,7 @@ ex:alyh a foaf:Person ;
     ex:mengambil ex:web_semantik .
 
 ex:ida a ex:Lecturer ;
-    foaf:name "Isa Dadi"@id ;
+    foaf:name "Ida Adi"@id ;
     ex:mengajar ex:web_semantik .
 
 ex:web_semantik a ex:Course ;

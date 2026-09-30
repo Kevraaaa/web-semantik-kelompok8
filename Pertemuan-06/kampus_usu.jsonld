@@ -1,18 +1,13 @@
 [
   {
-    "@id": "https://contoh.github.io/web-semantik/251402010/kampus#ida",
+    "@id": "https://contoh.github.io/web-semantik/251402010/kampus#web_semantik",
     "@type": [
-      "https://contoh.github.io/web-semantik/251402010/kampus#Lecturer"
+      "https://contoh.github.io/web-semantik/251402010/kampus#Course"
     ],
     "http://xmlns.com/foaf/0.1/name": [
       {
         "@language": "id",
-        "@value": "Isa Dadi"
-      }
-    ],
-    "https://contoh.github.io/web-semantik/251402010/kampus#mengajar": [
-      {
-        "@id": "https://contoh.github.io/web-semantik/251402010/kampus#web_semantik"
+        "@value": "Web Semantik"
       }
     ]
   },
@@ -40,14 +35,19 @@
     ]
   },
   {
-    "@id": "https://contoh.github.io/web-semantik/251402010/kampus#web_semantik",
+    "@id": "https://contoh.github.io/web-semantik/251402010/kampus#ida",
     "@type": [
-      "https://contoh.github.io/web-semantik/251402010/kampus#Course"
+      "https://contoh.github.io/web-semantik/251402010/kampus#Lecturer"
     ],
     "http://xmlns.com/foaf/0.1/name": [
       {
         "@language": "id",
-        "@value": "Web Semantik"
+        "@value": "Ida Adi"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402010/kampus#mengajar": [
+      {
+        "@id": "https://contoh.github.io/web-semantik/251402010/kampus#web_semantik"
       }
     ]
   }
