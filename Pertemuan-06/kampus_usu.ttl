@@ -1,0 +1,15 @@
+@prefix ex: <https://contoh.github.io/web-semantik/251402010/kampus#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ex:alyh a foaf:Person ;
+    foaf:name "Aliyah"@id ;
+    ex:domisili "Medan"@id ;
+    ex:mengambil ex:web_semantik .
+
+ex:ida a ex:Lecturer ;
+    foaf:name "Isa Dadi"@id ;
+    ex:mengajar ex:web_semantik .
+
+ex:web_semantik a ex:Course ;
+    foaf:name "Web Semantik"@id .
+
