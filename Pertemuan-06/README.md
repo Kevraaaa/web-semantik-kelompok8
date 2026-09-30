@@ -2,8 +2,8 @@
 
 ## Membaca dan Mengubah Triple RDF
 | Kalimat                                       | Subject         | Predicate   | Object          |
-| Ida Dadi adalah dosen.                        | ex:ida          | rdf:type    | ex:Lecturer     |
-| Ida Dadi mengajar Web Semantik.               | ex:ida          | ex:mengajar | ex:web_semantik |
+| Ida adi adalah dosen.                        | ex:ida          | rdf:type    | ex:Lecturer     |
+| Ida adi mengajar Web Semantik.               | ex:ida          | ex:mengajar | ex:web_semantik |
 | Mata Kuliah itu memiliki nama "Web Semantik". | ex:web_semantik | foaf:name   | "Web Semantik"  |
 
 ## IRI, Literal, Blank Node, dan Prefix
