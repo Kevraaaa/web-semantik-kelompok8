@@ -35,6 +35,13 @@ https://contoh.github.io/web-semantik/251402095/kampus#
 - Pernyataan yang sama: Untuk entitas ex:ida, Turtle menampilkannya sebagai blok triples berantai, sedangkan JSON-LD menyajikannya sebagai objek JSON tersendiri di dalam array graf.
 
 ## Refleksi
+
 1. Kapan object harus berupa IRI dan kapan berupa literal?
+   Object berupa IRI jika menunjuk ke entitas lain dalam graf, sedangkan literal digunakan untuk menyimpan nilai seperti nama, angka, atau teks.
+
 2. Mengapa prefix membantu keterbacaan tanpa mengubah IRI?
+   Prefix membuat IRI yang panjang menjadi lebih singkat dan mudah dibaca, tetapi tetap mengacu pada IRI yang sama.
+
 3. Sebutkan satu kesalahan pemodelan yang Anda hindari pada graf ini.
+   Saya menghindari penggunaan literal untuk entitas, misalnya pada relasi mengajar, object dibuat sebagai IRI mata kuliah (EX.web_semantik), bukan teks "Web Semantik".
+

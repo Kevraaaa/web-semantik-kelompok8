@@ -50,3 +50,10 @@ g.serialize("kampus_usu.ttl", format="turtle")
 g.serialize("kampus_usu.jsonld", format="json-ld", indent=2)
 
 print("\nFile 'kampus_usu.ttl' dan 'kampus_usu.jsonld' berhasil diperbarui!")
+
+from rdflib.namespace import RDF
+
+print("\n=== Daftar Dosen ===")
+
+for subject, predicate, obj in g.triples((None, RDF.type, EX.Lecturer)):
+    print(subject)

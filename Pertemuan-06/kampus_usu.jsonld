@@ -1,18 +1,78 @@
 [
   {
-    "@id": "https://contoh.github.io/web-semantik/251402010/kampus#web_semantik",
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#hadziq",
     "@type": [
-      "https://contoh.github.io/web-semantik/251402010/kampus#Course"
+      "http://xmlns.com/foaf/0.1/Person"
     ],
     "http://xmlns.com/foaf/0.1/name": [
       {
         "@language": "id",
-        "@value": "Web Semantik"
+        "@value": "Hadziq Naufal Sinaga"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402095/kampus#mengambil": [
+      {
+        "@id": "https://contoh.github.io/web-semantik/251402095/kampus#web_semantik"
+      },
+      {
+        "@id": "https://contoh.github.io/web-semantik/251402095/kampus#pbo"
       }
     ]
   },
   {
-    "@id": "https://contoh.github.io/web-semantik/251402010/kampus#alyh",
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#siti",
+    "@type": [
+      "https://contoh.github.io/web-semantik/251402095/kampus#Lecturer"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@language": "id",
+        "@value": "Siti Rahmah"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402095/kampus#mengajar": [
+      {
+        "@id": "https://contoh.github.io/web-semantik/251402095/kampus#basis_data"
+      }
+    ]
+  },
+  {
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#pbo",
+    "@type": [
+      "https://contoh.github.io/web-semantik/251402095/kampus#Course"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@language": "id",
+        "@value": "Pemrograman Berorientasi Objek"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402095/kampus#jumlahKredit": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3
+      }
+    ]
+  },
+  {
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#ida",
+    "@type": [
+      "https://contoh.github.io/web-semantik/251402095/kampus#Lecturer"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@language": "id",
+        "@value": "Ida Adi"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402095/kampus#mengajar": [
+      {
+        "@id": "https://contoh.github.io/web-semantik/251402095/kampus#web_semantik"
+      }
+    ]
+  },
+  {
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#alyh",
     "@type": [
       "http://xmlns.com/foaf/0.1/Person"
     ],
@@ -22,32 +82,68 @@
         "@value": "Aliyah"
       }
     ],
-    "https://contoh.github.io/web-semantik/251402010/kampus#domisili": [
+    "https://contoh.github.io/web-semantik/251402095/kampus#mengambil": [
       {
-        "@language": "id",
-        "@value": "Medan"
-      }
-    ],
-    "https://contoh.github.io/web-semantik/251402010/kampus#mengambil": [
-      {
-        "@id": "https://contoh.github.io/web-semantik/251402010/kampus#web_semantik"
+        "@id": "https://contoh.github.io/web-semantik/251402095/kampus#web_semantik"
       }
     ]
   },
   {
-    "@id": "https://contoh.github.io/web-semantik/251402010/kampus#ida",
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#budi",
     "@type": [
-      "https://contoh.github.io/web-semantik/251402010/kampus#Lecturer"
+      "https://contoh.github.io/web-semantik/251402095/kampus#Lecturer"
     ],
     "http://xmlns.com/foaf/0.1/name": [
       {
         "@language": "id",
-        "@value": "Ida Adi"
+        "@value": "Budi Santoso"
       }
     ],
-    "https://contoh.github.io/web-semantik/251402010/kampus#mengajar": [
+    "https://contoh.github.io/web-semantik/251402095/kampus#mengajar": [
       {
-        "@id": "https://contoh.github.io/web-semantik/251402010/kampus#web_semantik"
+        "@id": "https://contoh.github.io/web-semantik/251402095/kampus#pbo"
+      }
+    ]
+  },
+  {
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#web_semantik",
+    "@type": [
+      "https://contoh.github.io/web-semantik/251402095/kampus#Course"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@language": "id",
+        "@value": "Web Semantik"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402095/kampus#hariKuliah": [
+      {
+        "@language": "id",
+        "@value": "Senin"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402095/kampus#jumlahKredit": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3
+      }
+    ]
+  },
+  {
+    "@id": "https://contoh.github.io/web-semantik/251402095/kampus#basis_data",
+    "@type": [
+      "https://contoh.github.io/web-semantik/251402095/kampus#Course"
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@language": "id",
+        "@value": "Sistem Basis Data"
+      }
+    ],
+    "https://contoh.github.io/web-semantik/251402095/kampus#jumlahKredit": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4
       }
     ]
   }

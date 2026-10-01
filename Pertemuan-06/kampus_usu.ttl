@@ -1,15 +1,38 @@
-@prefix ex: <https://contoh.github.io/web-semantik/251402010/kampus#> .
+@prefix ex: <https://contoh.github.io/web-semantik/251402095/kampus#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ex:alyh a foaf:Person ;
     foaf:name "Aliyah"@id ;
-    ex:domisili "Medan"@id ;
     ex:mengambil ex:web_semantik .
+
+ex:budi a ex:Lecturer ;
+    foaf:name "Budi Santoso"@id ;
+    ex:mengajar ex:pbo .
+
+ex:hadziq a foaf:Person ;
+    foaf:name "Hadziq Naufal Sinaga"@id ;
+    ex:mengambil ex:pbo,
+        ex:web_semantik .
 
 ex:ida a ex:Lecturer ;
     foaf:name "Ida Adi"@id ;
     ex:mengajar ex:web_semantik .
 
+ex:siti a ex:Lecturer ;
+    foaf:name "Siti Rahmah"@id ;
+    ex:mengajar ex:basis_data .
+
+ex:basis_data a ex:Course ;
+    foaf:name "Sistem Basis Data"@id ;
+    ex:jumlahKredit 4 .
+
+ex:pbo a ex:Course ;
+    foaf:name "Pemrograman Berorientasi Objek"@id ;
+    ex:jumlahKredit 3 .
+
 ex:web_semantik a ex:Course ;
-    foaf:name "Web Semantik"@id .
+    foaf:name "Web Semantik"@id ;
+    ex:hariKuliah "Senin"@id ;
+    ex:jumlahKredit 3 .
 
