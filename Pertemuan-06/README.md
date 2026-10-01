@@ -17,22 +17,22 @@ Contoh IRI dasar: https://contoh.github.io/web-semantik/251402104/kampus#
 rdf = Resource Description Framework, rdfs = RDF Schema, xsd = XML Schema Definition, dan foaf = Friend of a Friend.
 
 ## IRI dasar graf
-[isi IRI dasar]
+https://contoh.github.io/web-semantik/251402095/kampus#
 
 ## Ringkasan graf
-- Jumlah triple: [isi]
-- Namespace yang digunakan: [isi]
-- Entitas: [isi]
+- Jumlah triple: 20
+- Namespace yang digunakan: ex, foaf, rdf, xsd
+- Entitas: 3 Dosen (ex:ida, ex:budi, ex:siti), 3 Mata Kuliah (ex:web_semantik, ex:pbo, ex:basis_data), 2 Mahasiswa (ex:alyh, ex:hadziq)
 
 ## Contoh triple
-1. [subject] - [predicate] - [object]
-2. [subject] - [predicate] - [object]
-3. [subject] - [predicate] - [object]
+1. ex:ida - rdf:type - ex:Lecturer
+2. ex:ida - ex:mengajar - ex:web_semantik
+3. ex:web_semantik - ex:jumlahKredit - "3"^^xsd:integer
 
 ## Perbandingan serialisasi
-- Turtle: [pengamatan]
-- JSON-LD: [pengamatan]
-- Pernyataan yang sama: [isi]
+- Turtle: Formatnya berbasis teks ringkas, mudah dibaca manusia, dan mengelompokkan predikat-objek untuk subjek yang sama dengan titik koma (;).
+- JSON-LD: Formatnya berupa struktur objek JSON berbasis kunci-nilai (@id, @type), sehingga mudah diintegrasikan dengan aplikasi web atau JavaScript.
+- Pernyataan yang sama: Untuk entitas ex:ida, Turtle menampilkannya sebagai blok triples berantai, sedangkan JSON-LD menyajikannya sebagai objek JSON tersendiri di dalam array graf.
 
 ## Refleksi
 1. Kapan object harus berupa IRI dan kapan berupa literal?
