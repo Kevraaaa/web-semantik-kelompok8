@@ -1,3 +1,6 @@
+# Pertemuan 7 - Serialisasi RDF
+
+
 | Format | Kekuatan utama | Skenario tepat |
 |---------|---------|---------|
 | Turtle | Ringkas dan mudah dibaca manusia | Saat membuat, mengedit, atau mempelajari graf RDF secara manual karena sintaksnya sederhana dan mudah dipahami. |
@@ -5,3 +8,32 @@
 | RDF/XML | Kompatibilitas data lama | Saat berintegrasi dengan sistem lama yang masih menggunakan XML sebagai format utama pertukaran data. |
 | N-Triples | Satu triple per baris; stabil untuk diff | Saat melakukan debugging, validasi, atau melacak perubahan data menggunakan Git. |
 | N-Quads | Menambahkan konteks graf | Saat mengelola beberapa named graph atau sumber data dalam satu dataset RDF. |
+
+## Artefak
+- Graf asal: [jumlah triple]
+- Format ekspor: Turtle, JSON-LD, N-Triples
+- Named graph: [nama graf 1] dan [nama graf 2]
+
+## Reifikasi dan provenance
+- Triple yang dianotasi: [isi]
+- Creator: [isi]
+- Date: [isi]
+- Source: [isi]
+
+## Perbandingan
+- Format paling mudah dibaca manusia: [isi dan alasan]
+- Format untuk HTML/API: [isi dan alasan]
+- Perbedaan reifikasi klasik dan RDF-star: [isi]
+
+## Refleksi
+1. Mengapa named graph berguna saat menggabungkan data dari sumber berbeda?
+
+Named graph berguna untuk membedakan data berdasarkan sumbernya, sehingga data lebih mudah dikelola, dibandingkan, dan diketahui asalnya saat digabungkan.
+
+2. Mengapa provenance penting untuk sebuah triple?
+
+Provenance penting untuk mengetahui asal-usul sebuah triple, seperti siapa yang membuatnya dan dari sumber mana data tersebut diperoleh. Dengan begitu, kebenaran dan kepercayaan terhadap data bisa diperiksa.
+
+3. Format apa yang Anda pilih untuk git diff, dan mengapa?
+
+Saya memilih format Turtle (.ttl) karena sintaksnya sederhana, mudah dibaca, dan perubahan pada triple lebih mudah terlihat saat menggunakan git diff.
