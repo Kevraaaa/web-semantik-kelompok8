@@ -9,16 +9,28 @@
 | N-Triples | Satu triple per baris; stabil untuk diff | Saat melakukan debugging, validasi, atau melacak perubahan data menggunakan Git. |
 | N-Quads | Menambahkan konteks graf | Saat mengelola beberapa named graph atau sumber data dalam satu dataset RDF. |
 
-## Artefak
-Graf asal: 26 triple pada graf kampus setelah penggabungan.
-Format ekspor: Turtle (.ttl), TriG (.trig), JSON-LD, dan N-Triples.
-Named graph: https://contoh.github.io/graph/kampus, https://contoh.github.io/graph/fakultas, dan https://contoh.github.io/graph/reifikasi.
+### Artefak
 
-## Reifikasi dan provenance
-Triple yang dianotasi: ex:ida ex:mengajar ex:web_semantik.
-Creator: Mahasiswa penyusun tugas.
-Date: 9 Oktober 2026.
-Source: Data kampus dari kampus_usu.ttl.
+* **Graf asal:** 26 triple pada graf kampus setelah penggabungan.
+* **Format ekspor:** Turtle (`.ttl`), TriG (`.trig`), JSON-LD, dan N-Triples.
+* **File yang dibuat:**
+
+  * `fakultas.ttl`
+  * `kampus_tergabung.trig`
+* **Named Graph:**
+
+  1. Kampus: `https://contoh.github.io/graph/kampus`
+  2. Fakultas: `https://contoh.github.io/graph/fakultas`
+  3. Reifikasi: `https://contoh.github.io/graph/reifikasi`
+* **Hasil validasi:** 36 triple dari 3 named graph.
+
+### Reifikasi dan Provenance
+
+* **Triple yang dianotasi:** `ex:ida ex:mengajar ex:web_semantik`
+* **Creator:** Mahasiswa penyusun tugas.
+* **Date:** 9 Oktober 2026.
+* **Source:** `kampus_usu.ttl` dan `fakultas.ttl`.
+
 
 ## Perbandingan
 - Format paling mudah dibaca manusia: [isi dan alasan]
