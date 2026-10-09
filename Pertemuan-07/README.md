@@ -31,11 +31,10 @@
 * **Date:** 9 Oktober 2026.
 * **Source:** `kampus_usu.ttl` dan `fakultas.ttl`.
 
-
 ## Perbandingan
-- Format paling mudah dibaca manusia: [isi dan alasan]
-- Format untuk HTML/API: [isi dan alasan]
-- Perbedaan reifikasi klasik dan RDF-star: [isi]
+- Format paling mudah dibaca manusia: Turtle (.ttl), karena memiliki sintaks yang ringkas, mendukung penulisan prefix untuk menghemat IRI, serta struktur penulisan predikat dan objek yang menyerupai bahasa alami.
+- Format untuk HTML/API: JSON-LD, karena berbasis struktur JSON standar yang mudah dipahami dan diolah oleh skrip JavaScript web/API, serta bisa langsung disisipkan ke dalam tag `<script type="application/ld+json">` pada HTML untuk SEO.
+- Perbedaan reifikasi klasik dan RDF-star: Reifikasi klasik lebih verbose (panjang/berbelit-belit) karena membutuhkan 1 node `rdf:Statement` dan 4 triple tambahan (`rdf:type`, `rdf:subject`, `rdf:predicate`, `rdf:object`) hanya untuk merekam provenance 1 triple. Sedangkan RDF-star lebih efisien dan ringkas karena mengizinkan sebuah triple dibungkus langsung sebagai subjek/objek dengan sintaks `<< subject predicate object >>` (seperti `<< ex:ida ex:mengajar ex:web_semantik >> dct:creator ex:ida .`) tanpa perlu memecahnya menjadi banyak triple terpisah.
 
 ## Refleksi
 1. Mengapa named graph berguna saat menggabungkan data dari sumber berbeda?
