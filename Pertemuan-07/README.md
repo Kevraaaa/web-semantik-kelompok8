@@ -10,15 +10,15 @@
 | N-Quads | Menambahkan konteks graf | Saat mengelola beberapa named graph atau sumber data dalam satu dataset RDF. |
 
 ## Artefak
-- Graf asal: [jumlah triple]
-- Format ekspor: Turtle, JSON-LD, N-Triples
-- Named graph: [nama graf 1] dan [nama graf 2]
+Graf asal: 26 triple pada graf kampus setelah penggabungan.
+Format ekspor: Turtle (.ttl), TriG (.trig), JSON-LD, dan N-Triples.
+Named graph: https://contoh.github.io/graph/kampus, https://contoh.github.io/graph/fakultas, dan https://contoh.github.io/graph/reifikasi.
 
 ## Reifikasi dan provenance
-- Triple yang dianotasi: [isi]
-- Creator: [isi]
-- Date: [isi]
-- Source: [isi]
+Triple yang dianotasi: ex:ida ex:mengajar ex:web_semantik.
+Creator: Mahasiswa penyusun tugas.
+Date: 9 Oktober 2026.
+Source: Data kampus dari kampus_usu.ttl.
 
 ## Perbandingan
 - Format paling mudah dibaca manusia: [isi dan alasan]
