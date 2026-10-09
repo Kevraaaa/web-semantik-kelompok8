@@ -28,12 +28,12 @@
 ## Refleksi
 1. Mengapa named graph berguna saat menggabungkan data dari sumber berbeda?
 
-Named graph berguna untuk membedakan data berdasarkan sumbernya, sehingga data lebih mudah dikelola, dibandingkan, dan diketahui asalnya saat digabungkan.
+   Named graph berguna untuk membedakan data berdasarkan sumbernya, sehingga data lebih mudah dikelola, dibandingkan, dan diketahui asalnya saat digabungkan.
 
 2. Mengapa provenance penting untuk sebuah triple?
 
-Provenance penting untuk mengetahui asal-usul sebuah triple, seperti siapa yang membuatnya dan dari sumber mana data tersebut diperoleh. Dengan begitu, kebenaran dan kepercayaan terhadap data bisa diperiksa.
+   Provenance penting untuk mengetahui asal-usul sebuah triple, seperti siapa yang membuatnya dan dari sumber mana data tersebut diperoleh. Dengan begitu, kebenaran dan kepercayaan terhadap data bisa diperiksa.
 
 3. Format apa yang Anda pilih untuk git diff, dan mengapa?
 
-Saya memilih format Turtle (.ttl) karena sintaksnya sederhana, mudah dibaca, dan perubahan pada triple lebih mudah terlihat saat menggunakan git diff.
+   Saya memilih format Turtle (.ttl) karena sintaksnya sederhana, mudah dibaca, dan perubahan pada triple lebih mudah terlihat saat menggunakan git diff.
