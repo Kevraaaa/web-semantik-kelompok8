@@ -1,0 +1,55 @@
+
+@prefix ex: <https://contoh.github.io/web-semantik/251402095/kampus#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<https://contoh.github.io/graph/kampus> {
+    ex:alyh a foaf:Person ;
+        foaf:name "Aliyah"@id ;
+        ex:mengambil ex:web_semantik .
+
+    ex:budi a ex:Lecturer ;
+        foaf:name "Budi Santoso"@id ;
+        ex:mengajar ex:pbo .
+
+    ex:hadziq a foaf:Person ;
+        foaf:name "Hadziq Naufal Sinaga"@id ;
+        ex:mengambil ex:pbo, ex:web_semantik .
+
+    ex:ida a ex:Lecturer ;
+        foaf:name "Ida Adi"@id ;
+        ex:mengajar ex:web_semantik .
+
+    ex:siti a ex:Lecturer ;
+        foaf:name "Siti Rahmah"@id ;
+        ex:mengajar ex:basis_data .
+
+    ex:basis_data a ex:Course ;
+        foaf:name "Sistem Basis Data"@id ;
+        ex:jumlahKredit 4 .
+
+    ex:pbo a ex:Course ;
+        foaf:name "Pemrograman Berorientasi Objek"@id ;
+        ex:jumlahKredit 3 .
+
+    ex:web_semantik a ex:Course ;
+        foaf:name "Web Semantik"@id ;
+        ex:hariKuliah "Senin"@id ;
+        ex:jumlahKredit 3 .
+}
+
+<https://contoh.github.io/graph/fakultas> {
+    ex:FakultasIlmuKomputer a ex:Faculty ;
+        foaf:name "Fakultas Ilmu Komputer" ;
+        ex:memilikiDepartemen ex:DepartemenInformatika ;
+        ex:memilikiDepartemen ex:DepartemenSistemInformasi ;
+        ex:beradaDi "Universitas Sumatera Utara" ;
+        ex:memilikiProgramStudi ex:Informatika .
+}
+
+<https://contoh.github.io/graph/reifikasi> {
+    ex:pernyataan1 a rdf:Statement ;
+        rdf:subject ex:ida ;
+        rdf:predicate ex:mengajar ;
+        rdf:object ex:web_semantik .
+}
