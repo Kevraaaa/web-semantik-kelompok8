@@ -1,0 +1,26 @@
+<https://contoh.github.io/web-semantik/251402095/kampus#alyh> <https://contoh.github.io/web-semantik/251402095/kampus#mengambil> <https://contoh.github.io/web-semantik/251402095/kampus#web_semantik> .
+<https://contoh.github.io/web-semantik/251402095/kampus#alyh> <http://xmlns.com/foaf/0.1/name> "Aliyah"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#budi> <https://contoh.github.io/web-semantik/251402095/kampus#mengajar> <https://contoh.github.io/web-semantik/251402095/kampus#pbo> .
+<https://contoh.github.io/web-semantik/251402095/kampus#basis_data> <https://contoh.github.io/web-semantik/251402095/kampus#jumlahKredit> "4"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://contoh.github.io/web-semantik/251402095/kampus#web_semantik> <http://xmlns.com/foaf/0.1/name> "Web Semantik"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#ida> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://contoh.github.io/web-semantik/251402095/kampus#Lecturer> .
+<https://contoh.github.io/web-semantik/251402095/kampus#ida> <https://contoh.github.io/web-semantik/251402095/kampus#mengajar> <https://contoh.github.io/web-semantik/251402095/kampus#web_semantik> .
+<https://contoh.github.io/web-semantik/251402095/kampus#alyh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<https://contoh.github.io/web-semantik/251402095/kampus#hadziq> <https://contoh.github.io/web-semantik/251402095/kampus#mengambil> <https://contoh.github.io/web-semantik/251402095/kampus#web_semantik> .
+<https://contoh.github.io/web-semantik/251402095/kampus#ida> <http://xmlns.com/foaf/0.1/name> "Ida Adi"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#pbo> <https://contoh.github.io/web-semantik/251402095/kampus#jumlahKredit> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://contoh.github.io/web-semantik/251402095/kampus#siti> <http://xmlns.com/foaf/0.1/name> "Siti Rahmah"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#web_semantik> <https://contoh.github.io/web-semantik/251402095/kampus#jumlahKredit> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://contoh.github.io/web-semantik/251402095/kampus#pbo> <http://xmlns.com/foaf/0.1/name> "Pemrograman Berorientasi Objek"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#web_semantik> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://contoh.github.io/web-semantik/251402095/kampus#Course> .
+<https://contoh.github.io/web-semantik/251402095/kampus#basis_data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://contoh.github.io/web-semantik/251402095/kampus#Course> .
+<https://contoh.github.io/web-semantik/251402095/kampus#siti> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://contoh.github.io/web-semantik/251402095/kampus#Lecturer> .
+<https://contoh.github.io/web-semantik/251402095/kampus#hadziq> <https://contoh.github.io/web-semantik/251402095/kampus#mengambil> <https://contoh.github.io/web-semantik/251402095/kampus#pbo> .
+<https://contoh.github.io/web-semantik/251402095/kampus#siti> <https://contoh.github.io/web-semantik/251402095/kampus#mengajar> <https://contoh.github.io/web-semantik/251402095/kampus#basis_data> .
+<https://contoh.github.io/web-semantik/251402095/kampus#budi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://contoh.github.io/web-semantik/251402095/kampus#Lecturer> .
+<https://contoh.github.io/web-semantik/251402095/kampus#web_semantik> <https://contoh.github.io/web-semantik/251402095/kampus#hariKuliah> "Senin"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#hadziq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+<https://contoh.github.io/web-semantik/251402095/kampus#pbo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://contoh.github.io/web-semantik/251402095/kampus#Course> .
+<https://contoh.github.io/web-semantik/251402095/kampus#budi> <http://xmlns.com/foaf/0.1/name> "Budi Santoso"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#basis_data> <http://xmlns.com/foaf/0.1/name> "Sistem Basis Data"@id .
+<https://contoh.github.io/web-semantik/251402095/kampus#hadziq> <http://xmlns.com/foaf/0.1/name> "Hadziq Naufal Sinaga"@id .
