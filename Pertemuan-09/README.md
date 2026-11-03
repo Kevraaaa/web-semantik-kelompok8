@@ -1,11 +1,18 @@
 # Pertemuan 9 - SPARQL Dasar: Tell & Ask dan Endpoint
 
 ## Langkah 1 - Tabel binding
-| Tahap | ?dosen | ?mk | ?namaMK |
-|-------|--------|-----|---------|
-| [isi] | [isi]  | [isi] | [isi] |
-- Jumlah baris hasil akhir: [isi]
-- Peran ?mk: [isi]
+|             Tahap              | ?dosen |   ?mk   |   ?namaMK    |
+|--------------------------------|--------|---------|--------------|
+| Pola 1, baris 1                |  budi  | tif2305 |       -      |
+| Pola 1, baris 2                |  sari  | tif2410 |       -      |
+| Pola 1, baris 3                |  sari  | tif2305 |       -      |
+| Pola 2, baris 4                |    -   | tif2305 | Web Semantik |
+| Pola 2, baris 5                |    -   | tif2410 | Data Mining  |
+| Hasil Akhir 1 (gabung tif2305) |  budi  | tif2305 | Web Semantik |
+| Hasil Akhir 2 (gabung tif2305) |  sari  | tif2305 | Web Semantik |
+| Hasil Akhir 1 (gabung tif2410) |  sari  | tif2410 | Data Mining  |
+- Jumlah baris hasil akhir: 3 baris
+- Peran ?mk: ?mk berperan sebagai variabel penghubung (Join) antara Pola 1 dan Pola 2, yang digunakan untuk mencocokkan kode mata kuliah (?mk) dari dosen (?dosen) dengan nama mata kuliah nya (?namaMK).
 
 ## Langkah 2 - ASK dan dunia terbuka
 1. [jawaban]
