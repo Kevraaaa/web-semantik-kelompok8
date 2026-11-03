@@ -12,7 +12,7 @@
 | Hasil Akhir 2 (gabung tif2305) |  sari  | tif2305 | Web Semantik |
 | Hasil Akhir 1 (gabung tif2410) |  sari  | tif2410 | Data Mining  |
 - Jumlah baris hasil akhir: 3 baris
-- Peran ?mk: ?mk berperan sebagai variabel penghubung (Join) antara Pola 1 dan Pola 2, yang digunakan untuk mencocokkan kode mata kuliah (?mk) dari dosen (?dosen) dengan nama mata kuliah nya (?namaMK).
+- Peran ?mk: ?mk berperan sebagai variabel penghubung (Join) antara Pola 1 dan Pola 2 walaupun digunakan tanpa kata JOIN. Ini digunakan untuk mencocokkan kode mata kuliah (?mk) dari dosen (?dosen) dengan nama mata kuliah nya (?namaMK).
 
 ## Langkah 2 - ASK dan dunia terbuka
 1. [jawaban]
