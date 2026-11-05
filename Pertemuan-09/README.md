@@ -34,9 +34,10 @@ SPARQL mencocokkan literal berdasarkan nilainya beserta tag bahasanya. Karena ke
 - Fakta yang ditambahkan: Ida Adi mengajar mata kuliah Pemrograman Web.
 
 ## Langkah 4 - Wikidata
-- Jumlah baris Q1 dengan wdt:P31: [isi]
-- Jumlah baris Q1 dengan wdt:P31/wdt:P279*: [isi]
-- Penjelasan perbedaan: [isi]
+- Jumlah baris Q1 dengan wdt:P31: 20 baris (dibatasi oleh `LIMIT 20`; total data asli tanpa limit kurang lebih 30 sampai 50 baris).
+- Jumlah baris Q1 dengan wdt:P31/wdt:P279*: 20 baris (kalau tetap menggunakan `LIMIT 20`; dan kalau `LIMIT 20` dihapus, hasilnya bertambah menjadi 100+ baris).
+- Penjelasan perbedaan: 
+  Sintaks `wdt:P31` (*instance of*) hanya mengambil objek yang secara eksplisit dicatat sebagai universitas secara langsung. Ketika diubah menjadi `wdt:P31/wdt:P279*`, tanda `/wdt:P279*` (*subclass of* secara transitif/berulang) menginstruksikan Wikidata untuk mencari objek yang merupakan universitas maupun seluruh sub-kategori turunannya (seperti Institut Teknologi, Politeknik, Sekolah Tinggi, dan Universitas Swasta/Negeri). Hal ini membuat pencarian mencakup lebih banyak jenis perguruan tinggi di Indonesia sehingga jumlah data yang ditemukan bertambah banyak.
 
 ## Langkah 5 - Endpoint dari Python
 - agent=UA: [isi]

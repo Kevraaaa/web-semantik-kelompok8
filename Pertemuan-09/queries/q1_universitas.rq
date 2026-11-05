@@ -1,0 +1,8 @@
+SELECT ?universitas ?universitasLabel ?kota ?kotaLabel WHERE {
+  ?universitas wdt:P31 wd:Q3918 ; # wd:Q3918 # universitas
+               wdt:P17 wd:Q252 ;  # wd:Q252 # Indonesia
+               wdt:P131 ?kota .   # P131: terletak di kota
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],id,en". }
+}
+LIMIT 20
