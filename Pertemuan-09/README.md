@@ -29,9 +29,9 @@ Variabel ?a dan ?b dapat memiliki nilai yang sama karena kedua pola tidak memili
 SPARQL mencocokkan literal berdasarkan nilainya beserta tag bahasanya. Karena keduanya berbeda, pola tersebut tidak menemukan kecocokan sehingga menghasilkan 0 baris.
 
 ## Langkah 3 - Query lokal
-- IRI dasar graf: [isi]
-- Jumlah triple awal / akhir: [isi] / [isi]
-- Fakta yang ditambahkan: [isi]
+- IRI dasar graf: https://contoh.github.io/web-semantik/251402095/kampus#
+- Jumlah triple awal / akhir: 26 / 28
+- Fakta yang ditambahkan: Ida Adi mengajar mata kuliah Pemrograman Web.
 
 ## Langkah 4 - Wikidata
 - Jumlah baris Q1 dengan wdt:P31: [isi]
