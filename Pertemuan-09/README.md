@@ -47,14 +47,14 @@ setReturnFormat(JSON): Digunakan untuk menentukan format hasil query dari Wikida
 b.get("kotaLabel", {}): Digunakan untuk mengambil data nama kota. Jika data kota tidak ditemukan, program akan menggunakan dictionary kosong sebagai nilai default sehingga tidak terjadi error.
 
 ## Refleksi
-1. Di titik mana SPARQL berbeda dari SQL?
+1.Di titik mana SPARQL berbeda dari SQL?
 
 SPARQL digunakan untuk mengambil data dari RDF yang berbentuk triple (subject, predicate, object), sedangkan SQL digunakan untuk mengambil dan mengelola data dari database relasional yang berbentuk tabel.
 
-2. Kapan Anda memakai graf lokal (rdflib) dan kapan endpoint publik?
+2.Kapan Anda memakai graf lokal (rdflib) dan kapan endpoint publik?
 
 Graf lokal menggunakan rdflib ketika ingin membuat, menyimpan, dan mengolah data RDF sendiri di komputer. Sedangkan endpoint publik digunakan ketika ingin mengambil data dari sumber luar seperti Wikidata tanpa harus mengunduh seluruh datanya terlebih dahulu.
 
-3. Sebutkan satu hasil query yang mengejutkan dan jelaskan penyebabnya.
+3.Sebutkan satu hasil query yang mengejutkan dan jelaskan penyebabnya.
 
 Salah satu hal yang menarik adalah hasil query hanya menampilkan 20 baris data universitas. Hal ini karena pada query terdapat perintah LIMIT 20 yang membatasi jumlah data yang ditampilkan. Jadi, bukan berarti jumlah universitas di Wikidata hanya 20.
