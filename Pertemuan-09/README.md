@@ -47,9 +47,9 @@ setReturnFormat(JSON): Digunakan untuk menentukan format hasil query dari Wikida
 b.get("kotaLabel", {}): Digunakan untuk mengambil data nama kota. Jika data kota tidak ditemukan, program akan menggunakan dictionary kosong sebagai nilai default sehingga tidak terjadi error.
 
 ## Refleksi
-Di titik mana SPARQL berbeda dari SQL?
+1. Di titik mana SPARQL berbeda dari SQL?
 
-1. SPARQL digunakan untuk mengambil data dari RDF yang berbentuk triple (subject, predicate, object), sedangkan SQL digunakan untuk mengambil dan mengelola data dari database relasional yang berbentuk tabel.
+SPARQL digunakan untuk mengambil data dari RDF yang berbentuk triple (subject, predicate, object), sedangkan SQL digunakan untuk mengambil dan mengelola data dari database relasional yang berbentuk tabel.
 
 2. Kapan Anda memakai graf lokal (rdflib) dan kapan endpoint publik?
 
