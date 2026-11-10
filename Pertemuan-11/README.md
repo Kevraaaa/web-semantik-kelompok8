@@ -28,12 +28,13 @@
 | D    | [isi]   | [isi]       | [isi]                   |
 
 ## Langkah 3 - Graf kampus lokal
-- Berkas sumber dan IRI dasar graf: [isi]
-- Kelas dosen dan properti nama: [isi]
-- Triple hasil pemetaan: [isi]
-- foaf:Person sebelum / sesudah: [isi] / [isi]
-- Triple asli vs triple turunan: [jawaban]
-- Dosen baru setelah program selesai: [jawaban]
+- Berkas sumber dan IRI dasar graf: ../pertemuan-09/kampus_usu_v2.ttl — 
+https://contoh.github.io/web-semantik/251402095/kampus#
+- Kelas dosen dan properti nama: ex:Lecturer dan foaf:name
+- Triple hasil pemetaan: 6 triple
+- foaf:Person sebelum / sesudah: 2 / 5
+- Triple asli vs triple turunan: Graf awal memiliki 28 triple. Program menghasilkan 6 triple turunan baru dari 3 dosen. Setiap dosen memperoleh tipe tambahan ex:Pegawai dan foaf:Person.
+- Dosen baru setelah program selesai: Dosen yang ditambahkan setelah program selesai tidak otomatis memperoleh triple turunan. Program harus dijalankan kembali agar dosen baru ikut diproses.
 
 ## Langkah 4 - Wikidata
 - Jumlah triple Q6: [isi]
