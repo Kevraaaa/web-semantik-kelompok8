@@ -22,10 +22,10 @@
 ## Langkah 2 - Tebak lalu cek
 | Soal | Tebakan | Hasil mesin | Penjelasan bila meleset |
 |------|---------|-------------|-------------------------|
-| A    | [isi]   | [isi]       | [isi]                   |
-| B    | [isi]   | [isi]       | [isi]                   |
-| C    | [isi]   | [isi]       | [isi]                   |
-| D    | [isi]   | [isi]       | [isi]                   |
+| A | 3 baris | 3 baris | Hasil mencakup ex:DosenTetap, ex:DosenTamu, dan ex:Dosen. |
+| B | 4 baris | 4 baris | Budi muncul 1 kali, Sari 2 kali, dan Rudi 1 kali. Sari memiliki dua tipe kelas, yaitu ex:DosenTetap dan ex:DosenTamu. |
+| C | 3 triple | 3 triple | CONSTRUCT menghasilkan 3 triple unik. Triple untuk Sari yang cocok dua kali hanya disimpan satu kali dalam graf. |
+| D | 0 triple | 0 triple | Rudi tidak memiliki ex:nama, sehingga variabel ?n tidak terikat dan triple tidak dihasilkan. Tidak ada pesan error. |
 
 ## Langkah 3 - Graf kampus lokal
 - Berkas sumber dan IRI dasar graf: ../pertemuan-09/kampus_usu_v2.ttl — 
