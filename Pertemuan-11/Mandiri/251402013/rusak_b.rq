@@ -1,0 +1,21 @@
+
+# Tujuan: satu ex:nama per orang
+
+CONSTRUCT {
+    ?o ex:nama ?n .
+}
+WHERE {
+    VALUES ?o {
+        dbr:Christopher_Nolan
+        dbr:Joko_Anwar
+        dbr:Wira_Lesmana
+    }
+
+    ?o ?p ?n .
+
+    VALUES ?p {
+        foaf:name
+        rdfs:label
+        schema:name
+    }
+}

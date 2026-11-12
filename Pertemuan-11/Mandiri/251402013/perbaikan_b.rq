@@ -1,0 +1,27 @@
+
+# Perbaikan B: satu nama untuk setiap orang
+
+CONSTRUCT {
+    ?o ex:nama ?n .
+}
+WHERE {
+    {
+        SELECT ?o (SAMPLE(?nama) AS ?n)
+        WHERE {
+            VALUES ?o {
+                dbr:Christopher_Nolan
+                dbr:Joko_Anwar
+                dbr:Wira_Lesmana
+            }
+
+            VALUES ?p {
+                foaf:name
+                rdfs:label
+                schema:name
+            }
+
+            ?o ?p ?nama .
+        }
+        GROUP BY ?o
+    }
+}
