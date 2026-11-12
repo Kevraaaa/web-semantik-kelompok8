@@ -44,14 +44,22 @@ https://contoh.github.io/web-semantik/251402095/kampus#
 - Kelas yang mengejutkan dan alasannya: Summer university. Alasannya karena universitas musim panas itu umumnya hanya berupa program kursus pendek atau konferensi akademis selama beberapa minggu di masa liburan. Lembaga ini bukan institusi perguruan tinggi resmi yang punya program gelar sarjana jangka panjang. Menariknya, di dalam sistem Wikidata kelas ini ternyata tetap dikategorikan langsung sebagai subkelas dari universitas.
 
 ## Langkah 5 - Graf dari Python
-- Jumlah triple universitas.ttl: [isi]
-- Jumlah baris universitas_per_kota.csv: [isi]
-- setReturnFormat(TURTLE): [isi]
-- Graph().parse(data=...): [isi]
-- Mengapa q_kota tidak memanggil endpoint: [isi]
+- Jumlah triple universitas.ttl: **126**
+- Jumlah baris universitas_per_kota.csv: **47**
+- setReturnFormat(TURTLE): Digunakan untuk menentukan format hasil query dari Wikidata menjadi Turtle agar bisa dibaca sebagai graf RDF.
+- Graph().parse(data=...): Digunakan untuk membaca hasil data Turtle dan mengubahnya menjadi graf RDF menggunakan RDFLib.
+- Mengapa q_kota tidak memanggil endpoint: Karena data universitas sudah disimpan di universitas.ttl. Jadi, query q_kota cukup dijalankan pada graf lokal tanpa perlu mengirim permintaan ulang ke Wikidata.
 
 ## Refleksi
+
 1. Mengapa jumlah triple hasil CONSTRUCT bisa lebih kecil dari jumlah baris SELECT dengan WHERE yang sama?
-> karena `CONSTRUCT` menghasilkan graf RDF berbentuk himpunan triple unik, sehingga data yang duplikat otomatis disaring dan digabung jadi satu. Sementara itu, `SELECT` berfungsi menampilkan seluruh baris data yang cocok dengan pola dalam bentuk tabel apa adanya, termasuk jika di dalamnya ada data yang berulang atau terduplikasi.
+
+   Karena CONSTRUCT menghasilkan graf RDF yang berisi triple unik, sehingga triple yang sama tidak disimpan berulang. Sedangkan SELECT menampilkan hasil dalam bentuk tabel dan masih bisa memiliki baris yang berulang.
+
 2. Bila taksonomi di graf kampus Anda berubah bulan depan, apa yang terjadi pada triple turunan di kampus_usu_v4.ttl?
+
+   Triple turunan yang sudah tersimpan tidak otomatis berubah ketika taksonomi sumber diperbarui. Jadi, file kampus_usu_v4.ttl perlu dibuat atau diperbarui kembali menggunakan data dan aturan yang terbaru agar hasilnya sesuai.
+
 3. Kapan Anda menyimpan hasil query sebagai tabel (CSV), dan kapan sebagai graf (Turtle)?
+
+   CSV digunakan ketika hasil query berupa data tabel yang ingin dihitung, direkap, atau dibuka menggunakan Excel. Sedangkan Turtle digunakan ketika hasil query berupa graf RDF yang masih memiliki hubungan antar data dan ingin diproses kembali menggunakan SPARQL.
