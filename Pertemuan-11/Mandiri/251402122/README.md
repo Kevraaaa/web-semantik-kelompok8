@@ -35,23 +35,29 @@ Triple turunan disimpan terpisah: 6
 ## Bagian E - Etika dan diskusi
 | Aturan | a_kota_limit.rq | demo_c.py |
 |--------|-----------------|-----------|
-| 1 User-Agent | [isi] | [isi] |
-| 2 LIMIT | [isi] | [isi] |
-| 3 Simpan, jangan ulangi | [isi] | [isi] |
-| 4 Jangkar jalur | [isi] | [isi] |
-- Versi yang melanggar aturan 4 (tidak dijalankan) dan alasannya: [isi]
+| 1 User-Agent | Tidak relevan secara langsung, karena file ini hanya berisi query SPARQL, bukan kode yang mengirim HTTP request. | Pada baris UA = "KelasWebSemantik/1.0 (ainuha.ssuraiya07@gmail.com)" dan SPARQLWrapper(..., agent=UA). |
+| 2 LIMIT | Dipenuhi oleh LIMIT 10 di akhir query. Batas ini membatasi jumlah solution, bukan jumlah triple hasil CONSTRUCT. | Tidak terlihat pada bagian kode yang diberikan. Query yang dikirim berasal dari q_demo_b.rq, jadi perlu memeriksa filenya untuk memastikan apakah menggunakan LIMIT. |
+| 3 Simpan, jangan ulangi | Tidak dilakukan oleh file query ini, karena tidak ada perintah untuk menyimpan hasil ke file. | Dipenuhi oleh g.serialize("film_nolan.ttl", format="turtle"). Setelah itu, graf dibaca kembali dari file lokal melalui Graph().parse("film_nolan.ttl") dan diolah tanpa mengakses endpoint lagi. |
+| 4 Jangkar jalur | Dipenuhi oleh ?kota wdt:P31/wdt:P279* wd:Q515. Jalur dimulai dari properti IRI wdt:P31 dan pencariannya diarahkan ke kelas berjangkar IRI wd:Q515. | Tidak dapat dipastikan dari demo_c.py saja, karena jalur yang digunakan terdapat di file q_demo_b.rq, bukan ditampilkan langsung di kode Python. |
+- Versi yang melanggar aturan 4 (tidak dijalankan) dan alasannya: 
+Pada bagian ini : ?kota wdt:P31/wdt:P279* ?jenis ; (melanggar aturan 4), yang seharusnya jadi ini : ?kota wdt:P31/wdt:P279* wd:Q515 ; . Hal ini dikarenakan, ujung jalur tidak llagi dibatasi oleh IRI kelas tertentu seperti wd:Q515, tapi dengan ?jenis. Karena endpoint harus mempertimbangkan banyak kemungkinan kelas dan hasil penelusuran hierarki, akibatnya ruang pencarian jadi lebih luas, solution meningkat, dan beban pemrosesan endpoint menjadi lebih besar.
 
 ### Diskusi 1 - Taksonomi berubah
-[150-250 kata]
+Kalau taksonomi berubah setelah hasil materialisasi demo_d.py disimpan ke graf produksi, triple hasil inferensi yang bergantung pada aturan lama dapat menjadi tidak sesuai lagi. Contohnya : jika hubungan ex:DosenTetap rdfs:subClassOf ex:Dosen dihapus, maka kesimpulan budi a ex:Dosen dan rina a ex:Dosen tidak lagi didukung oleh hierarki tersebut. Kesimpulan bahwa Budi dan Rina bertipe foaf:Person melalui jalur Dosen juga perlu diperiksa kembali. Jika hubungan ex:Dosen rdfs:subClassOf foaf:Person yang berubah, triple sari a foaf:Person juga perlu dievaluasi.
+
+Perbandingan antara kampus_v4.ttl dari C1 dan kampus_turunan.ttl dari C2 membantu menemukan masalah ini. kampus_v4.ttl berisi graf lengkap, yaitu : data awal dan hasil inferensi, sedangkan kampus_turunan.ttl berisi enam triple hasil inferensi saja. Saya dapat memeriksa triple pada graf turunan, mencocokkannya dengan aturan taksonomi terbaru, lalu menghapus atau menghitung ulang kesimpulan yang sudah tidak valid. Setelah itu, materialisasi dijalankan kembali menggunakan data dan aturan terbaru. Dengan menyimpan hasil turunan secara terpisah, proses audit dan pembaruan menjadi lebih mudah, karena triple hasil inferensi dapat diperiksa tanpa mencampurkannya dengan data asli.
 
 ### Diskusi 2 - SELECT atau CONSTRUCT
-[150-250 kata]
+Untuk dashboard populasi kota, saya memilih SELECT karena dashboard lebih membutuhkan data berbentuk tabel, contohnya seperti : nama kota dan jumlah penduduk, yang dapat langsung ditampilkan atau dihitung. Temuan Bagian A menunjukkan bahwa LIMIT 10 pada query CONSTRUCT menghasilkan 30 triple, sedangkan LIMIT 30 menghasilkan 90 triple. Artinya, 1 solution dapat menghasilkan beberapa triple dari template CONSTRUCT. Sementara itu, SELECT LIMIT 10 menghasilkan 10 baris untuk 10 kota berbeda. Hasil SELECT lebih mudah digunakan untuk menampilkan daftar kota dan membandingkan populasinya. Temuan populasi kembar juga mengingatkan bahwa dua kota dapat memiliki nilai populasi yang sama, tetapi tetap merupakan entitas yang berbeda sehingga tidak boleh disamakan hanya berdasarkan angka populasinya.
+
+Untuk menggabungkan data kota dari tiga sumber, saya memilih CONSTRUCT, karena hasilnya dapat dibentuk menjadi graf RDF dengan struktur dan kosakata yang seragam. Bukti dari rusak_b.rq menunjukkan bahwa penggunaan beberapa predikat nama dapat menghasilkan 4 triple, karena Christopher Nolan memiliki dua nilai nama dengan tag bahasa berbeda, yaitu tanpa tag dan dengan tag @en. Perbaikan menggunakan SAMPLE menghasilkan 3 triple, 1 nama untuk setiap orang. Dengan CONSTRUCT, data dari berbagai sumber dapat dipetakan ke properti RDF yang konsisten. Namun, nilai bahasa dan identitas entitas tetap perlu diperhatikan agar informasi tidak hilang atau tergabung secara keliru.
+
 
 ### Cek diri
 | Pernyataan | Bukti dari tugas ini |
 |------------|----------------------|
-| 1 | [isi] |
-| 2 | [isi] |
-| 3 | [isi] |
-| 4 | [isi] |
-| 5 | [isi] |
+| 1 CONSTRUCT mencetak template sekali per solution dan menggabungkan triple kembar. | Pada LIMIT 10 menghasilkan 30 triple dan LIMIT 30 menghasilkan 90 triple. Ini menunjukkan 1 solution menghasilkan 3 triple dari template CONSTRUCT.|
+|  2 Triple dengan variabel tak terikat tidak dicetak, tanpa error. | Pada rusak_a.rq menghasilkan 0 triple karena variabel pada template CONSTRUCT tidak terikat oleh pola WHERE. Querynya tetap dapat dieksekusi, tetapi triple tidak terbentuk.|
+|  3 UNION, jalur , dan VALUES menyatukan predikat berbeda. | Pada (rusak_b.rq): penggunaan VALUES menentukan 3 individu yang diperiksa, sedangkan jalur foaf:name|rdfs:label|schema:name mengambil nilai dari beberapa predikat nama. Hasil awalnya adalah 4 triple, namun setelah diperbaiki menjadi 3 triple.|
+|  4 Jalur + dan * menelusuri hierarki tanpa menyebut perantara. | Pada query materialisasi menggunakan a/rdfs:subClassOf* untuk menelusuri kelas induk. Contohnya : Rina yang bertipe ex:DosenTetap dapat disimpulkan sebagai ex:Dosen dan foaf:Person tanpa menuliskan setiap langkah hierarki secara terpisah.|
+|  5 Materialisasi menyimpan kesimpulan, tetapi harus dihitung ulang. | Pada langkah C putaran pertama menghasilkan 4 triple baru dan 3 individu foaf:Person. Setelah Rina ditambahkan, jumlah Person tetap 3 sampai materialisasi dijalankan kembali. Pada putaran ke 2 jumlah Person menjadi 4 dan total triple turunan menjadi 6.|
