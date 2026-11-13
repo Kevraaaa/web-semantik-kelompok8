@@ -15,18 +15,22 @@
 - Mengapa dbo:Film memberi 0 pada film_nolan.ttl: Hal ini dikarenakan, pada query CONSTRUCT, data film diubah dengan kosakata Schema.org, yaitu schema:Movie, bukan dbo:Film. Makanya, pencarian yang memakai dbo:Film, hasilnya 0 karena triple tersebut tidak terdapat didalam graf film_nolan.ttl.
 
 ## Bagian C - Materialisasi
-- Output demo_d.py: [isi]
-- Mengapa Ada Rina bernilai 3: [jawaban]
-- Output materialisasi_ulang.py: [isi]
-- Tiga triple yang bukan baru: [jawaban]
-- Kegunaan kampus_turunan.ttl dan langkah manual yang tersisa: [jawaban]
+- Output demo_d.py: 0 (Sebelum ditambahkan), 3 (Setelah data ditambahkan, terdapat 3 triple dalam graf RDF), dan 3 (Ada Rina, ada 3 triple terkait Rina)
+- Mengapa Ada Rina bernilai 3: Karena, Rina baru ditambah setelah proses materialisasi selesai. Walaupun Rina bertipe ex:DosenTetap dan kelas tersebut merupakan turunan foaf:Person, triple kesimpulan Rina a foaf:Person belum dibuat. Python RDFLib tidak otomatis menjalankan ulang aturan RDFS setiap kali ada data baru yang ditambahkan.
+- Output materialisasi_ulang.py: 
+Putaran 1: 4 triple baru | Person: 3
+Rina masuk | Person: 3
+Putaran 2 | Person: 4
+Triple turunan disimpan terpisah: 6
+- Tiga triple yang bukan baru: budi a ex:dosen, budi a foaf:Person, dan sari a foaf:Person. Hal ini dikarenakan, ketiganya sudah dihasilkan pada putaran pertama, jadi saat dijalankan lagi, setelah Rina ditambahkan, programnya hanya memasukkan triple yang belum ada di dalam graf (if t not in g). Jadi, triple Budi dan Sari tidak dihitung sebagai triple baru lagi.
+- Kegunaan kampus_turunan.ttl dan langkah manual yang tersisa: Ini untuk menyimpan triple hasil inferensi secara terpisah dari data asli. Caranya adalah dengan menjalankan kembali proses materialisasi setelah ada data baru, memeriksa hasil inferensi, dan menyimpan hasilnya ke dalam file. Hasil inferensi disimpan ke kampus_turunan.ttl, sedangkan graf lengkap disimpan ke kampus_v4.ttl.
 
 ## Bagian D - Diagnosis
-| Query | Hasil mesin | Gejala | Penyebab (baris yang salah) | Hasil setelah diperbaiki |
-|-------|-------------|--------|-----------------------------|--------------------------|
-| rusak_a | [isi] | [isi] | [isi] | [isi] |
-| rusak_b | [isi] | [isi] | [isi] | [isi] |
-| rusak_c | [isi] | [isi] | [isi] | [isi] |
+|  Query  | Hasil mesin | Gejala | Penyebab (baris yang salah) | Hasil setelah diperbaiki |
+|---------|-------------|--------|-----------------------------|--------------------------|
+| rusak_a | 0 triple    | Tidak ada hasil judul film | variable ?film di CONSTRUCT beda dengan ?f pada WHERE. Jadi, ?film tidak memiliki value | ada 3 triple : Following, Insomnia, dan Memento |
+| rusak_b | 4 triple    | Christopher_Nolan menghasilkan 2 nama, sedangkan yang lain hanya 1 | Property path foaf:name\|rdfs:label\|schema:name mengambil semua nama yang ada tanpa mengelompokkan hasilnya | ada 3 triple : Setiap orang hanya ada 1 ex:nama, yaitu : Christopher_Nolan, Joko_Anwar, dan Mira_Lesmana |
+| rusak_c | 0 triple    | Tidak ada hasil permukiman dari data kota | Query mencari ?x a ex:Permukiman secara langsung, padahal data menggunakan tipe yang lebih spesifik seperti ex:KotaMetropolitan, ex:KotaDiIndonesia, dan ex:Desa. Mesin tidak otomatis melakukan inferensi subclass. | ada 3 triple : Medan, Surabaya, dan Tomok (ex:Permukiman) |
 
 ## Bagian E - Etika dan diskusi
 | Aturan | a_kota_limit.rq | demo_c.py |
