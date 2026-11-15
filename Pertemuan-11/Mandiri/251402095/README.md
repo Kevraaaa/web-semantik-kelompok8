@@ -15,10 +15,10 @@
 
 ## Bagian C - Materialisasi
 - Output demo_d.py:
- ```text
-  Sebelum: 0
-  Sesudah: 3
-  Ada Rina: 3
+  ```text
+   Sebelum: 0
+   Sesudah: 3
+   Ada Rina: 3
   ```
 - Mengapa Ada Rina bernilai 3: Karena materialisasi menggunakan query `CONSTRUCT` bersifat statis (hanya memproses data yang ada pada saat query dijalankan) dan `rdflib.Graph` standar tidak memiliki *reasoner* RDFS otomatis. Triple `ex:rina a ex:DosenTetap` baru ditambahkan ke graf *setelah* blok `CONSTRUCT` selesai dieksekusi, sehingga triple turunan `ex:rina a foaf:Person` tidak otomatis terbentuk. Akibatnya, query `Q_ORANG` yang hanya mencari pola eksplisit `?x a foaf:Person` tetap mengembalikan 3 entitas lama.
 - Output materialisasi_ulang.py:
