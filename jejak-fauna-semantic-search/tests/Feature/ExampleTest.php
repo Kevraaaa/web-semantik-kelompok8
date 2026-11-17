@@ -16,4 +16,24 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_mock_pages_render_without_backend_services(): void
+    {
+        $paths = [
+            '/eksplorasi',
+            '/eksplorasi/orangutan-kalimantan',
+            '/bandingkan',
+            '/peta',
+            '/knowledge-graph',
+            '/masuk',
+            '/daftar',
+            '/profil',
+            '/lapor',
+            '/admin/laporan',
+        ];
+
+        foreach ($paths as $path) {
+            $this->get($path)->assertOk();
+        }
+    }
 }

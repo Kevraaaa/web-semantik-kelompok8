@@ -1,0 +1,6 @@
+[
+  {"id":"lap-001","nama":"Bekantan di bantaran sungai","slug":"bekantan","tanggal":"2026-03-08","status":"menunggu","lokasi":{"lat":-3.05,"lng":114.58,"teks":"Sungai Barito, Kalimantan Selatan"},"pelapor":"Rina P.","foto":["/images/fauna-placeholder.svg"],"catatan":""},
+  {"id":"lap-002","nama":"Jejak gajah dekat koridor hutan","slug":"gajah-kalimantan","tanggal":"2026-03-02","status":"diverifikasi","lokasi":{"lat":4.45,"lng":116.9,"teks":"Nunukan, Kalimantan Utara"},"pelapor":"Budi S.","foto":["/images/fauna-placeholder.svg"],"catatan":"Terima kasih, informasi telah ditinjau tim."},
+  {"id":"lap-003","nama":"Pesut terlihat di aliran Mahakam","slug":"pesut-mahakam","tanggal":"2026-02-25","status":"ditolak","lokasi":{"lat":-0.42,"lng":116.39,"teks":"Muara Kaman, Kalimantan Timur"},"pelapor":"Dewi A.","foto":["/images/fauna-placeholder.svg"],"catatan":"Lokasi perlu dilengkapi dengan titik yang lebih spesifik."},
+  {"id":"lap-004","nama":"Orangutan melintas di tepi hutan","slug":"orangutan-kalimantan","tanggal":"2026-02-18","status":"menunggu","lokasi":{"lat":-0.75,"lng":111.55,"teks":"Ketapang, Kalimantan Barat"},"pelapor":"Andi R.","foto":["/images/fauna-placeholder.svg"],"catatan":""}
+]
