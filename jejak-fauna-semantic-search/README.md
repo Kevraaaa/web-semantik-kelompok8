@@ -4,11 +4,11 @@ Berikut adalah daftar anggota kelompok beserta fokus bagian yang dikerjakan:
 
 | Nama Anggota | NIM | Bagian / Fokus Tugas |
 | :--- | :---: | :--- |
-| **Hadziq Naufal Sinaga** | 251402095 | Mengisi data hewan langka ke dalam format semantik. |
+| **Muhammad Kevin Ramadhan** | 251402013 | Membangun "otak" pengetahuannya (biasanya pakai software Protégé). |
 | **Aulia Syahfira** | 251402104 | Fitur pelengkap pencarian dan testing proyek. |
 | **Ainuha Suraiya** | 251402122 | Bagian Progres & Pelaporan |
 | **Aliyah Briek Salem** | 251402010 | Jembatan antara data semantik dan antarmuka web. |
-| **Muhammad Kevin Ramadhan** | 251402013 | Membangun "otak" pengetahuannya (biasanya pakai software Protégé). |
+| **Hadziq Naufal Sinaga** | 251402095 | Mengisi data hewan langka ke dalam format semantik. |
 
 ---
 
