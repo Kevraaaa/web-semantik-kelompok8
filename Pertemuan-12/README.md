@@ -54,7 +54,7 @@ Alasannya, tidak terdapat informasi yang menyatakan bahwa `ex:MahasiswaBerpresta
 - Turunan yang muncul karena domain dan range ex:mengajar: Hanya `ex:mk_baru a ex:Course`, hasil aturan rdfs3 dari range `ex:mengajar` (`ex:ida ex:mengajar ex:mk_baru`). Di v2, `ex:mk_baru` hanya punya nama dan tidak punya tipe, jadi reasoner yang mengisinya. Domain `ex:mengajar` tidak menambah triple baru, karena budi, ida, dan siti sudah asserted sebagai `ex:Lecturer`. Range juga tidak menambah apa pun untuk `ex:pbo`, `ex:web_semantik`, dan `ex:basis_data` karena ketiganya sudah asserted sebagai `ex:Course`.
 - Bila menambah dosen baru: Cukup menambah triple asserted ke graf sumber (`kampus_usu_v2.ttl`), misalnya `ex:dosen_baru a ex:Lecturer ; ex:mengajar ex:mk_x .`, lalu menjalankan ulang `reasoner_lokal.py`. Triple `a ex:Pegawai` dan `a foaf:Person` untuk dosen itu muncul otomatis di `kampus_usu_inferred.ttl`, tanpa ditulis tangan seperti di v4.
 
-**## Langkah 4 - Wikidata**
+## Langkah 4 - Wikidata
 
 - ?n Q8 / Q9: **877 / 1.343**
 - Penyebab selisih: Q9 hasilnya lebih besar karena pencariannya juga mencakup instance dari subkelas universitas, sedangkan Q8 hanya menghitung instance yang langsung termasuk universitas.
