@@ -62,13 +62,33 @@ Alasannya, tidak terdapat informasi yang menyatakan bahwa `ex:MahasiswaBerpresta
 - WDQS: **Tidak melakukan keduanya** dalam hal inferensi RDFS. Q9 menggunakan property path `P31/P279*` untuk menelusuri hubungan subkelas secara langsung saat query dijalankan. Jadi, aturan RDFS9 tidak otomatis dijalankan oleh WDQS.
 
 ## Langkah 5 - Konsistensi
-- Pesan galat RDFS / OWL RL: [isi] / [isi]
-- Individu yang disebut pesan: [isi]
-- Setelah baris terbalik dihapus: [isi]
-- Isi laporan_kelas.csv sebelum dan sesudah: [isi]
-- Dari mana dosen menjadi mata kuliah: [jawaban]
+- Pesan galat RDFS / OWL RL: 0 pesan galat / 2 pesan galat
+- Individu yang disebut pesan: `ex:ida` (`https://contoh.github.io/web-semantik/251402095/kampus#ida`) dan `ex:web_semantik` (`https://contoh.github.io/web-semantik/251402095/kampus#web_semantik`)
+- Setelah baris terbalik dihapus: RDFS tetap 0 pesan galat dan OWL RL juga langsung bersih jadi 0 pesan galat (jumlah triple otomatis turun dari 94 ke 89 di RDFS, dan dari 195 ke 186 di OWL RL karena triple turunan dari data terbalik tadi sudah hilang).
+- Isi laporan_kelas.csv sebelum dan sesudah:
+  - **Sebelum (masih ada triple terbalik):**
+    ```csv
+    kelas,asserted,rdfs,owl_rl
+    Lecturer,3,4,4
+    Pegawai,0,4,4
+    Course,3,5,5
+    ```
+  - **Sesudah (baris terbalik dihapus):**
+    ```csv
+    kelas,asserted,rdfs,owl_rl
+    Lecturer,3,3,3
+    Pegawai,0,3,3
+    Course,3,4,4
+    ```
+- Dari mana dosen menjadi mata kuliah: Di skema graf kampus kita, properti `ex:mengajar` sudah diatur punya `rdfs:domain ex:Lecturer` dan `rdfs:range ex:Course`, terus `ex:Lecturer` juga merupakan subkelas dari `ex:Pegawai`. Waktu kita sengaja masukin triple terbalik (`ex:web_semantik ex:mengajar ex:ida`), posisi `ex:ida` yang aslinya dosen malah nyasar jadi objek dari `ex:mengajar`. Gara-gara aturan `rdfs3` (range), reasoner otomatis menyimpulkan kalau `ex:ida` itu juga anggota `ex:Course`. Padahal `ex:ida` jelas-jelas `ex:Lecturer` yang lewat aturan `rdfs9` otomatis diturunkan jadi `ex:Pegawai`. Begitu OWL RL ngecek aksioma `ex:Pegawai owl:disjointWith ex:Course`, langsung ketahuan kalau `ex:ida` (dan sebaliknya `ex:web_semantik`) punya status ganda yang tabrakan, makanya muncul 2 `ErrorMessage`. Kalau profil RDFS diam aja dan ngasih 0 galat karena RDFS memang nggak ngerti kosakata OWL kayak `owl:disjointWith`, jadi dia cuma nurunin triple baru tanpa ngecek ada kontradiksi logika atau nggak.
 
 ## Refleksi
+## Refleksi
 1. Mengapa graf asserted disimpan terpisah dari graf inferred, dan apa akibatnya bila keduanya dicampur seperti kampus_usu_v4.ttl?
+   Graf `asserted` harus dipisah karena berkas itu adalah sumber kebenaran utama (*single source of truth*) yang isinya murni fakta dan aturan skema yang kita tulis sendiri, sedangkan `inferred` hanyalah hasil hitungan mesin yang sifatnya sementara dan bisa di-generate ulang kapan saja. Kalau keduanya dicampur dalam satu file seperti `kampus_usu_v4.ttl`, graf jadi susah dirawat saat ada pembaruan atau penghapusan data—misalnya kalau satu relasi `ex:mengajar` dihapus, triple turunannya tetap ketinggalan di dalam file karena kita nggak bisa membedakan mana triple tulisan asli dan mana triple hasil tebakan reasoner. Selain bikin ukuran file membengkak, pencampuran ini juga berbahaya kalau sempat ada data salah (seperti kasus triple terbalik di Langkah 5), karena fakta keliru yang terlanjur diturunkan bakal ikut tersimpan permanen meskipun sumber kesalahannya sudah diperbaiki.
+
 2. Pada Langkah 2, profil RDFS tidak memberi tahu bahwa aksioma OWL diabaikan. Bagaimana Anda akan memastikan profil yang dipakai sudah tepat untuk data Anda?
-3. Kapan Anda memilih menulis jalur seperti wdt:P279* di query, dan kapan memilih menjalankan reasoner lalu menyimpan closure??
+   Langkah pertama yang paling aman adalah mengecek daftar kosakata dan predikat yang dipakai di dalam skema atau data `.ttl` sebelum menjalankan reasoner (bisa dicek manual di file atau lewat query `SELECT DISTINCT ?p WHERE { ?s ?p ?o }`). Kalau skema cuma memakai `rdfs:subClassOf`, `rdfs:subPropertyOf`, `rdfs:domain`, dan `rdfs:range`, profil RDFS sudah cukup; tapi begitu muncul kosakata `owl:` seperti `owl:TransitiveProperty`, `owl:inverseOf`, `owl:SymmetricProperty`, atau `owl:disjointWith`, kita wajib memakai profil `OWLRL_Semantics`. Selain itu, kita nggak boleh cuma mengandalkan "program jalan tanpa error", melainkan harus melakukan pengujian kecil (*sanity check*) dengan query uji dan mengecek `ERR.ErrorMessage` untuk memastikan aturan OWL-nya benar-benar aktif bekerja.
+
+3. Kapan Anda memilih menulis jalur seperti wdt:P279* di query, dan kapan memilih menjalankan reasoner lalu menyimpan closure?
+   Menulis jalur langsung di query seperti `wdt:P279*` dipilih saat kita mengambil data dari graf publik berskala raksasa dan dinamis seperti Wikidata, di mana kita nggak punya kendali untuk mematerialisasi seluruh datanya dan isinya terus berubah setiap saat—cara ini juga pas kalau penalarannya cuma butuh menelusuri satu jalur hierarki tertentu secara cepat. Sebaliknya, menjalankan reasoner dan menyimpan closure dipilih untuk graf lokal atau database aplikasi kita sendiri yang skemanya kompleks (melibatkan kombinasi `domain`, `range`, `inverseOf`, sifat transitif, hingga validasi `disjointWith`), terutama kalau graf tersebut bakal sering di-query berulang kali sehingga butuh respons cepat tanpa menghitung ulang inferensi di setiap permintaan.
