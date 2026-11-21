@@ -1,15 +1,6 @@
 # Pertemuan 12 - Inferensi dan Reasoning
 
-## Langkah 1 - Closure dengan tangan
-| # | Triple turunan | Aturan | Premis |
-|---|----------------|--------|--------|
-| [isi] | [isi] | [isi] | [isi] |
-- Jumlah triple turunan bermakna: [isi]
-- Triple yang baru ditemukan di putaran kedua: [isi]
-- Triple asserted yang tidak menurunkan apa pun, dan alasannya: [isi]
-
-## Langkah 2 - Tebak lalu cek
-### 1. Triple Turunan RDFS
+##  1. Closure dengan tangan
 Berikut adalah seluruh triple turunan bermakna yang diperoleh menggunakan aturan RDFS. Bagian OWL tidak diperhitungkan.
 | # | Triple Turunan | Aturan | Premis |
 |---|---|---|---|
@@ -26,12 +17,11 @@ Berikut adalah seluruh triple turunan bermakna yang diperoleh menggunakan aturan
 | 11 | `ex:budi a ex:Orang` | `rdfs9` | `ex:budi a ex:Pegawai` + `ex:Pegawai rdfs:subClassOf ex:Orang` |
 | 12 | `ex:sari a ex:Orang` | `rdfs9` | `ex:sari a ex:Dosen` + `ex:Dosen rdfs:subClassOf ex:Orang` |
 
-### 2. Jumlah Triple Turunan Bermakna
+#### 2. Jumlah Triple Turunan Bermakna
 Jumlah keseluruhan adalah **12 triple turunan bermakna**, yang diperoleh dari aturan `rdfs2`, `rdfs3`, `rdfs7`, `rdfs9`, dan `rdfs11`.
 
-### 3. Triple yang Baru Ditemukan pada Putaran Kedua
+#### 3. Triple yang Baru Ditemukan pada Putaran Kedua
 Triple yang baru dapat ditemukan pada putaran kedua adalah:
-
 1. `ex:budi a ex:Pegawai`
 2. `ex:andi a ex:Orang`
 3. `ex:sari a ex:Pegawai`
@@ -40,12 +30,21 @@ Triple yang baru dapat ditemukan pada putaran kedua adalah:
 6. `ex:sari a ex:Orang`
 Triple tersebut membutuhkan hasil inferensi dari putaran pertama sebagai premis tambahan.
 
-### 4. Triple Asserted yang Tidak Menurunkan Apa Pun
+#### 4. Triple Asserted yang Tidak Menurunkan Apa Pun
 Triple yang tidak menghasilkan inferensi bermakna adalah:
 ```turtle
 ex:andi a ex:MahasiswaBerprestasi .
 ```
 Alasannya, tidak terdapat informasi yang menyatakan bahwa `ex:MahasiswaBerprestasi` merupakan subclass dari `ex:Mahasiswa` atau kelas lainnya. Reasoner tidak dapat menyimpulkan hubungan kelas hanya berdasarkan kemiripan nama.
+
+## Langkah 2 - Tebak lalu cek
+| Soal | Profil | Tebakan  | Hasil mesin | Penjelasan bila meleset |
+|------|--------|----------|-------------|-------------------------|
+|   A  | RDFS   | 3 baris  | 3 baris     | Budi disimpulkan sebagai Orang melalui domain membimbing, Sari melalui subclass DosenTamu, dan Andi melalui range membimbing. |
+|   B  | OWL RL | 10 baris | 10 baris    | Properti beradaDi bersifat transitif sehingga menghasilkan 6 hubungan tambahan dari 4 hubungan awal. |
+|   C  | RDFS   | 0 baris  | 0 baris     | RDFS tidak mengenal owl:inverseOf sehingga tidak dapat menyimpulkan hubungan dibimbing dari membimbing. |
+|   C  | OWL RL | 1 baris  | 1 baris     | OWL RL mengenal owl:inverseOf sehingga menghasilkan hubungan Andi dibimbing Budi. |
+|   D  | OWL RL | false    | false       | Tidak yang membuktikan bahwa medan ada sebuah Tempat. |
 
 ## Langkah 3 - Reasoner pada graf kampus
 - Berkas sumber dan IRI dasar graf: `../pertemuan-09/kampus_usu_v2.ttl`; IRI dasar `https://contoh.github.io/web-semantik/251402095/kampus#`
