@@ -1,0 +1,3464 @@
+@prefix jf: <https://jejakfauna.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+jf:AdeleanaForcarti a jf:Fauna ;
+    rdfs:label "Adeleana forcarti"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/134437/3956525> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q13228890> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of crustacean"^^xsd:string ;
+    jf:memakan jf:DetritusOrganikDanSeranggaAir ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:SungaiDanRawaAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Adeleana forcarti"^^xsd:string ;
+    jf:namaLokal "Adeleana forcarti"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gecarcinucidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:AetobatusFlagellum a jf:Fauna ;
+    rdfs:label "Longheaded eagle ray"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/169243577/124440562> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5033562> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Aetobatus flagellum"^^xsd:string ;
+    jf:namaLokal "Longheaded eagle ray"^^xsd:string ;
+    jf:termasukTaksonomi jf:Aetobatidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Aetobatus%20flagellum%20fb1.png"^^xsd:anyURI .
+
+jf:AetomylaeusVespertilio a jf:Fauna ;
+    rdfs:label "Ornate eagle ray"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/60121/124440895> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4550289> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Aetomylaeus vespertilio"^^xsd:string ;
+    jf:namaLokal "Ornate eagle ray"^^xsd:string ;
+    jf:termasukTaksonomi jf:AetomylaeusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Aetomylaeus%20vespertilio01.jpg"^^xsd:anyURI .
+
+jf:AmphicnemisMadelenae a jf:Fauna ;
+    rdfs:label "Amphicnemis madelenae"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/122150350/175968071> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2651463> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Amphicnemis madelenae"^^xsd:string ;
+    jf:namaLokal "Amphicnemis madelenae"^^xsd:string ;
+    jf:termasukTaksonomi jf:Coenagrionidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:AmphicnemisMariae a jf:Fauna ;
+    rdfs:label "Amphicnemis mariae"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/122150358/135433876> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2202826> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Amphicnemis mariae"^^xsd:string ;
+    jf:namaLokal "Amphicnemis mariae"^^xsd:string ;
+    jf:termasukTaksonomi jf:Coenagrionidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:AmphicnemisPandanicola a jf:Fauna ;
+    rdfs:label "Amphicnemis pandanicola"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163811/135433713> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2055786> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Amphicnemis pandanicola"^^xsd:string ;
+    jf:namaLokal "Amphicnemis pandanicola"^^xsd:string ;
+    jf:termasukTaksonomi jf:Coenagrionidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:AnsoniaLatidisca a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Ansonia latidisca"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/54471/114916284> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1907423> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ansonia latidisca"^^xsd:string ;
+    jf:namaLokal "Ansonia latidisca"^^xsd:string ;
+    jf:termasukTaksonomi jf:Bufonidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Leptobrachium%20hendricksoni%20%28Spotted%20Litter%20Frog%29%20%286967253802%29.jpg"^^xsd:anyURI .
+
+jf:AonyxCinereus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "sero ambrang"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/44166/164580923> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q141278490> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies mamalia"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Aonyx cinereus"^^xsd:string ;
+    jf:namaLokal "sero ambrang"^^xsd:string ;
+    jf:termasukTaksonomi jf:AonyxGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Small-clawed%20otter%20from%20Western%20Ghats.JPG"^^xsd:anyURI .
+
+jf:ArachnothelphusaMelanippe a jf:Fauna ;
+    rdfs:label "Arachnothelphusa melanippe"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/134106/3899742> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q13389484> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of crustacean"^^xsd:string ;
+    jf:memakan jf:DetritusOrganikDanSeranggaAir ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:SungaiDanRawaAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Arachnothelphusa melanippe"^^xsd:string ;
+    jf:namaLokal "Arachnothelphusa melanippe"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gecarcinucidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ArctictisBinturong a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "binturong"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/41690/45217088> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q213141> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal in the family Viverridae, native to South and Southeast Asia"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:LahanPerdu ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Arctictis binturong"^^xsd:string ;
+    jf:namaLokal "binturong"^^xsd:string ;
+    jf:termasukTaksonomi jf:ArctictisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Binturong%20in%20Overloon.jpg"^^xsd:anyURI .
+
+jf:BalantiocheilosMelanopterus a jf:Fauna ;
+    rdfs:label "Ikan balashark"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/149451010/90331546> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q187808> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of cyprinid fishes"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Balantiocheilos melanopterus"^^xsd:string ;
+    jf:namaLokal "Ikan balashark"^^xsd:string ;
+    jf:termasukTaksonomi jf:Cyprinidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Balantiocheilos%20melanopterus%20-%20Karlsruhe%20Zoo%2002.jpg"^^xsd:anyURI .
+
+jf:BalitoropsisOphiolepis a jf:Fauna ;
+    rdfs:label "Balitoropsis ophiolepis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91105797/91105826> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q46382421> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Balitoropsis ophiolepis"^^xsd:string ;
+    jf:namaLokal "Balitoropsis ophiolepis"^^xsd:string ;
+    jf:termasukTaksonomi jf:HillstreamLoach ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BarbodesBunau a jf:Fauna ;
+    rdfs:label "Barbodes bunau"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/70032451/90996299> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28531757> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of Actinopterygii"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Barbodes bunau"^^xsd:string ;
+    jf:namaLokal "Barbodes bunau"^^xsd:string ;
+    jf:termasukTaksonomi jf:Cyprinidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BarbourulaKalimantanensis a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Katak kepala-pipih kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/54444/3015179> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q369695> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Barbourula kalimantanensis"^^xsd:string ;
+    jf:namaLokal "Katak kepala-pipih kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:Bombinatoridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BatagurBorneoensis a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Tuntong laut"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163458/1009824> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1827817> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies satwa langka dari kelas Reptilia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Batagur borneoensis"^^xsd:string ;
+    jf:namaLokal "Tuntong laut"^^xsd:string ;
+    jf:termasukTaksonomi jf:BatagurGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Callagur%20borneoensis.jpg"^^xsd:anyURI .
+
+jf:BettaAlbimarginata a jf:Fauna ;
+    rdfs:label "Betta albimarginata"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91307122/91307128> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q139544> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta albimarginata"^^xsd:string ;
+    jf:namaLokal "Betta albimarginata"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Betta%20albimarginata%20060311%201.jpg"^^xsd:anyURI .
+
+jf:BettaAntoni a jf:Fauna ;
+    rdfs:label "Betta antoni"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91308798/91308887> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431668> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta antoni"^^xsd:string ;
+    jf:namaLokal "Betta antoni"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaBreviobesa a jf:Fauna ;
+    rdfs:label "Betta breviobesa"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91309063/91309172> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q81851933> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta breviobesa"^^xsd:string ;
+    jf:namaLokal "Betta breviobesa"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaBrownorum a jf:Fauna ;
+    rdfs:label "Betta brownorum"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91309202/91309211> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q526> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta brownorum"^^xsd:string ;
+    jf:namaLokal "Betta brownorum"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaChannoides a jf:Fauna ;
+    rdfs:label "Betta channoides"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91309244/91309260> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q533> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta channoides"^^xsd:string ;
+    jf:namaLokal "Betta channoides"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Betta%20channoides%20female%2009-07-2025.jpg"^^xsd:anyURI .
+
+jf:BettaDimidiata a jf:Fauna ;
+    rdfs:label "Betta dimidiata"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91309636/91309649> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q832277> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta dimidiata"^^xsd:string ;
+    jf:namaLokal "Betta dimidiata"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Betta%20dimidiata%20M005.jpg"^^xsd:anyURI .
+
+jf:BettaFoerschi a jf:Fauna ;
+    rdfs:label "Betta foerschi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91309890/91309895> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4898358> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta foerschi"^^xsd:string ;
+    jf:namaLokal "Betta foerschi"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaHendra a jf:Fauna ;
+    rdfs:label "Betta hendra"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91309930/91309935> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q21251776> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta hendra"^^xsd:string ;
+    jf:namaLokal "Betta hendra"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaLehi a jf:Fauna ;
+    rdfs:label "Betta lehi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91310030/91310034> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431799> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta lehi"^^xsd:string ;
+    jf:namaLokal "Betta lehi"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaMandor a jf:Fauna ;
+    rdfs:label "Betta mandor"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91310090/91310114> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1766260> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies ikan cupang"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta mandor"^^xsd:string ;
+    jf:namaLokal "Betta mandor"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaMidas a jf:Fauna ;
+    rdfs:label "Betta midas"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91310127/91310131> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431973> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta midas"^^xsd:string ;
+    jf:namaLokal "Betta midas"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaPatoti a jf:Fauna ;
+    rdfs:label "Betta patoti"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91310403/91310441> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5775986> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta patoti"^^xsd:string ;
+    jf:namaLokal "Betta patoti"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaPinguis a jf:Fauna ;
+    rdfs:label "Betta pinguis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/169568/91308499> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4898361> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta pinguis"^^xsd:string ;
+    jf:namaLokal "Betta pinguis"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaRutilans a jf:Fauna ;
+    rdfs:label "Betta rutilans"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91310650/91310657> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431607> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta rutilans"^^xsd:string ;
+    jf:namaLokal "Betta rutilans"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BettaSimorum a jf:Fauna ;
+    rdfs:label "Betta simorum"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91310746/91310751> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3639133> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta simorum"^^xsd:string ;
+    jf:namaLokal "Betta simorum"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Betta%20simorum%20male1.jpg"^^xsd:anyURI .
+
+jf:BettaUberis a jf:Fauna ;
+    rdfs:label "Betta uberis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91311009/91311023> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431718> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Betta uberis"^^xsd:string ;
+    jf:namaLokal "Betta uberis"^^xsd:string ;
+    jf:termasukTaksonomi jf:BettaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Betta%20uberis.jpg"^^xsd:anyURI .
+
+jf:BosJavanicus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Banteng"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/2888/270543638> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q183035> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "spesies hewan"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:Hutan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Bos javanicus"^^xsd:string ;
+    jf:namaLokal "Banteng"^^xsd:string ;
+    jf:termasukTaksonomi jf:BosGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Alas%20Purwo%20banteng%20close%20up.jpg"^^xsd:anyURI .
+
+jf:BrachygoniaOphelia a jf:Fauna ;
+    rdfs:label "Brachygonia ophelia"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163823/176090964> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2549094> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Brachygonia ophelia"^^xsd:string ;
+    jf:namaLokal "Brachygonia ophelia"^^xsd:string ;
+    jf:termasukTaksonomi jf:Libellulidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BrachygoniaPuella a jf:Fauna ;
+    rdfs:label "Brachygonia puella"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/202046/2732433> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2073664> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Brachygonia puella"^^xsd:string ;
+    jf:namaLokal "Brachygonia puella"^^xsd:string ;
+    jf:termasukTaksonomi jf:Libellulidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:BrevitrygonHeterura a jf:Fauna ;
+    rdfs:label "Pari toka-toka"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/104179262/104179599> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q46388287> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "sejenis ikan pari kecil"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Brevitrygon heterura"^^xsd:string ;
+    jf:namaLokal "Pari toka-toka"^^xsd:string ;
+    jf:termasukTaksonomi jf:BrevitrygonGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Brevitry%20heteru%20190930%20153203%20lab.jpg"^^xsd:anyURI .
+
+jf:BrotiaPageli a jf:Fauna ;
+    rdfs:label "Brotia pageli"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/188883/176103065> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q20085247> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of mollusc"^^xsd:string ;
+    jf:memakan jf:AlgaDanMikroorganisme ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanPayauKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Brotia pageli"^^xsd:string ;
+    jf:namaLokal "Brotia pageli"^^xsd:string ;
+    jf:termasukTaksonomi jf:Pachychilidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:CarcharhinusAlbimarginatus a jf:Fauna ;
+    rdfs:label "Carcharhinus albimarginatus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161526/124499982> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1126782> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Carcharhinus albimarginatus"^^xsd:string ;
+    jf:namaLokal "Carcharhinus albimarginatus"^^xsd:string ;
+    jf:termasukTaksonomi jf:CarcharhinusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Silvertip%20shark.jpg"^^xsd:anyURI .
+
+jf:CarcharhinusBorneensis a jf:Fauna ;
+    rdfs:label "Hiu kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39367/124407121> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q893969> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Carcharhinus borneensis"^^xsd:string ;
+    jf:namaLokal "Hiu kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:CarcharhinusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Carcharhinus%20borneensis%20%28Bleeker%2C%201858%29%202831935646.jpg"^^xsd:anyURI .
+
+jf:CarcharhinusHemiodon a jf:Fauna ;
+    rdfs:label "Pondicherry shark"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39369/221513674> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1516764> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Carcharhinus hemiodon"^^xsd:string ;
+    jf:namaLokal "Pondicherry shark"^^xsd:string ;
+    jf:termasukTaksonomi jf:Carcharhinidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Carcharhinus%20hemiodon%20nmfs.png"^^xsd:anyURI .
+
+jf:CatopumaBadia a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Kucing merah"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/4037/112910221> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q23772801> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Catopuma badia"^^xsd:string ;
+    jf:namaLokal "Kucing merah"^^xsd:string ;
+    jf:termasukTaksonomi jf:CatopumaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Bay%20cat%201%20Jim%20Sanderson-cropped.jpg"^^xsd:anyURI .
+
+jf:CaudiculatusCaudiculatus a jf:Fauna ;
+    rdfs:label "Caudiculatus caudiculatus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/173112/279203639> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Caudiculatus caudiculatus"^^xsd:string ;
+    jf:namaLokal "Caudiculatus caudiculatus"^^xsd:string ;
+    jf:termasukTaksonomi jf:CaudiculatusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:CephaloscylliumSarawakensis a jf:Fauna ;
+    rdfs:label "Sarawak pygmy swellshark"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161380/22516400> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4546359> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Cephaloscyllium sarawakensis"^^xsd:string ;
+    jf:namaLokal "Sarawak pygmy swellshark"^^xsd:string ;
+    jf:termasukTaksonomi jf:CephaloscylliumGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ChacaSerica a jf:Fauna ;
+    rdfs:label "Chaca serica"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91227479/91227545> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5516851> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Chaca serica"^^xsd:string ;
+    jf:namaLokal "Chaca serica"^^xsd:string ;
+    jf:termasukTaksonomi jf:Chacidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ChendolLubricus a jf:Fauna ;
+    rdfs:label "Chendol lubricus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/169555/91346216> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5637896> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Chendol lubricus"^^xsd:string ;
+    jf:namaLokal "Chendol lubricus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Chaudhuriidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ChiloscylliumIndicum a jf:Fauna ;
+    rdfs:label "Slender bamboo shark"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/41791/124416590> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q29289> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "bamboo shark found in the Indo-West Pacific Oceans"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Chiloscyllium indicum"^^xsd:string ;
+    jf:namaLokal "Slender bamboo shark"^^xsd:string ;
+    jf:termasukTaksonomi jf:Hemiscylliidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Chiloscyllium%20indicum%20by%20jordan%20and%20richardson.png"^^xsd:anyURI .
+
+jf:ClariasKapuasensis a jf:Fauna ;
+    rdfs:label "Clarias kapuasensis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91226506/91226511> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5863377> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Clarias kapuasensis"^^xsd:string ;
+    jf:namaLokal "Clarias kapuasensis"^^xsd:string ;
+    jf:termasukTaksonomi jf:AirbreathingCatfish ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ClariasPseudonieuhofii a jf:Fauna ;
+    rdfs:label "Clarias pseudonieuhofii"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91226655/91226662> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5555680> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Clarias pseudonieuhofii"^^xsd:string ;
+    jf:namaLokal "Clarias pseudonieuhofii"^^xsd:string ;
+    jf:termasukTaksonomi jf:AirbreathingCatfish ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ClupeichthysBleekeri a jf:Fauna ;
+    rdfs:label "Clupeichthys bleekeri"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91349787/143836802> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6852306> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Clupeichthys bleekeri"^^xsd:string ;
+    jf:namaLokal "Clupeichthys bleekeri"^^xsd:string ;
+    jf:termasukTaksonomi jf:ClupeichthysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ColumbaArgentina a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "merpati-hutan perak"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22690195/155300126> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q994440> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Columba argentina"^^xsd:string ;
+    jf:namaLokal "merpati-hutan perak"^^xsd:string ;
+    jf:termasukTaksonomi jf:Columbidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/ColumbaGriseaKeulemans.jpg"^^xsd:anyURI .
+
+jf:CrocodylusSiamensis a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Buaya Siam"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/5671/3048087> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q208277> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "spesies reptil"^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:Danau ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Crocodylus siamensis"^^xsd:string ;
+    jf:namaLokal "Buaya Siam"^^xsd:string ;
+    jf:termasukTaksonomi jf:CrocodylusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Siamcroc.JPG"^^xsd:anyURI .
+
+jf:CtenodesmaBersinara a jf:Fauna ;
+    rdfs:label "Ctenodesma bersinara"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/273524681/273526517> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ctenodesma bersinara"^^xsd:string ;
+    jf:namaLokal "Ctenodesma bersinara"^^xsd:string ;
+    jf:termasukTaksonomi jf:CtenodesmaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:CtenodesmaBorneensis a jf:Fauna ;
+    rdfs:label "Ctenodesma borneensis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/173117/150733086> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ctenodesma borneensis"^^xsd:string ;
+    jf:namaLokal "Ctenodesma borneensis"^^xsd:string ;
+    jf:termasukTaksonomi jf:CtenodesmaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:CtenodesmaScheibeneri a jf:Fauna ;
+    rdfs:label "Ctenodesma scheibeneri"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/277120808/289634967> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ctenodesma scheibeneri"^^xsd:string ;
+    jf:namaLokal "Ctenodesma scheibeneri"^^xsd:string ;
+    jf:termasukTaksonomi jf:CtenodesmaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:CynogaleBennettii a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Musang air"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/6082/45197343> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q541053> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:Rawa ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Cynogale bennettii"^^xsd:string ;
+    jf:namaLokal "Musang air"^^xsd:string ;
+    jf:termasukTaksonomi jf:CynogaleGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Mampalon%20%28Cynogale%20Bennettii%29.png"^^xsd:anyURI .
+
+jf:CyornisCaerulatus a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "sikatan biru-langit"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22709558/261773201> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3315389> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Cyornis caerulatus"^^xsd:string ;
+    jf:namaLokal "sikatan biru-langit"^^xsd:string ;
+    jf:termasukTaksonomi jf:CyornisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Naturalis%20Biodiversity%20Center%20-%20ZMA.AVES.14151%201%20LAT%20-%20Cyornis%20caerulatus%20albiventer%20Junge%2C%201933%20-%20Muscicapidae%20-%20skin%20-%20preserved%20specimen.jpeg"^^xsd:anyURI .
+
+jf:DiplogaleHosei a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Musang gunung"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/6635/45197564> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q559050> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Diplogale hosei"^^xsd:string ;
+    jf:namaLokal "Musang gunung"^^xsd:string ;
+    jf:termasukTaksonomi jf:DiplogaleGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/HemigaleHoseiSmit.jpg"^^xsd:anyURI .
+
+jf:DiscomyaRadulosa a jf:Fauna ;
+    rdfs:label "Discomya radulosa"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/173119/289634647> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Discomya radulosa"^^xsd:string ;
+    jf:namaLokal "Discomya radulosa"^^xsd:string ;
+    jf:termasukTaksonomi jf:DiscomyaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:DrepanostictaDrusilla a jf:Fauna ;
+    rdfs:label "Drepanosticta drusilla"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/123197987/123198028> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2331796> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Drepanosticta drusilla"^^xsd:string ;
+    jf:namaLokal "Drepanosticta drusilla"^^xsd:string ;
+    jf:termasukTaksonomi jf:Platystictidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ElephasMaximus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Gajah Asia"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/7140/45818198> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q133006> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:Hutan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Elephas maximus"^^xsd:string ;
+    jf:namaLokal "Gajah Asia"^^xsd:string ;
+    jf:termasukTaksonomi jf:ElephasGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Elephas%20maximus%20%28Bandipur%29.jpg"^^xsd:anyURI .
+
+jf:EllopostomaMegalomycter a jf:Fauna ;
+    rdfs:label "Ellopostoma megalomycter"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/43114861/91601675> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q959060> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ellopostoma megalomycter"^^xsd:string ;
+    jf:namaLokal "Ellopostoma megalomycter"^^xsd:string ;
+    jf:termasukTaksonomi jf:Ellopostomatidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Ellopostoma%20megalomycter.jpg"^^xsd:anyURI .
+
+jf:ElongariaTrompi a jf:Fauna ;
+    rdfs:label "Elongaria trompi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/277133255/279203654> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Elongaria trompi"^^xsd:string ;
+    jf:namaLokal "Elongaria trompi"^^xsd:string ;
+    jf:termasukTaksonomi jf:ElongariaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:EncheloclariasMedialis a jf:Fauna ;
+    rdfs:label "Encheloclarias medialis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91227393/91227398> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q21251038> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Encheloclarias medialis"^^xsd:string ;
+    jf:namaLokal "Encheloclarias medialis"^^xsd:string ;
+    jf:termasukTaksonomi jf:AirbreathingCatfish ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:EusphyraBlochii a jf:Fauna ;
+    rdfs:label "Cucut ronggeng"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/41810/124417935> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q890336> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies di hiu"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Eusphyra blochii"^^xsd:string ;
+    jf:namaLokal "Cucut ronggeng"^^xsd:string ;
+    jf:termasukTaksonomi jf:EusphyraGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Eusphyra%20blochii%20csiro-nfc.jpg"^^xsd:anyURI .
+
+jf:FluvitrygonKittipongi a jf:Fauna ;
+    rdfs:label "Fluvitrygon kittipongi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161719/124533257> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28926424> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of Elasmobranchii"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Fluvitrygon kittipongi"^^xsd:string ;
+    jf:namaLokal "Fluvitrygon kittipongi"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:FluvitrygonOxyrhynchus a jf:Fauna ;
+    rdfs:label "Fluvitrygon oxyrhynchus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/44185/2993563> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q46333075> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Fluvitrygon oxyrhynchus"^^xsd:string ;
+    jf:namaLokal "Fluvitrygon oxyrhynchus"^^xsd:string ;
+    jf:termasukTaksonomi jf:FluvitrygonGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:FluvitrygonSignifer a jf:Fauna ;
+    rdfs:label "Fluvitrygon signifer"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39411/2924238> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28926831> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Fluvitrygon signifer"^^xsd:string ;
+    jf:namaLokal "Fluvitrygon signifer"^^xsd:string ;
+    jf:termasukTaksonomi jf:FluvitrygonGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:GlyptothoraxExodon a jf:Fauna ;
+    rdfs:label "Glyptothorax exodon"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91214358/91214362> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3759747> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Glyptothorax exodon"^^xsd:string ;
+    jf:namaLokal "Glyptothorax exodon"^^xsd:string ;
+    jf:termasukTaksonomi jf:GlyptothoraxGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:GryllacrisBarabensis a jf:Fauna ;
+    rdfs:label "Gryllacris barabensis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/109194292/109194301> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q10509237> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Gryllacris barabensis"^^xsd:string ;
+    jf:namaLokal "Gryllacris barabensis"^^xsd:string ;
+    jf:termasukTaksonomi jf:GryllacrisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:GymnuraPoecilura a jf:Fauna ;
+    rdfs:label "Longtail butterfly ray"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/60117/124440205> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4547223> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Gymnura poecilura"^^xsd:string ;
+    jf:namaLokal "Longtail butterfly ray"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gymnuridae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Gymnura%20poecilura%20pakistan.jpg"^^xsd:anyURI .
+
+jf:GymnuraZonura a jf:Fauna ;
+    rdfs:label "Gymnura zonura"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/60113/124439689> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4548422> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of ray"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Gymnura zonura"^^xsd:string ;
+    jf:namaLokal "Gymnura zonura"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gymnuridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:HarpactesOrrhophaeus a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "Luntur tunggir-coklat"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22682845/221399686> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1273566> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Harpactes orrhophaeus"^^xsd:string ;
+    jf:namaLokal "Luntur tunggir-coklat"^^xsd:string ;
+    jf:termasukTaksonomi jf:HarpactesGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Harpactes%20orrhophaeus%20226638721.jpg"^^xsd:anyURI .
+
+jf:HeliaeschnaBartelsi a jf:Fauna ;
+    rdfs:label "Heliaeschna bartelsi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/139069649/139118448> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4033959> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Heliaeschna bartelsi"^^xsd:string ;
+    jf:namaLokal "Heliaeschna bartelsi"^^xsd:string ;
+    jf:termasukTaksonomi jf:Aeshnidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:HeliogomphusBlandulus a jf:Fauna ;
+    rdfs:label "Heliogomphus blandulus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/139365146/139403998> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2743410> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Heliogomphus blandulus"^^xsd:string ;
+    jf:namaLokal "Heliogomphus blandulus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gomphidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:HemirhamphodonKecil a jf:Fauna ;
+    rdfs:label "Hemirhamphodon kecil"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/90986405/90986409> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q20745770> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hemirhamphodon kecil"^^xsd:string ;
+    jf:namaLokal "Hemirhamphodon kecil"^^xsd:string ;
+    jf:termasukTaksonomi jf:Hemiramphidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:HeosemysSpinosa a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Spiny turtle"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/9942/3152508> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2532001> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Reptilia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Heosemys spinosa"^^xsd:string ;
+    jf:namaLokal "Spiny turtle"^^xsd:string ;
+    jf:termasukTaksonomi jf:HeosemysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Heosemys%20spinosa%20390638960.jpg"^^xsd:anyURI .
+
+jf:HimanturaUndulata a jf:Fauna ;
+    rdfs:label "honeycomb whipray"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161621/124516589> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q293116> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Indonesian species of stingray"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Himantura undulata"^^xsd:string ;
+    jf:namaLokal "honeycomb whipray"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Himantura%20undulata%20lisbon.jpg"^^xsd:anyURI .
+
+jf:HippocampusBarbouri a jf:Fauna ;
+    rdfs:label "Kuda laut barbour"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/40802/54906903> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2673554> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hippocampus barbouri"^^xsd:string ;
+    jf:namaLokal "Kuda laut barbour"^^xsd:string ;
+    jf:termasukTaksonomi jf:HippocampusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Hippocampus%20barbouri%2001.JPG"^^xsd:anyURI .
+
+jf:HippocampusComes a jf:Fauna ;
+    rdfs:label "Kuda laut ekor harimau"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/41008/254567190> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2422258> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies Ikan"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hippocampus comes"^^xsd:string ;
+    jf:namaLokal "Kuda laut ekor harimau"^^xsd:string ;
+    jf:termasukTaksonomi jf:HippocampusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/FMIB%2032893%20Hippocampus%20Comes.jpeg"^^xsd:anyURI .
+
+jf:HippocampusTrimaculatus a jf:Fauna ;
+    rdfs:label "Flat-faced seahorse"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/10087/254661671> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q301880> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Actinopterygii yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hippocampus trimaculatus"^^xsd:string ;
+    jf:namaLokal "Flat-faced seahorse"^^xsd:string ;
+    jf:termasukTaksonomi jf:HippocampusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/TakakuraTy.jpg"^^xsd:anyURI .
+
+jf:HolothuriaFuscogilva a jf:Fauna ;
+    rdfs:label "Teripang susu putih"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/200715/272662803> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2717641> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Holothuroidea yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:DetritusOrganikDasarLaut ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTerumbuKarangKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Holothuria fuscogilva"^^xsd:string ;
+    jf:namaLokal "Teripang susu putih"^^xsd:string ;
+    jf:termasukTaksonomi jf:HolothuriaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Pepino%20de%20mar%20%28Holothuria%20fuscogilva%29%2C%20parque%20nacional%20Ras%20Muhammad%2C%20Egipto%2C%202022-03-28%2C%20DD%20119.jpg"^^xsd:anyURI .
+
+jf:HolothuriaLessoni a jf:Fauna ;
+    rdfs:label "Holothuria (Metriatyla) lessoni"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/180275/272670402> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2880020> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Holothuroidea yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:DetritusOrganikDasarLaut ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTerumbuKarangKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Holothuria lessoni"^^xsd:string ;
+    jf:namaLokal "Holothuria (Metriatyla) lessoni"^^xsd:string ;
+    jf:termasukTaksonomi jf:HolothuriaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:HolothuriaScabra a jf:Fauna ;
+    rdfs:label "Teripang pasir"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/180257/272668462> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2395506> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Holothuroidea yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:DetritusOrganikDasarLaut ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTerumbuKarangKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Holothuria scabra"^^xsd:string ;
+    jf:namaLokal "Teripang pasir"^^xsd:string ;
+    jf:termasukTaksonomi jf:HolothuriaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Garlic%20bread%20sea%20cucumber%20%28Holothuria%20scabra%29.jpg"^^xsd:anyURI .
+
+jf:HydrornisBaudii a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "paok kepala-biru"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22698631/225432915> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q617427> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hydrornis baudii"^^xsd:string ;
+    jf:namaLokal "paok kepala-biru"^^xsd:string ;
+    jf:termasukTaksonomi jf:HydrornisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Pitta%20baudii%20koron%C3%A1s%20pitta.jpg"^^xsd:anyURI .
+
+jf:HylobatesAbbotti a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Owa kelempiau barat"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39889/17990882> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q29580608> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "sejenis owa dari Kalimantan bagian barat"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hylobates abbotti"^^xsd:string ;
+    jf:namaLokal "Owa kelempiau barat"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gibbon ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:HylobatesAlbibarbis a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Owa kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39879/17967053> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1721268> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Sejenis kera endemik Kalimantan"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hylobates albibarbis"^^xsd:string ;
+    jf:namaLokal "Owa kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gibbon ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Dark-handed%20or%20Agile%20Gibbon%20%28Hylobates%20agilis%29%20Tanjung%20Puting%20National%20Park%20-%20Indonesia%201.jpg"^^xsd:anyURI .
+
+jf:HylobatesFunereus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Owa kelempiau utara"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39890/17990856> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q29578698> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "sejenis owa dari Kalimantan bagian utara"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hylobates funereus"^^xsd:string ;
+    jf:namaLokal "Owa kelempiau utara"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gibbon ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Hylobates%20funereus%20North%20Borneo%20Gibbon%20Tabin%20WR%20Sabah%20Quentin%20Phillipps%2023%20Oct%202010.jpg"^^xsd:anyURI .
+
+jf:HylobatesMuelleri a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "owa-owa"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39888/17990934> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q845938> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Hylobates muelleri"^^xsd:string ;
+    jf:namaLokal "owa-owa"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gibbon ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/MuellersGibbon.jpg"^^xsd:anyURI .
+
+jf:IctinogomphusAcutus a jf:Fauna ;
+    rdfs:label "Ictinogomphus acutus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163716/137390966> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2326180> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ictinogomphus acutus"^^xsd:string ;
+    jf:namaLokal "Ictinogomphus acutus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gomphidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:KottelatlimiaPristes a jf:Fauna ;
+    rdfs:label "Kottelatlimia pristes"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/180680/1651194> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5617265> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Kottelatlimia pristes"^^xsd:string ;
+    jf:namaLokal "Kottelatlimia pristes"^^xsd:string ;
+    jf:termasukTaksonomi jf:KottelatlimiaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:KurixalusAbsconditus a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Kurixalus absconditus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/186874168/186874219> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q97180337> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Amphibia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Kurixalus absconditus"^^xsd:string ;
+    jf:namaLokal "Kurixalus absconditus"^^xsd:string ;
+    jf:termasukTaksonomi jf:KurixalusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:LanthanotusBorneensis a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Biawak tak bertelinga"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/102342572/102342580> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q904780> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Reptilia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Lanthanotus borneensis"^^xsd:string ;
+    jf:namaLokal "Biawak tak bertelinga"^^xsd:string ;
+    jf:termasukTaksonomi jf:LanthanotusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Real%20Lanthanotus%20borneensis.jpg"^^xsd:anyURI .
+
+jf:LeiocassisRudicula a jf:Fauna ;
+    rdfs:label "Leiocassis rudicula"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/155959799/155959814> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q122069107> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi ""^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Leiocassis rudicula"^^xsd:string ;
+    jf:namaLokal "Leiocassis rudicula"^^xsd:string ;
+    jf:termasukTaksonomi jf:Bagridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:LepidocephalichthysLorentzi a jf:Fauna ;
+    rdfs:label "Lepidocephalichthys lorentzi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91093426/91093441> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6424320> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Lepidocephalichthys lorentzi"^^xsd:string ;
+    jf:namaLokal "Lepidocephalichthys lorentzi"^^xsd:string ;
+    jf:termasukTaksonomi jf:Cobitidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:LepidocephalusSpectrum a jf:Fauna ;
+    rdfs:label "Lepidocephalus spectrum"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91094224/91094246> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5684434> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Lepidocephalus spectrum"^^xsd:string ;
+    jf:namaLokal "Lepidocephalus spectrum"^^xsd:string ;
+    jf:termasukTaksonomi jf:LepidocephalusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:LeptobrachellaMarmorata a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Leptobrachella marmorata"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/88320892/123407446> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q81850383> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Leptobrachella marmorata"^^xsd:string ;
+    jf:namaLokal "Leptobrachella marmorata"^^xsd:string ;
+    jf:termasukTaksonomi jf:Megophryidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:LestesPraevius a jf:Fauna ;
+    rdfs:label "Lestes praevius"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/173717182/173775275> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1904295> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Lestes praevius"^^xsd:string ;
+    jf:namaLokal "Lestes praevius"^^xsd:string ;
+    jf:termasukTaksonomi jf:Lestidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:LimnonectesKenepaiensis a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Limnonectes kenepaiensis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/58343/96081312> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q577561> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Limnonectes kenepaiensis"^^xsd:string ;
+    jf:namaLokal "Limnonectes kenepaiensis"^^xsd:string ;
+    jf:termasukTaksonomi jf:LimnonectesGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:LimnonectesSinuatodorsalis a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Limnonectes sinuatodorsalis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/89255456/114926500> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q21011760> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Amphibia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Limnonectes sinuatodorsalis"^^xsd:string ;
+    jf:namaLokal "Limnonectes sinuatodorsalis"^^xsd:string ;
+    jf:termasukTaksonomi jf:LimnonectesGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:MacacaNemestrina a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Macaca nemestrina"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/12555/223433999> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q618026> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies mamalia"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Macaca nemestrina"^^xsd:string ;
+    jf:namaLokal "Macaca nemestrina"^^xsd:string ;
+    jf:termasukTaksonomi jf:MacacaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Macaca%20nemestrina%20349257747.jpg"^^xsd:anyURI .
+
+jf:MacromiaMnemosyne a jf:Fauna ;
+    rdfs:label "Macromia mnemosyne"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/139419869/139430058> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q592691> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Macromia mnemosyne"^^xsd:string ;
+    jf:namaLokal "Macromia mnemosyne"^^xsd:string ;
+    jf:termasukTaksonomi jf:Macromiidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:MaculabatisGerrardi a jf:Fauna ;
+    rdfs:label "Maculabatis gerrardi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161566/175219648> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28926011> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of Elasmobranchii"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Maculabatis gerrardi"^^xsd:string ;
+    jf:namaLokal "Maculabatis gerrardi"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:MaculabatisMacrura a jf:Fauna ;
+    rdfs:label "Maculabatis macrura"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/104188627/104189052> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q107054566> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of cartilaginous fish"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Maculabatis macrura"^^xsd:string ;
+    jf:namaLokal "Maculabatis macrura"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:MaculabatisPastinacoides a jf:Fauna ;
+    rdfs:label "Maculabatis pastinacoides"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161540/124503092> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28926732> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of Elasmobranchii"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Maculabatis pastinacoides"^^xsd:string ;
+    jf:namaLokal "Maculabatis pastinacoides"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:MeristogenysJerboa a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Meristogenys jerboa"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/58370/123693073> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2243951> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Meristogenys jerboa"^^xsd:string ;
+    jf:namaLokal "Meristogenys jerboa"^^xsd:string ;
+    jf:termasukTaksonomi jf:Ranidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Meristogenys%20jerboa.jpg"^^xsd:anyURI .
+
+jf:MeristogenysPenrissenensis a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Meristogenys penrissenensis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/89250933/123694500> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q22009313> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Meristogenys penrissenensis"^^xsd:string ;
+    jf:namaLokal "Meristogenys penrissenensis"^^xsd:string ;
+    jf:termasukTaksonomi jf:Ranidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:MetaphyaMicans a jf:Fauna ;
+    rdfs:label "Metaphya micans"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/139351857/139403918> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2801194> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Metaphya micans"^^xsd:string ;
+    jf:namaLokal "Metaphya micans"^^xsd:string ;
+    jf:termasukTaksonomi jf:Corduliidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:MurinaAenea a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Bronze tube-nosed bat"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/13936/22091750> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2896989> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Murina aenea"^^xsd:string ;
+    jf:namaLokal "Bronze tube-nosed bat"^^xsd:string ;
+    jf:termasukTaksonomi jf:MurinaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:NannophyopsisChalcosoma a jf:Fauna ;
+    rdfs:label "Nannophyopsis chalcosoma"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/202047/176654781> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7927423> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Nannophyopsis chalcosoma"^^xsd:string ;
+    jf:namaLokal "Nannophyopsis chalcosoma"^^xsd:string ;
+    jf:termasukTaksonomi jf:Libellulidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:NanobagrusImmaculatus a jf:Fauna ;
+    rdfs:label "Nanobagrus immaculatus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91182854/91182861> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3754229> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Nanobagrus immaculatus"^^xsd:string ;
+    jf:namaLokal "Nanobagrus immaculatus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Bagridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:NasalisLarvatus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "bekantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/14352/195372486> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q192029> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies monyet berhidung panjang"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Nasalis larvatus"^^xsd:string ;
+    jf:namaLokal "bekantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:NasalisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Proboscis%20monkey%20%28Nasalis%20larvatus%29%20male%20Labuk%20Bay.jpg"^^xsd:anyURI .
+
+jf:NemacheilusTebo a jf:Fauna ;
+    rdfs:label "Nemacheilus tebo"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91175388/91175397> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6423806> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Nemacheilus tebo"^^xsd:string ;
+    jf:namaLokal "Nemacheilus tebo"^^xsd:string ;
+    jf:termasukTaksonomi jf:NemacheilusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:NeofelisDiardi a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Macan dahan Sunda"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/136603/97212874> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q275163> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Neofelis diardi"^^xsd:string ;
+    jf:namaLokal "Macan dahan Sunda"^^xsd:string ;
+    jf:termasukTaksonomi jf:NeofelisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Borneo%20clouded%20leopard.jpg"^^xsd:anyURI .
+
+jf:NotochelysPlatynota a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Malayan flat-shelled turtle"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/14856/546301> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2403644> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Reptilia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Notochelys platynota"^^xsd:string ;
+    jf:namaLokal "Malayan flat-shelled turtle"^^xsd:string ;
+    jf:termasukTaksonomi jf:NotochelysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Notochelys%20platynota%20Hardwicke.jpg"^^xsd:anyURI .
+
+jf:NycticebusBorneanus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Kukang kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163015906/163015915> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7071010> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "kukang endemik dari Kalimantan"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Nycticebus borneanus"^^xsd:string ;
+    jf:namaLokal "Kukang kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:Lorisidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Nycticebus%20borneanus%20%28Nycticebus%20coucang%20borneanus%29%20-%20Museo%20Civico%20di%20Storia%20Naturale%20Giacomo%20Doria%20-%20Genoa%2C%20Italy%20-%20DSC02519.JPG"^^xsd:anyURI .
+
+jf:NycticebusKayan a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Kungkang kayan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163015583/163015849> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q956010> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies primata"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Nycticebus kayan"^^xsd:string ;
+    jf:namaLokal "Kungkang kayan"^^xsd:string ;
+    jf:termasukTaksonomi jf:Lorisidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Slow%20Loris.jpg"^^xsd:anyURI .
+
+jf:NycticebusMenagensis a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Kungkang filipina"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163013860/17970781> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2363029> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of primate"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Nycticebus menagensis"^^xsd:string ;
+    jf:namaLokal "Kungkang filipina"^^xsd:string ;
+    jf:termasukTaksonomi jf:Lorisidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Nycticebus%20menagensis.png"^^xsd:anyURI .
+
+jf:OkamejeiCairae a jf:Fauna ;
+    rdfs:label "Okamejei cairae"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/176486201/176486211> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5030435> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Okamejei cairae"^^xsd:string ;
+    jf:namaLokal "Okamejei cairae"^^xsd:string ;
+    jf:termasukTaksonomi jf:Rajidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:OkamejeiHollandi a jf:Fauna ;
+    rdfs:label "Okamejei hollandi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161532/124501466> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3703946> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Okamejei hollandi"^^xsd:string ;
+    jf:namaLokal "Okamejei hollandi"^^xsd:string ;
+    jf:termasukTaksonomi jf:Rajidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Raja%20hollandi.jpg"^^xsd:anyURI .
+
+jf:OligoaeschnaMutata a jf:Fauna ;
+    rdfs:label "Oligoaeschna mutata"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/139069875/139118488> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2444972> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Oligoaeschna mutata"^^xsd:string ;
+    jf:namaLokal "Oligoaeschna mutata"^^xsd:string ;
+    jf:termasukTaksonomi jf:Aeshnidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:OligoaeschnaPlatyura a jf:Fauna ;
+    rdfs:label "Oligoaeschna platyura"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163705/139086821> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2688052> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Oligoaeschna platyura"^^xsd:string ;
+    jf:namaLokal "Oligoaeschna platyura"^^xsd:string ;
+    jf:termasukTaksonomi jf:Aeshnidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:OmpokBinotatus a jf:Fauna ;
+    rdfs:label "Ompok binotatus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91211887/91211891> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5855745> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ompok binotatus"^^xsd:string ;
+    jf:namaLokal "Ompok binotatus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Siluridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:OmpokPluriradiatus a jf:Fauna ;
+    rdfs:label "Ompok pluriradiatus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91212012/91212022> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5679813> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ompok pluriradiatus"^^xsd:string ;
+    jf:namaLokal "Ompok pluriradiatus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Siluridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:OmpokSupernus a jf:Fauna ;
+    rdfs:label "Ompok supernus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91212100/91212104> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5645210> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ompok supernus"^^xsd:string ;
+    jf:namaLokal "Ompok supernus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Siluridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:OphiophagusHannah a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Ular lanang"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/177540/1491874> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q48186> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies ular berbisa"^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ophiophagus hannah"^^xsd:string ;
+    jf:namaLokal "Ular lanang"^^xsd:string ;
+    jf:termasukTaksonomi jf:Elapidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Ophiophagus%20hannah%20381373252.jpg"^^xsd:anyURI .
+
+jf:OrangutanKalimantan a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Orangutan kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/17975/259043172> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q599672> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies orang utan asli pulau Kalimantan"^^xsd:string ;
+    jf:memakan jf:TelurBurung ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pongo pygmaeus"^^xsd:string ;
+    jf:namaLokal "Orangutan kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:PongoGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Nanga%20with%20male%20baby.jpg"^^xsd:anyURI .
+
+jf:OrlitiaBorneensis a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Kura-kura Sungai Kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/15509/724972> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2716594> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of turtle"^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Orlitia borneensis"^^xsd:string ;
+    jf:namaLokal "Kura-kura Sungai Kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:Geoemydidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Orlitia%20borneensis.jpg"^^xsd:anyURI .
+
+jf:PachycyphaAurea a jf:Fauna ;
+    rdfs:label "Pachycypha aurea"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/135431279/176835986> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1832672> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pachycypha aurea"^^xsd:string ;
+    jf:namaLokal "Pachycypha aurea"^^xsd:string ;
+    jf:termasukTaksonomi jf:Chlorocyphidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PaludomusSubfasciata a jf:Fauna ;
+    rdfs:label "Paludomus subfasciata"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/281890044/289635037> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q106082634> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Gastropoda yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:AlgaDanMikroorganisme ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanPayauKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Paludomus subfasciata"^^xsd:string ;
+    jf:namaLokal "Paludomus subfasciata"^^xsd:string ;
+    jf:termasukTaksonomi jf:PaludomusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PangioAlternans a jf:Fauna ;
+    rdfs:label "Pangio alternans"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91103190/91103222> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2838288> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pangio alternans"^^xsd:string ;
+    jf:namaLokal "Pangio alternans"^^xsd:string ;
+    jf:termasukTaksonomi jf:Cobitidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PangioPulla a jf:Fauna ;
+    rdfs:label "Pangio pulla"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/181245/1713251> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3765137> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pangio pulla"^^xsd:string ;
+    jf:namaLokal "Pangio pulla"^^xsd:string ;
+    jf:termasukTaksonomi jf:Cobitidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParagaleusRandalli a jf:Fauna ;
+    rdfs:label "slender weasel shark"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161506/173437966> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q40573> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of shark (Paragaleus randalli)"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Paragaleus randalli"^^xsd:string ;
+    jf:namaLokal "slender weasel shark"^^xsd:string ;
+    jf:termasukTaksonomi jf:Hemigaleidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParakysisAnomalopteryx a jf:Fauna ;
+    rdfs:label "Parakysis anomalopteryx"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91216070/91216081> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3755251> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parakysis anomalopteryx"^^xsd:string ;
+    jf:namaLokal "Parakysis anomalopteryx"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParakysisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParakysisNotialis a jf:Fauna ;
+    rdfs:label "Parakysis notialis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91216223/91216231> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3755278> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parakysis notialis"^^xsd:string ;
+    jf:namaLokal "Parakysis notialis"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParakysisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParosphromenusAnjunganensis a jf:Fauna ;
+    rdfs:label "Parosphromenus anjunganensis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91311649/91311697> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q7340365> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus anjunganensis"^^xsd:string ;
+    jf:namaLokal "Parosphromenus anjunganensis"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParosphromenusFilamentosus a jf:Fauna ;
+    rdfs:label "Parosphromenus filamentosus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91311819/91311838> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431699> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus filamentosus"^^xsd:string ;
+    jf:namaLokal "Parosphromenus filamentosus"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParosphromenusLinkei a jf:Fauna ;
+    rdfs:label "Parosphromenus linkei"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91315551/91315585> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431705> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus linkei"^^xsd:string ;
+    jf:namaLokal "Parosphromenus linkei"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParosphromenusOpallios a jf:Fauna ;
+    rdfs:label "Parosphromenus opallios"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91315629/91315651> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5787606> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus opallios"^^xsd:string ;
+    jf:namaLokal "Parosphromenus opallios"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Parosphromenus%20opallios.png"^^xsd:anyURI .
+
+jf:ParosphromenusOrnaticauda a jf:Fauna ;
+    rdfs:label "Parosphromenus ornaticauda"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91315657/91315674> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5648006> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus ornaticauda"^^xsd:string ;
+    jf:namaLokal "Parosphromenus ornaticauda"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParosphromenusPahuensis a jf:Fauna ;
+    rdfs:label "Parosphromenus pahuensis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91315715/91315720> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5571426> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus pahuensis"^^xsd:string ;
+    jf:namaLokal "Parosphromenus pahuensis"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParosphromenusParvulus a jf:Fauna ;
+    rdfs:label "Parosphromenus parvulus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91315761/91315771> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5653439> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus parvulus"^^xsd:string ;
+    jf:namaLokal "Parosphromenus parvulus"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ParosphromenusQuindecim a jf:Fauna ;
+    rdfs:label "Parosphromenus quindecim"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91315810/91315821> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6431827> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Parosphromenus quindecim"^^xsd:string ;
+    jf:namaLokal "Parosphromenus quindecim"^^xsd:string ;
+    jf:termasukTaksonomi jf:ParosphromenusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Parosphromenus%20quindecim.png"^^xsd:anyURI .
+
+jf:PastinachusGracilicaudus a jf:Fauna ;
+    rdfs:label "Pastinachus gracilicaudus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/104306073/104306117> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1762877> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pastinachus gracilicaudus"^^xsd:string ;
+    jf:namaLokal "Pastinachus gracilicaudus"^^xsd:string ;
+    jf:termasukTaksonomi jf:PastinachusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PastinachusSolocirostris a jf:Fauna ;
+    rdfs:label "roughnose stingray"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161465/124490382> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q4546954> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Pastinachus solocirostris"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pastinachus solocirostris"^^xsd:string ;
+    jf:namaLokal "roughnose stingray"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PastinachusStellurostris a jf:Fauna ;
+    rdfs:label "Pastinachus stellurostris"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/104306247/104306271> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2056261> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pastinachus stellurostris"^^xsd:string ;
+    jf:namaLokal "Pastinachus stellurostris"^^xsd:string ;
+    jf:termasukTaksonomi jf:PastinachusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PateobatisUarnacoides a jf:Fauna ;
+    rdfs:label "Pateobatis uarnacoides"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161547/175221157> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28926847> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of Elasmobranchii"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pateobatis uarnacoides"^^xsd:string ;
+    jf:namaLokal "Pateobatis uarnacoides"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PelochelysCantorii a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Asian giant softshell turtle"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/135458600/1076984> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2006609> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies satwa langka dari kelas Reptilia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pelochelys cantorii"^^xsd:string ;
+    jf:namaLokal "Asian giant softshell turtle"^^xsd:string ;
+    jf:termasukTaksonomi jf:PelochelysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Pelochelys%20cantorii.jpg"^^xsd:anyURI .
+
+jf:PelophryneRhopophilia a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Pelophryne rhopophilia"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/54871/114917827> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2248005> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pelophryne rhopophilia"^^xsd:string ;
+    jf:namaLokal "Pelophryne rhopophilia"^^xsd:string ;
+    jf:termasukTaksonomi jf:Bufonidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PetinomysGenibarbis a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Whiskered flying squirrel"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/16735/115138813> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1765528> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Petinomys genibarbis"^^xsd:string ;
+    jf:namaLokal "Whiskered flying squirrel"^^xsd:string ;
+    jf:termasukTaksonomi jf:PetinomysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Zoological%20researches%20in%20Java%2C%20and%20the%20neighbouring%20islands%20BHL47293132.jpg"^^xsd:anyURI .
+
+jf:PetinomysSetosus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Petinomys setosus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/16739/22241609> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1767377> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Petinomys setosus"^^xsd:string ;
+    jf:namaLokal "Petinomys setosus"^^xsd:string ;
+    jf:termasukTaksonomi jf:PetinomysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PetinomysVordermanni a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Petinomys vordermanni"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/16740/115139026> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q784409> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of rodent in the Sciuridae family"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Petinomys vordermanni"^^xsd:string ;
+    jf:namaLokal "Petinomys vordermanni"^^xsd:string ;
+    jf:termasukTaksonomi jf:PetinomysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PhilautusErythrophthalmus a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Philautus erythrophthalmus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/58838/123693606> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3003797> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Philautus erythrophthalmus"^^xsd:string ;
+    jf:namaLokal "Philautus erythrophthalmus"^^xsd:string ;
+    jf:termasukTaksonomi jf:PhilautusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PhilautusIngeri a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Philautus ingeri"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/58856/246754898> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2700276> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Philautus ingeri"^^xsd:string ;
+    jf:namaLokal "Philautus ingeri"^^xsd:string ;
+    jf:termasukTaksonomi jf:PhilautusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PhilautusLongicrus a jf:Amfibi,
+        jf:Fauna ;
+    rdfs:label "Philautus longicrus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/79101579/58482381> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2699269> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of amphibian"^^xsd:string ;
+    jf:memakan jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanLembapDanAliranSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Philautus longicrus"^^xsd:string ;
+    jf:namaLokal "Philautus longicrus"^^xsd:string ;
+    jf:termasukTaksonomi jf:PhilautusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PodolestesChrysopus a jf:Fauna ;
+    rdfs:label "Podolestes chrysopus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/122149956/122150110> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2255067> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Podolestes chrysopus"^^xsd:string ;
+    jf:namaLokal "Podolestes chrysopus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Argiolestidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PolyplectronSchleiermacheri a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "kuau-kerdil kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22679393/262327449> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q835098> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Polyplectron schleiermacheri"^^xsd:string ;
+    jf:namaLokal "kuau-kerdil kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:PolyplectronGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Bornean%20Peacock%20Pheasant%20by%20George%20Edward%20Lodge.png"^^xsd:anyURI .
+
+jf:PresbytisCanicrus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Lutung kutai"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39808/200247353> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q104248290> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies primata"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Presbytis canicrus"^^xsd:string ;
+    jf:namaLokal "Lutung kutai"^^xsd:string ;
+    jf:termasukTaksonomi jf:PresbytisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Presbytis%20hosei%20canicrus.jpg"^^xsd:anyURI .
+
+jf:PresbytisChrysomelas a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Surili sarawak"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39803/17955321> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1112463> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Presbytis chrysomelas"^^xsd:string ;
+    jf:namaLokal "Surili sarawak"^^xsd:string ;
+    jf:termasukTaksonomi jf:PresbytisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Presbytis%20chrysomelas.png"^^xsd:anyURI .
+
+jf:PresbytisFrontata a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "lutung jirangan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/18127/17954836> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q936878> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies mamalia"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Presbytis frontata"^^xsd:string ;
+    jf:namaLokal "lutung jirangan"^^xsd:string ;
+    jf:termasukTaksonomi jf:PresbytisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/1910%20White-Fronted%20Langur%20%2838753075280%29.jpg"^^xsd:anyURI .
+
+jf:PresbytisHosei a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Lutung banggat"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/175648870/195370322> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q856324> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Presbytis hosei"^^xsd:string ;
+    jf:namaLokal "Lutung banggat"^^xsd:string ;
+    jf:termasukTaksonomi jf:PresbytisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/SemnopithecusHoseiSmit.jpg"^^xsd:anyURI .
+
+jf:PresbytisRubicunda a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Lutung Merah"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/18131/17953935> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1193851> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Presbytis rubicunda"^^xsd:string ;
+    jf:namaLokal "Lutung Merah"^^xsd:string ;
+    jf:termasukTaksonomi jf:PresbytisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Presbytis%20rubicunda%20-%20R%20Vasconcellos%20-%20459746459.jpeg"^^xsd:anyURI .
+
+jf:PrionailurusPlaniceps a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Kucing kepala datar"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/18148/50662095> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q274177> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Kucing liar kecil"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Prionailurus planiceps"^^xsd:string ;
+    jf:namaLokal "Kucing kepala datar"^^xsd:string ;
+    jf:termasukTaksonomi jf:PrionailurusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Prionailurus%20planiceps%20cropped.png"^^xsd:anyURI .
+
+jf:PristisClavata a jf:Fauna ;
+    rdfs:label "dwarf sawfish"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39390/68641215> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q244406> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pristis clavata"^^xsd:string ;
+    jf:namaLokal "dwarf sawfish"^^xsd:string ;
+    jf:termasukTaksonomi jf:PristisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Pristis%20clavata%20%28Dwarf%20sawfish%29%20in%20Aqua%20park.png"^^xsd:anyURI .
+
+jf:ProdasineuraAbbreviata a jf:Fauna ;
+    rdfs:label "Prodasineura abbreviata"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163682/135437277> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2245304> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Prodasineura abbreviata"^^xsd:string ;
+    jf:namaLokal "Prodasineura abbreviata"^^xsd:string ;
+    jf:termasukTaksonomi jf:Platycnemididae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:ProdasineuraQuadristigma a jf:Fauna ;
+    rdfs:label "Prodasineura quadristigma"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/135437246/176976675> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q732424> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Prodasineura quadristigma"^^xsd:string ;
+    jf:namaLokal "Prodasineura quadristigma"^^xsd:string ;
+    jf:termasukTaksonomi jf:Platycnemididae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PseudagrionopteraDiotima a jf:Fauna ;
+    rdfs:label "Pseudagrionoptera diotima"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/163703/177039963> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2754021> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pseudagrionoptera diotima"^^xsd:string ;
+    jf:namaLokal "Pseudagrionoptera diotima"^^xsd:string ;
+    jf:termasukTaksonomi jf:Libellulidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PseudodonWalpolei a jf:Fauna ;
+    rdfs:label "Pseudodon walpolei"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/277182297/279203649> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q107020878> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pseudodon walpolei"^^xsd:string ;
+    jf:namaLokal "Pseudodon walpolei"^^xsd:string ;
+    jf:termasukTaksonomi jf:PseudodonGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PseudomystusFunebris a jf:Fauna ;
+    rdfs:label "Pseudomystus funebris"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91183311/91183315> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6408312> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pseudomystus funebris"^^xsd:string ;
+    jf:namaLokal "Pseudomystus funebris"^^xsd:string ;
+    jf:termasukTaksonomi jf:Bagridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PseudomystusMyersi a jf:Fauna ;
+    rdfs:label "Pseudomystus myersi"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/169543/91183024> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5600698> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pseudomystus myersi"^^xsd:string ;
+    jf:namaLokal "Pseudomystus myersi"^^xsd:string ;
+    jf:termasukTaksonomi jf:Bagridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:PteromyscusPulverulentus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Pteromyscus pulverulentus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/18703/22245307> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1768659> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Pteromyscus pulverulentus"^^xsd:string ;
+    jf:namaLokal "Pteromyscus pulverulentus"^^xsd:string ;
+    jf:termasukTaksonomi jf:PteromyscusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/SciuropterusPulverulentusWolf.jpg"^^xsd:anyURI .
+
+jf:PtilocichlaLeucogrammica a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "berencet kalimantan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22716010/224542415> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q766654> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:Hutan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ptilocichla leucogrammica"^^xsd:string ;
+    jf:namaLokal "berencet kalimantan"^^xsd:string ;
+    jf:termasukTaksonomi jf:PtilocichlaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Bornean%20Wren-%20%28or%20Ground-%29%20Babbler%20%2813997632799%29%20%28cropped%29.jpg"^^xsd:anyURI .
+
+jf:RamphiculusJambu a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "jambu fruit-dove"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22691341/218158050> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28123124> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Ramphiculus jambu"^^xsd:string ;
+    jf:namaLokal "jambu fruit-dove"^^xsd:string ;
+    jf:termasukTaksonomi jf:RamphiculusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:RaphismiaInermis a jf:Fauna ;
+    rdfs:label "Raphismia inermis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/202050/177128030> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3081003> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Raphismia inermis"^^xsd:string ;
+    jf:namaLokal "Raphismia inermis"^^xsd:string ;
+    jf:termasukTaksonomi jf:Libellulidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:RectidensLauris a jf:Fauna ;
+    rdfs:label "Rectidens lauris"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/273524815/273526522> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Bivalvia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:PlanktonDanPartikelOrganik ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:DasarSungaiAirTawarKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Rectidens lauris"^^xsd:string ;
+    jf:namaLokal "Rectidens lauris"^^xsd:string ;
+    jf:termasukTaksonomi jf:RectidensGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:RheithrosciurusMacrotis a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Papun babu"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/19474/22248783> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q893959> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Rheithrosciurus macrotis"^^xsd:string ;
+    jf:namaLokal "Papun babu"^^xsd:string ;
+    jf:termasukTaksonomi jf:RheithrosciurusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/SciurusMacrotisWolf.jpg"^^xsd:anyURI .
+
+jf:RhinopteraJavanica a jf:Fauna ;
+    rdfs:label "Flapnose ray"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/60129/124442197> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5261079> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of Elasmobranchii"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Rhinoptera javanica"^^xsd:string ;
+    jf:namaLokal "Flapnose ray"^^xsd:string ;
+    jf:termasukTaksonomi jf:RhinopteraGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Rhinoptera%20javanica.jpg"^^xsd:anyURI .
+
+jf:RhynchobatusSpringeri a jf:Fauna ;
+    rdfs:label "broadnose wedgefish"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/60182/124448942> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q3283079> ;
+    jf:berstatusKonservasi jf:StatusKritis ;
+    jf:deskripsi "Rhynchobatus springeri"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Rhynchobatus springeri"^^xsd:string ;
+    jf:namaLokal "broadnose wedgefish"^^xsd:string ;
+    jf:termasukTaksonomi jf:Rhinidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:RollulusRouloul a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "puyuh sengayan"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22679106/196436384> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q763130> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:Hutan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Rollulus rouloul"^^xsd:string ;
+    jf:namaLokal "puyuh sengayan"^^xsd:string ;
+    jf:termasukTaksonomi jf:RollulusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Crested%20Partridge%20male%200A2A0892.jpg"^^xsd:anyURI .
+
+jf:RusaTimorensis a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Rusa Jawa"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/41789/22156866> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q663412> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Rusa timorensis"^^xsd:string ;
+    jf:namaLokal "Rusa Jawa"^^xsd:string ;
+    jf:termasukTaksonomi jf:RusaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Kawanan%20Rusa.jpg"^^xsd:anyURI .
+
+jf:ScleropagesFormosus a jf:Fauna ;
+    rdfs:label "Arwana Asia"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/152320185/89797267> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q728584> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Jenis ikan Arwana"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Scleropages formosus"^^xsd:string ;
+    jf:namaLokal "Arwana Asia"^^xsd:string ;
+    jf:termasukTaksonomi jf:Osteoglossidae ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Arowana.jpg"^^xsd:anyURI .
+
+jf:SetornisCriniger a jf:Burung,
+        jf:Fauna ;
+    rdfs:label "empuloh paruh-kait"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/22713158/220648909> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q1313699> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "spesies burung"^^xsd:string ;
+    jf:memakan jf:SeranggaDanBuahHutan ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Setornis criniger"^^xsd:string ;
+    jf:namaLokal "empuloh paruh-kait"^^xsd:string ;
+    jf:termasukTaksonomi jf:SetornisGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Setornis.JPG"^^xsd:anyURI .
+
+jf:SiebenrockiellaCrassicollis a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Kura-kura pipi-putih"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/39616/2930856> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2180636> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Reptilia yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Siebenrockiella crassicollis"^^xsd:string ;
+    jf:namaLokal "Kura-kura pipi-putih"^^xsd:string ;
+    jf:termasukTaksonomi jf:SiebenrockiellaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Sieben%20crass%20100118-0378%20stgd.jpg"^^xsd:anyURI .
+
+jf:SilurichthysLigneolus a jf:Fauna ;
+    rdfs:label "Silurichthys ligneolus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91213337/91213347> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q6411246> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Silurichthys ligneolus"^^xsd:string ;
+    jf:namaLokal "Silurichthys ligneolus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Siluridae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:SphaerichthysAcrostoma a jf:Fauna ;
+    rdfs:label "Sphaerichthys acrostoma"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91316029/91316052> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5597065> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Sphaerichthys acrostoma"^^xsd:string ;
+    jf:namaLokal "Sphaerichthys acrostoma"^^xsd:string ;
+    jf:termasukTaksonomi jf:SphaerichthysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:SphaerichthysVaillanti a jf:Fauna ;
+    rdfs:label "Sphaerichthys vaillanti"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/169553/91316015> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5644142> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Sphaerichthys vaillanti"^^xsd:string ;
+    jf:namaLokal "Sphaerichthys vaillanti"^^xsd:string ;
+    jf:termasukTaksonomi jf:SphaerichthysGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Sphaerichthys%20vaillanti%20above%20Java%20moss.jpg"^^xsd:anyURI .
+
+jf:StigmatogobiusSignifer a jf:Fauna ;
+    rdfs:label "Stigmatogobius signifer"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91082959/91083002> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q2916978> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Stigmatogobius signifer"^^xsd:string ;
+    jf:namaLokal "Stigmatogobius signifer"^^xsd:string ;
+    jf:termasukTaksonomi jf:Gobiidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:SundadanioEchinus a jf:Fauna ;
+    rdfs:label "Sundadanio echinus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/91075441/91075451> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q5659699> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of fish"^^xsd:string ;
+    jf:memakan jf:PlanktonDanIkanKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanTawarDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Sundadanio echinus"^^xsd:string ;
+    jf:namaLokal "Sundadanio echinus"^^xsd:string ;
+    jf:termasukTaksonomi jf:Cyprinidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:SusBarbatus a jf:Fauna,
+        jf:Mamalia ;
+    rdfs:label "Babi berjenggot"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/41772/123793370> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q809606> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "species of mammal"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Sus barbatus"^^xsd:string ;
+    jf:namaLokal "Babi berjenggot"^^xsd:string ;
+    jf:termasukTaksonomi jf:SusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Bearded-Pig.jpg"^^xsd:anyURI .
+
+jf:TelatrygonBiasa a jf:Fauna ;
+    rdfs:label "Telatrygon biasa"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/116855963/116856055> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q26260488> ;
+    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Telatrygon biasa"^^xsd:string ;
+    jf:namaLokal "Telatrygon biasa"^^xsd:string ;
+    jf:termasukTaksonomi jf:TelatrygonGenus ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:TelostictaGading a jf:Fauna ;
+    rdfs:label "Telosticta gading"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/123529326/177240235> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q13976556> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies serangga"^^xsd:string ;
+    jf:memakan jf:NektarDanDaun ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Telosticta gading"^^xsd:string ;
+    jf:namaLokal "Telosticta gading"^^xsd:string ;
+    jf:termasukTaksonomi jf:Platystictidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:TomistomaSchlegelii a jf:Fauna,
+        jf:Reptil ;
+    rdfs:label "Buaya sepit"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/21981/214287051> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q242464> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "spesies reptil mirip buaya dari familia Gavialidae"^^xsd:string ;
+    jf:memakan jf:IkanAmfibiDanMamaliaKecil ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:HutanRawaDanSungaiKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Tomistoma schlegelii"^^xsd:string ;
+    jf:namaLokal "Buaya sepit"^^xsd:string ;
+    jf:termasukTaksonomi jf:TomistomaGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Tomistoma%20schlegelii.jpg"^^xsd:anyURI .
+
+jf:UrogymnusGranulatus a jf:Fauna ;
+    rdfs:label "Urogymnus granulatus"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161431/124484009> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28926118> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Urogymnus granulatus"^^xsd:string ;
+    jf:namaLokal "Urogymnus granulatus"^^xsd:string ;
+    jf:termasukTaksonomi jf:UrogymnusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Urogymnus%20granulatus%20352815503.jpg"^^xsd:anyURI .
+
+jf:UrogymnusLobistoma a jf:Fauna ;
+    rdfs:label "Urogymnus lobistoma"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/161546/124504854> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q28926545> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "species of stingray"^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Urogymnus lobistoma"^^xsd:string ;
+    jf:namaLokal "Urogymnus lobistoma"^^xsd:string ;
+    jf:termasukTaksonomi jf:Dasyatidae ;
+    jf:tersebarDi jf:WilayahKalimantan .
+
+jf:UrogymnusPolylepis a jf:Fauna ;
+    rdfs:label "Urogymnus polylepis"^^xsd:string ;
+    rdfs:seeAlso <https://www.iucnredlist.org/species/195320/104294071> ;
+    owl:sameAs <http://www.wikidata.org/entity/Q46608149> ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
+    jf:deskripsi "Spesies satwa langka dari kelas Chondrichthyes yang berhabitat di wilayah Kalimantan."^^xsd:string ;
+    jf:memakan jf:IkanDanKrustasea ;
+    jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
+    jf:mempunyaiHabitat jf:PerairanPesisirDanMuaraKalimantan ;
+    jf:mempunyaiUpayaKonservasi jf:PerlindunganKawasanHabitatDanPemantauanPopulasi ;
+    jf:namaIlmiah "Urogymnus polylepis"^^xsd:string ;
+    jf:namaLokal "Urogymnus polylepis"^^xsd:string ;
+    jf:termasukTaksonomi jf:UrogymnusGenus ;
+    jf:tersebarDi jf:WilayahKalimantan ;
+    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Himantura%20polylepis.jpg"^^xsd:anyURI .
+
+jf:Aetobatidae a jf:Taksonomi ;
+    rdfs:label "Aetobatidae"^^xsd:string .
+
+jf:AetomylaeusGenus a jf:Taksonomi ;
+    rdfs:label "Aetomylaeus (Genus)"^^xsd:string .
+
+jf:AonyxGenus a jf:Taksonomi ;
+    rdfs:label "Aonyx (Genus)"^^xsd:string .
+
+jf:ArctictisGenus a jf:Taksonomi ;
+    rdfs:label "Arctictis (Genus)"^^xsd:string .
+
+jf:Argiolestidae a jf:Taksonomi ;
+    rdfs:label "Argiolestidae"^^xsd:string .
+
+jf:BatagurGenus a jf:Taksonomi ;
+    rdfs:label "Batagur (Genus)"^^xsd:string .
+
+jf:Bombinatoridae a jf:Taksonomi ;
+    rdfs:label "Bombinatoridae"^^xsd:string .
+
+jf:BosGenus a jf:Taksonomi ;
+    rdfs:label "Bos (Genus)"^^xsd:string .
+
+jf:BrevitrygonGenus a jf:Taksonomi ;
+    rdfs:label "Brevitrygon (Genus)"^^xsd:string .
+
+jf:Carcharhinidae a jf:Taksonomi ;
+    rdfs:label "Carcharhinidae"^^xsd:string .
+
+jf:CatopumaGenus a jf:Taksonomi ;
+    rdfs:label "Catopuma (Genus)"^^xsd:string .
+
+jf:CaudiculatusGenus a jf:Taksonomi ;
+    rdfs:label "Caudiculatus (Genus)"^^xsd:string .
+
+jf:CephaloscylliumGenus a jf:Taksonomi ;
+    rdfs:label "Cephaloscyllium (Genus)"^^xsd:string .
+
+jf:Chacidae a jf:Taksonomi ;
+    rdfs:label "Chacidae"^^xsd:string .
+
+jf:Chaudhuriidae a jf:Taksonomi ;
+    rdfs:label "Chaudhuriidae"^^xsd:string .
+
+jf:Chlorocyphidae a jf:Taksonomi ;
+    rdfs:label "Chlorocyphidae"^^xsd:string .
+
+jf:ClupeichthysGenus a jf:Taksonomi ;
+    rdfs:label "Clupeichthys (Genus)"^^xsd:string .
+
+jf:Columbidae a jf:Taksonomi ;
+    rdfs:label "Columbidae"^^xsd:string .
+
+jf:Corduliidae a jf:Taksonomi ;
+    rdfs:label "Corduliidae"^^xsd:string .
+
+jf:CrocodylusGenus a jf:Taksonomi ;
+    rdfs:label "Crocodylus (Genus)"^^xsd:string .
+
+jf:CynogaleGenus a jf:Taksonomi ;
+    rdfs:label "Cynogale (Genus)"^^xsd:string .
+
+jf:CyornisGenus a jf:Taksonomi ;
+    rdfs:label "Cyornis (Genus)"^^xsd:string .
+
+jf:Danau a jf:Habitat ;
+    jf:namaHabitat "danau"^^xsd:string .
+
+jf:DiplogaleGenus a jf:Taksonomi ;
+    rdfs:label "Diplogale (Genus)"^^xsd:string .
+
+jf:DiscomyaGenus a jf:Taksonomi ;
+    rdfs:label "Discomya (Genus)"^^xsd:string .
+
+jf:Elapidae a jf:Taksonomi ;
+    rdfs:label "Elapidae"^^xsd:string .
+
+jf:ElephasGenus a jf:Taksonomi ;
+    rdfs:label "Elephas (Genus)"^^xsd:string .
+
+jf:Ellopostomatidae a jf:Taksonomi ;
+    rdfs:label "Ellopostomatidae"^^xsd:string .
+
+jf:ElongariaGenus a jf:Taksonomi ;
+    rdfs:label "Elongaria (Genus)"^^xsd:string .
+
+jf:EusphyraGenus a jf:Taksonomi ;
+    rdfs:label "Eusphyra (Genus)"^^xsd:string .
+
+jf:Geoemydidae a jf:Taksonomi ;
+    rdfs:label "Geoemydidae"^^xsd:string .
+
+jf:GlyptothoraxGenus a jf:Taksonomi ;
+    rdfs:label "Glyptothorax (Genus)"^^xsd:string .
+
+jf:Gobiidae a jf:Taksonomi ;
+    rdfs:label "Gobiidae"^^xsd:string .
+
+jf:GryllacrisGenus a jf:Taksonomi ;
+    rdfs:label "Gryllacris (Genus)"^^xsd:string .
+
+jf:HarpactesGenus a jf:Taksonomi ;
+    rdfs:label "Harpactes (Genus)"^^xsd:string .
+
+jf:Hemigaleidae a jf:Taksonomi ;
+    rdfs:label "Hemigaleidae"^^xsd:string .
+
+jf:Hemiramphidae a jf:Taksonomi ;
+    rdfs:label "Hemiramphidae"^^xsd:string .
+
+jf:Hemiscylliidae a jf:Taksonomi ;
+    rdfs:label "Hemiscylliidae"^^xsd:string .
+
+jf:HeosemysGenus a jf:Taksonomi ;
+    rdfs:label "Heosemys (Genus)"^^xsd:string .
+
+jf:HillstreamLoach a jf:Taksonomi ;
+    rdfs:label "hillstream loach"^^xsd:string .
+
+jf:HydrornisGenus a jf:Taksonomi ;
+    rdfs:label "Hydrornis (Genus)"^^xsd:string .
+
+jf:KottelatlimiaGenus a jf:Taksonomi ;
+    rdfs:label "Kottelatlimia (Genus)"^^xsd:string .
+
+jf:KurixalusGenus a jf:Taksonomi ;
+    rdfs:label "Kurixalus (Genus)"^^xsd:string .
+
+jf:LahanPerdu a jf:Habitat ;
+    jf:namaHabitat "lahan perdu"^^xsd:string .
+
+jf:LanthanotusGenus a jf:Taksonomi ;
+    rdfs:label "Lanthanotus (Genus)"^^xsd:string .
+
+jf:LepidocephalusGenus a jf:Taksonomi ;
+    rdfs:label "Lepidocephalus (Genus)"^^xsd:string .
+
+jf:Lestidae a jf:Taksonomi ;
+    rdfs:label "Lestidae"^^xsd:string .
+
+jf:MacacaGenus a jf:Taksonomi ;
+    rdfs:label "Macaca (Genus)"^^xsd:string .
+
+jf:Macromiidae a jf:Taksonomi ;
+    rdfs:label "Macromiidae"^^xsd:string .
+
+jf:Megophryidae a jf:Taksonomi ;
+    rdfs:label "Megophryidae"^^xsd:string .
+
+jf:MurinaGenus a jf:Taksonomi ;
+    rdfs:label "Murina (Genus)"^^xsd:string .
+
+jf:NasalisGenus a jf:Taksonomi ;
+    rdfs:label "Nasalis (Genus)"^^xsd:string .
+
+jf:NemacheilusGenus a jf:Taksonomi ;
+    rdfs:label "Nemacheilus (Genus)"^^xsd:string .
+
+jf:NeofelisGenus a jf:Taksonomi ;
+    rdfs:label "Neofelis (Genus)"^^xsd:string .
+
+jf:NotochelysGenus a jf:Taksonomi ;
+    rdfs:label "Notochelys (Genus)"^^xsd:string .
+
+jf:Osteoglossidae a jf:Taksonomi ;
+    rdfs:label "Osteoglossidae"^^xsd:string .
+
+jf:Pachychilidae a jf:Taksonomi ;
+    rdfs:label "Pachychilidae"^^xsd:string .
+
+jf:PaludomusGenus a jf:Taksonomi ;
+    rdfs:label "Paludomus (Genus)"^^xsd:string .
+
+jf:PelochelysGenus a jf:Taksonomi ;
+    rdfs:label "Pelochelys (Genus)"^^xsd:string .
+
+jf:PolyplectronGenus a jf:Taksonomi ;
+    rdfs:label "Polyplectron (Genus)"^^xsd:string .
+
+jf:PongoGenus a jf:Taksonomi ;
+    rdfs:label "Pongo (Genus)"^^xsd:string .
+
+jf:PrionailurusGenus a jf:Taksonomi ;
+    rdfs:label "Prionailurus (Genus)"^^xsd:string .
+
+jf:PristisGenus a jf:Taksonomi ;
+    rdfs:label "Pristis (Genus)"^^xsd:string .
+
+jf:PseudodonGenus a jf:Taksonomi ;
+    rdfs:label "Pseudodon (Genus)"^^xsd:string .
+
+jf:PteromyscusGenus a jf:Taksonomi ;
+    rdfs:label "Pteromyscus (Genus)"^^xsd:string .
+
+jf:PtilocichlaGenus a jf:Taksonomi ;
+    rdfs:label "Ptilocichla (Genus)"^^xsd:string .
+
+jf:RamphiculusGenus a jf:Taksonomi ;
+    rdfs:label "Ramphiculus (Genus)"^^xsd:string .
+
+jf:Rawa a jf:Habitat ;
+    jf:namaHabitat "rawa"^^xsd:string .
+
+jf:RectidensGenus a jf:Taksonomi ;
+    rdfs:label "Rectidens (Genus)"^^xsd:string .
+
+jf:RheithrosciurusGenus a jf:Taksonomi ;
+    rdfs:label "Rheithrosciurus (Genus)"^^xsd:string .
+
+jf:Rhinidae a jf:Taksonomi ;
+    rdfs:label "Rhinidae"^^xsd:string .
+
+jf:RhinopteraGenus a jf:Taksonomi ;
+    rdfs:label "Rhinoptera (Genus)"^^xsd:string .
+
+jf:RollulusGenus a jf:Taksonomi ;
+    rdfs:label "Rollulus (Genus)"^^xsd:string .
+
+jf:RusaGenus a jf:Taksonomi ;
+    rdfs:label "Rusa (Genus)"^^xsd:string .
+
+jf:SetornisGenus a jf:Taksonomi ;
+    rdfs:label "Setornis (Genus)"^^xsd:string .
+
+jf:SiebenrockiellaGenus a jf:Taksonomi ;
+    rdfs:label "Siebenrockiella (Genus)"^^xsd:string .
+
+jf:SusGenus a jf:Taksonomi ;
+    rdfs:label "Sus (Genus)"^^xsd:string .
+
+jf:TelatrygonGenus a jf:Taksonomi ;
+    rdfs:label "Telatrygon (Genus)"^^xsd:string .
+
+jf:TelurBurung a jf:Makanan ;
+    rdfs:label "Telur burung"^^xsd:string .
+
+jf:TomistomaGenus a jf:Taksonomi ;
+    rdfs:label "Tomistoma (Genus)"^^xsd:string .
+
+jf:AlgaDanMikroorganisme a jf:Makanan ;
+    rdfs:label "Alga dan Mikroorganisme"^^xsd:string .
+
+jf:Bufonidae a jf:Taksonomi ;
+    rdfs:label "Bufonidae"^^xsd:string .
+
+jf:CarcharhinusGenus a jf:Taksonomi ;
+    rdfs:label "Carcharhinus (Genus)"^^xsd:string .
+
+jf:DetritusOrganikDanSeranggaAir a jf:Makanan ;
+    rdfs:label "Detritus Organik dan Serangga Air"^^xsd:string .
+
+jf:FluvitrygonGenus a jf:Taksonomi ;
+    rdfs:label "Fluvitrygon (Genus)"^^xsd:string .
+
+jf:Gecarcinucidae a jf:Taksonomi ;
+    rdfs:label "Gecarcinucidae"^^xsd:string .
+
+jf:Gomphidae a jf:Taksonomi ;
+    rdfs:label "Gomphidae"^^xsd:string .
+
+jf:Gymnuridae a jf:Taksonomi ;
+    rdfs:label "Gymnuridae"^^xsd:string .
+
+jf:LimnonectesGenus a jf:Taksonomi ;
+    rdfs:label "Limnonectes (Genus)"^^xsd:string .
+
+jf:ParakysisGenus a jf:Taksonomi ;
+    rdfs:label "Parakysis (Genus)"^^xsd:string .
+
+jf:PastinachusGenus a jf:Taksonomi ;
+    rdfs:label "Pastinachus (Genus)"^^xsd:string .
+
+jf:PerairanTawarDanPayauKalimantan a jf:Habitat ;
+    jf:namaHabitat "Perairan Tawar dan Payau Kalimantan"^^xsd:string .
+
+jf:Platycnemididae a jf:Taksonomi ;
+    rdfs:label "Platycnemididae"^^xsd:string .
+
+jf:Platystictidae a jf:Taksonomi ;
+    rdfs:label "Platystictidae"^^xsd:string .
+
+jf:Rajidae a jf:Taksonomi ;
+    rdfs:label "Rajidae"^^xsd:string .
+
+jf:Ranidae a jf:Taksonomi ;
+    rdfs:label "Ranidae"^^xsd:string .
+
+jf:SphaerichthysGenus a jf:Taksonomi ;
+    rdfs:label "Sphaerichthys (Genus)"^^xsd:string .
+
+jf:SungaiDanRawaAirTawarKalimantan a jf:Habitat ;
+    jf:namaHabitat "Sungai dan Rawa Air Tawar Kalimantan"^^xsd:string .
+
+jf:UrogymnusGenus a jf:Taksonomi ;
+    rdfs:label "Urogymnus (Genus)"^^xsd:string .
+
+jf:Aeshnidae a jf:Taksonomi ;
+    rdfs:label "Aeshnidae"^^xsd:string .
+
+jf:AirbreathingCatfish a jf:Taksonomi ;
+    rdfs:label "Airbreathing catfish"^^xsd:string .
+
+jf:Cobitidae a jf:Taksonomi ;
+    rdfs:label "Cobitidae"^^xsd:string .
+
+jf:Coenagrionidae a jf:Taksonomi ;
+    rdfs:label "Coenagrionidae"^^xsd:string .
+
+jf:CtenodesmaGenus a jf:Taksonomi ;
+    rdfs:label "Ctenodesma (Genus)"^^xsd:string .
+
+jf:Cyprinidae a jf:Taksonomi ;
+    rdfs:label "Cyprinidae"^^xsd:string .
+
+jf:DetritusOrganikDasarLaut a jf:Makanan ;
+    rdfs:label "Detritus Organik Dasar Laut"^^xsd:string .
+
+jf:HippocampusGenus a jf:Taksonomi ;
+    rdfs:label "Hippocampus (Genus)"^^xsd:string .
+
+jf:HolothuriaGenus a jf:Taksonomi ;
+    rdfs:label "Holothuria (Genus)"^^xsd:string .
+
+jf:Lorisidae a jf:Taksonomi ;
+    rdfs:label "Lorisidae"^^xsd:string .
+
+jf:PerairanTerumbuKarangKalimantan a jf:Habitat ;
+    jf:namaHabitat "Perairan Terumbu Karang Kalimantan"^^xsd:string .
+
+jf:PetinomysGenus a jf:Taksonomi ;
+    rdfs:label "Petinomys (Genus)"^^xsd:string .
+
+jf:PhilautusGenus a jf:Taksonomi ;
+    rdfs:label "Philautus (Genus)"^^xsd:string .
+
+jf:Bagridae a jf:Taksonomi ;
+    rdfs:label "Bagridae"^^xsd:string .
+
+jf:Gibbon a jf:Taksonomi ;
+    rdfs:label "gibbon"^^xsd:string .
+
+jf:Hutan a jf:Habitat ;
+    jf:namaHabitat "hutan"^^xsd:string .
+
+jf:Siluridae a jf:Taksonomi ;
+    rdfs:label "Siluridae"^^xsd:string .
+
+jf:Libellulidae a jf:Taksonomi ;
+    rdfs:label "Libellulidae"^^xsd:string .
+
+jf:PresbytisGenus a jf:Taksonomi ;
+    rdfs:label "Presbytis (Genus)"^^xsd:string .
+
+jf:DasarSungaiAirTawarKalimantan a jf:Habitat ;
+    jf:namaHabitat "Dasar Sungai Air Tawar Kalimantan"^^xsd:string .
+
+jf:Dasyatidae a jf:Taksonomi ;
+    rdfs:label "Dasyatidae"^^xsd:string .
+
+jf:ParosphromenusGenus a jf:Taksonomi ;
+    rdfs:label "Parosphromenus (Genus)"^^xsd:string .
+
+jf:PlanktonDanPartikelOrganik a jf:Makanan ;
+    rdfs:label "Plankton dan Partikel Organik"^^xsd:string .
+
+jf:HutanRawaDanSungaiKalimantan a jf:Habitat ;
+    jf:namaHabitat "Hutan Rawa dan Sungai Kalimantan"^^xsd:string .
+
+jf:SeranggaDanBuahHutan a jf:Makanan ;
+    rdfs:label "Serangga dan Buah Hutan"^^xsd:string .
+
+jf:IkanAmfibiDanMamaliaKecil a jf:Makanan ;
+    rdfs:label "Ikan, Amfibi, dan Mamalia Kecil"^^xsd:string .
+
+jf:HutanLembapDanAliranSungaiKalimantan a jf:Habitat ;
+    jf:namaHabitat "Hutan Lembap dan Aliran Sungai Kalimantan"^^xsd:string .
+
+jf:SeranggaKecil a jf:Makanan ;
+    rdfs:label "Serangga Kecil"^^xsd:string .
+
+jf:BettaGenus a jf:Taksonomi ;
+    rdfs:label "Betta (Genus)"^^xsd:string .
+
+jf:NektarDanDaun a jf:Makanan ;
+    rdfs:label "Nektar dan Daun"^^xsd:string .
+
+jf:StatusKritis a jf:StatusKonservasi ;
+    rdfs:label "Critically Endangered"^^xsd:string ;
+    jf:kodeIUCN "CR"^^xsd:string .
+
+jf:BuahbuahanDaunDanSerangga a jf:Makanan ;
+    rdfs:label "Buah-buahan, Daun, dan Serangga"^^xsd:string .
+
+jf:IkanDanKrustasea a jf:Makanan ;
+    rdfs:label "Ikan dan Krustasea"^^xsd:string .
+
+jf:PerairanPesisirDanMuaraKalimantan a jf:Habitat ;
+    jf:namaHabitat "Perairan Pesisir dan Muara Kalimantan"^^xsd:string .
+
+jf:HutanHujanTropis a jf:Habitat ;
+    jf:namaHabitat "Hutan Hujan Dataran Rendah Kalimantan"^^xsd:string,
+        "Hutan Hujan Tropis Kalimantan"^^xsd:string,
+        "Kanopi Hutan Hujan Kalimantan"^^xsd:string,
+        "lowland forest"^^xsd:string .
+
+jf:PerairanTawarDanSungaiKalimantan a jf:Habitat ;
+    jf:namaHabitat "Perairan Tawar dan Sungai Kalimantan"^^xsd:string .
+
+jf:PlanktonDanIkanKecil a jf:Makanan ;
+    rdfs:label "Plankton dan Ikan Kecil"^^xsd:string .
+
+jf:StatusTerancam a jf:StatusKonservasi ;
+    rdfs:label "Endangered"^^xsd:string ;
+    jf:kodeIUCN "EN"^^xsd:string .
+
+jf:StatusRentan a jf:StatusKonservasi ;
+    rdfs:label "Vulnerable"^^xsd:string ;
+    jf:kodeIUCN "VU"^^xsd:string .
+
+jf:KehilanganDanDegradasiHabitatAlami a jf:Ancaman ;
+    jf:deskripsiAncaman "Kehilangan dan degradasi habitat alami"^^xsd:string .
+
+jf:PerlindunganKawasanHabitatDanPemantauanPopulasi a jf:UpayaKonservasi ;
+    jf:deskripsiKonservasi "Perlindungan kawasan habitat dan pemantauan populasi"^^xsd:string .
+
+jf:WilayahKalimantan a jf:Wilayah ;
+    jf:namaWilayah "Kalimantan"^^xsd:string .
+

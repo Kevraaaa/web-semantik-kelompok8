@@ -1,0 +1,9 @@
+# --- perbaikan_c.rq ---
+# Tujuan (kota.ttl): semua permukiman sebagai ex:Permukiman
+CONSTRUCT { ?tempat a ex:Permukiman . }
+WHERE {
+    VALUES ?nama {"Medan"@id 
+        "Surabaya"@id 
+        "Tomok"@id}
+    ?tempat rdfs:label ?nama .
+}

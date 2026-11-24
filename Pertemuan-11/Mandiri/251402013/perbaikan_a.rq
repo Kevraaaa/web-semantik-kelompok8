@@ -1,0 +1,10 @@
+
+# Perbaikan A: judul film Nolan
+
+CONSTRUCT {
+    ?f ex:judul ?j .
+}
+WHERE {
+    ?f dbo:director dbr:Christopher_Nolan ;
+       rdfs:label ?j .
+}

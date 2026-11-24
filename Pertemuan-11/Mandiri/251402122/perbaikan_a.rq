@@ -1,0 +1,10 @@
+# --- perbaikan_a.rq ---
+# Tujuan (film.ttl): judul film Nolan sebagai ex:judul
+CONSTRUCT { ?film ex:judul ?judul . }
+WHERE {
+    ?film a dbo:Film ;
+    dbo:director dbr:Christopher_Nolan ;
+    rdfs:label ?judul .
+
+    FILTER(LANG(?judul) = "en")
+}
