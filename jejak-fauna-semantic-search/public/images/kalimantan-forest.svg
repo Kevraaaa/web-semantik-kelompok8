@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustrasi hutan hujan Kalimantan</title>
+  <desc id="desc">Kanopi hutan tropis berkabut dengan siluet pepohonan dan sungai.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#708477"/><stop offset=".48" stop-color="#314735"/><stop offset="1" stop-color="#162718"/></linearGradient>
+    <linearGradient id="mist" x2="0" y2="1"><stop stop-color="#d8dfc7" stop-opacity=".2"/><stop offset="1" stop-color="#d8dfc7" stop-opacity="0"/></linearGradient>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#627e7b"/><stop offset="1" stop-color="#243b35"/></linearGradient>
+  </defs>
+  <rect width="1800" height="1000" fill="url(#sky)"/>
+  <path d="M0 470 Q190 260 360 440 Q510 180 680 430 Q860 180 1040 435 Q1240 170 1420 420 Q1600 230 1800 420V1000H0Z" fill="#243923"/>
+  <path d="M0 600 Q170 300 330 550 Q500 290 690 540 Q900 290 1090 540 Q1260 300 1450 540 Q1640 330 1800 570V1000H0Z" fill="#1e321f"/>
+  <path d="M0 755 Q220 480 430 710 Q640 450 850 690 Q1080 430 1280 710 Q1500 470 1800 700V1000H0Z" fill="#172718"/>
+  <path d="M690 1000 Q760 790 890 710 Q1040 640 1110 490 Q1040 700 980 800 Q950 895 1010 1000Z" fill="url(#water)" opacity=".85"/>
+  <g fill="#152516">
+    <path d="M95 1000V370h38v630M60 425q54-140 108 0M35 500q80-170 159 0M20 580q94-170 190 0"/>
+    <path d="M310 1000V300h31v700M270 370q55-130 110 0M245 440q70-150 145 0M228 515q88-155 174 0"/>
+    <path d="M1510 1000V315h34v685M1460 385q65-150 130 0M1430 465q80-165 160 0M1400 545q105-175 210 0"/>
+    <path d="M1690 1000V400h34v600M1640 465q65-140 130 0M1610 540q80-150 160 0"/>
+  </g>
+  <rect width="1800" height="1000" fill="url(#mist)"/>
+  <g fill="#eff4bd" opacity=".14"><circle cx="480" cy="210" r="160"/><circle cx="1230" cy="260" r="210"/></g>
+</svg>
