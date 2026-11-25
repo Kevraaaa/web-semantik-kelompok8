@@ -1,0 +1,17 @@
+{
+  "nama":"Ayu Lestari",
+  "email":"ayu.lestari@example.test",
+  "bergabung":"Januari 2026",
+  "favorit":["orangutan-kalimantan","bekantan","pesut-mahakam"],
+  "riwayat_pencarian":[
+    {"kata_kunci":"satwa pemakan buah di hutan","waktu":"Hari ini, 09.42"},
+    {"kata_kunci":"fauna sungai Kalimantan","waktu":"Kemarin, 18.10"},
+    {"kata_kunci":"hewan terancam di mangrove","waktu":"12 Mei 2026, 14.30"}
+  ],
+  "laporan":["lap-001","lap-002","lap-003"],
+  "aktivitas":[
+    {"judul":"Menyimpan Bekantan ke favorit","waktu":"Hari ini · 09.42","ikon":"♡"},
+    {"judul":"Mencari fauna penghuni sungai","waktu":"Kemarin · 18.10","ikon":"⌕"},
+    {"judul":"Mengirim laporan penemuan Pesut Mahakam","waktu":"25 Februari 2026","ikon":"⌖"}
+  ]
+}
