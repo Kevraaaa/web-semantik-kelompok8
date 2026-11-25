@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
  *   GET  /api/fauna/{slug}               – Detail satu fauna
  *   GET  /api/fauna/{slug}/rekomendasi   – Fauna serupa
  *   POST /api/pencarian-semantik         – Pencarian kalimat bebas
+ *   GET  /api/ontology/validation        – Validasi dataset terhadap OWL/XML
  *   GET  /api/knowledge-graph            – Node dan edge graf pengetahuan
  */
 class FaunaController extends Controller
@@ -162,6 +163,13 @@ class FaunaController extends Controller
         $result = $this->sparql->pencarianSemantik($validated['kalimat']);
 
         return response()->json($result);
+    }
+
+    public function ontologyValidation(): JsonResponse
+    {
+        return response()->json([
+            'data' => $this->sparql->validateRdfAgainstOntology(),
+        ]);
     }
 
     // ------------------------------------------------------------------

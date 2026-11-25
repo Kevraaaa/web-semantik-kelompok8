@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#182415">
+    <script>
+        try {
+            const savedTheme = localStorage.getItem('jf_theme');
+            if (savedTheme === 'light' || savedTheme === 'dark') {
+                document.documentElement.dataset.theme = savedTheme;
+                document.querySelector('meta[name="theme-color"]').content = savedTheme === 'light' ? '#F5F7F2' : '#182415';
+            }
+        } catch (_) {}
+    </script>
     <meta name="description" content="Jelajahi keanekaragaman fauna Pulau Kalimantan melalui eksplorasi berbasis semantik.">
     <title>@yield('title', 'Jejak Fauna Kalimantan')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])

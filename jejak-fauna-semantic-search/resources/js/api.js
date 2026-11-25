@@ -1,4 +1,6 @@
 const DUMMY = '/dummy';
+const API = '/api';
+const ARRAY_FILTERS = new Set(['status', 'habitat', 'makanan', 'kelompok', 'ancaman']);
 
 async function readJson(file) {
     const response = await fetch(`${DUMMY}/${file}`, { headers: { Accept: 'application/json' } });
@@ -9,91 +11,55 @@ async function readJson(file) {
     return response.json();
 }
 
-function includesAny(values, selected, partial = false) {
-    return selected.length === 0 || selected.some((selectedValue) => values.some((value) => partial
-        ? value.toLocaleLowerCase('id').includes(selectedValue.toLocaleLowerCase('id'))
-        : value === selectedValue));
-}
-
-/**
- * TODO(backend): ganti dengan GET /api/fauna?query=&status=&habitat=&makanan=&kelompok=&ancaman=; response {data: Fauna[], meta}.
- */
-export async function getFauna(filters = {}) {
-    const fauna = await readJson('fauna.json');
-    const query = (filters.query || '').toLocaleLowerCase('id');
-    const statuses = filters.status ? [].concat(filters.status) : [];
-    const habitats = filters.habitat ? [].concat(filters.habitat) : [];
-    const foods = filters.makanan ? [].concat(filters.makanan) : [];
-    const groups = filters.kelompok ? [].concat(filters.kelompok) : [];
-    const threats = filters.ancaman ? [].concat(filters.ancaman) : [];
-
-    return fauna.filter((animal) => {
-        const searchable = `${animal.nama} ${animal.nama_ilmiah} ${animal.deskripsi}`.toLocaleLowerCase('id');
-        return (!query || searchable.includes(query))
-            && includesAny([animal.status_iucn], statuses)
-            && includesAny(animal.habitat, habitats)
-            && includesAny(animal.makanan, foods)
-            && includesAny([animal.kelompok], groups, true)
-            && includesAny(animal.ancaman, threats, true);
+async function requestApi(path, options = {}) {
+    const response = await fetch(`${API}${path}`, {
+        headers: {
+            Accept: 'application/json',
+            ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+            ...options.headers,
+        },
+        ...options,
     });
+    const payload = await response.json();
+    if (!response.ok) {
+        throw new Error(payload.message || `Permintaan API gagal (${response.status}).`);
+    }
+
+    return payload;
 }
 
-/**
- * TODO(backend): ganti dengan GET /api/fauna/{slug}; response satu objek Fauna atau 404.
- */
+export async function getFauna(filters = {}) {
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries({ ...filters, per_page: 100 })) {
+        if (value === undefined || value === null || value === '') continue;
+        for (const item of [].concat(value)) {
+            params.append(ARRAY_FILTERS.has(key) ? `${key}[]` : key, item);
+        }
+    }
+
+    const firstPage = await requestApi(`/fauna?${params}`);
+    const fauna = [...firstPage.data];
+    const pageCount = Math.ceil(firstPage.meta.total / firstPage.meta.per_page);
+    for (let page = 2; page <= pageCount; page += 1) {
+        params.set('page', page);
+        const nextPage = await requestApi(`/fauna?${params}`);
+        fauna.push(...nextPage.data);
+    }
+
+    return fauna;
+}
+
 export async function getFaunaDetail(slug) {
-    const fauna = await readJson('fauna.json');
-    const match = fauna.find((animal) => animal.slug === slug);
-    if (!match) {
-        throw new Error('Fauna tidak ditemukan pada data dummy.');
-    }
-    return match;
+    return (await requestApi(`/fauna/${encodeURIComponent(slug)}`)).data;
 }
 
-const synonymGroups = [
-    { terms: ['buah', 'buah-buahan', 'fruit'], values: ['buah', 'Ficus', 'Buah hutan'] },
-    { terms: ['ikan', 'perairan', 'air tawar'], values: ['Ikan', 'Udang', 'Moluska'] },
-    { terms: ['daun', 'dedaunan', 'herbivora'], values: ['Daun', 'Daun muda', 'Rumput', 'Tunas'] },
-    { terms: ['sungai', 'air', 'mahakam'], values: ['Sungai', 'Sungai Mahakam', 'Danau air tawar', 'Tepi sungai'] },
-    { terms: ['rawa', 'gambut'], values: ['Hutan rawa gambut', 'Hutan rawa'] },
-    { terms: ['mangrove', 'bakau', 'pesisir'], values: ['Hutan mangrove', 'Mangrove'] },
-    { terms: ['hutan', 'kanopi', 'pepohonan'], values: ['Hutan hujan tropis', 'Hutan dataran rendah', 'Kanopi hutan'] },
-    { terms: ['mamalia', 'hewan menyusui'], values: ['Mamalia'] },
-    { terms: ['primata', 'monyet', 'kera', 'bergantung'], values: ['Primata', 'buah', 'Hutan hujan tropis'] },
-    { terms: ['burung', 'terbang'], values: ['Burung'] },
-    { terms: ['terancam', 'langka', 'kritis', 'punah'], values: ['Kritis', 'Terancam', 'Rentan', 'Sangat Jarang'] },
-];
-
-/**
- * TODO(backend): ganti dengan POST /api/pencarian-semantik {kalimat}; response {data: [{fauna, skor, alasan_kecocokan}]}.
- * Status konservasi dummy wajib diverifikasi terhadap sumber IUCN Red List terbaru sebelum ditayangkan sebagai data faktual.
- */
 export async function cariSemantik(kalimat) {
-    const fauna = await getFauna();
-    const normalized = (kalimat || '').toLocaleLowerCase('id').trim();
-    const terms = synonymGroups.filter((group) => group.terms.some((term) => normalized.includes(term)));
+    const result = await requestApi('/pencarian-semantik', {
+        method: 'POST',
+        body: JSON.stringify({ kalimat }),
+    });
 
-    if (!normalized) {
-        return [];
-    }
-
-    return fauna.map((animal) => {
-        const reasons = [];
-        for (const group of terms) {
-            const habitatMatch = animal.habitat.find((item) => group.values.some((value) => item.toLocaleLowerCase('id').includes(value.toLocaleLowerCase('id'))));
-            if (habitatMatch) reasons.push(`habitat: ${habitatMatch}`);
-            const foodMatch = animal.makanan.find((item) => group.values.some((value) => item.toLocaleLowerCase('id').includes(value.toLocaleLowerCase('id'))));
-            if (foodMatch) reasons.push(`makanan: ${foodMatch}`);
-            if (group.values.some((value) => animal.kelompok.toLocaleLowerCase('id').includes(value.toLocaleLowerCase('id')))) {
-                reasons.push(`kelompok: ${animal.kelompok}`);
-            }
-        }
-        const exactHits = `${animal.nama} ${animal.nama_ilmiah}`.toLocaleLowerCase('id').split(/\s+/).filter((word) => word.length > 3 && normalized.includes(word));
-        if (exactHits.length) {
-            reasons.push(`nama: ${animal.nama}`);
-        }
-        return { fauna: animal, alasan_kecocokan: [...new Set(reasons)], skor: new Set(reasons).size };
-    }).filter((result) => result.skor > 0).sort((a, b) => b.skor - a.skor);
+    return result.data;
 }
 
 /**
@@ -137,26 +103,19 @@ export async function getLaporanAdmin(filters = {}) {
     return reports.filter((report) => !filters.status || report.status === filters.status);
 }
 
-/**
- * TODO(backend): ganti dengan GET /api/knowledge-graph?relasi[]; response {nodes: Node[], edges: Edge[]}.
- */
 export async function getGraph(filter = {}) {
-    const graph = await readJson('graph.json');
-    if (!filter.relasi || filter.relasi.length === 0) {
-        return graph;
+    const params = new URLSearchParams();
+    for (const relation of filter.relasi || []) {
+        params.append('relasi[]', relation);
     }
-    const edges = graph.edges.filter((edge) => filter.relasi.includes(edge.type));
-    const ids = new Set(edges.flatMap((edge) => [edge.from, edge.to]));
-    return { nodes: graph.nodes.filter((node) => ids.has(node.id)), edges };
+    params.set('limit', 200);
+
+    return requestApi(`/knowledge-graph?${params}`);
 }
 
-/**
- * TODO(backend): ganti dengan GET /api/fauna/{slug}/rekomendasi?limit=6; response {data: Fauna[]}.
- */
 export async function getRekomendasi(slug) {
-    const animal = await getFaunaDetail(slug);
-    const fauna = await getFauna();
-    return fauna.filter((item) => animal.serupa.includes(item.slug));
+    const result = await requestApi(`/fauna/${encodeURIComponent(slug)}/rekomendasi?limit=6`);
+    return result.data;
 }
 
 /**
@@ -179,13 +138,6 @@ export async function toggleFavorit(slug) {
     }
     localStorage.setItem('jf_favorites', JSON.stringify([...favorites]));
     return favorites.has(slug);
-}
-
-/**
- * TODO(backend): ganti dengan POST /api/laporan-penemuan multipart/form-data {fauna_slug?, nama_bebas, deskripsi, tanggal, latitude, longitude, lokasi, foto[]}; response {data: Laporan}.
- */
-export async function kirimLaporan(payload) {
-    return { ...payload, id: `mock-${Date.now()}`, status: 'menunggu', created_at: new Date().toISOString() };
 }
 
 /**

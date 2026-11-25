@@ -74,10 +74,10 @@ async function renderComparison() {
             ['Makanan', (animal) => animal.makanan.join(', ')],
             ['Status konservasi', (animal) => animal.status_iucn],
             ['Ancaman', (animal) => animal.ancaman.join(', ')],
-            ['Wilayah persebaran', (animal) => animal.sebaran.map((place) => `${place.lat.toFixed(2)}, ${place.lng.toFixed(2)}`).join(' · ')],
-            ['Karakteristik', (animal) => animal.karakteristik.join(', ')],
+            ['Wilayah persebaran', (animal) => animal.wilayah.join(', ')],
+            ['Deskripsi', (animal) => animal.deskripsi],
         ];
-        container.innerHTML = `<div class="overflow-x-auto rounded-2xl border border-soft surface"><table class="w-full min-w-[760px] border-collapse text-left text-sm"><thead><tr><th class="sticky left-0 z-10 w-40 bg-[var(--surface-raised)] p-4 text-xs uppercase tracking-wide text-muted">Aspek</th>${animals.map((animal) => `<th class="min-w-52 border-l border-soft bg-[var(--surface-raised)] p-4 align-top"><div class="fauna-visual mb-3 grid h-28 place-items-center rounded-xl text-4xl">${escapeHtml(animal.ikon)}</div><span class="font-display text-lg">${escapeHtml(animal.nama)}</span><div class="mt-1 text-xs italic text-muted">${escapeHtml(animal.nama_ilmiah)}</div></th>`).join('')}</tr></thead><tbody class="divide-y divide-white/5">${rows.map(([label, getter]) => {
+        container.innerHTML = `<div class="overflow-x-auto rounded-2xl border border-soft surface"><table class="w-full min-w-[760px] border-collapse text-left text-sm"><thead><tr><th class="sticky left-0 z-10 w-40 bg-[var(--surface-raised)] p-4 text-xs uppercase tracking-wide text-muted">Aspek</th>${animals.map((animal) => `<th class="min-w-52 border-l border-soft bg-[var(--surface-raised)] p-4 align-top"><div class="fauna-visual mb-3 grid h-28 place-items-center rounded-xl text-4xl">${animal.ikon || '🌿'}</div><span class="font-display text-lg">${escapeHtml(animal.nama)}</span><div class="mt-1 text-xs italic text-muted">${escapeHtml(animal.nama_ilmiah)}</div></th>`).join('')}</tr></thead><tbody class="divide-y divide-white/5">${rows.map(([label, getter]) => {
             const values = animals.map(getter);
             const shared = new Set(values).size === 1;
             return `<tr><th class="sticky left-0 bg-[var(--surface)] p-4 text-xs font-semibold ${shared ? 'text-emerald-200' : 'text-fresh-grown'}"><span class="mb-1 block text-[.58rem] uppercase tracking-wide">${shared ? '✓ Sama' : '↗ Berbeda'}</span>${escapeHtml(label)}</th>${values.map((value) => `<td class="border-l border-soft p-4 text-xs leading-5 ${shared ? 'bg-emerald-400/[.035]' : 'bg-fresh-grown/[.035]'}">${escapeHtml(value)}</td>`).join('')}</tr>`;

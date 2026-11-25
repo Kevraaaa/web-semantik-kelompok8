@@ -4,7 +4,7 @@
 @section('content')
     <section class="hero-image hero-grain relative flex min-h-[min(760px,88svh)] items-center overflow-hidden">
         <div class="container-page relative z-10 grid w-full gap-12 py-16 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
-            <div class="max-w-3xl">
+            <div class="hero-copy max-w-3xl" data-hero-copy>
                 <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-fresh-grown/20 bg-black/20 px-3 py-1.5 text-xs text-fresh-grown backdrop-blur"><span aria-hidden="true">❧</span> Pray for Kalimantan</div>
                 <p class="eyebrow">Jelajah · Kenali · Lestarikan</p>
                 <h1 class="font-display mt-5 text-5xl leading-[1.04] text-white sm:text-6xl lg:text-7xl">Jelajahi Keanekaragaman <span class="text-fresh-grown">Fauna Kalimantan</span></h1>
@@ -34,7 +34,7 @@
             <x-shortcut-card icon="⌕" title="Pencarian Fauna" description="Temukan spesies dari nama atau ciri yang kamu kenal." :href="route('explore')" />
             <x-shortcut-card icon="☷" title="Filter Fauna" description="Susuri fauna menurut habitat, makanan, status, dan kelompok." :href="route('explore').'#filter-fauna'" />
             <x-shortcut-card icon="⌖" title="Peta Persebaran" description="Lihat jejak persebaran dan laporan pengamatan warga." :href="route('map')" />
-            <x-shortcut-card icon="⌘" title="Pencarian Semantik" description="Ceritakan satwa yang kamu cari dengan kalimat sederhana." :href="route('explore').'#pencarian'" />
+            <x-shortcut-card icon="⌘" title="Pencarian Semantik" description="Ceritakan satwa yang kamu cari dengan kalimat sederhana." :href="route('explore').'?mode=semantic#pencarian-semantik'" />
         </div>
     </section>
 
@@ -61,7 +61,7 @@
     </section>
 
     <section class="container-page grid gap-5 py-10 lg:grid-cols-2">
-        <article class="relative overflow-hidden rounded-3xl border border-soft bg-wood-bark/60 p-7 sm:p-9">
+        <article class="nature-panel relative overflow-hidden rounded-3xl border border-soft p-7 sm:p-9">
             <div class="absolute -right-10 -top-10 size-56 rounded-full border border-fresh-grown/10"></div>
             <p class="eyebrow">Status konservasi</p><h2 class="font-display mt-2 max-w-md text-3xl">Mengenal status, memahami ancaman</h2>
             <div class="mt-7 flex items-center gap-4 rounded-2xl border border-soft bg-black/10 p-4">
@@ -79,9 +79,9 @@
     </section>
 
     <section class="container-page section-space" id="tentang">
-        <div class="relative overflow-hidden rounded-[2rem] border border-soft bg-wood-bark/60 p-8 sm:p-12">
+        <div class="nature-panel relative overflow-hidden rounded-[2rem] border border-soft p-8 sm:p-12">
             <div class="absolute -right-12 -top-16 size-64 rounded-full border border-fresh-grown/10"></div>
-            <div class="relative max-w-3xl"><p class="eyebrow">Tentang Jejak Fauna</p><h2 class="font-display mt-3 text-3xl sm:text-4xl">Satu langkah kecil untuk lebih mengenal rumah kita.</h2><p class="mt-5 text-sm leading-7 text-muted sm:text-base">Jejak Fauna Kalimantan adalah ruang eksplorasi digital untuk merangkai pengetahuan tentang satwa, habitat, dan ekosistem. Kenali hubungan di antara mereka, bagikan pengamatan dengan bertanggung jawab, dan temukan alasan untuk ikut menjaga hutan.</p><a class="btn-primary mt-7" href="{{ route('explore') }}">Mulai menjelajah <span aria-hidden="true">→</span></a></div>
+            <div class="relative max-w-3xl"><p class="eyebrow">Tentang Jejak Fauna</p><h2 class="font-display mt-3 text-3xl sm:text-4xl">Satu langkah kecil untuk lebih mengenal rumah kita.</h2><p class="mt-5 text-sm leading-7 text-muted sm:text-base">Jejak Fauna Kalimantan adalah ruang eksplorasi digital untuk merangkai pengetahuan tentang satwa, habitat, dan ekosistem. Kenali hubungan di antara mereka dan temukan alasan untuk ikut menjaga hutan.</p><a class="btn-primary mt-7" href="{{ route('explore') }}">Mulai menjelajah <span aria-hidden="true">→</span></a></div>
         </div>
     </section>
     <x-compare-bar />

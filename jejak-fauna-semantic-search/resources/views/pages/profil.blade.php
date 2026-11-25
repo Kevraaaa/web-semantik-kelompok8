@@ -4,7 +4,7 @@
 @section('content')
 <section class="container-page pb-20 pt-10">
     <div class="rounded-3xl border border-soft surface p-6 sm:p-9">
-        <div class="flex flex-col gap-5 sm:flex-row sm:items-center"><div class="grid size-20 place-items-center rounded-full bg-fig-leaf/30 font-display text-3xl text-fresh-grown">A</div><div class="flex-1"><p class="eyebrow">Ruang pribadimu</p><h1 class="font-display mt-1 text-3xl" data-profile-name>Ayu Lestari</h1><p class="mt-1 text-sm text-muted" data-profile-email>ayu.lestari@example.test · Bergabung Januari 2026</p></div><a class="btn-secondary" href="{{ route('report.create') }}">＋ Lapor Penemuan</a></div>
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center"><div class="grid size-20 place-items-center rounded-full bg-fig-leaf/30 font-display text-3xl text-fresh-grown">A</div><div class="flex-1"><p class="eyebrow">Ruang pribadimu</p><h1 class="font-display mt-1 text-3xl" data-profile-name>Ayu Lestari</h1><p class="mt-1 text-sm text-muted" data-profile-email>ayu.lestari@example.test · Bergabung Januari 2026</p></div></div>
         <div class="mt-8 flex gap-2 overflow-x-auto border-b border-soft pb-3" role="tablist" aria-label="Menu profil">
             <button class="profile-tab active" type="button" role="tab" aria-selected="true" data-profile-tab="favorit">Favorit</button>
             <button class="profile-tab" type="button" role="tab" aria-selected="false" data-profile-tab="riwayat">Riwayat Pencarian</button>

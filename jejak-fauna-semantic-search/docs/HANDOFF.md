@@ -1,17 +1,18 @@
 # Serah Terima Backend — Jejak Fauna Kalimantan
 
-Project kini memiliki backend API fauna yang berjalan melalui HTTP. Endpoint aktual dan contoh payload lengkap tersedia di [docs/API.md](API.md). API membaca `dataset/fauna_kalimantan.ttl` melalui `App\Services\SparqlService`; dataset terverifikasi berisi 334 fauna dan disimpan pada cache file Laravel selama 1 jam.
+Project kini memiliki API fauna berbasis query SPARQL RDFLib. `App\Services\SparqlService` menjalankan adapter Python terhadap `dataset/fauna_kalimantan.ttl`; ontology `dataset/JejakFauna_Ontology_Final.owl` dibaca sesuai format OWL/XML untuk validasi. Dataset berisi 3.125 triple dan 193 individual bertipe `jf:Fauna`, diverifikasi dari berkas saat integrasi. Endpoint dan kontrak aktual tersedia di [docs/API.md](API.md).
 
 Backend yang sudah tersedia:
 
 - katalog fauna dengan pencarian teks, filter, dan paginasi;
 - nilai filter dari dataset;
 - detail fauna berdasarkan slug;
-- rekomendasi berbasis kesamaan kelompok, status, dan habitat;
-- pencarian semantik berbasis token dan sinonim Bahasa Indonesia;
-- knowledge graph node/edge dari relasi fauna, kelompok, habitat, makanan, dan ancaman.
+- rekomendasi SPARQL berdasarkan kesamaan habitat, makanan, taksonomi, status konservasi, dan kelompok;
+- pencarian semantik menggunakan literal dan relasi RDF, disertai toleransi typo ringan;
+- knowledge graph node/edge yang dibangun dari query SPARQL terhadap relasi RDF;
+- endpoint validasi vocabulary, domain/range, datatype, dan kelengkapan data antara Turtle dan OWL/XML.
 
-Validasi request dan error response API telah diuji melalui HTTP. Cache dataset menggunakan file store secara eksplisit sehingga endpoint fauna tidak bergantung pada database lokal.
+Cache hasil katalog memakai file store Laravel selama 1 jam. Operasi RDF tidak bergantung pada database lokal; error interpreter/parser dikembalikan sebagai HTTP `503` JSON dan dicatat pada log.
 
 ## 1. Titik sambung `TODO(backend)`
 
@@ -20,8 +21,8 @@ Daftar komentar implementasi yang perlu ditindaklanjuti (nomor baris pada revisi
 | Lokasi | Integrasi yang perlu dilakukan |
 |---|---|
 | `routes/web.php:5, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26` | Ganti masing-masing route view dengan controller sesuai tanggung jawab route pada bagian 3. |
-| `resources/js/api.js:19, 42, 68, 100, 118, 125, 133, 141, 154, 163, 171, 185, 192, 206, 213, 220` | Ganti pembacaan fixture dan simulasi dengan endpoint fauna, semantik, sebaran, laporan, graph, rekomendasi, favorit, profil, auth, dan verifikasi pada tabel bagian 2. |
-| `resources/js/report.js:74` | Kirim FormData foto dan metadata ke endpoint laporan; tampilkan validasi server dan ID laporan. |
+| `resources/js/api.js` | Integrasi katalog, detail, semantic search, rekomendasi, dan graph sudah memakai API RDF. Sebaran, laporan, favorit, profil, auth, dan moderasi masih mock/fixture. |
+| Alur laporan warga | Belum tersedia pada worktree saat ini; form/API penyimpanan dan moderasi masih perlu dibangun. |
 | `resources/js/admin.js:48` | Kirim keputusan moderasi/catatan ke API dan refresh status dengan respons server. |
 
 Rincian baris komentar saat ini dapat diambil dengan:
@@ -132,9 +133,8 @@ Contoh objek Fauna saat ini ada di `public/dummy/fauna.json`; contoh laporan, Ge
 
 ## 4. Fitur yang masih mock atau belum tersedia di backend
 
-- Pencarian semantik memakai pencocokan kata kunci/sinonim JavaScript, bukan embedding atau Fuseki/SPARQL.
+- Pencarian katalog, pencarian semantik, detail, rekomendasi fauna, filter, dan knowledge graph sudah membaca Turtle lewat query SPARQL RDFLib. Ini bukan embedding search dan belum memakai Fuseki.
 - Peta memakai GeoJSON/titik ilustratif dan tile basemap publik; kelimpahan serta koordinat bukan hasil survei.
-- Knowledge graph memakai relasi contoh, bukan hasil query ontologi.
 - Favorit, pilihan perbandingan, tema, status login demo (toggle `window.__DUMMY_LOGGED_IN__` di DevTools), dan keputusan moderasi disimpan di `localStorage`.
 - Login/daftar hanya validasi browser dan flag demo; lupa kata sandi hanya toast.
 - Laporan warga tidak diunggah atau disimpan. Pratinjau foto memakai object URL sementara.
@@ -147,20 +147,21 @@ Endpoint API yang belum tersedia: `/api/sebaran`, `/api/laporan-warga`, `/api/pr
 
 Audit terakhir dijalankan pada server lokal Laravel melalui HTTP:
 
-- 6 route API terdaftar sesuai `php artisan route:list --path=api`.
+- 7 route API terdaftar sesuai `php artisan route:list --path=api`.
 - Endpoint sukses mengembalikan HTTP `200` dan JSON valid.
-- Fauna tidak ditemukan mengembalikan `404` JSON.
-- Payload kosong dan parameter invalid mengembalikan `422` JSON.
-- Dataset menghasilkan 334 fauna; pencarian, filter, rekomendasi, dan graph berhasil diuji.
-- PHPUnit: 7 test lulus dengan 68 assertion, termasuk regression test API.
-- PHP syntax check: lulus untuk controller, service, dan route.
+- Fauna tidak ditemukan mengembalikan `404` JSON; payload tidak valid mengembalikan `422`; kegagalan interpreter RDF mengembalikan `503`.
+- Dataset aktual: 3.125 triple, 193 individu `jf:Fauna`, 12 class dan 16 property digunakan, 2.031 triple valid, 0 error.
+- Validator melaporkan 114 fauna tanpa `urlGambar`, class `StatusEndemisme` belum dipakai, dan property `beratTubuh`, `berstatusEndemisme`, `panjangTubuh` belum dipakai.
+- Pengujian fitur RDF: 13 test lulus dengan 62 assertion, termasuk pencarian nama/typo, filter habitat/makanan/status, detail, rekomendasi, graph, validasi positif/negatif, dataset kosong, serta interpreter gagal.
+- PHPUnit penuh: 21 test lulus dengan 120 assertion.
 - Laravel Pint dan `git diff --check`: lulus.
+- `npm run build`: berhasil. Vite masih menampilkan peringatan asset `/images/kalimantan-forest.svg` yang diselesaikan saat runtime serta chunk graf lebih dari 500 kB.
 
 Bug yang diperbaiki: service sebelumnya memakai cache database default dan menghasilkan HTTP 500 ketika database `laravel` tidak tersedia. Service sekarang menggunakan cache file untuk dataset lokal.
 
 ## 6. Teknologi dan rencana pengembangan
 
-Teknologi backend saat ini adalah Laravel 13, PHP 8.5, route/controller Laravel, parser Turtle in-process, Laravel file cache, PHPUnit, dan Pint. Tahap berikutnya adalah menghubungkan frontend ke endpoint aktual, menambahkan persistence/authentication untuk laporan dan pengguna, serta mengganti parser in-process dengan triplestore/SPARQL bila diperlukan.
+Teknologi backend saat ini adalah Laravel 13, PHP 8.5, RDFLib `7.6.0`, query SPARQL lokal atas Turtle, pembaca XML standar untuk OWL/XML, Laravel file cache, PHPUnit, dan Pint. Koneksi Fuseki/triplestore jarak jauh belum digunakan. Peta, laporan, pengguna, autentikasi, dan moderasi tetap perlu backend terpisah sebelum demo dapat mengklaim fitur tersebut end-to-end.
 
 ## 7. Menjalankan proyek
 
@@ -169,6 +170,7 @@ Jalankan dari direktori aplikasi:
 ```powershell
 composer install
 npm install
+python -m pip install -r requirements.txt
 npm run dev
 php artisan serve
 ```

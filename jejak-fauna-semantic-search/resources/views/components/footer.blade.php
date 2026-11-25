@@ -1,4 +1,4 @@
-<footer class="border-t border-soft bg-wood-bark/40">
+<footer class="nature-panel border-t border-soft">
     <div class="container-page grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
             <a href="{{ route('home') }}" class="flex items-center gap-2 text-sm font-semibold"><span class="text-xl text-fresh-grown">❧</span> Jejak Fauna Kalimantan</a>

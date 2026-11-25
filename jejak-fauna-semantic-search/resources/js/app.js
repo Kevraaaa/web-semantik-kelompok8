@@ -7,7 +7,7 @@ if (page === 'home' || page === 'explore' || page === 'detail') {
     import('./search.js');
 }
 
-if (page === 'map' || page === 'report' || page === 'home' || page === 'detail' || page === 'admin') {
+if (page === 'map' || page === 'home' || page === 'detail' || page === 'admin') {
     import('./map.js');
 }
 
@@ -25,10 +25,6 @@ if (page === 'explore' || page === 'compare' || page === 'detail' || page === 'h
 
 if (page === 'login' || page === 'register' || page === 'profile' || page === 'admin') {
     import('./account.js');
-}
-
-if (page === 'report') {
-    import('./report.js');
 }
 
 if (page === 'admin') {
@@ -94,5 +90,4 @@ document.addEventListener('keydown', (event) => {
     mobileMenu?.classList.add('hidden');
     menuButton?.setAttribute('aria-expanded', 'false');
     document.querySelector('[data-filter-drawer]')?.classList.add('hidden');
-    document.querySelector('[data-report-success]')?.dispatchEvent(new CustomEvent('jf:modal-escape'));
 });
