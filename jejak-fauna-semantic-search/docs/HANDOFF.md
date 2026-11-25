@@ -1,6 +1,17 @@
 # Serah Terima Backend — Jejak Fauna Kalimantan
 
-Tahap ini berisi antarmuka dan simulasi browser. Tidak ada model, migration, koneksi database/Fuseki, autentikasi sungguhan, penyimpanan laporan, maupun otorisasi admin.
+Project kini memiliki backend API fauna yang berjalan melalui HTTP. Endpoint aktual dan contoh payload lengkap tersedia di [docs/API.md](API.md). API membaca `dataset/fauna_kalimantan.ttl` melalui `App\Services\SparqlService`; dataset terverifikasi berisi 334 fauna dan disimpan pada cache file Laravel selama 1 jam.
+
+Backend yang sudah tersedia:
+
+- katalog fauna dengan pencarian teks, filter, dan paginasi;
+- nilai filter dari dataset;
+- detail fauna berdasarkan slug;
+- rekomendasi berbasis kesamaan kelompok, status, dan habitat;
+- pencarian semantik berbasis token dan sinonim Bahasa Indonesia;
+- knowledge graph node/edge dari relasi fauna, kelompok, habitat, makanan, dan ancaman.
+
+Validasi request dan error response API telah diuji melalui HTTP. Cache dataset menggunakan file store secara eksplisit sehingga endpoint fauna tidak bergantung pada database lokal.
 
 ## 1. Titik sambung `TODO(backend)`
 
@@ -21,7 +32,9 @@ rg -n "TODO\(backend\)" routes resources
 
 Nilai `status_iucn` pada fixture hanya contoh UI. Sebelum dipublikasikan, verifikasi taksonomi, kategori, tanggal penilaian, dan sumber status terkini, terutama status keberadaan Badak Sumatra di Kalimantan.
 
-## 2. Kontrak endpoint yang dibutuhkan
+## 2. Kontrak endpoint yang direncanakan
+
+Bagian ini adalah roadmap fitur yang belum terdaftar sebagai route API. Kontrak aktual yang sudah diimplementasikan berada di [docs/API.md](API.md).
 
 Nama properti response di bawah mengikuti bentuk fixture `/dummy/*.json`. Tambahkan envelope `data` dan metadata paginasi sesuai standar API aplikasi bila diperlukan.
 
@@ -101,7 +114,7 @@ Objek Fauna yang dipakai untuk katalog, detail, rekomendasi, dan banding:
 
 Contoh objek Fauna saat ini ada di `public/dummy/fauna.json`; contoh laporan, GeoJSON, dan graf masing-masing ada di `public/dummy/laporan.json`, `public/dummy/sebaran.json`, dan `public/dummy/graph.json`.
 
-## 3. Route yang dipindahkan ke controller
+## 3. Route web yang masih memakai view
 
 | Nama route | Path | Tanggung jawab controller yang disarankan |
 |---|---|---|
@@ -117,7 +130,7 @@ Contoh objek Fauna saat ini ada di `public/dummy/fauna.json`; contoh laporan, Ge
 | `report.create` | `/lapor` | Form dan penyimpanan laporan. |
 | `admin.reports` | `/admin/laporan` | Antrean dan moderasi dengan middleware admin. |
 
-## 4. Fitur yang masih mock
+## 4. Fitur yang masih mock atau belum tersedia di backend
 
 - Pencarian semantik memakai pencocokan kata kunci/sinonim JavaScript, bukan embedding atau Fuseki/SPARQL.
 - Peta memakai GeoJSON/titik ilustratif dan tile basemap publik; kelimpahan serta koordinat bukan hasil survei.
@@ -128,7 +141,28 @@ Contoh objek Fauna saat ini ada di `public/dummy/fauna.json`; contoh laporan, Ge
 - Profil, riwayat pencarian, aktivitas, serta antrean laporan hanya fixture dummy.
 - Aksi setujui/tolak tidak memiliki otorisasi dan tidak mengubah data server.
 
-## 5. Menjalankan proyek
+Endpoint API yang belum tersedia: `/api/sebaran`, `/api/laporan-warga`, `/api/profil/laporan`, `/api/admin/laporan`, `/api/profil`, `/api/fauna/perbandingan`, `/api/favorit`, `/api/laporan-penemuan`, `/api/auth`, dan verifikasi laporan admin.
+
+## 5. Verifikasi backend
+
+Audit terakhir dijalankan pada server lokal Laravel melalui HTTP:
+
+- 6 route API terdaftar sesuai `php artisan route:list --path=api`.
+- Endpoint sukses mengembalikan HTTP `200` dan JSON valid.
+- Fauna tidak ditemukan mengembalikan `404` JSON.
+- Payload kosong dan parameter invalid mengembalikan `422` JSON.
+- Dataset menghasilkan 334 fauna; pencarian, filter, rekomendasi, dan graph berhasil diuji.
+- PHPUnit: 7 test lulus dengan 68 assertion, termasuk regression test API.
+- PHP syntax check: lulus untuk controller, service, dan route.
+- Laravel Pint dan `git diff --check`: lulus.
+
+Bug yang diperbaiki: service sebelumnya memakai cache database default dan menghasilkan HTTP 500 ketika database `laravel` tidak tersedia. Service sekarang menggunakan cache file untuk dataset lokal.
+
+## 6. Teknologi dan rencana pengembangan
+
+Teknologi backend saat ini adalah Laravel 13, PHP 8.5, route/controller Laravel, parser Turtle in-process, Laravel file cache, PHPUnit, dan Pint. Tahap berikutnya adalah menghubungkan frontend ke endpoint aktual, menambahkan persistence/authentication untuk laporan dan pengguna, serta mengganti parser in-process dengan triplestore/SPARQL bila diperlukan.
+
+## 7. Menjalankan proyek
 
 Jalankan dari direktori aplikasi:
 
