@@ -14,7 +14,7 @@
         </div>
         <div class="flex items-center gap-2">
             <div class="flex items-center gap-2" data-auth-guest>
-                <a class="hidden rounded-full px-3 py-2 text-xs text-muted transition hover:text-white sm:inline-flex" href="{{ route('login') }}">Masuk</a>
+                <a class="hidden rounded-full px-3 py-2 text-xs text-muted transition hover:text-[var(--text)] sm:inline-flex" href="{{ route('login') }}">Masuk</a>
                 <a class="btn-primary min-h-9 px-3 py-2 text-xs" href="{{ route('register') }}">Daftar</a>
             </div>
             <div class="relative hidden" data-auth-user>

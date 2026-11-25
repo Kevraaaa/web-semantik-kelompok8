@@ -4,7 +4,7 @@
 @section('content')
 <section class="container-page flex min-h-[76vh] items-center justify-center py-12">
     <div class="grid w-full max-w-5xl overflow-hidden rounded-3xl border border-soft surface shadow-2xl md:grid-cols-[.9fr_1.1fr]">
-        <aside class="hero-image relative hidden min-h-[590px] flex-col justify-end p-10 md:flex"><div class="relative z-10"><p class="eyebrow">Jejak Fauna Kalimantan</p><h1 class="font-display mt-3 text-4xl text-white">Setiap perjalanan dimulai dari rasa ingin tahu.</h1><p class="mt-4 text-sm leading-6 text-white/70">Masuk untuk menyimpan spesies favorit dan mencatat cerita penemuanmu.</p></div></aside>
+        <aside class="hero-image relative hidden min-h-[590px] flex-col justify-end p-10 md:flex"><div class="hero-copy relative z-10"><p class="eyebrow">Jejak Fauna Kalimantan</p><h1 class="font-display mt-3 text-4xl text-white">Setiap perjalanan dimulai dari rasa ingin tahu.</h1><p class="mt-4 text-sm leading-6 text-white/70">Masuk untuk menyimpan spesies favorit dan mencatat cerita penemuanmu.</p></div></aside>
         <div class="p-6 sm:p-10">
             <a class="text-sm text-muted hover:text-fresh-grown" href="{{ route('home') }}">← Kembali ke beranda</a>
             <div class="mt-9"><p class="eyebrow">Selamat datang kembali</p><h2 class="font-display mt-2 text-3xl">Masuk ke akunmu</h2><p class="mt-2 text-sm text-muted">Gunakan akun demo untuk melihat tampilan profil.</p></div>

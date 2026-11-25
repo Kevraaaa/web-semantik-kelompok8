@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#" xml:base="https://jejakfauna.org/ontology" ontologyIRI="https://jejakfauna.org/ontology">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#" />
+    <Prefix name="jf" IRI="https://jejakfauna.org/ontology#" />
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#" />
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace" />
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#" />
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#" />
+    <Prefix name="https://jejakfauna.org/ontology#" IRI="jf:" />
+    <Declaration>
+        <Class IRI="#Amfibi" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ancaman" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Burung" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fauna" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Habitat" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mamalia" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reptil" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StatusEndemisme" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StatusKonservasi" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Taksonomi" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpayaKonservasi" />
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wilayah" />
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#berstatusEndemisme" />
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#berstatusKonservasi" />
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mempunyaiAncaman" />
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mempunyaiHabitat" />
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mempunyaiUpayaKonservasi" />
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#termasukTaksonomi" />
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tersebarDi" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#deskripsiKonservasi" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#beratTubuh" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#deskripsi" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#deskripsiAncaman" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#kodeIUCN" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaHabitat" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaIlmiah" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaLokal" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#namaWilayah" />
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#panjangTubuh" />
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HutanHujanTropis" />
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OrangutanKalimantan" />
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Amfibi" />
+        <Class IRI="#Fauna" />
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Burung" />
+        <Class IRI="#Fauna" />
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mamalia" />
+        <Class IRI="#Fauna" />
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reptil" />
+        <Class IRI="#Fauna" />
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Mamalia" />
+        <NamedIndividual IRI="#OrangutanKalimantan" />
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#beratTubuh" />
+        <NamedIndividual IRI="#OrangutanKalimantan" />
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">87</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#deskripsi" />
+        <NamedIndividual IRI="#OrangutanKalimantan" />
+        <Literal>Primata endemik Pulau Kalimantan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#namaIlmiah" />
+        <NamedIndividual IRI="#OrangutanKalimantan" />
+        <Literal>Pongo pygmaeus</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#namaLokal" />
+        <NamedIndividual IRI="#OrangutanKalimantan" />
+        <Literal>Orangutan Kalimantan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#panjangTubuh" />
+        <NamedIndividual IRI="#OrangutanKalimantan" />
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">100</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#berstatusEndemisme" />
+        <Class IRI="#Fauna" />
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#berstatusKonservasi" />
+        <Class IRI="#Fauna" />
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mempunyaiAncaman" />
+        <Class IRI="#Fauna" />
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mempunyaiHabitat" />
+        <Class IRI="#Fauna" />
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mempunyaiUpayaKonservasi" />
+        <Class IRI="#Fauna" />
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#termasukTaksonomi" />
+        <Class IRI="#Fauna" />
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tersebarDi" />
+        <Class IRI="#Fauna" />
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#berstatusEndemisme" />
+        <Class IRI="#StatusEndemisme" />
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#berstatusKonservasi" />
+        <Class IRI="#StatusKonservasi" />
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mempunyaiAncaman" />
+        <Class IRI="#Ancaman" />
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mempunyaiHabitat" />
+        <Class IRI="#Habitat" />
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mempunyaiUpayaKonservasi" />
+        <Class IRI="#UpayaKonservasi" />
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#termasukTaksonomi" />
+        <Class IRI="#Taksonomi" />
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tersebarDi" />
+        <Class IRI="#Wilayah" />
+    </ObjectPropertyRange>
+    <Declaration>
+        <DataProperty IRI="#urlGambar" />
+    </Declaration>
+    <DataPropertyDomain>
+        <DataProperty IRI="#urlGambar" />
+        <Class IRI="#Fauna" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#deskripsiKonservasi" />
+        <Class IRI="#UpayaKonservasi" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#beratTubuh" />
+        <Class IRI="#Fauna" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#deskripsi" />
+        <Class IRI="#Fauna" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#deskripsiAncaman" />
+        <Class IRI="#Ancaman" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#kodeIUCN" />
+        <Class IRI="#StatusKonservasi" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaHabitat" />
+        <Class IRI="#Habitat" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaIlmiah" />
+        <Class IRI="#Fauna" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaLokal" />
+        <Class IRI="#Fauna" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#namaWilayah" />
+        <Class IRI="#Wilayah" />
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#panjangTubuh" />
+        <Class IRI="#Fauna" />
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#urlGambar" />
+        <Datatype abbreviatedIRI="xsd:anyURI" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#deskripsiKonservasi" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#beratTubuh" />
+        <Datatype abbreviatedIRI="xsd:decimal" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#deskripsi" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#deskripsiAncaman" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#kodeIUCN" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaHabitat" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaIlmiah" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaLokal" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#namaWilayah" />
+        <Datatype abbreviatedIRI="xsd:string" />
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#panjangTubuh" />
+        <Datatype abbreviatedIRI="xsd:decimal" />
+    </DataPropertyRange>
+<Declaration><Class IRI="#Makanan" /></Declaration><Declaration><ObjectProperty IRI="#memakan" /></Declaration><ObjectPropertyDomain><ObjectProperty IRI="#memakan" /><Class IRI="#Fauna" /></ObjectPropertyDomain><ObjectPropertyRange><ObjectProperty IRI="#memakan" /><Class IRI="#Makanan" /></ObjectPropertyRange><ClassAssertion><Class IRI="#Habitat" /><NamedIndividual IRI="#HutanHujanTropis" /></ClassAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#mempunyaiHabitat" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#HutanHujanTropis" /></ObjectPropertyAssertion><Declaration><NamedIndividual IRI="#WilayahKalimantan" /></Declaration><ClassAssertion><Class IRI="#Wilayah" /><NamedIndividual IRI="#WilayahKalimantan" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#namaWilayah" /><NamedIndividual IRI="#WilayahKalimantan" /><Literal>Kalimantan</Literal></DataPropertyAssertion><Declaration><NamedIndividual IRI="#StatusKritis" /></Declaration><ClassAssertion><Class IRI="#StatusKonservasi" /><NamedIndividual IRI="#StatusKritis" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#kodeIUCN" /><NamedIndividual IRI="#StatusKritis" /><Literal>CR</Literal></DataPropertyAssertion><Declaration><NamedIndividual IRI="#EndemikBorneo" /></Declaration><ClassAssertion><Class IRI="#StatusEndemisme" /><NamedIndividual IRI="#EndemikBorneo" /></ClassAssertion><Declaration><NamedIndividual IRI="#KehilanganHabitat" /></Declaration><ClassAssertion><Class IRI="#Ancaman" /><NamedIndividual IRI="#KehilanganHabitat" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#deskripsiAncaman" /><NamedIndividual IRI="#KehilanganHabitat" /><Literal>Kehilangan dan perubahan habitat hutan.</Literal></DataPropertyAssertion><Declaration><NamedIndividual IRI="#FragmentasiHabitat" /></Declaration><ClassAssertion><Class IRI="#Ancaman" /><NamedIndividual IRI="#FragmentasiHabitat" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#deskripsiAncaman" /><NamedIndividual IRI="#FragmentasiHabitat" /><Literal>Fragmentasi habitat menjadi kawasan hutan yang terpisah.</Literal></DataPropertyAssertion><Declaration><NamedIndividual IRI="#KebakaranHutan" /></Declaration><ClassAssertion><Class IRI="#Ancaman" /><NamedIndividual IRI="#KebakaranHutan" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#deskripsiAncaman" /><NamedIndividual IRI="#KebakaranHutan" /><Literal>Kebakaran hutan yang merusak habitat.</Literal></DataPropertyAssertion><Declaration><NamedIndividual IRI="#PerlindunganKawasan" /></Declaration><ClassAssertion><Class IRI="#UpayaKonservasi" /><NamedIndividual IRI="#PerlindunganKawasan" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#deskripsiKonservasi" /><NamedIndividual IRI="#PerlindunganKawasan" /><Literal>Perlindungan kawasan habitat dan pengelolaan kawasan lindung.</Literal></DataPropertyAssertion><Declaration><NamedIndividual IRI="#PemantauanPopulasi" /></Declaration><ClassAssertion><Class IRI="#UpayaKonservasi" /><NamedIndividual IRI="#PemantauanPopulasi" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#deskripsiKonservasi" /><NamedIndividual IRI="#PemantauanPopulasi" /><Literal>Pemantauan populasi dan kondisi habitat secara berkala.</Literal></DataPropertyAssertion><Declaration><NamedIndividual IRI="#OrdoPrimata" /></Declaration><ClassAssertion><Class IRI="#Taksonomi" /><NamedIndividual IRI="#OrdoPrimata" /></ClassAssertion><DataPropertyAssertion><DataProperty IRI="#namaHabitat" /><NamedIndividual IRI="#HutanHujanTropis" /><Literal>Hutan hujan tropis</Literal></DataPropertyAssertion><ClassAssertion><Class IRI="#Fauna" /><NamedIndividual IRI="#OrangutanKalimantan" /></ClassAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#tersebarDi" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#WilayahKalimantan" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#berstatusKonservasi" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#StatusKritis" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#berstatusEndemisme" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#EndemikBorneo" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#mempunyaiAncaman" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#KehilanganHabitat" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#mempunyaiAncaman" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#FragmentasiHabitat" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#mempunyaiAncaman" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#KebakaranHutan" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#mempunyaiUpayaKonservasi" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#PerlindunganKawasan" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#mempunyaiUpayaKonservasi" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#PemantauanPopulasi" /></ObjectPropertyAssertion><ObjectPropertyAssertion><ObjectProperty IRI="#termasukTaksonomi" /><NamedIndividual IRI="#OrangutanKalimantan" /><NamedIndividual IRI="#OrdoPrimata" /></ObjectPropertyAssertion></Ontology>

@@ -28,12 +28,16 @@ class ExampleTest extends TestCase
             '/masuk',
             '/daftar',
             '/profil',
-            '/lapor',
             '/admin/laporan',
         ];
 
         foreach ($paths as $path) {
             $this->get($path)->assertOk();
         }
+    }
+
+    public function test_public_discovery_report_form_is_removed(): void
+    {
+        $this->get('/lapor')->assertNotFound();
     }
 }

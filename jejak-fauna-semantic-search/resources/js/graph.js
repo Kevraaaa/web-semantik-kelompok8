@@ -3,6 +3,7 @@ import { getFaunaDetail, getGraph } from './api.js';
 const colors = {
     pusat: { background: '#eff4bd', border: '#b5c27c', font: { color: '#25321f' } },
     fauna: { background: '#556f30', border: '#8fa65d', font: { color: '#f0f0e5' } },
+    kelompok: { background: '#405b37', border: '#8fa65d', font: { color: '#f0f0e5' } },
     habitat: { background: '#516f7a', border: '#85a5ac', font: { color: '#f0f0e5' } },
     ekosistem: { background: '#3e6870', border: '#80a6a6', font: { color: '#f0f0e5' } },
     makanan: { background: '#855f2d', border: '#b18a51', font: { color: '#fff3d4' } },
@@ -42,7 +43,7 @@ async function mountGraph(container, mini = false) {
         if (node.slug) {
             try {
                 const animal = await getFaunaDetail(node.slug);
-                selected.querySelector('[data-graph-detail-text]').textContent = `${animal.nama_ilmiah} · ${animal.status_iucn}. Relasi di graf bersifat ilustratif.`;
+                selected.querySelector('[data-graph-detail-text]').textContent = `${animal.nama_ilmiah} · ${animal.status_iucn}. Relasi diturunkan dari dataset RDF.`;
                 link.href = `/eksplorasi/${encodeURIComponent(node.slug)}`;
                 link.classList.remove('hidden');
             } catch (error) {

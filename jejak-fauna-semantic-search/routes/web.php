@@ -21,7 +21,5 @@ Route::view('/masuk', 'pages.auth.login')->name('login');
 Route::view('/daftar', 'pages.auth.register')->name('register');
 // TODO(backend): ganti dengan controller profil; kembalikan favorit, riwayat, laporan, dan aktivitas pengguna.
 Route::view('/profil', 'pages.profil')->name('profile');
-// TODO(backend): ganti dengan controller laporan penemuan; POST metadata dan foto, response laporan tersimpan.
-Route::view('/lapor', 'pages.lapor')->name('report.create');
 // TODO(backend): ganti dengan controller moderasi; GET daftar laporan dan POST keputusan verifikasi.
 Route::view('/admin/laporan', 'pages.admin.laporan')->name('admin.reports');

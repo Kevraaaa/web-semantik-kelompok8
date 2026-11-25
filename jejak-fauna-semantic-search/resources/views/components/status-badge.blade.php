@@ -8,4 +8,4 @@
         default => 'bg-azul-petroleo/30 text-sky-100',
     };
 @endphp
-<span {{ $attributes->merge(['class' => "inline-flex rounded-full px-2.5 py-1 text-[.67rem] font-semibold {$badgeColor}"]) }}>{{ $status }}</span>
+<span data-conservation-status="{{ $status }}" {{ $attributes->merge(['class' => "status-badge inline-flex rounded-full px-2.5 py-1 text-[.67rem] font-semibold {$badgeColor}"]) }}>{{ $status }}</span>

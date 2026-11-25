@@ -40,6 +40,9 @@ Route::get('/fauna/{slug}/rekomendasi', [FaunaController::class, 'rekomendasi'])
 // Body: { "kalimat": "satwa pemakan buah di hutan yang kritis" }
 Route::post('/pencarian-semantik', [FaunaController::class, 'pencarianSemantik'])->name('api.pencarian-semantik');
 
+// GET /api/ontology/validation
+Route::get('/ontology/validation', [FaunaController::class, 'ontologyValidation'])->name('api.ontology.validation');
+
 // ------------------------------------------------------------------
 // Knowledge Graph
 // ------------------------------------------------------------------

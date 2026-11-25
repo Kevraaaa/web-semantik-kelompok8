@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'rdf' => [
+        'dataset_path' => env('RDF_DATASET_PATH', base_path('dataset/fauna_kalimantan.ttl')),
+        'ontology_path' => env('RDF_ONTOLOGY_PATH', base_path('dataset/JejakFauna_Ontology_Final.owl')),
+        'python_binary' => env('RDF_PYTHON_BINARY', 'python'),
+        'script_path' => base_path('scripts/rdf_semantic.py'),
+        'timeout' => (int) env('RDF_TIMEOUT', 30),
+    ],
+
 ];
