@@ -24,7 +24,7 @@ class SparqlService
     // ------------------------------------------------------------------
 
     /** Cache key untuk hasil parsing TTL. */
-    protected const CACHE_KEY = 'jejak_fauna_parsed_ttl';
+    protected const CACHE_KEY = 'jejak_fauna_parsed_ttl_v2';
 
     /** Durasi cache dalam detik (1 jam). Dataset bersifat statis. */
     protected const CACHE_TTL = 3600;
@@ -36,8 +36,48 @@ class SparqlService
         'StatusRentan' => 'Rentan (VU)',
     ];
 
-    /** Kelompok fauna yang punya class eksplisit di TTL. */
-    protected const KELOMPOK_CLASS = ['Mamalia', 'Burung', 'Reptil', 'Amfibi'];
+    /** Kelompok fauna yang dikenali dari tipe RDF. */
+    protected const KELOMPOK_CLASS = [
+        'Mamalia', 'Burung', 'Reptil', 'Amfibi', 'Ikan',
+        'Krustasea', 'Serangga', 'Moluska', 'Echinodermata',
+    ];
+
+    /** Label cadangan untuk deskripsi dataset yang menyebut kelas fauna. */
+    protected const DESKRIPSI_KELOMPOK = [
+        'mammal' => 'Mamalia',
+        'mammalia' => 'Mamalia',
+        'primate' => 'Mamalia',
+        'primata' => 'Mamalia',
+        'rodent' => 'Mamalia',
+        'burung' => 'Burung',
+        'bird' => 'Burung',
+        'amfibi' => 'Amfibi',
+        'amphibian' => 'Amfibi',
+        'amphibia' => 'Amfibi',
+        'reptil' => 'Reptil',
+        'reptile' => 'Reptil',
+        'reptilia' => 'Reptil',
+        'turtle' => 'Reptil',
+        'snake' => 'Reptil',
+        'ular' => 'Reptil',
+        'crocodyl' => 'Reptil',
+        'ikan' => 'Ikan',
+        'fish' => 'Ikan',
+        'fishes' => 'Ikan',
+        'actinopterygii' => 'Ikan',
+        'chondrichthyes' => 'Ikan',
+        'elasmobranchii' => 'Ikan',
+        'ray' => 'Ikan',
+        'shark' => 'Ikan',
+        'stingray' => 'Ikan',
+        'crustacean' => 'Krustasea',
+        'serangga' => 'Serangga',
+        'insect' => 'Serangga',
+        'mollusc' => 'Moluska',
+        'bivalvia' => 'Moluska',
+        'gastropoda' => 'Moluska',
+        'holothuroidea' => 'Echinodermata',
+    ];
 
     /** Path ke file dataset TTL. */
     protected string $ttlPath;
@@ -59,7 +99,8 @@ class SparqlService
      *   status   (array)   – ['StatusKritis', 'StatusTerancam', 'StatusRentan']
      *   habitat  (array)   – key habitat, misal ['HutanHujanTropis']
      *   makanan  (array)   – key makanan, misal ['BuahbuahanDaunDanSerangga']
-     *   kelompok (array)   – ['Mamalia', 'Burung', 'Reptil', 'Amfibi']
+     *   kelompok (array)   – kelompok fauna yang terdeteksi
+     *   famili   (array)   – key famili, misal ['Bufonidae']
      *   ancaman  (array)   – key ancaman
      *
      * @return array { data: array, meta: { page, per_page, total } }
@@ -90,6 +131,12 @@ class SparqlService
         if (! empty($filters['kelompok'])) {
             $kelompokFilter = (array) $filters['kelompok'];
             $all = array_filter($all, fn ($f) => in_array($f['kelompok'], $kelompokFilter));
+        }
+
+        // Filter famili
+        if (! empty($filters['famili'])) {
+            $familiFilter = (array) $filters['famili'];
+            $all = array_filter($all, fn ($f) => in_array($f['famili_key'], $familiFilter));
         }
 
         // Filter ancaman
@@ -296,7 +343,7 @@ class SparqlService
     /**
      * Ambil semua nilai enum yang tersedia di dataset (untuk filter UI).
      *
-     * @return array { status: [], habitat: [], makanan: [], kelompok: [], ancaman: [] }
+     * @return array { status: [], habitat: [], makanan: [], kelompok: [], famili: [], ancaman: [] }
      */
     public function getFilterOptions(): array
     {
@@ -306,6 +353,7 @@ class SparqlService
         $habitatList = [];
         $makananList = [];
         $kelompokList = [];
+        $familiList = [];
         $ancamanList = [];
 
         foreach ($all as $f) {
@@ -321,6 +369,9 @@ class SparqlService
             if ($f['kelompok'] !== 'Lainnya') {
                 $kelompokList[] = $f['kelompok'];
             }
+            if ($f['famili_key']) {
+                $familiList[$f['famili_key']] = $f['famili'];
+            }
             foreach ($f['ancaman_keys'] as $i => $key) {
                 $ancamanList[$key] = $f['ancaman'][$i] ?? $this->humanize($key);
             }
@@ -331,6 +382,7 @@ class SparqlService
             'habitat' => $habitatList,
             'makanan' => $makananList,
             'kelompok' => array_values(array_unique($kelompokList)),
+            'famili' => $familiList,
             'ancaman' => $ancamanList,
         ];
     }
@@ -372,6 +424,7 @@ class SparqlService
         $lines = file($this->ttlPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $fauna = [];
         $current = null;
+        $typeStatementPending = false;
 
         foreach ($lines as $line) {
             $trimmed = trim($line);
@@ -387,9 +440,18 @@ class SparqlService
                     $fauna[] = $current;
                 }
                 $current = $this->newFaunaEntry($m[1]);
-                $this->parseTypes($current, $m[2]);
+                $typeDeclaration = explode(';', $m[2], 2)[0];
+                $this->parseTypes($current, $typeDeclaration);
+                $typeStatementPending = ! str_contains($m[2], ';') && ! str_contains($m[2], '.');
                 // Jika ada predikasi lain di baris yang sama setelah " ;"
                 $this->parseProperty($current, $trimmed);
+
+                continue;
+            }
+
+            if ($current !== null && $typeStatementPending && preg_match('/^\s+jf:\w+(?:\s*,)?\s*[;,]?\s*$/', $line)) {
+                $this->parseTypes($current, $trimmed);
+                $typeStatementPending = str_ends_with(trim($trimmed), ',');
 
                 continue;
             }
@@ -404,6 +466,11 @@ class SparqlService
         if ($current !== null) {
             $fauna[] = $current;
         }
+
+        foreach ($fauna as &$item) {
+            $this->inferKelompok($item);
+        }
+        unset($item);
 
         return $fauna;
     }
@@ -429,6 +496,8 @@ class SparqlService
             'ancaman' => [],
             'ancaman_keys' => [],
             'taksonomi' => null,
+            'famili_key' => null,
+            'famili' => null,
             'url_gambar' => null,
             'url_iucn' => null,
             'wikidata_uri' => null,
@@ -440,8 +509,10 @@ class SparqlService
      */
     protected function parseTypes(array &$item, string $typeStr): void
     {
+        preg_match_all('/jf:(\w+)/', $typeStr, $matches);
+
         foreach (self::KELOMPOK_CLASS as $kelas) {
-            if (str_contains($typeStr, "jf:{$kelas}")) {
+            if (in_array($kelas, $matches[1], true)) {
                 $item['kelompok'] = $kelas;
 
                 return; // ambil kelompok pertama yang cocok
@@ -469,14 +540,17 @@ class SparqlService
         }
 
         // Object properties → status
-        if (preg_match('/jf:berstatusKonservasi\s+jf:(\w+)/', $line, $m)) {
-            $item['status_iucn_key'] = $m[1];
-            $item['status_iucn'] = self::STATUS_MAP[$m[1]] ?? $m[1];
+        $statusKeys = $this->objectKeysForPredicate($line, 'berstatusKonservasi');
+        if ($statusKeys !== []) {
+            $statusKey = $statusKeys[0];
+            $item['status_iucn_key'] = $statusKey;
+            $item['status_iucn'] = self::STATUS_MAP[$statusKey] ?? $statusKey;
         }
 
         // Object properties → habitat (bisa lebih dari satu)
-        if (preg_match_all('/jf:mempunyaiHabitat\s+jf:(\w+)/', $line, $matches)) {
-            foreach ($matches[1] as $key) {
+        $habitatKeys = $this->objectKeysForPredicate($line, 'mempunyaiHabitat');
+        if ($habitatKeys !== []) {
+            foreach ($habitatKeys as $key) {
                 if (! in_array($key, $item['habitat_keys'])) {
                     $item['habitat_keys'][] = $key;
                     $item['habitat'][] = $this->humanize($key);
@@ -485,8 +559,9 @@ class SparqlService
         }
 
         // Object properties → makanan
-        if (preg_match_all('/jf:memakan\s+jf:(\w+)/', $line, $matches)) {
-            foreach ($matches[1] as $key) {
+        $makananKeys = $this->objectKeysForPredicate($line, 'memakan');
+        if ($makananKeys !== []) {
+            foreach ($makananKeys as $key) {
                 if (! in_array($key, $item['makanan_keys'])) {
                     $item['makanan_keys'][] = $key;
                     $item['makanan'][] = $this->humanize($key);
@@ -495,8 +570,9 @@ class SparqlService
         }
 
         // Object properties → ancaman
-        if (preg_match_all('/jf:mempunyaiAncaman\s+jf:(\w+)/', $line, $matches)) {
-            foreach ($matches[1] as $key) {
+        $ancamanKeys = $this->objectKeysForPredicate($line, 'mempunyaiAncaman');
+        if ($ancamanKeys !== []) {
+            foreach ($ancamanKeys as $key) {
                 if (! in_array($key, $item['ancaman_keys'])) {
                     $item['ancaman_keys'][] = $key;
                     $item['ancaman'][] = $this->humanize($key);
@@ -505,8 +581,13 @@ class SparqlService
         }
 
         // Object properties → taksonomi
-        if (preg_match('/jf:termasukTaksonomi\s+jf:(\w+)/', $line, $m)) {
-            $item['taksonomi'] = $this->humanize($m[1]);
+        foreach ($this->objectKeysForPredicate($line, 'termasukTaksonomi') as $key) {
+            $item['taksonomi'] = $this->humanize($key);
+
+            if ($item['famili_key'] === null && preg_match('/idae$/', $key)) {
+                $item['famili_key'] = $key;
+                $item['famili'] = $this->humanize($key);
+            }
         }
 
         // URI references
@@ -515,6 +596,42 @@ class SparqlService
         }
         if (preg_match('/owl:sameAs\s+<([^>]+)>/', $line, $m)) {
             $item['wikidata_uri'] = $m[1];
+        }
+    }
+
+    /**
+     * Ambil semua objek jf untuk satu predikat, termasuk nilai yang dipisahkan koma.
+     *
+     * @return string[]
+     */
+    protected function objectKeysForPredicate(string $line, string $predicate): array
+    {
+        if (! preg_match('/jf:'.preg_quote($predicate, '/').'\s+([^;.]+)/', $line, $propertyMatch)) {
+            return [];
+        }
+
+        preg_match_all('/jf:(\w+)/', $propertyMatch[1], $objectMatches);
+
+        return $objectMatches[1];
+    }
+
+    /**
+     * Tentukan kelompok dari deskripsi hanya jika tipe RDF tidak menyediakannya.
+     */
+    protected function inferKelompok(array &$item): void
+    {
+        if ($item['kelompok'] !== 'Lainnya') {
+            return;
+        }
+
+        $description = mb_strtolower($item['deskripsi'] ?? '');
+
+        foreach (self::DESKRIPSI_KELOMPOK as $term => $kelompok) {
+            if (preg_match('/(?<![\p{L}\p{N}])'.preg_quote($term, '/').'(?![\p{L}\p{N}])/u', $description)) {
+                $item['kelompok'] = $kelompok;
+
+                return;
+            }
         }
     }
 
@@ -619,22 +736,22 @@ class SparqlService
         foreach ($tokens as $token) {
             // Cocokkan nama langsung (bobot tinggi)
             if (
-                str_contains(mb_strtolower($fauna['nama'] ?? ''), $token) ||
-                str_contains(mb_strtolower($fauna['nama_ilmiah'] ?? ''), $token)
+                $this->containsWord($fauna['nama'] ?? '', $token) ||
+                $this->containsWord($fauna['nama_ilmiah'] ?? '', $token)
             ) {
                 $skor += 3;
                 $alasan[] = 'nama: '.($fauna['nama'] ?? $fauna['subject']);
             }
 
             // Deskripsi (bobot rendah)
-            if (str_contains(mb_strtolower($fauna['deskripsi'] ?? ''), $token)) {
+            if ($this->containsWord($fauna['deskripsi'] ?? '', $token)) {
                 $skor += 1;
                 $alasan[] = 'deskripsi cocok';
             }
 
             // Habitat
             foreach ($habitatSinonim as $kata => $keys) {
-                if (str_contains($token, $kata)) {
+                if ($token === $kata) {
                     $matched = array_intersect($fauna['habitat_keys'], $keys);
                     if (! empty($matched)) {
                         $skor++;
@@ -645,7 +762,7 @@ class SparqlService
 
             // Makanan
             foreach ($makananSinonim as $kata => $keys) {
-                if (str_contains($token, $kata)) {
+                if ($token === $kata) {
                     $matched = array_intersect($fauna['makanan_keys'], $keys);
                     if (! empty($matched)) {
                         $skor++;
@@ -656,7 +773,7 @@ class SparqlService
 
             // Status
             foreach ($statusSinonim as $kata => $key) {
-                if (str_contains($token, $kata)) {
+                if ($token === $kata) {
                     if ($key === null || $fauna['status_iucn_key'] === $key) {
                         $skor++;
                         $alasan[] = 'status: '.($fauna['status_iucn'] ?? 'dilindungi');
@@ -666,7 +783,7 @@ class SparqlService
 
             // Kelompok
             foreach ($kelompokSinonim as $kata => $kelompok) {
-                if (str_contains($token, $kata) && $fauna['kelompok'] === $kelompok) {
+                if ($token === $kata && $fauna['kelompok'] === $kelompok) {
                     $skor++;
                     $alasan[] = 'kelompok: '.$kelompok;
                 }
@@ -705,6 +822,17 @@ class SparqlService
     }
 
     /**
+     * Periksa kata utuh pada field tampilan agar kata pendek tidak cocok sebagai bagian kata lain.
+     */
+    protected function containsWord(string $text, string $word): bool
+    {
+        return preg_match(
+            '/(?<![\p{L}\p{N}])'.preg_quote($word, '/').'(?![\p{L}\p{N}])/u',
+            mb_strtolower($text),
+        ) === 1;
+    }
+
+    /**
      * Konversi internal fauna array ke bentuk response publik API.
      * Hanya field yang aman dan relevan untuk ditampilkan ke client.
      */
@@ -721,6 +849,8 @@ class SparqlService
             'makanan' => $fauna['makanan'],
             'ancaman' => $fauna['ancaman'],
             'taksonomi' => $fauna['taksonomi'],
+            'famili_key' => $fauna['famili_key'],
+            'famili' => $fauna['famili'],
             'gambar' => $fauna['url_gambar'] ?? '/images/fauna-placeholder.svg',
             'url_iucn' => $fauna['url_iucn'],
             'wikidata' => $fauna['wikidata_uri'],

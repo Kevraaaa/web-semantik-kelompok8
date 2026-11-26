@@ -1,0 +1,10 @@
+@prefix jf: <https://jejakfauna.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+jf:FaunaUji a jf:Fauna,
+        jf:Mamalia ;
+    jf:deskripsi "fauna uji"^^xsd:string ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga, jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:AncamanSatu, jf:AncamanDua ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis, jf:SungaiDanRawaAirTawarKalimantan ;
+    jf:termasukTaksonomi jf:Muridae, jf:MusGenus .

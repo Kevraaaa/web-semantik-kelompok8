@@ -32,6 +32,50 @@ class FaunaApiTest extends TestCase
         }
     }
 
+    public function test_fauna_group_and_family_filters_return_parsed_values(): void
+    {
+        $familyOptions = $this->getJson('/api/fauna/filter-options');
+
+        $familyOptions->assertOk()
+            ->assertJsonPath('data.famili.Bufonidae', 'Bufonidae');
+        $this->assertContains('Ikan', $familyOptions->json('data.kelompok'));
+
+        $familyResponse = $this->getJson('/api/fauna?famili[]=Bufonidae&per_page=100');
+
+        $familyResponse->assertOk();
+        $this->assertNotEmpty($familyResponse->json('data'));
+        foreach ($familyResponse->json('data') as $fauna) {
+            $this->assertSame('Bufonidae', $fauna['famili_key']);
+            $this->assertSame('Bufonidae', $fauna['famili']);
+        }
+
+        $this->getJson('/api/fauna?kelompok[]=Mamalia&per_page=100')
+            ->assertOk()
+            ->assertJsonPath('data.0.kelompok', 'Mamalia');
+
+        $fishResponse = $this->getJson('/api/fauna?kelompok[]=Ikan&per_page=100');
+
+        $fishResponse->assertOk();
+        $this->assertGreaterThan(0, $fishResponse->json('meta.total'));
+        foreach ($fishResponse->json('data') as $fauna) {
+            $this->assertSame('Ikan', $fauna['kelompok']);
+        }
+
+        $this->getJson('/api/fauna?famili=Bufonidae')
+            ->assertUnprocessable()
+            ->assertJsonStructure(['errors' => ['famili']]);
+    }
+
+    public function test_semantic_search_does_not_match_short_synonyms_inside_other_words(): void
+    {
+        $response = $this->postJson('/api/pencarian-semantik', [
+            'kalimat' => 'green crystal vulture fairy',
+        ]);
+
+        $response->assertOk()
+            ->assertJsonPath('data', []);
+    }
+
     public function test_detail_recommendation_semantic_search_and_graph_return_json(): void
     {
         $this->getJson('/api/fauna/orangutan-kalimantan')

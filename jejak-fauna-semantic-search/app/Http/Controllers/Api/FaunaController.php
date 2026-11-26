@@ -37,7 +37,8 @@ class FaunaController extends Controller
      *   status[] (string[])      – StatusKritis | StatusTerancam | StatusRentan
      *   habitat[] (string[])     – key habitat dari dataset
      *   makanan[] (string[])     – key makanan dari dataset
-     *   kelompok[] (string[])    – Mamalia | Burung | Reptil | Amfibi
+     *   kelompok[] (string[])    – kelompok fauna dari dataset
+     *   famili[] (string[])      – key famili dari dataset
      *   ancaman[] (string[])     – key ancaman dari dataset
      *   page     (int, default 1)
      *   per_page (int, default 12, maks 100)
@@ -54,6 +55,8 @@ class FaunaController extends Controller
             'makanan.*' => ['string'],
             'kelompok' => ['nullable', 'array'],
             'kelompok.*' => ['string'],
+            'famili' => ['nullable', 'array'],
+            'famili.*' => ['string'],
             'ancaman' => ['nullable', 'array'],
             'ancaman.*' => ['string'],
             'page' => ['nullable', 'integer', 'min:1'],
