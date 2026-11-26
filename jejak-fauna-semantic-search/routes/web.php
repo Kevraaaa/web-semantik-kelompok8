@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
 // TODO(backend): ganti dengan controller Beranda; response menyiapkan rekomendasi dan ringkasan konservasi.
@@ -15,11 +17,18 @@ Route::view('/bandingkan', 'pages.bandingkan')->name('compare');
 Route::view('/peta', 'pages.peta')->name('map');
 // TODO(backend): ganti dengan controller data node dan edge knowledge graph.
 Route::view('/knowledge-graph', 'pages.knowledge-graph')->name('graph');
-// TODO(backend): ganti dengan controller sesi; POST kredensial dan response token/session setelah autentikasi tersedia.
-Route::view('/masuk', 'pages.auth.login')->name('login');
-// TODO(backend): ganti dengan controller pendaftaran; POST payload profil setelah autentikasi tersedia.
-Route::view('/daftar', 'pages.auth.register')->name('register');
-// TODO(backend): ganti dengan controller profil; kembalikan favorit, riwayat, laporan, dan aktivitas pengguna.
-Route::view('/profil', 'pages.profil')->name('profile');
-// TODO(backend): ganti dengan controller moderasi; GET daftar laporan dan POST keputusan verifikasi.
-Route::view('/admin/laporan', 'pages.admin.laporan')->name('admin.reports');
+Route::middleware('guest')->group(function () {
+    Route::view('/masuk', 'pages.auth.login')->name('login');
+    Route::post('/masuk', [AuthenticatedSessionController::class, 'store'])
+        ->middleware('throttle:5,1')
+        ->name('login.store');
+
+    Route::view('/daftar', 'pages.auth.register')->name('register');
+    Route::post('/daftar', [RegisteredUserController::class, 'store'])->name('register.store');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::post('/keluar', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+    Route::view('/profil', 'pages.profil')->name('profile');
+    Route::view('/admin/laporan', 'pages.admin.laporan')->name('admin.reports');
+});

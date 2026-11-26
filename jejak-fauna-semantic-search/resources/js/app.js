@@ -23,7 +23,7 @@ if (page === 'explore' || page === 'compare' || page === 'detail' || page === 'h
     import('./compare.js');
 }
 
-if (page === 'login' || page === 'register' || page === 'profile' || page === 'admin') {
+if (page === 'profile') {
     import('./account.js');
 }
 
@@ -46,36 +46,6 @@ document.querySelector('[data-account-toggle]')?.addEventListener('click', (even
     const expanded = button.getAttribute('aria-expanded') === 'true';
     button.setAttribute('aria-expanded', String(!expanded));
     menu?.classList.toggle('hidden', expanded);
-});
-
-let dummyLoggedIn = localStorage.getItem('jf_logged_in') === 'true';
-
-const syncAccount = () => {
-    document.querySelectorAll('[data-auth-guest]').forEach((element) => {
-        element.classList.toggle('hidden', dummyLoggedIn);
-    });
-    document.querySelectorAll('[data-auth-user]').forEach((element) => {
-        element.classList.toggle('hidden', !dummyLoggedIn);
-    });
-};
-
-Object.defineProperty(window, '__DUMMY_LOGGED_IN__', {
-    configurable: true,
-    get: () => dummyLoggedIn,
-    set: (value) => {
-        dummyLoggedIn = Boolean(value);
-        localStorage.setItem('jf_logged_in', String(dummyLoggedIn));
-        syncAccount();
-    },
-});
-
-syncAccount();
-
-document.querySelectorAll('[data-logout]').forEach((button) => {
-    button.addEventListener('click', () => {
-        window.__DUMMY_LOGGED_IN__ = false;
-        window.location.href = '/';
-    });
 });
 
 document.addEventListener('keydown', (event) => {

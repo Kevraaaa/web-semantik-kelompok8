@@ -13,20 +13,29 @@
             <a class="nav-link" href="{{ route('home') }}#tentang">Tentang</a>
         </div>
         <div class="flex items-center gap-2">
-            <div class="flex items-center gap-2" data-auth-guest>
-                <a class="hidden rounded-full px-3 py-2 text-xs text-muted transition hover:text-[var(--text)] sm:inline-flex" href="{{ route('login') }}">Masuk</a>
-                <a class="btn-primary min-h-9 px-3 py-2 text-xs" href="{{ route('register') }}">Daftar</a>
-            </div>
-            <div class="relative hidden" data-auth-user>
-                <button class="btn-secondary min-h-9 px-3 py-2 text-xs" type="button" data-account-toggle aria-expanded="false" aria-haspopup="true">
-                    <span class="grid size-5 place-items-center rounded-full bg-fig-leaf/50">A</span> Akun <span aria-hidden="true">⌄</span>
-                </button>
-                <div class="glass absolute right-0 top-12 z-50 hidden w-48 rounded-xl p-2 shadow-xl" data-account-menu>
-                    <a class="dropdown-link" href="{{ route('profile') }}">Profil saya</a>
-                    <a class="dropdown-link" href="{{ route('profile') }}#laporan-saya">Laporan saya</a>
-                    <button class="dropdown-link w-full text-left" data-logout type="button">Keluar</button>
+            @guest
+                <div class="flex items-center gap-2">
+                    <a class="hidden rounded-full px-3 py-2 text-xs text-muted transition hover:text-[var(--text)] sm:inline-flex" href="{{ route('login') }}">Masuk</a>
+                    <a class="btn-primary min-h-9 px-3 py-2 text-xs" href="{{ route('register') }}">Daftar</a>
                 </div>
-            </div>
+            @endguest
+            @auth
+                @php($user = auth()->user())
+                <div class="relative">
+                    <button class="btn-secondary min-h-9 max-w-56 px-3 py-2 text-xs" type="button" data-account-toggle aria-expanded="false" aria-haspopup="true">
+                        <span class="grid size-5 shrink-0 place-items-center rounded-full bg-fig-leaf/50">{{ \Illuminate\Support\Str::upper(\Illuminate\Support\Str::substr($user->name, 0, 1)) }}</span>
+                        <span class="max-w-36 truncate">{{ $user->name }}</span>
+                    </button>
+                    <div class="glass absolute right-0 top-12 z-50 hidden w-48 rounded-xl p-2 shadow-xl" data-account-menu>
+                        <a class="dropdown-link" href="{{ route('profile') }}">Profil saya</a>
+                        <a class="dropdown-link" href="{{ route('profile') }}#laporan-saya">Laporan saya</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button class="dropdown-link w-full text-left" type="submit">Keluar</button>
+                        </form>
+                    </div>
+                </div>
+            @endauth
             <button class="grid size-9 place-items-center rounded-full border border-soft text-lg text-fresh-grown transition hover:bg-white/5" data-theme-toggle type="button" aria-label="Aktifkan tema terang" aria-pressed="false">
                 <span data-theme-icon aria-hidden="true">☼</span>
             </button>

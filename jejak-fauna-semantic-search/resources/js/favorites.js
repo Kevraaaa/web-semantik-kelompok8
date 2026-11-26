@@ -1,11 +1,9 @@
-import { getProfil, toggleFavorit } from './api.js';
+import { getFavoriteSlugs, toggleFavorit } from './api.js';
 import { showToast } from './toast.js';
-
-const storageKey = 'jf_favorites';
 
 function favoriteSet() {
     try {
-        return new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+        return new Set(getFavoriteSlugs());
     } catch (error) {
         console.error('Favorit lokal tidak dapat dibaca.', error);
         return new Set();
@@ -23,13 +21,6 @@ function paintFavorites() {
     });
 }
 
-if (!localStorage.getItem(storageKey)) {
-    getProfil().then((profile) => {
-        localStorage.setItem(storageKey, JSON.stringify(profile.favorit));
-        paintFavorites();
-    }).catch((error) => console.error(error));
-}
-
 document.addEventListener('click', async (event) => {
     const button = event.target.closest('[data-favorite]');
     if (!button) return;
@@ -43,7 +34,7 @@ document.addEventListener('click', async (event) => {
             const remaining = document.querySelectorAll('[data-profile-favorite-card]').length;
             if (count) count.textContent = `${remaining} tersimpan`;
         }
-        showToast(active ? 'Fauna ditambahkan ke favorit demo.' : 'Fauna dihapus dari favorit demo.');
+        showToast(active ? 'Fauna ditambahkan ke favorit akun ini.' : 'Fauna dihapus dari favorit akun ini.');
     } catch (error) {
         console.error(error);
         showToast('Favorit belum dapat diperbarui.', 'error');

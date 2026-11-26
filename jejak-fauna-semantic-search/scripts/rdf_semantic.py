@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import difflib
 import json
+import math
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -36,18 +37,60 @@ STOPWORDS = {
     "dari", "di", "fauna", "hewan", "hidup", "ingin", "jenis", "yang",
     "makan", "memakan", "pemakan", "satwa", "saya", "spesies", "untuk",
 }
+GROUP_CLASSES = (
+    "Mamalia", "Burung", "Reptil", "Amfibi", "Ikan",
+    "Krustasea", "Serangga", "Moluska", "Echinodermata",
+)
+DESCRIPTION_GROUPS = {
+    "mammal": "Mamalia",
+    "mammalia": "Mamalia",
+    "primate": "Mamalia",
+    "primata": "Mamalia",
+    "rodent": "Mamalia",
+    "burung": "Burung",
+    "bird": "Burung",
+    "amfibi": "Amfibi",
+    "amphibian": "Amfibi",
+    "amphibia": "Amfibi",
+    "reptil": "Reptil",
+    "reptile": "Reptil",
+    "reptilia": "Reptil",
+    "turtle": "Reptil",
+    "snake": "Reptil",
+    "ular": "Reptil",
+    "crocodyl": "Reptil",
+    "ikan": "Ikan",
+    "fish": "Ikan",
+    "fishes": "Ikan",
+    "actinopterygii": "Ikan",
+    "chondrichthyes": "Ikan",
+    "elasmobranchii": "Ikan",
+    "ray": "Ikan",
+    "shark": "Ikan",
+    "stingray": "Ikan",
+    "crustacean": "Krustasea",
+    "serangga": "Serangga",
+    "insect": "Serangga",
+    "mollusc": "Moluska",
+    "mollusk": "Moluska",
+    "bivalvia": "Moluska",
+    "gastropoda": "Moluska",
+    "holothuroidea": "Echinodermata",
+}
 
 PREFIXES = """
 PREFIX jf: <https://jejakfauna.org/ontology#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 """
+GROUP_VALUES = " ".join(f"jf:{group}" for group in GROUP_CLASSES)
 
-FAUNA_QUERY = PREFIXES + """
+FAUNA_QUERY = (PREFIXES + """
 SELECT DISTINCT ?fauna ?localName ?scientificName ?description ?image
        ?iucnUrl ?wikidata ?group ?status ?habitat ?food ?threat
-       ?taxonomy ?region ?effort
+       ?taxonomy ?region ?effort ?latitude ?longitude
 WHERE {
     ?fauna a jf:Fauna ;
         jf:namaLokal ?localName ;
@@ -58,7 +101,7 @@ WHERE {
     OPTIONAL { ?fauna owl:sameAs ?wikidata }
     OPTIONAL {
         ?fauna rdf:type ?group .
-        VALUES ?group { jf:Mamalia jf:Burung jf:Reptil jf:Amfibi }
+        VALUES ?group { __GROUP_VALUES__ }
     }
     OPTIONAL { ?fauna jf:berstatusKonservasi ?status }
     OPTIONAL { ?fauna jf:mempunyaiHabitat ?habitat }
@@ -67,9 +110,10 @@ WHERE {
     OPTIONAL { ?fauna jf:termasukTaksonomi ?taxonomy }
     OPTIONAL { ?fauna jf:tersebarDi ?region }
     OPTIONAL { ?fauna jf:mempunyaiUpayaKonservasi ?effort }
+    OPTIONAL { ?fauna geo:lat ?latitude ; geo:long ?longitude }
 }
 ORDER BY ?localName
-"""
+""").replace("__GROUP_VALUES__", GROUP_VALUES)
 
 
 def load_graph(path: str) -> Graph:
@@ -153,6 +197,8 @@ def query_fauna(graph: Graph) -> list[dict]:
             "kelompok_key": "Lainnya",
             "status_iucn": None,
             "status_iucn_key": None,
+            "latitude": None,
+            "longitude": None,
             "habitat": [],
             "habitat_keys": [],
             "makanan": [],
@@ -160,6 +206,9 @@ def query_fauna(graph: Graph) -> list[dict]:
             "ancaman": [],
             "ancaman_keys": [],
             "taksonomi": [],
+            "taksonomi_keys": [],
+            "famili_key": None,
+            "famili": None,
             "wilayah": [],
             "wilayah_keys": [],
             "upaya_konservasi": [],
@@ -181,6 +230,21 @@ def query_fauna(graph: Graph) -> list[dict]:
         if row.status is not None:
             record["status_iucn_key"] = local_name(row.status)
             record["status_iucn"] = resource_label(graph, row.status, "status")
+        if row.latitude is not None and row.longitude is not None:
+            try:
+                latitude = float(row.latitude)
+                longitude = float(row.longitude)
+            except (TypeError, ValueError, OverflowError):
+                pass
+            else:
+                if (
+                    math.isfinite(latitude)
+                    and math.isfinite(longitude)
+                    and -90 <= latitude <= 90
+                    and -180 <= longitude <= 180
+                ):
+                    record["latitude"] = latitude
+                    record["longitude"] = longitude
 
         for row_field, public_field in relation_fields.items():
             value = getattr(row, row_field)
@@ -202,8 +266,28 @@ def query_fauna(graph: Graph) -> list[dict]:
                 "wilayah": "wilayah_keys",
                 "upaya_konservasi": "upaya_konservasi_keys",
             }.get(field)
-            if key_field:
+            if field == "taksonomi":
+                record["taksonomi_keys"] = sorted({key for key, _ in pairs}, key=str.casefold)
+                family_key = next(
+                    (key for key in record["taksonomi_keys"] if key.casefold().endswith("idae")),
+                    None,
+                )
+                if family_key:
+                    record["famili_key"] = family_key
+                    record["famili"] = next(
+                        (label for key, label in pairs if key == family_key),
+                        humanize(family_key),
+                    )
+            elif key_field:
                 record[key_field] = sorted({key for key, _ in pairs}, key=str.casefold)
+
+        if record["kelompok"] == "Lainnya":
+            description = record["deskripsi"].casefold()
+            for term, group in DESCRIPTION_GROUPS.items():
+                if re.search(r"(?<![\w])" + re.escape(term) + r"(?![\w])", description):
+                    record["kelompok"] = group
+                    record["kelompok_key"] = group
+                    break
 
         results.append(record)
 
@@ -214,7 +298,8 @@ def public_fauna(fauna: dict) -> dict:
     public_fields = (
         "slug", "nama", "nama_ilmiah", "kelompok", "deskripsi", "status_iucn",
         "habitat", "makanan", "ancaman", "taksonomi", "wilayah",
-        "upaya_konservasi", "gambar", "url_iucn", "wikidata",
+        "upaya_konservasi", "gambar", "url_iucn", "wikidata", "famili_key", "famili",
+        "latitude", "longitude",
     )
     result = {field: fauna.get(field) for field in public_fields}
     result["sumber"] = [url for url in (fauna.get("url_iucn"), fauna.get("wikidata")) if url]
@@ -228,6 +313,7 @@ def filters(graph: Graph) -> dict:
         "habitat": {},
         "makanan": {},
         "kelompok": set(),
+        "famili": {},
         "ancaman": {},
     }
     for item in fauna:
@@ -235,6 +321,8 @@ def filters(graph: Graph) -> dict:
             options["status"][item["status_iucn_key"]] = item["status_iucn"]
         if item["kelompok"] != "Lainnya":
             options["kelompok"].add(item["kelompok"])
+        if item["famili_key"]:
+            options["famili"][item["famili_key"]] = item["famili"]
 
     for field, predicate, kind in (
         ("habitat", "mempunyaiHabitat", "habitat"),
@@ -261,13 +349,13 @@ def query_terms(query: str) -> list[str]:
 
 
 def matches_term(term: str, text: str) -> bool:
-    normalized_text = normalize(text)
-    if term in normalized_text:
+    words = re.findall(r"[^\W_]+", normalize(text), flags=re.UNICODE)
+    if term in words:
         return True
 
     return any(
         len(word) >= 4 and difflib.SequenceMatcher(None, term, word).ratio() >= 0.82
-        for word in re.findall(r"[^\W_]+", normalized_text, flags=re.UNICODE)
+        for word in words
     )
 
 
@@ -294,6 +382,16 @@ def semantic_search(graph: Graph, query: str) -> dict:
                     reasons[field].add(value)
                     matched_terms.update(matched)
 
+        if fauna["status_iucn"]:
+            matched = {
+                term for term in terms
+                if matches_term(term, fauna["status_iucn"])
+                or matches_term(term, fauna["status_iucn_key"] or "")
+            }
+            if matched:
+                reasons["status"].add(fauna["status_iucn"])
+                matched_terms.update(matched)
+
         if fauna["kelompok"] != "Lainnya":
             matched = {term for term in terms if matches_term(term, fauna["kelompok"])}
             if matched:
@@ -315,6 +413,7 @@ def semantic_search(graph: Graph, query: str) -> dict:
                     ("ancaman", "ancaman"),
                     ("wilayah", "wilayah"),
                     ("upaya_konservasi", "upaya konservasi"),
+                    ("status", "status"),
                     ("kelompok", "kelompok"),
                     ("nama", "nama"),
                     ("deskripsi", "deskripsi"),
@@ -362,15 +461,19 @@ def recommendations(graph: Graph, slug: str, limit: int) -> dict:
     SELECT DISTINCT ?candidate
     WHERE {
         ?target rdf:type ?group .
-        VALUES ?group { jf:Mamalia jf:Burung jf:Reptil jf:Amfibi }
+        VALUES ?group { __GROUP_VALUES__ }
         ?candidate rdf:type ?group, jf:Fauna .
         FILTER (?candidate != ?target)
     }
-    """
+    """.replace("__GROUP_VALUES__", GROUP_VALUES)
     for row in graph.query(group_query, initBindings={"target": target_uri}):
         scores[str(row.candidate)] += 1
 
     indexed = {item["iri"]: item for item in fauna}
+    for candidate in fauna:
+        if candidate["kelompok"] == target["kelompok"] and candidate["kelompok"] != "Lainnya":
+            scores[candidate["iri"]] += 1
+
     ranked = sorted(
         ((indexed[iri], score) for iri, score in scores.items() if iri in indexed),
         key=lambda pair: (-pair[1], pair[0]["nama"].casefold()),
@@ -378,11 +481,40 @@ def recommendations(graph: Graph, slug: str, limit: int) -> dict:
     return {"data": [public_fauna(item) for item, _ in ranked[:max(1, limit)]]}
 
 
-def knowledge_graph(graph: Graph, limit: int, relation_filter: list[str]) -> dict:
-    fauna = query_fauna(graph)[:max(1, limit)]
+def knowledge_graph(
+    graph: Graph,
+    limit: int,
+    relation_filter: list[str],
+    group_filter: str | None = None,
+    habitat_filter: str | None = None,
+) -> dict:
+    all_fauna = query_fauna(graph)
+    if group_filter:
+        all_fauna = [item for item in all_fauna if item["kelompok"] == group_filter]
+    if habitat_filter:
+        all_fauna = [item for item in all_fauna if habitat_filter in item["habitat_keys"]]
+
+    if group_filter or habitat_filter:
+        fauna = all_fauna[:max(1, limit)]
+    else:
+        by_group: dict[str, list[dict]] = defaultdict(list)
+        for item in all_fauna:
+            by_group[item["kelompok"]].append(item)
+
+        fauna = []
+        for index in range(max((len(items) for items in by_group.values()), default=0)):
+            for group_items in by_group.values():
+                if index < len(group_items):
+                    fauna.append(group_items[index])
+                    if len(fauna) >= max(1, limit):
+                        break
+            if len(fauna) >= max(1, limit):
+                break
+
     if not fauna:
         return {"nodes": [], "edges": []}
 
+    fauna_by_slug = {item["slug"]: item for item in fauna}
     values = " ".join(f"<{item['iri']}>" for item in fauna)
     query = PREFIXES + f"""
     SELECT DISTINCT ?fauna ?name ?group ?habitat ?food ?threat
@@ -391,7 +523,7 @@ def knowledge_graph(graph: Graph, limit: int, relation_filter: list[str]) -> dic
         ?fauna jf:namaLokal ?name .
         OPTIONAL {{
             ?fauna rdf:type ?group .
-            VALUES ?group {{ jf:Mamalia jf:Burung jf:Reptil jf:Amfibi }}
+            VALUES ?group {{ {GROUP_VALUES} }}
         }}
         OPTIONAL {{ ?fauna jf:mempunyaiHabitat ?habitat }}
         OPTIONAL {{ ?fauna jf:memakan ?food }}
@@ -409,8 +541,8 @@ def knowledge_graph(graph: Graph, limit: int, relation_filter: list[str]) -> dic
             "type": "fauna",
             "slug": slug,
         }
-        if row.group is not None:
-            group = local_name(row.group)
+        group = local_name(row.group) if row.group is not None else fauna_by_slug[slug]["kelompok"]
+        if group != "Lainnya":
             group_id = f"kelompok:{group}"
             nodes[group_id] = {"id": group_id, "label": group, "type": "kelompok"}
             edges.add((fauna_id, group_id, "bagian dari", "bagianDari"))
@@ -731,6 +863,8 @@ def handle(operation: str, payload: dict) -> dict:
             graph,
             int(payload.get("limit", 50)),
             list(payload.get("relations", [])),
+            str(payload["group"]) if payload.get("group") else None,
+            str(payload["habitat"]) if payload.get("habitat") else None,
         )
     if operation == "filters":
         return filters(graph)

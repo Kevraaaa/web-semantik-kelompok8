@@ -17,7 +17,7 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_mock_pages_render_without_backend_services(): void
+    public function test_public_pages_render_without_backend_services(): void
     {
         $paths = [
             '/eksplorasi',
@@ -27,8 +27,6 @@ class ExampleTest extends TestCase
             '/knowledge-graph',
             '/masuk',
             '/daftar',
-            '/profil',
-            '/admin/laporan',
         ];
 
         foreach ($paths as $path) {

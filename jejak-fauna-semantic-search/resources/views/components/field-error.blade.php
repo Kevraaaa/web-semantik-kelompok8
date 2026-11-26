@@ -1,2 +1,4 @@
 @props(['name'])
-<p class="mt-1 hidden text-xs text-rose-300" data-error-for="{{ $name }}"></p>
+@error($name)
+    <p class="mt-1 text-xs text-rose-300">{{ $message }}</p>
+@enderror
