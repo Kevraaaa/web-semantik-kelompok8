@@ -177,6 +177,8 @@ class FaunaController extends Controller
      * Query parameters:
      *   relasi[] – filter tipe relasi: hidupDi | memakan | terancamOleh | bagianDari
      *   limit    – maks fauna yang di-generate ke graph (default 50, maks 200)
+     *   kelompok – filter berdasarkan kelompok fauna
+     *   habitat  – filter berdasarkan key habitat dari dataset
      */
     public function knowledgeGraph(Request $request): JsonResponse
     {
@@ -184,11 +186,15 @@ class FaunaController extends Controller
             'relasi' => ['nullable', 'array'],
             'relasi.*' => ['string', 'in:hidupDi,memakan,terancamOleh,bagianDari'],
             'limit' => ['nullable', 'integer', 'min:1', 'max:200'],
+            'kelompok' => ['nullable', 'string', 'max:100'],
+            'habitat' => ['nullable', 'string', 'max:200'],
         ]);
 
         $result = $this->sparql->getKnowledgeGraph(
             relasiFilter: $validated['relasi'] ?? [],
             limit: (int) ($validated['limit'] ?? 50),
+            kelompok: $validated['kelompok'] ?? null,
+            habitat: $validated['habitat'] ?? null,
         );
 
         return response()->json($result);

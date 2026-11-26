@@ -100,6 +100,43 @@ class FaunaApiTest extends TestCase
             ]);
     }
 
+    public function test_knowledge_graph_default_is_varied_and_focus_filters_are_applied(): void
+    {
+            $defaultGraph = $this->getJson('/api/knowledge-graph?limit=50');
+
+            $defaultGraph->assertOk();
+            $defaultGroups = array_values(array_unique(array_column(
+                array_filter($defaultGraph->json('nodes'), fn ($node) => $node['type'] === 'kelompok'),
+                'label',
+            )));
+            $this->assertGreaterThan(1, count($defaultGroups));
+
+            $focusedGraph = $this->getJson('/api/knowledge-graph?kelompok=Amfibi&limit=10');
+
+            $focusedGraph->assertOk();
+            $focusedGroups = array_values(array_unique(array_column(
+                array_filter($focusedGraph->json('nodes'), fn ($node) => $node['type'] === 'kelompok'),
+                'label',
+            )));
+            $this->assertSame(['Amfibi'], $focusedGroups);
+
+            $habitatGraph = $this->getJson('/api/knowledge-graph?habitat=SungaiDanRawaAirTawarKalimantan&relasi[]=hidupDi');
+
+            $habitatGraph->assertOk();
+            $this->assertNotEmpty($habitatGraph->json('nodes'));
+            $habitatNodes = array_values(array_filter(
+                $habitatGraph->json('nodes'),
+                fn ($node) => $node['type'] === 'habitat',
+            ));
+            $this->assertSame(
+                ['Sungai Dan Rawa Air Tawar Kalimantan'],
+                array_column($habitatNodes, 'label'),
+            );
+            foreach ($habitatGraph->json('edges') as $edge) {
+                $this->assertSame('hidupDi', $edge['type']);
+            }
+    }
+
     public function test_invalid_and_missing_api_inputs_return_structured_errors(): void
     {
         $this->getJson('/api/fauna/tidak-ada')

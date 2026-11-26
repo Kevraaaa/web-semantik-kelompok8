@@ -1,4 +1,4 @@
-import { getFaunaDetail, getGraph } from './api.js';
+import { getFaunaDetail, getFilterOptions, getGraph } from './api.js';
 
 const colors = {
     pusat: { background: '#eff4bd', border: '#b5c27c', font: { color: '#25321f' } },
@@ -7,13 +7,51 @@ const colors = {
     ekosistem: { background: '#3e6870', border: '#80a6a6', font: { color: '#f0f0e5' } },
     makanan: { background: '#855f2d', border: '#b18a51', font: { color: '#fff3d4' } },
     ancaman: { background: '#713d36', border: '#b16d5c', font: { color: '#ffe6d8' } },
+    kelompok: { background: '#70743a', border: '#a2a964', font: { color: '#f0f0e5' } },
 };
+
+const fallbackColor = { background: '#58605a', border: '#89938b', font: { color: '#f0f0e5' } };
+
+function styleNodes(nodes, mini = false) {
+    return nodes.map((node) => {
+        const color = colors[node.type] ?? fallbackColor;
+
+        return {
+            ...node,
+            color,
+            shape: 'dot',
+            size: node.type === 'pusat' ? 34 : (node.type === 'fauna' ? 23 : 16),
+            font: { ...color.font, size: mini ? 10 : 13 },
+            borderWidth: 1.5,
+        };
+    });
+}
+
+function styleEdges(edges) {
+    return edges.map((edge) => ({
+        ...edge,
+        arrows: 'to',
+        color: { color: '#91a181', opacity: .48, highlight: '#eff4bd' },
+        font: { color: '#c4cbb8', size: 10, align: 'middle', strokeWidth: 3, strokeColor: '#1b2a1b' },
+        smooth: { type: 'dynamic' },
+    }));
+}
+
+function populateSelect(select, options, placeholder) {
+    if (!select) {
+        return;
+    }
+
+    select.replaceChildren(new Option(placeholder, ''));
+    options.forEach(([value, label]) => select.add(new Option(label, value)));
+}
 
 async function mountGraph(container, mini = false) {
     const { Network } = await import('vis-network/standalone');
-    const fullGraph = await getGraph();
-    const nodes = fullGraph.nodes.map((node) => ({ ...node, color: colors[node.type], shape: node.type === 'pusat' ? 'dot' : 'dot', size: node.type === 'pusat' ? 34 : (node.type === 'fauna' ? 23 : 16), font: { ...colors[node.type].font, size: mini ? 10 : 13 }, borderWidth: 1.5 }));
-    const edges = fullGraph.edges.map((edge) => ({ ...edge, arrows: 'to', color: { color: '#91a181', opacity: .48, highlight: '#eff4bd' }, font: { color: '#c4cbb8', size: 10, align: 'middle', strokeWidth: 3, strokeColor: '#1b2a1b' }, smooth: { type: 'dynamic' } }));
+    const relationTypes = [...document.querySelectorAll('[data-graph-relation]:checked')].map((input) => input.value);
+    let fullGraph = await getGraph({ relasi: relationTypes });
+    const nodes = styleNodes(fullGraph.nodes, mini);
+    const edges = styleEdges(fullGraph.edges);
     const network = new Network(container, { nodes, edges }, {
         autoResize: true,
         interaction: { hover: true, navigationButtons: false, keyboard: true, zoomView: true },
@@ -26,6 +64,12 @@ async function mountGraph(container, mini = false) {
     if (mini) {
         return network;
     }
+
+    const options = await getFilterOptions();
+    const groupFilter = document.querySelector('[data-graph-group]');
+    const habitatFilter = document.querySelector('[data-graph-habitat]');
+    populateSelect(groupFilter, options.kelompok.map((group) => [group, group]), 'Semua kelompok');
+    populateSelect(habitatFilter, Object.entries(options.habitat), 'Semua habitat');
 
     const selected = document.querySelector('[data-graph-detail]');
     network.on('click', async (event) => {
@@ -42,7 +86,7 @@ async function mountGraph(container, mini = false) {
         if (node.slug) {
             try {
                 const animal = await getFaunaDetail(node.slug);
-                selected.querySelector('[data-graph-detail-text]').textContent = `${animal.nama_ilmiah} · ${animal.status_iucn}. Relasi di graf bersifat ilustratif.`;
+                selected.querySelector('[data-graph-detail-text]').textContent = `${animal.nama_ilmiah} · ${animal.status_iucn}. Hubungan ditampilkan berdasarkan relasi pada dataset.`;
                 link.href = `/eksplorasi/${encodeURIComponent(node.slug)}`;
                 link.classList.remove('hidden');
             } catch (error) {
@@ -71,10 +115,17 @@ async function mountGraph(container, mini = false) {
 
     const applyRelations = async () => {
         const types = [...document.querySelectorAll('[data-graph-relation]:checked')].map((input) => input.value);
-        const graph = await getGraph({ relasi: types });
-        network.setData({ nodes: graph.nodes.map((node) => ({ ...node, color: colors[node.type], font: { ...colors[node.type].font, size: 13 } })), edges: graph.edges.map((edge) => ({ ...edge, arrows: 'to', color: { color: '#91a181', opacity: .6 }, font: { color: '#c4cbb8', size: 10 } })) });
+        const graph = await getGraph({
+            relasi: types,
+            kelompok: groupFilter?.value || undefined,
+            habitat: habitatFilter?.value || undefined,
+        });
+        fullGraph = graph;
+        network.setData({ nodes: styleNodes(graph.nodes), edges: styleEdges(graph.edges) });
     };
     document.querySelectorAll('[data-graph-relation]').forEach((input) => input.addEventListener('change', applyRelations));
+    groupFilter?.addEventListener('change', applyRelations);
+    habitatFilter?.addEventListener('change', applyRelations);
     return network;
 }
 

@@ -9,91 +9,155 @@ async function readJson(file) {
     return response.json();
 }
 
-function includesAny(values, selected, partial = false) {
-    return selected.length === 0 || selected.some((selectedValue) => values.some((value) => partial
-        ? value.toLocaleLowerCase('id').includes(selectedValue.toLocaleLowerCase('id'))
-        : value === selectedValue));
+const ICON_BY_GROUP = {
+    Mamalia: '🐾',
+    Burung: '🐦',
+    Reptil: '🦎',
+    Amfibi: '🐸',
+    Ikan: '🐟',
+    Krustasea: '🦀',
+    Serangga: '🦋',
+    Moluska: '🐚',
+    Echinodermata: '⭐',
+};
+
+async function readApiJson(url, options = {}) {
+    const response = await fetch(url, {
+        method: options.method || 'GET',
+        headers: {
+            Accept: 'application/json',
+            ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+        },
+        ...(options.body ? { body: JSON.stringify(options.body) } : {}),
+    });
+
+    if (!response.ok) {
+        throw new Error(`Permintaan API gagal (${response.status}) pada ${url}.`);
+    }
+
+    return response.json();
+}
+
+function queryString(filters = {}) {
+    const params = new URLSearchParams();
+
+    for (const [key, value] of Object.entries(filters)) {
+        if (value === undefined || value === null || value === '') {
+            continue;
+        }
+
+        if (Array.isArray(value)) {
+            value.forEach((item) => params.append(`${key}[]`, item));
+        } else {
+            params.set(key, value);
+        }
+    }
+
+    return params.toString();
+}
+
+function normalizeAnimal(animal) {
+    const habitat = Array.isArray(animal.habitat) ? animal.habitat : [];
+
+    return {
+        ...animal,
+        ikon: animal.ikon || ICON_BY_GROUP[animal.kelompok] || '🌿',
+        ekosistem: animal.ekosistem || habitat[0] || 'Habitat belum diketahui',
+        karakteristik: Array.isArray(animal.karakteristik) ? animal.karakteristik : [],
+        sumber: Array.isArray(animal.sumber)
+            ? animal.sumber
+            : [animal.url_iucn, animal.wikidata].filter(Boolean),
+        serupa: Array.isArray(animal.serupa) ? animal.serupa : [],
+        habitat,
+        makanan: Array.isArray(animal.makanan) ? animal.makanan : [],
+        ancaman: Array.isArray(animal.ancaman) ? animal.ancaman : [],
+        gambar: animal.gambar || '/images/fauna-placeholder.svg',
+        status_iucn: animal.status_iucn || 'Status belum diketahui',
+    };
 }
 
 /**
- * TODO(backend): ganti dengan GET /api/fauna?query=&status=&habitat=&makanan=&kelompok=&ancaman=; response {data: Fauna[], meta}.
+ * Ambil satu halaman katalog dan pertahankan metadata paginasi dari API.
+ */
+export async function getFaunaPage(filters = {}) {
+    const params = queryString(filters);
+    const response = await readApiJson(`/api/fauna${params ? `?${params}` : ''}`);
+
+    if (!Array.isArray(response.data) || !response.meta || !Number.isInteger(response.meta.total)) {
+        throw new Error('Format respons /api/fauna tidak valid.');
+    }
+
+    return { ...response, data: response.data.map(normalizeAnimal) };
+}
+
+/**
+ * Ambil seluruh hasil yang cocok. Fungsi ini menjaga kontrak array untuk pemakai katalog lain.
  */
 export async function getFauna(filters = {}) {
-    const fauna = await readJson('fauna.json');
-    const query = (filters.query || '').toLocaleLowerCase('id');
-    const statuses = filters.status ? [].concat(filters.status) : [];
-    const habitats = filters.habitat ? [].concat(filters.habitat) : [];
-    const foods = filters.makanan ? [].concat(filters.makanan) : [];
-    const groups = filters.kelompok ? [].concat(filters.kelompok) : [];
-    const threats = filters.ancaman ? [].concat(filters.ancaman) : [];
+    const { page: _page, per_page: _perPage, ...queryFilters } = filters;
+    const fauna = [];
+    let page = 1;
+    let total = Number.POSITIVE_INFINITY;
 
-    return fauna.filter((animal) => {
-        const searchable = `${animal.nama} ${animal.nama_ilmiah} ${animal.deskripsi}`.toLocaleLowerCase('id');
-        return (!query || searchable.includes(query))
-            && includesAny([animal.status_iucn], statuses)
-            && includesAny(animal.habitat, habitats)
-            && includesAny(animal.makanan, foods)
-            && includesAny([animal.kelompok], groups, true)
-            && includesAny(animal.ancaman, threats, true);
-    });
+    while (fauna.length < total) {
+        const response = await getFaunaPage({ ...queryFilters, page, per_page: 100 });
+        fauna.push(...response.data);
+        total = response.meta.total;
+
+        if (response.data.length === 0 && fauna.length < total) {
+            throw new Error('Paginasi /api/fauna berhenti sebelum seluruh hasil diterima.');
+        }
+
+        page += 1;
+    }
+
+    return fauna;
+}
+
+export async function getFilterOptions() {
+    const response = await readApiJson('/api/fauna/filter-options');
+
+    if (!response.data || typeof response.data !== 'object') {
+        throw new Error('Format respons /api/fauna/filter-options tidak valid.');
+    }
+
+    return response.data;
 }
 
 /**
- * TODO(backend): ganti dengan GET /api/fauna/{slug}; response satu objek Fauna atau 404.
+ * Ambil detail fauna dari API.
  */
 export async function getFaunaDetail(slug) {
-    const fauna = await readJson('fauna.json');
-    const match = fauna.find((animal) => animal.slug === slug);
-    if (!match) {
-        throw new Error('Fauna tidak ditemukan pada data dummy.');
+    const response = await readApiJson(`/api/fauna/${encodeURIComponent(slug)}`);
+
+    if (!response.data || typeof response.data !== 'object') {
+        throw new Error('Format respons detail fauna tidak valid.');
     }
-    return match;
+
+    return normalizeAnimal(response.data);
 }
 
-const synonymGroups = [
-    { terms: ['buah', 'buah-buahan', 'fruit'], values: ['buah', 'Ficus', 'Buah hutan'] },
-    { terms: ['ikan', 'perairan', 'air tawar'], values: ['Ikan', 'Udang', 'Moluska'] },
-    { terms: ['daun', 'dedaunan', 'herbivora'], values: ['Daun', 'Daun muda', 'Rumput', 'Tunas'] },
-    { terms: ['sungai', 'air', 'mahakam'], values: ['Sungai', 'Sungai Mahakam', 'Danau air tawar', 'Tepi sungai'] },
-    { terms: ['rawa', 'gambut'], values: ['Hutan rawa gambut', 'Hutan rawa'] },
-    { terms: ['mangrove', 'bakau', 'pesisir'], values: ['Hutan mangrove', 'Mangrove'] },
-    { terms: ['hutan', 'kanopi', 'pepohonan'], values: ['Hutan hujan tropis', 'Hutan dataran rendah', 'Kanopi hutan'] },
-    { terms: ['mamalia', 'hewan menyusui'], values: ['Mamalia'] },
-    { terms: ['primata', 'monyet', 'kera', 'bergantung'], values: ['Primata', 'buah', 'Hutan hujan tropis'] },
-    { terms: ['burung', 'terbang'], values: ['Burung'] },
-    { terms: ['terancam', 'langka', 'kritis', 'punah'], values: ['Kritis', 'Terancam', 'Rentan', 'Sangat Jarang'] },
-];
-
 /**
- * TODO(backend): ganti dengan POST /api/pencarian-semantik {kalimat}; response {data: [{fauna, skor, alasan_kecocokan}]}.
- * Status konservasi dummy wajib diverifikasi terhadap sumber IUCN Red List terbaru sebelum ditayangkan sebagai data faktual.
+ * Pencarian semantik server mengembalikan kecocokan dari seluruh dataset.
  */
 export async function cariSemantik(kalimat) {
-    const fauna = await getFauna();
-    const normalized = (kalimat || '').toLocaleLowerCase('id').trim();
-    const terms = synonymGroups.filter((group) => group.terms.some((term) => normalized.includes(term)));
-
-    if (!normalized) {
+    if (!kalimat?.trim()) {
         return [];
     }
 
-    return fauna.map((animal) => {
-        const reasons = [];
-        for (const group of terms) {
-            const habitatMatch = animal.habitat.find((item) => group.values.some((value) => item.toLocaleLowerCase('id').includes(value.toLocaleLowerCase('id'))));
-            if (habitatMatch) reasons.push(`habitat: ${habitatMatch}`);
-            const foodMatch = animal.makanan.find((item) => group.values.some((value) => item.toLocaleLowerCase('id').includes(value.toLocaleLowerCase('id'))));
-            if (foodMatch) reasons.push(`makanan: ${foodMatch}`);
-            if (group.values.some((value) => animal.kelompok.toLocaleLowerCase('id').includes(value.toLocaleLowerCase('id')))) {
-                reasons.push(`kelompok: ${animal.kelompok}`);
-            }
-        }
-        const exactHits = `${animal.nama} ${animal.nama_ilmiah}`.toLocaleLowerCase('id').split(/\s+/).filter((word) => word.length > 3 && normalized.includes(word));
-        if (exactHits.length) {
-            reasons.push(`nama: ${animal.nama}`);
-        }
-        return { fauna: animal, alasan_kecocokan: [...new Set(reasons)], skor: new Set(reasons).size };
-    }).filter((result) => result.skor > 0).sort((a, b) => b.skor - a.skor);
+    const response = await readApiJson('/api/pencarian-semantik', {
+        method: 'POST',
+        body: { kalimat },
+    });
+
+    if (!Array.isArray(response.data)) {
+        throw new Error('Format respons /api/pencarian-semantik tidak valid.');
+    }
+
+    return response.data.map((result) => ({
+        ...result,
+        fauna: normalizeAnimal(result.fauna),
+    }));
 }
 
 /**
@@ -138,25 +202,31 @@ export async function getLaporanAdmin(filters = {}) {
 }
 
 /**
- * TODO(backend): ganti dengan GET /api/knowledge-graph?relasi[]; response {nodes: Node[], edges: Edge[]}.
+ * Ambil relasi fauna dari API, dengan filter opsional untuk fokus graf.
  */
 export async function getGraph(filter = {}) {
-    const graph = await readJson('graph.json');
-    if (!filter.relasi || filter.relasi.length === 0) {
-        return graph;
+    const params = queryString(filter);
+    const response = await readApiJson(`/api/knowledge-graph${params ? `?${params}` : ''}`);
+
+    if (!Array.isArray(response.nodes) || !Array.isArray(response.edges)) {
+        throw new Error('Format respons /api/knowledge-graph tidak valid.');
     }
-    const edges = graph.edges.filter((edge) => filter.relasi.includes(edge.type));
-    const ids = new Set(edges.flatMap((edge) => [edge.from, edge.to]));
-    return { nodes: graph.nodes.filter((node) => ids.has(node.id)), edges };
+
+    return response;
 }
 
 /**
- * TODO(backend): ganti dengan GET /api/fauna/{slug}/rekomendasi?limit=6; response {data: Fauna[]}.
+ * Ambil rekomendasi fauna dari API.
  */
-export async function getRekomendasi(slug) {
-    const animal = await getFaunaDetail(slug);
-    const fauna = await getFauna();
-    return fauna.filter((item) => animal.serupa.includes(item.slug));
+export async function getRekomendasi(slug, limit = 6) {
+    const params = queryString({ limit });
+    const response = await readApiJson(`/api/fauna/${encodeURIComponent(slug)}/rekomendasi?${params}`);
+
+    if (!Array.isArray(response.data)) {
+        throw new Error('Format respons rekomendasi fauna tidak valid.');
+    }
+
+    return response.data.map(normalizeAnimal);
 }
 
 /**

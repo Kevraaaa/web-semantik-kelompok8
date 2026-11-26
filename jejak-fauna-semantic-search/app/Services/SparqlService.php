@@ -275,11 +275,58 @@ class SparqlService
      *
      * @param  array  $relasiFilter  Filter tipe relasi (kosong = semua)
      * @param  int  $limit  Maks jumlah fauna (hindari graph terlalu besar)
+     * @param  string|null  $kelompok  Filter kelompok fauna
+     * @param  string|null  $habitat  Filter key habitat
      * @return array { nodes: [], edges: [] }
      */
-    public function getKnowledgeGraph(array $relasiFilter = [], int $limit = 50): array
+    public function getKnowledgeGraph(
+        array $relasiFilter = [],
+        int $limit = 50,
+        ?string $kelompok = null,
+        ?string $habitat = null,
+    ): array
     {
-        $all = array_slice($this->getAllFauna(), 0, $limit);
+        $all = $this->getAllFauna();
+
+        if ($kelompok !== null) {
+            $all = array_filter($all, fn ($fauna) => $fauna['kelompok'] === $kelompok);
+        }
+
+        if ($habitat !== null) {
+            $all = array_filter($all, fn ($fauna) => in_array($habitat, $fauna['habitat_keys'], true));
+        }
+
+        $all = array_values($all);
+
+        if ($kelompok !== null || $habitat !== null) {
+            $all = array_slice($all, 0, $limit);
+        } else {
+            $faunaByGroup = [];
+            foreach ($all as $fauna) {
+                $faunaByGroup[$fauna['kelompok']][] = $fauna;
+            }
+
+            $all = [];
+            for ($round = 0; count($all) < $limit; $round++) {
+                $addedFauna = false;
+
+                foreach ($faunaByGroup as $groupFauna) {
+                    if (isset($groupFauna[$round])) {
+                        $all[] = $groupFauna[$round];
+                        $addedFauna = true;
+                    }
+
+                    if (count($all) >= $limit) {
+                        break;
+                    }
+                }
+
+                if (! $addedFauna) {
+                    break;
+                }
+            }
+        }
+
         $nodes = [];
         $edges = [];
         $nodeIds = [];
