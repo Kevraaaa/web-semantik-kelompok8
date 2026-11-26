@@ -1,4 +1,14 @@
-import { cariSemantik, getFauna, getFaunaDetail, getRekomendasi } from './api.js';
+import { cariSemantik, getFauna, getFaunaDetail, getFaunaPage, getFilterOptions, getRekomendasi } from './api.js';
+
+document.addEventListener('error', (event) => {
+    const image = event.target;
+    if (!(image instanceof HTMLImageElement) || !image.closest('[data-fauna-card]') || image.dataset.fallbackApplied) {
+        return;
+    }
+
+    image.dataset.fallbackApplied = 'true';
+    image.src = '/images/fauna-placeholder.svg';
+}, true);
 
 const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;',
@@ -34,40 +44,175 @@ async function setupDiscovery() {
     const emptyState = document.querySelector('[data-fauna-empty]');
     const errorState = document.querySelector('[data-fauna-error]');
     const activeFilters = document.querySelector('[data-active-filters]');
+    const loadMore = document.querySelector('[data-fauna-load-more]');
+    const sidebar = document.querySelector('#filter-fauna');
+    const drawer = document.querySelector('[data-filter-drawer]');
+    const drawerContent = drawer?.querySelector('[data-filter-drawer-content]');
+    const pageSize = 12;
+    let page = 1;
+    let semanticResults = null;
+    let renderSequence = 0;
 
-    const render = async () => {
-        const selected = (name) => [...document.querySelectorAll(`[name="${name}"]:checked`)].map((input) => input.value);
-        const selects = Object.fromEntries([...document.querySelectorAll('[data-filter-select]')].map((select) => [select.dataset.filterSelect, select.value]));
-        const filters = { ...selects, status: selected('status'), habitat: selected('habitat') };
+    const entriesFor = (options) => Array.isArray(options)
+        ? options.map((value) => [value, value])
+        : Object.entries(options || {});
+
+    const renderOptions = (options) => {
+        for (const key of ['status', 'habitat']) {
+            const container = sidebar.querySelector(`[data-filter-options="${key}"]`);
+            container.innerHTML = entriesFor(options[key]).map(([value, label]) => `<label class="flex items-center gap-2"><input class="accent-fresh-grown" type="checkbox" name="${key}" value="${escapeHtml(value)}"><span>${escapeHtml(label)}</span></label>`).join('');
+        }
+
+        for (const key of ['makanan', 'kelompok', 'famili', 'ancaman']) {
+            const select = sidebar.querySelector(`[data-filter-select="${key}"]`);
+            const defaultLabel = select.options[0].textContent;
+            select.innerHTML = `<option value="">${escapeHtml(defaultLabel)}</option>${entriesFor(options[key]).map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join('')}`;
+        }
+    };
+
+    const selectedFilters = () => {
+        const selected = (name) => [...new Set([...sidebar.querySelectorAll(`[name="${name}"]:checked`)].map((input) => input.value))];
+        const selects = Object.fromEntries([...sidebar.querySelectorAll('[data-filter-select]')].map((select) => [select.dataset.filterSelect, select.value]));
+
+        return {
+            status: selected('status'),
+            habitat: selected('habitat'),
+            ...Object.fromEntries(Object.entries(selects).map(([key, value]) => [key, value ? [value] : []])),
+        };
+    };
+
+    const selectedLabels = () => [
+        ...[...sidebar.querySelectorAll('input[type="checkbox"]:checked')].map((input) => input.closest('label').textContent.trim()),
+        ...[...sidebar.querySelectorAll('[data-filter-select]')].filter((select) => select.value).map((select) => select.options[select.selectedIndex].textContent),
+    ];
+
+    const originalFilter = (input) => input.dataset.filterSelect
+        ? sidebar.querySelector(`[data-filter-select="${input.dataset.filterSelect}"]`)
+        : [...sidebar.querySelectorAll(`input[name="${input.name}"]`)].find((item) => item.value === input.value);
+
+    const setupFilterDrawer = () => {
+        if (!drawerContent || !sidebar) {
+            return;
+        }
+
+        drawerContent.replaceChildren(sidebar.querySelector('[data-filter-panel]').cloneNode(true));
+        drawerContent.querySelectorAll('input, select').forEach((input) => {
+            input.addEventListener('change', () => {
+                const original = originalFilter(input);
+                if (original) {
+                    if (input.type === 'checkbox') {
+                        original.checked = input.checked;
+                    } else {
+                        original.value = input.value;
+                    }
+                    original.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+        });
+    };
+
+    const syncFilterDrawer = () => {
+        drawerContent?.querySelectorAll('input, select').forEach((input) => {
+            const original = originalFilter(input);
+            if (original) {
+                if (input.type === 'checkbox') {
+                    input.checked = original.checked;
+                } else {
+                    input.value = original.value;
+                }
+            }
+        });
+    };
+
+    try {
+        renderOptions(await getFilterOptions());
+        setupFilterDrawer();
+    } catch (error) {
+        console.error(error);
+        resultGrid.innerHTML = '';
+        errorState.classList.remove('hidden');
+        resultCount.textContent = 'Filter fauna tidak tersedia';
+        return;
+    }
+
+    const render = async (append = false) => {
+        const requestId = ++renderSequence;
+        const filters = selectedFilters();
         const query = queryInput.value.trim();
-        resultGrid.innerHTML = Array.from({ length: 6 }, () => '<div class="skeleton h-80 rounded-2xl" aria-hidden="true"></div>').join('');
-        emptyState.classList.add('hidden');
-        errorState.classList.add('hidden');
-        activeFilters.innerHTML = [...filters.status, ...filters.habitat, ...Object.values(selects).filter(Boolean)]
+        const semantic = semanticToggle.checked && query;
+        const targetPage = append ? page + 1 : 1;
+
+        if (!append) {
+            page = 1;
+            semanticResults = null;
+            resultGrid.innerHTML = Array.from({ length: 6 }, () => '<div class="skeleton h-80 rounded-2xl" aria-hidden="true"></div>').join('');
+            emptyState.classList.add('hidden');
+            errorState.classList.add('hidden');
+            loadMore.classList.add('hidden');
+        }
+        loadMore.disabled = true;
+        activeFilters.innerHTML = selectedLabels()
             .map((item) => `<span class="pill text-xs">${escapeHtml(item)} <span aria-hidden="true">×</span></span>`).join('');
 
         try {
             let results;
-            if (semanticToggle.checked && query) {
-                results = await cariSemantik(query);
-                const filtered = await getFauna(filters);
-                const allowed = new Set(filtered.map((item) => item.slug));
-                results = results.filter((item) => allowed.has(item.fauna.slug));
-                resultGrid.innerHTML = results.map((item) => cardMarkup(item.fauna, item.alasan_kecocokan)).join('');
+            let total;
+            if (semantic) {
+                if (!semanticResults) {
+                    const [matches, filteredFauna] = await Promise.all([cariSemantik(query), getFauna(filters)]);
+                    if (requestId !== renderSequence) {
+                        return;
+                    }
+                    const allowed = new Set(filteredFauna.map((item) => item.slug));
+                    semanticResults = matches.filter((item) => allowed.has(item.fauna.slug));
+                }
+
+                total = semanticResults.length;
+                results = semanticResults.slice((targetPage - 1) * pageSize, targetPage * pageSize);
             } else {
-                results = await getFauna({ ...filters, query });
-                resultGrid.innerHTML = results.map((animal) => cardMarkup(animal)).join('');
+                const response = await getFaunaPage({
+                    ...filters,
+                    query,
+                    page: targetPage,
+                    per_page: pageSize,
+                });
+                if (requestId !== renderSequence) {
+                    return;
+                }
+                results = response.data;
+                total = response.meta.total;
             }
-            const count = results.length;
-            resultCount.textContent = `${count} fauna ditemukan${semanticToggle.checked && query ? ' · diurutkan menurut kecocokan semantik' : ''}`;
-            emptyState.classList.toggle('hidden', count > 0);
-            resultGrid.classList.toggle('hidden', count === 0);
+
+            if (requestId !== renderSequence) {
+                return;
+            }
+
+            page = targetPage;
+            const markup = results.map((item) => semantic
+                ? cardMarkup(item.fauna, item.alasan_kecocokan)
+                : cardMarkup(item)).join('');
+            if (append) {
+                resultGrid.insertAdjacentHTML('beforeend', markup);
+            } else {
+                resultGrid.innerHTML = markup;
+            }
+            resultCount.textContent = `${total} fauna ditemukan${semantic ? ' · diurutkan menurut kecocokan semantik' : ''}`;
+            emptyState.classList.toggle('hidden', total > 0);
+            resultGrid.classList.toggle('hidden', results.length === 0 && !append);
+            loadMore.classList.toggle('hidden', page * pageSize >= total);
+            loadMore.disabled = false;
             document.dispatchEvent(new CustomEvent('jf:results-rendered'));
         } catch (error) {
+            if (requestId !== renderSequence) {
+                return;
+            }
             console.error(error);
-            resultGrid.innerHTML = '';
+            if (!append) {
+                resultGrid.innerHTML = '';
+            }
             errorState.classList.remove('hidden');
             resultCount.textContent = 'Data fauna tidak tersedia';
+            loadMore.disabled = false;
         }
     };
 
@@ -104,7 +249,7 @@ async function setupDiscovery() {
         render();
     });
     document.addEventListener('change', (event) => {
-        if (event.target.matches('[name="status"], [name="habitat"], [data-filter-select]')) {
+        if (event.target.matches('#filter-fauna [name="status"], #filter-fauna [name="habitat"], #filter-fauna [data-filter-select]')) {
             render();
         }
     });
@@ -124,24 +269,11 @@ async function setupDiscovery() {
         });
     });
 
-    const drawer = document.querySelector('[data-filter-drawer]');
-    const sidebar = document.querySelector('#filter-fauna');
-    const drawerContent = drawer?.querySelector('[data-filter-drawer-content]');
-    if (drawerContent && sidebar) {
-        drawerContent.append(sidebar.querySelector('[data-filter-panel]').cloneNode(true));
-        drawerContent.querySelectorAll('input, select').forEach((input) => {
-            input.addEventListener('change', () => {
-                const original = [...sidebar.querySelectorAll('input, select')].find((item) => item.name === input.name && item.value === input.value)
-                    || sidebar.querySelector(`[data-filter-select="${input.dataset.filterSelect}"]`);
-                if (original) {
-                    if (input.type === 'checkbox') original.checked = input.checked;
-                    else original.value = input.value;
-                    original.dispatchEvent(new Event('change', { bubbles: true }));
-                }
-            });
-        });
-    }
-    document.querySelector('[data-mobile-filter]')?.addEventListener('click', () => drawer?.classList.remove('hidden'));
+    loadMore.addEventListener('click', () => render(true));
+    document.querySelector('[data-mobile-filter]')?.addEventListener('click', () => {
+        syncFilterDrawer();
+        drawer?.classList.remove('hidden');
+    });
     document.querySelectorAll('[data-filter-close]').forEach((button) => button.addEventListener('click', () => drawer?.classList.add('hidden')));
     drawer?.addEventListener('click', (event) => {
         if (event.target === drawer) drawer.classList.add('hidden');
@@ -155,8 +287,9 @@ async function setupHome() {
     if (featured) {
         try {
             const fauna = await getFauna();
-            const picks = ['orangutan-kalimantan', 'bekantan', 'pesut-mahakam', 'beruang-madu'];
-            featured.innerHTML = fauna.filter((animal) => picks.includes(animal.slug)).map((animal) => cardMarkup(animal, [])).join('');
+            const picks = ['orangutan-kalimantan', 'nasalis-larvatus', 'batagur-borneoensis', 'betta-albimarginata'];
+            const faunaBySlug = new Map(fauna.map((animal) => [animal.slug, animal]));
+            featured.innerHTML = picks.map((slug) => faunaBySlug.get(slug)).filter(Boolean).map((animal) => cardMarkup(animal, [])).join('');
             document.dispatchEvent(new CustomEvent('jf:results-rendered'));
         } catch (error) {
             console.error(error);

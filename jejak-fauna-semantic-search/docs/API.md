@@ -37,7 +37,8 @@ Query parameters:
 | `status[]` | string[] | Opsional; key status seperti `StatusKritis` atau label tampilan `Kritis (CR)` |
 | `habitat[]` | string[] | Opsional; key atau label habitat dari dataset |
 | `makanan[]` | string[] | Opsional; key atau istilah yang cocok dengan label makanan |
-| `kelompok[]` | string[] | Opsional; misalnya `Mamalia`, `Burung`, `Reptil`, `Amfibi` |
+| `kelompok[]` | string[] | Opsional; misalnya `Mamalia`, `Burung`, `Reptil`, `Amfibi`, `Ikan`, `Krustasea`, `Serangga`, `Moluska`, atau `Echinodermata` |
+| `famili[]` | string[] | Opsional; key famili hasil relasi taksonomi, misalnya `Bufonidae` |
 | `ancaman[]` | string[] | Opsional; key atau label ancaman dari dataset |
 | `page` | integer | Opsional, minimal 1; default `1` |
 | `per_page` | integer | Opsional, 1–100; default `12` |
@@ -64,8 +65,12 @@ Contoh response `200`:
       "makanan": ["Telur burung"],
       "ancaman": ["Kehilangan Dan Degradasi Habitat Alami"],
       "taksonomi": ["Pongo (Genus)"],
+      "famili_key": null,
+      "famili": null,
       "wilayah": ["Kalimantan"],
       "upaya_konservasi": ["Perlindungan kawasan habitat dan pemantauan populasi"],
+      "latitude": null,
+      "longitude": null,
       "gambar": "http://commons.wikimedia.org/wiki/Special:FilePath/Nanga%20with%20male%20baby.jpg",
       "url_iucn": "https://www.iucnredlist.org/species/17975/259043172",
       "wikidata": "http://www.wikidata.org/entity/Q599672",
@@ -90,7 +95,8 @@ Response `200`:
     "status": {"StatusKritis": "Kritis (CR)", "StatusTerancam": "Terancam (EN)", "StatusRentan": "Rentan (VU)"},
     "habitat": {"HutanHujanTropis": "Hutan Hujan Tropis"},
     "makanan": {"BuahbuahanDaunDanSerangga": "Buahbuahan Daun Dan Serangga"},
-    "kelompok": ["Amfibi", "Burung"],
+    "kelompok": ["Amfibi", "Burung", "Ikan"],
+    "famili": {"Bufonidae": "Bufonidae"},
     "ancaman": {"KehilanganDanDegradasiHabitatAlami": "Kehilangan Dan Degradasi Habitat Alami"}
   }
 }
@@ -211,11 +217,13 @@ Query parameters:
 |---|---|---|
 | `relasi[]` | string[] | Opsional; `hidupDi`, `memakan`, `terancamOleh`, `bagianDari` |
 | `limit` | integer | Opsional, 1–200 fauna; default `50` |
+| `kelompok` | string | Opsional; batasi graph pada satu kelompok fauna |
+| `habitat` | string | Opsional; key habitat dari dataset |
 
 Contoh request:
 
 ```text
-GET /api/knowledge-graph?relasi[]=hidupDi&limit=2
+GET /api/knowledge-graph?relasi[]=hidupDi&kelompok=Amfibi&limit=2
 ```
 
 Response `200`:
@@ -238,9 +246,10 @@ Nilai relasi atau limit yang tidak valid menghasilkan `422`.
 - Sumber data: `dataset/fauna_kalimantan.ttl`.
 - Laravel menjalankan RDFLib `7.6.0` sebagai subprocess dan seluruh pengambilan katalog, pencarian semantik, detail, rekomendasi, graph, serta filter menggunakan query SPARQL terhadap Turtle.
 - OWL/XML hanya dipakai untuk validasi vocabulary dan constraint. Dataset tidak diubah atau dipaksakan menjadi RDF/XML.
+- Koordinat peta dibaca dari properti WGS84 `geo:lat` dan `geo:long` pada individu fauna. Koordinat kosong, non-finite, atau di luar rentang latitude/longitude dikembalikan sebagai `null` dan tidak dijadikan marker. Dataset saat ini belum memuat koordinat fauna valid, sehingga marker fauna tidak ditampilkan sampai data ditambahkan.
 - Cache file Laravel menyimpan hasil katalog SPARQL selama 1 jam; perubahan file dataset membentuk cache key baru.
 - Jumlah individu `jf:Fauna` saat ini 193; jumlah triple dataset 3.125. Keduanya dihitung dari file saat validasi.
-- Dataset tidak menyediakan koordinat geospasial. Peta tetap memakai GeoJSON ilustratif yang diberi label di UI.
+- Peta menggunakan tile OpenStreetMap. Marker laporan warga masih memakai data demo terpisah dari katalog fauna.
 - Endpoint laporan warga, autentikasi, favorit, profil, moderasi, sebaran GeoJSON, dan perbandingan belum terdaftar pada route API saat ini.
 
 ## Menyiapkan RDFLib

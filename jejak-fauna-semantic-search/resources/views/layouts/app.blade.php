@@ -18,7 +18,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')
 </head>
-<body data-page="@yield('page', 'default')">
+<body data-page="@yield('page', 'default')" data-user-scope="{{ auth()->id() ?? 'guest' }}">
     <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-fresh-grown focus:px-4 focus:py-2 focus:text-moss-green" href="#konten">Lewati ke konten</a>
     <x-navbar />
     <main id="konten">

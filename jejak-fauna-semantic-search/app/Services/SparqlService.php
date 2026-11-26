@@ -11,12 +11,9 @@ use Symfony\Component\Process\Process;
 
 class SparqlService
 {
-    private const CACHE_TTL = 3600;
-
     /**
-     * Return RDF-backed fauna with the filters and pagination used by the API.
-     *
-     * @return array{data: array<int, array>, meta: array{page: int, per_page: int, total: int}}
+     * @param  array<string, mixed>  $filters
+     * @return array{data: array<int, array<string, mixed>>, meta: array{page: int, per_page: int, total: int}}
      */
     public function listFauna(array $filters = [], int $page = 1, int $perPage = 12): array
     {
@@ -27,13 +24,20 @@ class SparqlService
             'habitat' => ['habitat_keys', 'habitat'],
             'makanan' => ['makanan_keys', 'makanan'],
             'kelompok' => ['kelompok_key', 'kelompok'],
+            'famili' => ['famili_key', 'famili'],
             'ancaman' => ['ancaman_keys', 'ancaman'],
         ] as $filter => [$keyField, $labelField]) {
             if (! empty($filters[$filter])) {
-                $selected = array_map(fn ($value) => $this->normalize((string) $value), (array) $filters[$filter]);
-                $fauna = array_filter($fauna, fn ($item) => $this->containsSelected(
+                $selected = array_map(
+                    fn ($value) => $this->normalize((string) $value),
+                    (array) $filters[$filter],
+                );
+                $fauna = array_filter($fauna, fn (array $item) => $this->containsSelected(
                     $selected,
-                    array_merge((array) ($item[$keyField] ?? []), (array) ($item[$labelField] ?? [])),
+                    array_merge(
+                        (array) ($item[$keyField] ?? []),
+                        (array) ($item[$labelField] ?? []),
+                    ),
                     $filter !== 'status',
                 ));
             }
@@ -41,7 +45,8 @@ class SparqlService
 
         if (! empty($filters['query'])) {
             $query = $this->normalize((string) $filters['query']);
-            $matches = array_filter($fauna, fn ($item) => str_contains(
+            $filteredFauna = $fauna;
+            $matches = array_filter($filteredFauna, fn (array $item) => str_contains(
                 $this->normalize(implode(' ', array_filter([
                     $item['nama'] ?? '',
                     $item['nama_ilmiah'] ?? '',
@@ -55,7 +60,7 @@ class SparqlService
 
             if ($matches === []) {
                 $terms = preg_split('/\s+/', $query, -1, PREG_SPLIT_NO_EMPTY) ?: [];
-                $matches = array_filter($fauna, function (array $item) use ($terms): bool {
+                $matches = array_filter($filteredFauna, function (array $item) use ($terms): bool {
                     $names = $this->normalize(($item['nama'] ?? '').' '.($item['nama_ilmiah'] ?? ''));
                     $nameTerms = preg_split('/[^a-z0-9]+/', $names, -1, PREG_SPLIT_NO_EMPTY) ?: [];
 
@@ -74,6 +79,7 @@ class SparqlService
                     return false;
                 });
             }
+
             $fauna = $matches;
         }
 
@@ -94,6 +100,9 @@ class SparqlService
         ];
     }
 
+    /**
+     * @return array<string, mixed>|null
+     */
     public function getFaunaBySlug(string $slug): ?array
     {
         foreach ($this->getAllFauna() as $fauna) {
@@ -106,7 +115,7 @@ class SparqlService
     }
 
     /**
-     * @return array{data: array<int, array{fauna: array, skor: int, alasan_kecocokan: array<int, string>}>}
+     * @return array{data: array<int, array{fauna: array<string, mixed>, skor: int, alasan_kecocokan: array<int, string>}>}
      */
     public function pencarianSemantik(string $kalimat): array
     {
@@ -114,7 +123,7 @@ class SparqlService
     }
 
     /**
-     * @return array{data: array<int, array>}
+     * @return array{data: array<int, array<string, mixed>>}
      */
     public function getRekomendasiBySlug(string $slug, int $limit = 6): array
     {
@@ -125,36 +134,47 @@ class SparqlService
     }
 
     /**
-     * @return array{nodes: array<int, array>, edges: array<int, array>}
+     * @param  array<int, string>  $relasiFilter
+     * @return array{nodes: array<int, array<string, mixed>>, edges: array<int, array<string, mixed>>}
      */
-    public function getKnowledgeGraph(array $relasiFilter = [], int $limit = 50): array
-    {
+    public function getKnowledgeGraph(
+        array $relasiFilter = [],
+        int $limit = 50,
+        ?string $kelompok = null,
+        ?string $habitat = null,
+    ): array {
         return $this->runPython('graph', [
             'relations' => array_values($relasiFilter),
             'limit' => max(1, min(200, $limit)),
+            'group' => $kelompok,
+            'habitat' => $habitat,
         ]);
     }
 
     /**
-     * @return array{status: array<string, string>, habitat: array<string, string>, makanan: array<string, string>, kelompok: array<int, string>, ancaman: array<string, string>}
+     * @return array<string, mixed>
      */
     public function getFilterOptions(): array
     {
         return $this->runPython('filters');
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function validateRdfAgainstOntology(): array
     {
         return $this->runPython('validate');
     }
 
     /**
-     * @return array<int, array>
+     * @return array<int, array<string, mixed>>
      */
     private function getAllFauna(): array
     {
         $datasetPath = (string) config('services.rdf.dataset_path');
         $scriptPath = (string) config('services.rdf.script_path');
+
         if (! is_file($datasetPath) || ! is_file($scriptPath)) {
             return $this->runPython('fauna')['data'];
         }
@@ -168,16 +188,21 @@ class SparqlService
 
         return Cache::store('file')->remember(
             $cacheKey,
-            self::CACHE_TTL,
+            3600,
             fn () => $this->runPython('fauna')['data'],
         );
     }
 
+    /**
+     * @param  array<int, string>  $selected
+     * @param  array<int, string>  $values
+     */
     private function containsSelected(array $selected, array $values, bool $partial): bool
     {
         foreach ($values as $value) {
             $readableValue = preg_replace('/(?<=[a-z0-9])(?=[A-Z])/', ' ', (string) $value);
             $normalizedValue = $this->normalize($readableValue);
+
             foreach ($selected as $selectedValue) {
                 if ($normalizedValue === $selectedValue) {
                     return true;
@@ -207,6 +232,10 @@ class SparqlService
         return mb_strtolower(trim($value), 'UTF-8');
     }
 
+    /**
+     * @param  array<string, mixed>  $fauna
+     * @return array<string, mixed>
+     */
     private function toPublicFauna(array $fauna): array
     {
         $publicFauna = array_intersect_key($fauna, array_flip([
@@ -220,9 +249,13 @@ class SparqlService
             'makanan',
             'ancaman',
             'taksonomi',
+            'famili_key',
+            'famili',
             'wilayah',
             'upaya_konservasi',
             'gambar',
+            'latitude',
+            'longitude',
             'url_iucn',
             'wikidata',
             'sumber',
@@ -235,12 +268,14 @@ class SparqlService
         return $publicFauna;
     }
 
+    /**
+     * @param  array<string, mixed>  $input
+     * @return array<string, mixed>
+     */
     private function runPython(string $operation, array $input = []): array
     {
         $pythonBinary = (string) config('services.rdf.python_binary');
         $scriptPath = (string) config('services.rdf.script_path');
-        $datasetPath = (string) config('services.rdf.dataset_path');
-        $ontologyPath = (string) config('services.rdf.ontology_path');
 
         if (! is_file($scriptPath)) {
             Log::error('RDF semantic engine script is missing.', ['script' => $scriptPath]);
@@ -251,8 +286,8 @@ class SparqlService
         $process = new Process([$pythonBinary, $scriptPath, $operation]);
         $process->setTimeout((float) config('services.rdf.timeout', 30));
         $process->setInput(json_encode([
-            'dataset_path' => $datasetPath,
-            'ontology_path' => $ontologyPath,
+            'dataset_path' => (string) config('services.rdf.dataset_path'),
+            'ontology_path' => (string) config('services.rdf.ontology_path'),
             ...$input,
         ], JSON_THROW_ON_ERROR));
 

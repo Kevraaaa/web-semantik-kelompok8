@@ -38,7 +38,8 @@ class FaunaController extends Controller
      *   status[] (string[])      – StatusKritis | StatusTerancam | StatusRentan
      *   habitat[] (string[])     – key habitat dari dataset
      *   makanan[] (string[])     – key makanan dari dataset
-     *   kelompok[] (string[])    – Mamalia | Burung | Reptil | Amfibi
+     *   kelompok[] (string[])    – kelompok fauna dari dataset
+     *   famili[] (string[])      – key famili dari dataset
      *   ancaman[] (string[])     – key ancaman dari dataset
      *   page     (int, default 1)
      *   per_page (int, default 12, maks 100)
@@ -55,6 +56,8 @@ class FaunaController extends Controller
             'makanan.*' => ['string'],
             'kelompok' => ['nullable', 'array'],
             'kelompok.*' => ['string'],
+            'famili' => ['nullable', 'array'],
+            'famili.*' => ['string'],
             'ancaman' => ['nullable', 'array'],
             'ancaman.*' => ['string'],
             'page' => ['nullable', 'integer', 'min:1'],
@@ -182,6 +185,8 @@ class FaunaController extends Controller
      * Query parameters:
      *   relasi[] – filter tipe relasi: hidupDi | memakan | terancamOleh | bagianDari
      *   limit    – maks fauna yang di-generate ke graph (default 50, maks 200)
+     *   kelompok – filter berdasarkan kelompok fauna
+     *   habitat  – filter berdasarkan key habitat dari dataset
      */
     public function knowledgeGraph(Request $request): JsonResponse
     {
@@ -189,11 +194,15 @@ class FaunaController extends Controller
             'relasi' => ['nullable', 'array'],
             'relasi.*' => ['string', 'in:hidupDi,memakan,terancamOleh,bagianDari'],
             'limit' => ['nullable', 'integer', 'min:1', 'max:200'],
+            'kelompok' => ['nullable', 'string', 'max:100'],
+            'habitat' => ['nullable', 'string', 'max:200'],
         ]);
 
         $result = $this->sparql->getKnowledgeGraph(
             relasiFilter: $validated['relasi'] ?? [],
             limit: (int) ($validated['limit'] ?? 50),
+            kelompok: $validated['kelompok'] ?? null,
+            habitat: $validated['habitat'] ?? null,
         );
 
         return response()->json($result);

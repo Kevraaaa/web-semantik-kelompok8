@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#" xml:base="https://jejakfauna.org/ontology" ontologyIRI="https://jejakfauna.org/ontology">
     <Prefix name="" IRI="http://www.w3.org/2002/07/owl#" />
     <Prefix name="jf" IRI="https://jejakfauna.org/ontology#" />

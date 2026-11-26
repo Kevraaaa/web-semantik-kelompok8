@@ -1,0 +1,21 @@
+@prefix jf: <https://jejakfauna.org/ontology#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+jf:FaunaUji a jf:Fauna,
+        jf:Mamalia ;
+    jf:namaLokal "Fauna Uji"^^xsd:string ;
+    jf:namaIlmiah "Fauna test"^^xsd:string ;
+    jf:deskripsi "fauna uji"^^xsd:string ;
+    geo:lat 0.8 ;
+    geo:long 114.0 ;
+    jf:memakan jf:BuahbuahanDaunDanSerangga, jf:SeranggaKecil ;
+    jf:mempunyaiAncaman jf:AncamanSatu, jf:AncamanDua ;
+    jf:mempunyaiHabitat jf:HutanHujanTropis, jf:SungaiDanRawaAirTawarKalimantan ;
+    jf:termasukTaksonomi jf:Muridae, jf:MusGenus .
+
+jf:FaunaTanpaKoordinat a jf:Fauna ;
+    jf:namaLokal "Fauna Tanpa Koordinat"^^xsd:string ;
+    jf:namaIlmiah "Fauna absentia"^^xsd:string ;
+    geo:lat 91.0 ;
+    geo:long 181.0 .

@@ -1,4 +1,4 @@
-import { getFauna, getLaporanWarga, getSebaran } from './api.js';
+import { getFauna, getKalimantanBoundary, getLaporanWarga, getSebaran } from './api.js';
 
 const center = [0.8, 114];
 let leafletPromise;
@@ -34,19 +34,52 @@ function dotIcon(L, color, emoji = '•', abundance = '') {
 
 function mapOptions(L, node, zoom = 5) {
     const map = L.map(node, { scrollWheelZoom: false, zoomControl: true }).setView(center, zoom);
-    let tileLayer;
-    const setBasemap = (theme = document.documentElement.dataset.theme) => {
-        if (tileLayer) map.removeLayer(tileLayer);
-        const style = theme === 'light' ? 'light_all' : 'dark_all';
-        tileLayer = L.tileLayer(`https://{s}.basemaps.cartocdn.com/${style}/{z}/{x}/{y}{r}.png`, {
-            attribution: '&copy; OpenStreetMap &copy; CARTO',
-            subdomains: 'abcd',
-            maxZoom: 19,
-        }).addTo(map);
-    };
-    setBasemap();
-    document.addEventListener('jf:theme-changed', (event) => setBasemap(event.detail?.theme));
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
+    }).addTo(map);
+
+    if ('ResizeObserver' in window) {
+        const resizeObserver = new ResizeObserver(() => map.invalidateSize({ pan: false }));
+        resizeObserver.observe(node);
+        map.once('unload', () => resizeObserver.disconnect());
+    } else {
+        const resizeMap = () => map.invalidateSize({ pan: false });
+        window.addEventListener('resize', resizeMap, { passive: true });
+        map.once('unload', () => window.removeEventListener('resize', resizeMap));
+    }
+
     return map;
+}
+
+function toLeafletLatLng(latitude, longitude) {
+    const lat = typeof latitude === 'string' && latitude.trim() ? Number(latitude) : latitude;
+    const lng = typeof longitude === 'string' && longitude.trim() ? Number(longitude) : longitude;
+
+    if (
+        typeof lat !== 'number'
+        || typeof lng !== 'number'
+        || !Number.isFinite(lat)
+        || !Number.isFinite(lng)
+        || lat < -90
+        || lat > 90
+        || lng < -180
+        || lng > 180
+    ) {
+        return null;
+    }
+
+    return [lat, lng];
+}
+
+function getFeatureLatLng(feature) {
+    if (feature?.geometry?.type !== 'Point' || !Array.isArray(feature.geometry.coordinates)) {
+        return null;
+    }
+
+    const [longitude, latitude] = feature.geometry.coordinates;
+
+    return toLeafletLatLng(latitude, longitude);
 }
 
 const safe = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char]));
@@ -59,25 +92,81 @@ async function setupMainMap(node) {
     const count = document.querySelector('[data-map-count]');
     const controls = [...document.querySelectorAll('[data-map-filter]')];
     const showReports = document.querySelector('[data-map-reports]');
+    const distributionStatus = document.querySelector('[data-map-distribution-status]');
     let animals = [];
     let reportMarkers = [];
     let faunaMarkers = [];
+    let administrativeBoundaryPromise;
+    let paintRequestId = 0;
+
+    const renderAdministrativeBoundary = async () => {
+        if (!administrativeBoundaryPromise) {
+            administrativeBoundaryPromise = getKalimantanBoundary().then((boundary) => {
+                const layer = L.geoJSON(boundary, {
+                    style: {
+                        color: '#d4d7c7',
+                        weight: 1,
+                        fillOpacity: 0,
+                        dashArray: '4 5',
+                    },
+                }).addTo(map);
+                layer.bringToBack();
+                map.attributionControl.addAttribution(
+                    'Batas: <a href="https://www.geoboundaries.org/api/current/gbOpen/IDN/ADM1/">geoBoundaries IDN ADM1</a> · <a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a> · sumber <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>/<a href="https://wambachers-osm.website/boundaries/">Wambacher</a> (2017)',
+                );
+                return layer;
+            });
+        }
+
+        try {
+            await administrativeBoundaryPromise;
+        } catch (error) {
+            administrativeBoundaryPromise = null;
+            throw error;
+        }
+    };
 
     const paint = async () => {
+        const requestId = ++paintRequestId;
+        const filters = Object.fromEntries(controls.map((input) => [input.dataset.mapFilter, input.value]).filter(([, value]) => value));
         cluster.clearLayers();
         results.innerHTML = '';
-        const filters = Object.fromEntries(controls.map((input) => [input.dataset.mapFilter, input.value]).filter(([, value]) => value));
         try {
             const [geojson, allAnimals, reports] = await Promise.all([getSebaran(filters), getFauna(filters.slug ? { query: '' } : {}), getLaporanWarga()]);
+            if (requestId !== paintRequestId) return;
+
             animals = allAnimals;
+            let boundaryLoaded = true;
+            try {
+                await renderAdministrativeBoundary();
+            } catch (error) {
+                if (requestId !== paintRequestId) return;
+                console.error(error);
+                boundaryLoaded = false;
+            }
+            if (requestId !== paintRequestId) return;
+
+            if (distributionStatus) {
+                const selectedAnimal = allAnimals.find((animal) => animal.slug === filters.slug);
+                const selectedName = selectedAnimal ? ` untuk ${selectedAnimal.nama}` : ' per spesies';
+                distributionStatus.textContent = boundaryLoaded
+                    ? `Data persebaran${selectedName} belum tersedia. Garis provinsi hanya batas administrasi.`
+                    : `Batas administrasi tidak dapat dimuat; data persebaran${selectedName} belum tersedia.`;
+            }
             const animalBySlug = new Map(animals.map((animal) => [animal.slug, animal]));
             faunaMarkers = [];
             geojson.features.forEach((feature) => {
-                const animal = animalBySlug.get(feature.properties.slug);
-                if (!animal) return;
-                const [lng, lat] = feature.geometry.coordinates;
+                const animal = animalBySlug.get(feature.properties?.slug);
+                const latLng = getFeatureLatLng(feature);
+                if (!animal || !latLng) return;
+                const [lat, lng] = latLng;
                 const marker = L.marker([lat, lng], { icon: dotIcon(L, 'fauna', animal.ikon || '🌿', feature.properties.kelimpahan) });
-                marker.bindPopup(`<div class="flex items-center gap-2"><img src="${safe(animal.gambar)}" alt="" width="42" height="42" style="border-radius:8px;object-fit:cover"><div><strong>${safe(animal.nama)}</strong><br><span style="font-size:11px">${safe(feature.properties.kelimpahan)} · ${safe(animal.status_iucn)}</span><br><a href="/eksplorasi/${encodeURIComponent(animal.slug)}" style="color:#eff4bd">Lihat detail →</a></div></div>`);
+                const scientificName = animal.nama_ilmiah || 'Nama ilmiah belum tercatat';
+                const conservationStatus = animal.status_iucn || 'Status konservasi belum tercatat';
+                const regionNames = Array.isArray(animal.wilayah) && animal.wilayah.length
+                    ? animal.wilayah.join(', ')
+                    : 'Wilayah belum tercatat';
+                marker.bindPopup(`<div class="flex items-center gap-2"><img src="${safe(animal.gambar)}" alt="" width="42" height="42" style="border-radius:8px;object-fit:cover"><div><strong>${safe(animal.nama)}</strong><br><em style="font-size:11px">${safe(scientificName)}</em><br><span style="font-size:11px">Status: ${safe(conservationStatus)}<br>Relasi wilayah RDF: ${safe(regionNames)}</span><br><a href="/eksplorasi/${encodeURIComponent(animal.slug)}" style="color:#eff4bd">Lihat detail →</a></div></div>`);
                 marker.addTo(cluster);
                 faunaMarkers.push({ marker, animal, lat, lng, abundance: feature.properties.kelimpahan });
             });
@@ -89,17 +178,26 @@ async function setupMainMap(node) {
                     const reportAnimal = animalBySlug.get(report.slug);
                     if (filters.status && reportAnimal?.status_iucn !== filters.status) return;
                     if (filters.habitat && !reportAnimal?.habitat.includes(filters.habitat)) return;
-                    const marker = L.marker([report.lokasi.lat, report.lokasi.lng], { icon: dotIcon(L, 'report', '⌖') });
+                    const latLng = toLeafletLatLng(report.lokasi?.lat, report.lokasi?.lng);
+                    if (!latLng) return;
+                    const marker = L.marker(latLng, { icon: dotIcon(L, 'report', '⌖') });
                     marker.bindPopup(`<strong>Laporan warga</strong><br>${safe(report.nama)}<br><span style="font-size:11px">${safe(report.lokasi.teks)}</span>`);
                     marker.addTo(cluster);
-                    reportMarkers.push({ marker, report });
+                    reportMarkers.push({ marker, report, lat: latLng[0], lng: latLng[1] });
                 });
             }
             map.addLayer(cluster);
 
-            const rows = [...faunaMarkers.map((item) => ({ ...item, isReport: false })), ...reportMarkers.map(({ marker, report }) => ({ marker, reportItem: report, lat: report.lokasi.lat, lng: report.lokasi.lng, isReport: true }))];
+            if ((filters.slug || filters.status || filters.habitat) && faunaMarkers.length) {
+                map.fitBounds(
+                    L.latLngBounds(faunaMarkers.map(({ lat, lng }) => [lat, lng])),
+                    { maxZoom: 8, padding: [20, 20] },
+                );
+            }
+
+            const rows = [...faunaMarkers.map((item) => ({ ...item, isReport: false })), ...reportMarkers.map(({ marker, report, lat, lng }) => ({ marker, reportItem: report, lat, lng, isReport: true }))];
             count.textContent = `${rows.length} titik`;
-            results.innerHTML = rows.length ? rows.map((row, index) => `<button type="button" class="map-result" data-map-item="${index}"><span class="map-result-dot ${row.isReport ? 'report' : ''}">${row.isReport ? '⌖' : (row.animal.ikon || '🌿')}</span><span class="min-w-0 flex-1 text-left"><strong class="block truncate text-xs">${safe(row.isReport ? row.reportItem.nama : row.animal.nama)}</strong><span class="mt-1 block truncate text-[.65rem] text-muted">${safe(row.isReport ? row.reportItem.lokasi.teks : `${row.abundance} · ${row.animal.status_iucn || 'Status belum tercatat'}`)}</span></span><span class="text-fresh-grown">→</span></button>`).join('') : '<p class="py-5 text-xs text-muted">Tidak ada titik sesuai filter.</p>';
+            results.innerHTML = rows.length ? rows.map((row, index) => `<button type="button" class="map-result" data-map-item="${index}"><span class="map-result-dot ${row.isReport ? 'report' : ''}">${row.isReport ? '⌖' : (row.animal.ikon || '🌿')}</span><span class="min-w-0 flex-1 text-left"><strong class="block truncate text-xs">${safe(row.isReport ? row.reportItem.nama : row.animal.nama)}</strong><span class="mt-1 block truncate text-[.65rem] text-muted">${safe(row.isReport ? row.reportItem.lokasi.teks : `${row.abundance} · ${row.animal.status_iucn || 'Status belum tercatat'}`)}</span></span><span class="text-fresh-grown">→</span></button>`).join('') : '<p class="py-5 text-xs text-muted">Belum ada koordinat fauna valid di dataset untuk filter ini.</p>';
             results.querySelectorAll('[data-map-item]').forEach((button) => {
                 button.addEventListener('click', () => {
                     const row = rows[Number(button.dataset.mapItem)];
@@ -108,6 +206,7 @@ async function setupMainMap(node) {
                 });
             });
         } catch (error) {
+            if (requestId !== paintRequestId) return;
             console.error(error);
             results.innerHTML = '<p class="text-xs text-rose-200">Data sebaran belum dapat dimuat.</p>';
         }
@@ -131,18 +230,19 @@ async function setupSimpleMap(node, slug = '', picker = false) {
         const animalBySlug = new Map(animals.map((animal) => [animal.slug, animal]));
 
         geojson.features.forEach((feature) => {
-            const animal = animalBySlug.get(feature.properties.slug);
-            if (!animal) return;
-            const [lng, lat] = feature.geometry.coordinates;
+            const animal = animalBySlug.get(feature.properties?.slug);
+            const latLng = getFeatureLatLng(feature);
+            if (!animal || !latLng) return;
+            const [lat, lng] = latLng;
             const marker = L.marker([lat, lng], { icon: dotIcon(L, 'fauna', animal.ikon || '🌿', feature.properties.kelimpahan) });
             marker.bindPopup(`<strong>${safe(animal.nama)}</strong><br>${safe(feature.properties.kelimpahan)}`);
             marker.addTo(group);
         });
         map.addLayer(group);
 
-        if (slug && geojson.features[0]) {
-            const [lng, lat] = geojson.features[0].geometry.coordinates;
-            map.setView([lat, lng], 7);
+        const firstValidFeature = geojson.features.find((feature) => getFeatureLatLng(feature));
+        if (slug && firstValidFeature) {
+            map.setView(getFeatureLatLng(firstValidFeature), 7);
         }
     }
     if (picker) {
@@ -194,10 +294,13 @@ document.addEventListener('jf:admin-map-ready', async () => {
     try {
         const L = await loadLeaflet();
         const map = mapOptions(L, node, 8);
-        const lat = Number(node.dataset.lat);
-        const lng = Number(node.dataset.lng);
-        L.marker([lat, lng], { icon: dotIcon(L, 'report', '⌖') }).addTo(map);
-        map.setView([lat, lng], 8);
+        const latLng = toLeafletLatLng(node.dataset.lat, node.dataset.lng);
+        if (!latLng) {
+            node.innerHTML = '<p class="p-3 text-xs text-rose-200">Koordinat lokasi laporan tidak valid.</p>';
+            return;
+        }
+        L.marker(latLng, { icon: dotIcon(L, 'report', '⌖') }).addTo(map);
+        map.setView(latLng, 8);
         window.setTimeout(() => map.invalidateSize(), 100);
     } catch (error) {
         console.error(error);

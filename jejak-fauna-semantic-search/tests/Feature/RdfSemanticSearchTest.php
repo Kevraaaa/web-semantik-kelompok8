@@ -71,6 +71,16 @@ class RdfSemanticSearchTest extends TestCase
         $this->assertNotEmpty($response->json('data.makanan'));
     }
 
+    public function test_fauna_without_wgs84_data_has_no_generated_coordinates(): void
+    {
+        $response = $this->getJson('/api/fauna?query=orangutan&per_page=1');
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('data.0.latitude', null)
+            ->assertJsonPath('data.0.longitude', null);
+    }
+
     public function test_semantic_search_matches_habitat_and_food_relations(): void
     {
         $habitatResponse = $this->postJson('/api/pencarian-semantik', [
