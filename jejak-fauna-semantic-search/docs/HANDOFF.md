@@ -1,6 +1,6 @@
 # Serah Terima Backend — Jejak Fauna Kalimantan
 
-Project kini memiliki backend API fauna yang berjalan melalui HTTP. Endpoint aktual dan contoh payload lengkap tersedia di [docs/API.md](API.md). API membaca `dataset/fauna_kalimantan.ttl` melalui `App\Services\SparqlService`; dataset terverifikasi berisi 334 fauna dan disimpan pada cache file Laravel selama 1 jam.
+Project kini memiliki backend API fauna yang berjalan melalui HTTP. Endpoint aktual dan contoh payload lengkap tersedia di [docs/API.md](API.md). Dataset `dataset/fauna_kalimantan.ttl` terverifikasi berisi 3.125 triple dan 193 resource `jf:Fauna`. `SparqlService` dapat membaca dataset melalui Fuseki/SPARQL HTTP atau fallback parser lokal yang eksplisit.
 
 Backend yang sudah tersedia:
 
@@ -11,7 +11,7 @@ Backend yang sudah tersedia:
 - pencarian semantik berbasis token dan sinonim Bahasa Indonesia;
 - knowledge graph node/edge dari relasi fauna, kelompok, habitat, makanan, dan ancaman.
 
-Validasi request dan error response API telah diuji melalui HTTP. Cache dataset menggunakan file store secara eksplisit sehingga endpoint fauna tidak bergantung pada database lokal.
+Validasi request dan error response API telah diuji melalui HTTP. Fallback lokal menggunakan file cache secara eksplisit sehingga endpoint fauna tidak bergantung pada database lokal. Mode Fuseki tidak memakai cache hasil query agar kehilangan koneksi dapat dikembalikan sebagai HTTP `503`.
 
 ## 1. Titik sambung `TODO(backend)`
 
@@ -151,16 +151,16 @@ Audit terakhir dijalankan pada server lokal Laravel melalui HTTP:
 - Endpoint sukses mengembalikan HTTP `200` dan JSON valid.
 - Fauna tidak ditemukan mengembalikan `404` JSON.
 - Payload kosong dan parameter invalid mengembalikan `422` JSON.
-- Dataset menghasilkan 334 fauna; pencarian, filter, rekomendasi, dan graph berhasil diuji.
+- Dataset Fuseki menghasilkan 3.125 triple dan 193 resource `jf:Fauna`; pencarian, filter, rekomendasi, dan graph berhasil diuji.
 - PHPUnit: 7 test lulus dengan 68 assertion, termasuk regression test API.
 - PHP syntax check: lulus untuk controller, service, dan route.
-- Laravel Pint dan `git diff --check`: lulus.
+- Laravel Pint lulus. `git diff --check` belum dapat dijalankan karena Git root berada di luar akses sandbox.
 
-Bug yang diperbaiki: service sebelumnya memakai cache database default dan menghasilkan HTTP 500 ketika database `laravel` tidak tersedia. Service sekarang menggunakan cache file untuk dataset lokal.
+Bug yang diperbaiki: parser lokal sebelumnya memasukkan subject non-fauna dan melewatkan 21 deklarasi multi-baris; service kini memfilter resource `jf:Fauna`, sehingga fallback konsisten menghasilkan 193 fauna. Mode Fuseki menggunakan query read-only dan mengembalikan `503` saat server tidak tersedia.
 
 ## 6. Teknologi dan rencana pengembangan
 
-Teknologi backend saat ini adalah Laravel 13, PHP 8.5, route/controller Laravel, parser Turtle in-process, Laravel file cache, PHPUnit, dan Pint. Tahap berikutnya adalah menghubungkan frontend ke endpoint aktual, menambahkan persistence/authentication untuk laporan dan pengguna, serta mengganti parser in-process dengan triplestore/SPARQL bila diperlukan.
+Teknologi backend saat ini adalah Laravel 13, PHP 8.5, route/controller Laravel, query SPARQL HTTP melalui Fuseki 6.3.0, parser Turtle fallback, Laravel file cache untuk fallback, PHPUnit, dan Pint. Tahap berikutnya adalah menghubungkan frontend ke endpoint aktual serta menambahkan persistence/authentication untuk laporan dan pengguna.
 
 ## 7. Menjalankan proyek
 
@@ -174,3 +174,17 @@ php artisan serve
 ```
 
 Tidak perlu menjalankan migration untuk pratinjau UI ini. Untuk bundle produksi, gunakan `npm run build`.
+
+## 8. Status Apache Jena Fuseki
+
+Apache Jena Fuseki 6.3.0 berhasil diunduh dari sumber resmi Apache, checksum SHA-512 diverifikasi, dan diekstrak secara portable di luar repository. Java yang tersedia adalah 26.0.2.1. Dataset TDB2 persisten berada di:
+
+```text
+C:\_Ainuha\_Ainuha IT\_Semester03\Web_Semantik\jejak-fauna-fuseki-runtime\databases\jejak-fauna
+```
+
+Fuseki dijalankan read-only pada `localhost:3030`; endpoint query yang dipakai Laravel adalah `http://localhost:3030/jejak-fauna/query`. Loading awal dilakukan melalui endpoint lokal sementara dalam mode update, lalu server dijalankan ulang tanpa `--update`.
+
+Mode Fuseki Laravel diaktifkan dengan `FUSEKI_ENABLED=true`. Enam endpoint API berhasil diuji melalui Laravel di port lokal alternatif. Saat Fuseki dihentikan, API mengembalikan HTTP `503` terstruktur. Fallback lokal juga diuji dan menghasilkan 193 fauna.
+
+Detail perintah startup, verifikasi SPARQL, dan troubleshooting tersedia di [FUSEKI_SETUP.md](FUSEKI_SETUP.md).

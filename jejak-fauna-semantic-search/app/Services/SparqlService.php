@@ -2,7 +2,10 @@
 
 namespace App\Services;
 
+use App\Exceptions\SparqlUnavailableException;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 /**
  * SparqlService
@@ -24,7 +27,7 @@ class SparqlService
     // ------------------------------------------------------------------
 
     /** Cache key untuk hasil parsing TTL. */
-    protected const CACHE_KEY = 'jejak_fauna_parsed_ttl';
+    protected const CACHE_KEY = 'jejak_fauna_parsed_ttl_v2';
 
     /** Durasi cache dalam detik (1 jam). Dataset bersifat statis. */
     protected const CACHE_TTL = 3600;
@@ -344,10 +347,169 @@ class SparqlService
      */
     protected function getAllFauna(): array
     {
-        // Dataset RDF bersifat lokal dan API harus tetap dapat berjalan tanpa
-        // koneksi database. Gunakan file cache secara eksplisit agar default
-        // CACHE_STORE=database tidak membuat endpoint fauna gagal 500.
-        return Cache::store('file')->remember(self::CACHE_KEY, self::CACHE_TTL, fn () => $this->parseTtl());
+        if (config('services.fuseki.enabled')) {
+            return $this->loadFromFuseki();
+        }
+
+        return Cache::store('file')->remember(
+            self::CACHE_KEY.'_local',
+            self::CACHE_TTL,
+            fn (): array => $this->parseTtl(),
+        );
+    }
+
+    /**
+     * Load fauna resources from Fuseki using a read-only SPARQL query.
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    protected function loadFromFuseki(): array
+    {
+        $query = <<<'SPARQL'
+PREFIX jf: <https://jejakfauna.org/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?subject ?predicate ?object
+WHERE {
+    ?subject rdf:type jf:Fauna ;
+             ?predicate ?object .
+}
+ORDER BY ?subject ?predicate ?object
+SPARQL;
+
+        $bindings = $this->executeFusekiQuery($query);
+        $fauna = [];
+
+        foreach ($bindings as $binding) {
+            $subject = $this->bindingValue($binding, 'subject');
+            $predicate = $this->bindingValue($binding, 'predicate');
+            $object = $this->bindingValue($binding, 'object');
+
+            if ($subject === null || $predicate === null || $object === null) {
+                continue;
+            }
+
+            $subjectName = $this->localName($subject);
+            $fauna[$subjectName] ??= $this->newFaunaEntry($subjectName);
+            $this->parseFusekiProperty($fauna[$subjectName], $predicate, $object);
+        }
+
+        return array_values($fauna);
+    }
+
+    /**
+     * Execute one read-only SPARQL query against the configured Fuseki endpoint.
+     *
+     * @return array<int, array<string, array<string, string>>>
+     */
+    protected function executeFusekiQuery(string $query): array
+    {
+        $endpoint = rtrim((string) config('services.fuseki.url'), '/')
+            .'/'.trim((string) config('services.fuseki.dataset'), '/')
+            .'/'.ltrim((string) config('services.fuseki.query_endpoint'), '/');
+
+        try {
+            $response = Http::acceptJson()
+                ->asForm()
+                ->timeout((int) config('services.fuseki.timeout', 10))
+                ->post($endpoint, ['query' => $query]);
+        } catch (ConnectionException $exception) {
+            throw new SparqlUnavailableException(
+                'Tidak dapat terhubung ke Fuseki.',
+                previous: $exception,
+            );
+        }
+
+        if ($response->failed()) {
+            throw new SparqlUnavailableException(
+                'Fuseki mengembalikan HTTP '.$response->status().'.'
+            );
+        }
+
+        $bindings = $response->json('results.bindings');
+
+        if (! is_array($bindings)) {
+            throw new SparqlUnavailableException('Response Fuseki bukan hasil SPARQL JSON yang valid.');
+        }
+
+        return $bindings;
+    }
+
+    /**
+     * Map one RDF predicate returned by Fuseki to the existing public model.
+     */
+    protected function parseFusekiProperty(array &$item, string $predicate, string $object): void
+    {
+        $property = $this->localName($predicate);
+        $value = $this->localName($object);
+
+        if ($property === 'namaLokal') {
+            $item['nama'] = $object;
+        } elseif ($property === 'namaIlmiah') {
+            $item['nama_ilmiah'] = $object;
+        } elseif ($property === 'deskripsi') {
+            $item['deskripsi'] = $object;
+        } elseif ($property === 'urlGambar') {
+            $item['url_gambar'] = $object;
+        } elseif ($property === 'berstatusKonservasi') {
+            $item['status_iucn_key'] = $value;
+            $item['status_iucn'] = self::STATUS_MAP[$value] ?? $value;
+        } elseif ($property === 'mempunyaiHabitat') {
+            $this->appendRelation($item, 'habitat', $value);
+        } elseif ($property === 'memakan') {
+            $this->appendRelation($item, 'makanan', $value);
+        } elseif ($property === 'mempunyaiAncaman') {
+            $this->appendRelation($item, 'ancaman', $value);
+        } elseif ($property === 'termasukTaksonomi') {
+            $item['taksonomi'] = $this->humanize($value);
+        } elseif ($property === 'seeAlso') {
+            $item['url_iucn'] = $object;
+        } elseif ($property === 'sameAs') {
+            $item['wikidata_uri'] = $object;
+        } elseif ($property === 'type') {
+            $this->parseTypes($item, 'jf:'.$value);
+        }
+    }
+
+    /**
+     * Append a relation key and its display label without duplicates.
+     */
+    protected function appendRelation(array &$item, string $field, string $key): void
+    {
+        $keysField = $field.'_keys';
+
+        if (in_array($key, $item[$keysField], true)) {
+            return;
+        }
+
+        $item[$keysField][] = $key;
+        $item[$field][] = $this->humanize($key);
+    }
+
+    /**
+     * Read a value from a SPARQL JSON binding.
+     */
+    protected function bindingValue(array $binding, string $name): ?string
+    {
+        $value = $binding[$name]['value'] ?? null;
+
+        return is_string($value) ? $value : null;
+    }
+
+    /**
+     * Return the local fragment of a URI or the original literal value.
+     */
+    protected function localName(string $value): string
+    {
+        $fragment = strrchr($value, '#');
+
+        if ($fragment !== false) {
+            return substr($fragment, 1);
+        }
+
+        $slash = strrchr($value, '/');
+
+        return $slash === false ? $value : substr($slash, 1);
     }
 
     /**
@@ -383,10 +545,11 @@ class SparqlService
 
             // Baris pembuka: "jf:SubjectName a jf:Fauna ..."
             if (preg_match('/^jf:(\w+)\s+a\s+(.+)/', $trimmed, $m)) {
-                if ($current !== null) {
+                if ($current !== null && $current['is_fauna']) {
                     $fauna[] = $current;
                 }
                 $current = $this->newFaunaEntry($m[1]);
+                $current['is_fauna'] = str_contains($m[2], 'jf:Fauna');
                 $this->parseTypes($current, $m[2]);
                 // Jika ada predikasi lain di baris yang sama setelah " ;"
                 $this->parseProperty($current, $trimmed);
@@ -396,12 +559,16 @@ class SparqlService
 
             // Baris properti (indented)
             if ($current !== null && preg_match('/^\s+(jf:|rdfs:|owl:)/', $line)) {
+                if (str_contains($trimmed, 'jf:Fauna')) {
+                    $current['is_fauna'] = true;
+                }
+
                 $this->parseProperty($current, $trimmed);
             }
         }
 
         // Simpan entri terakhir
-        if ($current !== null) {
+        if ($current !== null && $current['is_fauna']) {
             $fauna[] = $current;
         }
 
@@ -415,6 +582,7 @@ class SparqlService
     {
         return [
             'subject' => $subject,
+            'is_fauna' => false,
             'slug' => $this->subjectToSlug($subject),
             'nama' => null,
             'nama_ilmiah' => null,

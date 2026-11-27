@@ -1,6 +1,6 @@
 # Jejak Fauna API
 
-Dokumentasi ini hanya mencakup route API yang benar-benar terdaftar pada aplikasi saat ini. Semua endpoint mengembalikan JSON dan menggunakan dataset `dataset/fauna_kalimantan.ttl` melalui `App\Services\SparqlService`.
+Dokumentasi ini hanya mencakup route API yang benar-benar terdaftar pada aplikasi saat ini. Semua endpoint mengembalikan JSON dan menggunakan dataset `dataset/fauna_kalimantan.ttl` melalui `App\Services\SparqlService`. Jika `FUSEKI_ENABLED=true`, service mengambil RDF melalui SPARQL HTTP dari Fuseki; jika `false`, service memakai parser Turtle lokal sebagai fallback eksplisit.
 
 ## Ringkasan endpoint
 
@@ -26,7 +26,7 @@ Validasi gagal menggunakan HTTP `422` dengan bentuk umum:
 
 ## `GET /api/fauna`
 
-Mengambil katalog fauna dari Turtle dengan pencarian teks, filter ontologi, dan paginasi.
+Mengambil katalog fauna dari resource `jf:Fauna` dengan pencarian teks, filter property RDF, dan paginasi.
 
 Query parameters:
 
@@ -131,7 +131,7 @@ Slug yang tidak ada menghasilkan `404` dengan format error detail fauna; `limit`
 
 ## `POST /api/pencarian-semantik`
 
-Mencari fauna berdasarkan token, sinonim habitat/makanan/status/kelompok, nama, dan deskripsi dari dataset.
+Mencari fauna berdasarkan token, sinonim habitat/makanan/status/kelompok, nama, dan deskripsi dari data RDF yang sudah dimuat melalui Fuseki atau fallback lokal. Pengambilan data dilakukan dari resource/property dataset; scoring semantik masih berupa aturan berbobot di PHP, bukan embedding atau reasoner.
 
 Request JSON wajib:
 
@@ -190,6 +190,9 @@ Nilai relasi atau limit yang tidak valid menghasilkan `422`.
 ## Sumber data dan batasan
 
 - Sumber data: `dataset/fauna_kalimantan.ttl`.
-- Parser berjalan in-process; belum ada Fuseki, database, atau library RDF eksternal.
-- Dataset fauna diparse dan disimpan pada cache file Laravel selama 1 jam.
+- Dataset terverifikasi berisi 3.125 triple dan 193 resource `jf:Fauna`.
+- Mode Fuseki menggunakan query SPARQL HTTP read-only pada endpoint yang dikonfigurasi; hasil tidak dicache agar kegagalan Fuseki segera terlihat sebagai `503`.
+- Mode fallback lokal menggunakan parser Turtle dan cache file Laravel selama 1 jam.
+- Jika Fuseki aktif tetapi tidak tersedia, API mengembalikan `503` dengan `error: fuseki_unavailable`, bukan diam-diam beralih ke parser lokal.
+- Konfigurasi Fuseki: `FUSEKI_ENABLED`, `FUSEKI_URL`, `FUSEKI_DATASET`, `FUSEKI_QUERY_ENDPOINT`, dan `FUSEKI_TIMEOUT`.
 - Endpoint laporan warga, autentikasi, favorit, profil, moderasi, sebaran GeoJSON, dan perbandingan belum terdaftar pada route API saat ini.

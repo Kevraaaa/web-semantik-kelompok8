@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'fuseki' => [
+        'enabled' => filter_var(env('FUSEKI_ENABLED', false), FILTER_VALIDATE_BOOL),
+        'url' => env('FUSEKI_URL', 'http://localhost:3030'),
+        'dataset' => env('FUSEKI_DATASET', 'jejak-fauna'),
+        'query_endpoint' => env('FUSEKI_QUERY_ENDPOINT', '/query'),
+        'timeout' => (int) env('FUSEKI_TIMEOUT', 10),
+    ],
+
 ];
