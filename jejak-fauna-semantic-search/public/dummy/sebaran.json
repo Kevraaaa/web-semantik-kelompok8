@@ -1,0 +1,17 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[113.8,0.8]},"properties":{"slug":"orangutan-kalimantan","kelimpahan":"Jarang"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[114.2,1.2]},"properties":{"slug":"orangutan-kalimantan","kelimpahan":"Umum"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[114.6,-3.1]},"properties":{"slug":"bekantan","kelimpahan":"Umum"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[116.1,-2.7]},"properties":{"slug":"bekantan","kelimpahan":"Jarang"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[116.4,-0.4]},"properties":{"slug":"pesut-mahakam","kelimpahan":"Sangat Jarang"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[112.9,-1.5]},"properties":{"slug":"beruang-madu","kelimpahan":"Umum"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[114.6,1.5]},"properties":{"slug":"rangkong-badak","kelimpahan":"Umum"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[112.1,-1.0]},"properties":{"slug":"owa-kalimantan","kelimpahan":"Jarang"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[115.1,1.4]},"properties":{"slug":"lutung-kalimantan","kelimpahan":"Umum"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[114.1,1.8]},"properties":{"slug":"macan-dahan-kalimantan","kelimpahan":"Sangat Jarang"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[117.2,4.1]},"properties":{"slug":"badak-sumatra","kelimpahan":"Sangat Jarang"}},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[117.3,5.2]},"properties":{"slug":"gajah-kalimantan","kelimpahan":"Jarang"}}
+  ]
+}
