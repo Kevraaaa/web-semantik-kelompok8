@@ -21,7 +21,14 @@ function styleNodes(nodes, mini = false) {
             color,
             shape: 'dot',
             size: node.type === 'pusat' ? 34 : (node.type === 'fauna' ? 23 : 16),
-            font: { ...color.font, size: mini ? 10 : 13 },
+            font: {
+                ...color.font,
+                size: mini ? 10 : 15,
+                face: 'Inter',
+                bold: { mod: 'bold' },
+                strokeWidth: mini ? 2 : 3,
+                strokeColor: '#182719',
+            },
             borderWidth: 1.5,
         };
     });
@@ -31,9 +38,9 @@ function styleEdges(edges) {
     return edges.map((edge) => ({
         ...edge,
         arrows: 'to',
-        color: { color: '#91a181', opacity: .48, highlight: '#eff4bd' },
-        font: { color: '#c4cbb8', size: 10, align: 'middle', strokeWidth: 3, strokeColor: '#1b2a1b' },
-        smooth: { type: 'dynamic' },
+        color: { color: '#c2d3ab', opacity: .9, highlight: '#eff4bd' },
+        font: { color: '#f0f3e8', size: 12, face: 'Inter', bold: { mod: 'bold' }, align: 'horizontal', strokeWidth: 4, strokeColor: '#182719' },
+        smooth: { type: 'continuous', roundness: .12 },
     }));
 }
 
@@ -55,9 +62,17 @@ async function mountGraph(container, mini = false) {
     const network = new Network(container, { nodes, edges }, {
         autoResize: true,
         interaction: { hover: true, navigationButtons: false, keyboard: true, zoomView: true },
-        physics: { stabilization: { iterations: mini ? 80 : 160 }, barnesHut: { gravitationalConstant: -3700, springLength: mini ? 130 : 170, springConstant: .04 } },
+        physics: {
+            stabilization: { iterations: mini ? 80 : 160 },
+            barnesHut: {
+                gravitationalConstant: -1800,
+                centralGravity: .25,
+                springLength: mini ? 85 : 110,
+                springConstant: .05,
+            },
+        },
         nodes: { borderWidth: 1, shape: 'dot', font: { face: 'Inter' } },
-        edges: { width: 1, selectionWidth: 2 },
+        edges: { width: 1.5, selectionWidth: 2.5 },
     });
     network.on('stabilizationIterationsDone', () => network.fit({ animation: false }));
 

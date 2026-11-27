@@ -1,6 +1,16 @@
 import './theme.js';
 import './toast.js';
 
+document.addEventListener('error', (event) => {
+    const image = event.target;
+    if (!(image instanceof HTMLImageElement) || !image.hasAttribute('data-fauna-image') || image.dataset.fallbackApplied) {
+        return;
+    }
+
+    image.dataset.fallbackApplied = 'true';
+    image.src = '/images/fauna-placeholder.svg';
+}, true);
+
 const page = document.body.dataset.page;
 
 if (page === 'home' || page === 'explore' || page === 'detail') {

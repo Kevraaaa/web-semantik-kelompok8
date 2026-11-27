@@ -55,13 +55,13 @@
         <article class="rounded-3xl border border-soft surface p-6 sm:p-8">
             <div class="flex items-start justify-between gap-4"><div><p class="eyebrow">Kenali ruang hidup</p><h2 class="font-display mt-2 text-3xl">Jejak di peta</h2></div><span class="grid size-11 place-items-center rounded-full bg-azul-petroleo/25 text-lg text-sky-100">⌖</span></div>
             <p class="mt-3 max-w-lg text-sm leading-6 text-muted">Sebaran pada peta adalah gambaran awal untuk memahami luasnya lanskap yang perlu dijaga.</p>
-            <div class="relative mt-5"><div class="h-64 rounded-2xl" data-mini-map aria-label="Peta mini persebaran fauna"></div><div class="absolute bottom-3 left-3 flex flex-wrap gap-2 rounded-xl bg-black/50 p-2 text-[.65rem] text-white backdrop-blur"><span>● Sangat Umum</span><span class="text-emerald-200">● Umum</span><span class="text-amber-200">● Jarang</span><span class="text-rose-200">● Sangat Jarang</span></div></div>
+            <div class="relative mt-5"><div class="h-64 rounded-2xl" data-mini-map aria-label="Peta mini persebaran fauna"></div><div class="map-legend-overlay absolute bottom-3 left-3 flex flex-wrap gap-2 rounded-xl bg-black/50 p-2 text-[.65rem] text-white backdrop-blur"><span>● Sangat Umum</span><span class="text-emerald-200">● Umum</span><span class="text-amber-200">● Jarang</span><span class="text-rose-200">● Sangat Jarang</span></div></div>
             <a class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-fresh-grown hover:gap-3" href="{{ route('map') }}">Lihat Peta <span aria-hidden="true">→</span></a>
         </article>
     </section>
 
     <section class="container-page grid gap-5 py-10 lg:grid-cols-2">
-        <article class="nature-panel relative overflow-hidden rounded-3xl border border-soft p-7 sm:p-9">
+        <article class="nature-panel relative min-w-0 overflow-hidden rounded-3xl border border-soft p-7 sm:p-9">
             <div class="absolute -right-10 -top-10 size-56 rounded-full border border-fresh-grown/10"></div>
             <p class="eyebrow">Status konservasi</p><h2 class="font-display mt-2 max-w-md text-3xl">Mengenal status, memahami ancaman</h2>
             <div class="mt-7 flex items-center gap-4 rounded-2xl border border-soft bg-black/10 p-4">
@@ -71,7 +71,7 @@
             <ul class="mt-5 grid gap-3 text-sm text-muted"><li>◉ Kehilangan dan fragmentasi habitat</li><li>◉ Perburuan dan perdagangan ilegal</li><li>◉ Kebakaran hutan</li></ul>
             <a class="btn-secondary mt-6" href="{{ route('explore.show', 'orangutan-kalimantan') }}">Pelajari Lebih Lanjut <span aria-hidden="true">→</span></a>
         </article>
-        <article class="rounded-3xl border border-soft surface p-7 sm:p-9">
+        <article class="min-w-0 rounded-3xl border border-soft surface p-7 sm:p-9">
             <p class="eyebrow">Mungkin kamu suka</p><h2 class="font-display mt-2 text-3xl">Temukan yang serupa</h2>
             <p class="mt-3 text-sm leading-6 text-muted">Jelajah dari satu cerita menuju hubungan fauna yang lain.</p>
             <div class="mt-8 flex gap-4 overflow-x-auto pb-2" data-recommendations></div>

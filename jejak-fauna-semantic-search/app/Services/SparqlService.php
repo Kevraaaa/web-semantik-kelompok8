@@ -29,7 +29,7 @@ class SparqlService
         ] as $filter => [$keyField, $labelField]) {
             if (! empty($filters[$filter])) {
                 $selected = array_map(
-                    fn ($value) => $this->normalize((string) $value),
+                    fn ($value) => $this->normalizeFilterValue((string) $value),
                     (array) $filters[$filter],
                 );
                 $fauna = array_filter($fauna, fn (array $item) => $this->containsSelected(
@@ -200,8 +200,7 @@ class SparqlService
     private function containsSelected(array $selected, array $values, bool $partial): bool
     {
         foreach ($values as $value) {
-            $readableValue = preg_replace('/(?<=[a-z0-9])(?=[A-Z])/', ' ', (string) $value);
-            $normalizedValue = $this->normalize($readableValue);
+            $normalizedValue = $this->normalizeFilterValue((string) $value);
 
             foreach ($selected as $selectedValue) {
                 if ($normalizedValue === $selectedValue) {
@@ -225,6 +224,13 @@ class SparqlService
         }
 
         return false;
+    }
+
+    private function normalizeFilterValue(string $value): string
+    {
+        $readableValue = preg_replace('/(?<=[a-z0-9])(?=[A-Z])/', ' ', $value) ?? $value;
+
+        return $this->normalize($readableValue);
     }
 
     private function normalize(string $value): string

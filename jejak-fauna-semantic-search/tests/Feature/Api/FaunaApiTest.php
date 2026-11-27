@@ -27,6 +27,7 @@ class FaunaApiTest extends TestCase
         $response = $this->getJson('/api/fauna?status[]=StatusKritis&per_page=10');
 
         $response->assertOk();
+        $this->assertNotEmpty($response->json('data'));
         foreach ($response->json('data') as $fauna) {
             $this->assertSame('Kritis (CR)', $fauna['status_iucn']);
         }
@@ -64,6 +65,34 @@ class FaunaApiTest extends TestCase
         $this->getJson('/api/fauna?famili=Bufonidae')
             ->assertUnprocessable()
             ->assertJsonStructure(['errors' => ['famili']]);
+    }
+
+    public function test_filter_option_camel_case_keys_match_rdf_relation_values(): void
+    {
+        $options = $this->getJson('/api/fauna/filter-options')
+            ->assertOk()
+            ->json('data');
+
+        foreach ([
+            'habitat' => 'habitat',
+            'makanan' => 'makanan',
+            'ancaman' => 'ancaman',
+        ] as $filter => $field) {
+            $key = array_key_first($options[$filter]);
+            $label = $options[$filter][$key];
+            $response = $this->getJson('/api/fauna?'.$filter.'[]='.urlencode($key).'&per_page=100');
+
+            $response->assertOk();
+            $fauna = $response->json('data');
+            $this->assertNotEmpty($fauna, "The {$filter} option key should match RDF data.");
+
+            foreach ($fauna as $animal) {
+                $this->assertContains(
+                    mb_strtolower($label),
+                    array_map('mb_strtolower', $animal[$field]),
+                );
+            }
+        }
     }
 
     public function test_semantic_search_does_not_match_short_synonyms_inside_other_words(): void

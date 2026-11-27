@@ -109,8 +109,7 @@ jf:AnsoniaLatidisca a jf:Amfibi,
     jf:namaIlmiah "Ansonia latidisca"^^xsd:string ;
     jf:namaLokal "Ansonia latidisca"^^xsd:string ;
     jf:termasukTaksonomi jf:Bufonidae ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Leptobrachium%20hendricksoni%20%28Spotted%20Litter%20Frog%29%20%286967253802%29.jpg"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:AonyxCinereus a jf:Fauna,
         jf:Mamalia ;
@@ -126,8 +125,7 @@ jf:AonyxCinereus a jf:Fauna,
     jf:namaIlmiah "Aonyx cinereus"^^xsd:string ;
     jf:namaLokal "sero ambrang"^^xsd:string ;
     jf:termasukTaksonomi jf:AonyxGenus ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Small-clawed%20otter%20from%20Western%20Ghats.JPG"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:ArachnothelphusaMelanippe a jf:Fauna ;
     rdfs:label "Arachnothelphusa melanippe"^^xsd:string ;
@@ -237,8 +235,7 @@ jf:BatagurBorneoensis a jf:Fauna,
     jf:namaIlmiah "Batagur borneoensis"^^xsd:string ;
     jf:namaLokal "Tuntong laut"^^xsd:string ;
     jf:termasukTaksonomi jf:BatagurGenus ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Callagur%20borneoensis.jpg"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:BettaAlbimarginata a jf:Fauna ;
     rdfs:label "Betta albimarginata"^^xsd:string ;
@@ -253,8 +250,7 @@ jf:BettaAlbimarginata a jf:Fauna ;
     jf:namaIlmiah "Betta albimarginata"^^xsd:string ;
     jf:namaLokal "Betta albimarginata"^^xsd:string ;
     jf:termasukTaksonomi jf:BettaGenus ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Betta%20albimarginata%20060311%201.jpg"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:BettaAntoni a jf:Fauna ;
     rdfs:label "Betta antoni"^^xsd:string ;
@@ -779,8 +775,7 @@ jf:CrocodylusSiamensis a jf:Fauna,
     jf:namaIlmiah "Crocodylus siamensis"^^xsd:string ;
     jf:namaLokal "Buaya Siam"^^xsd:string ;
     jf:termasukTaksonomi jf:CrocodylusGenus ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Siamcroc.JPG"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:CtenodesmaBersinara a jf:Fauna ;
     rdfs:label "Ctenodesma bersinara"^^xsd:string ;
@@ -966,7 +961,8 @@ jf:EncheloclariasMedialis a jf:Fauna ;
     jf:termasukTaksonomi jf:AirbreathingCatfish ;
     jf:tersebarDi jf:WilayahKalimantan .
 
-jf:EusphyraBlochii a jf:Fauna ;
+jf:EusphyraBlochii a jf:Ikan,
+        jf:Fauna ;
     rdfs:label "Cucut ronggeng"^^xsd:string ;
     rdfs:seeAlso <https://www.iucnredlist.org/species/41810/124417935> ;
     owl:sameAs <http://www.wikidata.org/entity/Q890336> ;
@@ -1425,11 +1421,12 @@ jf:LanthanotusBorneensis a jf:Fauna,
     jf:tersebarDi jf:WilayahKalimantan ;
     jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Real%20Lanthanotus%20borneensis.jpg"^^xsd:anyURI .
 
-jf:LeiocassisRudicula a jf:Fauna ;
+jf:LeiocassisRudicula a jf:Ikan,
+        jf:Fauna ;
     rdfs:label "Leiocassis rudicula"^^xsd:string ;
     rdfs:seeAlso <https://www.iucnredlist.org/species/155959799/155959814> ;
     owl:sameAs <http://www.wikidata.org/entity/Q122069107> ;
-    jf:berstatusKonservasi jf:StatusRentan ;
+    jf:berstatusKonservasi jf:StatusTerancam ;
     jf:deskripsi ""^^xsd:string ;
     jf:memakan jf:PlanktonDanIkanKecil ;
     jf:mempunyaiAncaman jf:KehilanganDanDegradasiHabitatAlami ;
@@ -2220,7 +2217,8 @@ jf:PastinachusGracilicaudus a jf:Fauna ;
     jf:termasukTaksonomi jf:PastinachusGenus ;
     jf:tersebarDi jf:WilayahKalimantan .
 
-jf:PastinachusSolocirostris a jf:Fauna ;
+jf:PastinachusSolocirostris a jf:Ikan,
+        jf:Fauna ;
     rdfs:label "roughnose stingray"^^xsd:string ;
     rdfs:seeAlso <https://www.iucnredlist.org/species/161465/124490382> ;
     owl:sameAs <http://www.wikidata.org/entity/Q4546954> ;
@@ -2312,8 +2310,7 @@ jf:PetinomysGenibarbis a jf:Fauna,
     jf:namaIlmiah "Petinomys genibarbis"^^xsd:string ;
     jf:namaLokal "Whiskered flying squirrel"^^xsd:string ;
     jf:termasukTaksonomi jf:PetinomysGenus ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Zoological%20researches%20in%20Java%2C%20and%20the%20neighbouring%20islands%20BHL47293132.jpg"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:PetinomysSetosus a jf:Fauna,
         jf:Mamalia ;
@@ -2747,7 +2744,8 @@ jf:RhinopteraJavanica a jf:Fauna ;
     jf:tersebarDi jf:WilayahKalimantan ;
     jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Rhinoptera%20javanica.jpg"^^xsd:anyURI .
 
-jf:RhynchobatusSpringeri a jf:Fauna ;
+jf:RhynchobatusSpringeri a jf:Ikan,
+        jf:Fauna ;
     rdfs:label "broadnose wedgefish"^^xsd:string ;
     rdfs:seeAlso <https://www.iucnredlist.org/species/60182/124448942> ;
     owl:sameAs <http://www.wikidata.org/entity/Q3283079> ;
@@ -2809,8 +2807,7 @@ jf:ScleropagesFormosus a jf:Fauna ;
     jf:namaIlmiah "Scleropages formosus"^^xsd:string ;
     jf:namaLokal "Arwana Asia"^^xsd:string ;
     jf:termasukTaksonomi jf:Osteoglossidae ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Arowana.jpg"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:SetornisCriniger a jf:Burung,
         jf:Fauna ;
@@ -3030,8 +3027,7 @@ jf:UrogymnusPolylepis a jf:Fauna ;
     jf:namaIlmiah "Urogymnus polylepis"^^xsd:string ;
     jf:namaLokal "Urogymnus polylepis"^^xsd:string ;
     jf:termasukTaksonomi jf:UrogymnusGenus ;
-    jf:tersebarDi jf:WilayahKalimantan ;
-    jf:urlGambar "http://commons.wikimedia.org/wiki/Special:FilePath/Himantura%20polylepis.jpg"^^xsd:anyURI .
+    jf:tersebarDi jf:WilayahKalimantan .
 
 jf:Aetobatidae a jf:Taksonomi ;
     rdfs:label "Aetobatidae"^^xsd:string .

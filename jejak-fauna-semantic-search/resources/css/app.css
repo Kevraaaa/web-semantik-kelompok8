@@ -101,7 +101,7 @@ a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .field-label { display: block; margin-bottom: .45rem; color: var(--text); font-size: .8rem; font-weight: 600; }
 .hero-image {
     background-color: #182415;
-    background-image: radial-gradient(rgb(239 244 189 / 5%) .7px, transparent .7px), linear-gradient(90deg, rgb(12 22 12 / 88%) 0%, rgb(20 30 18 / 73%) 45%, rgb(20 30 18 / 30%) 100%), url('/images/kalimantan-forest.svg');
+    background-image: radial-gradient(rgb(239 244 189 / 5%) .7px, transparent .7px), linear-gradient(90deg, rgb(12 22 12 / 88%) 0%, rgb(20 30 18 / 73%) 45%, rgb(20 30 18 / 30%) 100%),     url('../../public/images/kalimantan-forest.svg');
     background-position: center, center, center 48%;
     background-size: 7px 7px, cover, cover;
     background-repeat: repeat, no-repeat, no-repeat;
@@ -198,6 +198,10 @@ footer.nature-panel { background: color-mix(in srgb, #362f22 40%, var(--page)); 
 :root[data-theme='light'] .map-marker.abundance-common { background: var(--accent); }
 :root[data-theme='light'] .map-marker.abundance-rare { background: #A17A3E; }
 :root[data-theme='light'] .map-marker.abundance-very-rare { background: #A45D52; }
+:root[data-theme='light'] .map-legend-overlay .text-emerald-200 { color: #a7f3d0; }
+:root[data-theme='light'] .map-legend-overlay .text-amber-200 { color: #fde68a; }
+:root[data-theme='light'] .map-legend-overlay .text-rose-200 { color: #fecdd3; }
+:root[data-theme='light'] .fauna-visual [data-favorite].text-rose-200 { color: #fecdd3; }
 :root[data-theme='light'] [class~='bg-moss-green/95'] { border-color: var(--line); background: var(--surface); }
 :root[data-theme='light'] [class~='bg-fig-leaf/20'],
 :root[data-theme='light'] [class~='bg-fig-leaf/25'],

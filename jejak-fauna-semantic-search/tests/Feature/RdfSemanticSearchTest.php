@@ -71,6 +71,55 @@ class RdfSemanticSearchTest extends TestCase
         $this->assertNotEmpty($response->json('data.makanan'));
     }
 
+    public function test_taxonomically_verified_fauna_are_grouped_as_fish(): void
+    {
+        foreach ([
+            'eusphyra-blochii',
+            'leiocassis-rudicula',
+            'pastinachus-solocirostris',
+            'rhynchobatus-springeri',
+        ] as $slug) {
+            $this->getJson("/api/fauna/{$slug}")
+                ->assertOk()
+                ->assertJsonPath('data.kelompok', 'Ikan');
+        }
+    }
+
+    public function test_fauna_with_misidentified_image_uses_the_placeholder(): void
+    {
+        $response = $this->getJson('/api/fauna?query=Ansonia%20latidisca&per_page=1');
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('data.0.gambar', '/images/fauna-placeholder.svg');
+    }
+
+    public function test_unverified_commons_image_sources_use_the_placeholder(): void
+    {
+        foreach ([
+            'Aonyx cinereus',
+            'Batagur borneoensis',
+            'Betta albimarginata',
+            'Crocodylus siamensis',
+            'Petinomys genibarbis',
+            'Scleropages formosus',
+            'Urogymnus polylepis',
+        ] as $scientificName) {
+            $this->getJson('/api/fauna?query='.urlencode($scientificName).'&per_page=1')
+                ->assertOk()
+                ->assertJsonPath('data.0.gambar', '/images/fauna-placeholder.svg');
+        }
+    }
+
+    public function test_leiocassis_conservation_status_matches_iucn_assessment(): void
+    {
+        $response = $this->getJson('/api/fauna?query=Leiocassis%20rudicula&per_page=1');
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('data.0.status_iucn', 'Terancam (EN)');
+    }
+
     public function test_fauna_without_wgs84_data_has_no_generated_coordinates(): void
     {
         $response = $this->getJson('/api/fauna?query=orangutan&per_page=1');
@@ -144,7 +193,7 @@ class RdfSemanticSearchTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertJsonPath('data.triple_count', 3125)
+            ->assertJsonPath('data.triple_count', 3121)
             ->assertJsonPath('data.vocabulary.namespace_matches', true);
         $this->assertNotEmpty($response->json('data.classes.used'));
         $this->assertNotEmpty($response->json('data.properties.used'));

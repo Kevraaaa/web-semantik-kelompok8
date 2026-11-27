@@ -58,6 +58,24 @@ const ICON_BY_GROUP = {
     Echinodermata: '⭐',
 };
 
+function optimizeFaunaImage(image) {
+    if (typeof image !== 'string' || !image.trim()) {
+        return '/images/fauna-placeholder.svg';
+    }
+
+    const commonsFilePath = 'http://commons.wikimedia.org/wiki/Special:FilePath/';
+    const secureCommonsFilePath = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+    const url = image.startsWith(commonsFilePath)
+        ? image.replace('http://', 'https://')
+        : image;
+
+    if (!url.startsWith(secureCommonsFilePath) || /[?&]width=/.test(url)) {
+        return url;
+    }
+
+    return `${url}${url.includes('?') ? '&' : '?'}width=800`;
+}
+
 function normalizeAnimal(animal) {
     const habitat = Array.isArray(animal.habitat) ? animal.habitat : [];
 
@@ -73,7 +91,7 @@ function normalizeAnimal(animal) {
         habitat,
         makanan: Array.isArray(animal.makanan) ? animal.makanan : [],
         ancaman: Array.isArray(animal.ancaman) ? animal.ancaman : [],
-        gambar: animal.gambar || '/images/fauna-placeholder.svg',
+        gambar: optimizeFaunaImage(animal.gambar),
         status_iucn: animal.status_iucn || 'Status belum diketahui',
     };
 }

@@ -24,6 +24,9 @@
         <Class IRI="#Habitat" />
     </Declaration>
     <Declaration>
+        <Class IRI="#Ikan" />
+    </Declaration>
+    <Declaration>
         <Class IRI="#Mamalia" />
     </Declaration>
     <Declaration>
@@ -107,6 +110,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Burung" />
+        <Class IRI="#Fauna" />
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ikan" />
         <Class IRI="#Fauna" />
     </SubClassOf>
     <SubClassOf>

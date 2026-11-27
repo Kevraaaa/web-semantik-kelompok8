@@ -1,7 +1,16 @@
 @props(['fauna', 'showCompare' => true])
+@php
+    $imageUrl = $fauna['gambar'] ?? '/images/fauna-placeholder.svg';
+    if (str_starts_with($imageUrl, 'http://commons.wikimedia.org/wiki/Special:FilePath/')) {
+        $imageUrl = str_replace('http://', 'https://', $imageUrl);
+    }
+    if (str_starts_with($imageUrl, 'https://commons.wikimedia.org/wiki/Special:FilePath/') && !str_contains($imageUrl, 'width=')) {
+        $imageUrl .= str_contains($imageUrl, '?') ? '&width=800' : '?width=800';
+    }
+@endphp
 <article class="fauna-card group overflow-hidden rounded-2xl border border-soft surface card-hover" data-fauna-card data-slug="{{ $fauna['slug'] }}">
     <div class="fauna-visual relative h-52">
-        <img class="absolute inset-0 size-full object-cover opacity-55 mix-blend-screen transition duration-500 group-hover:scale-105 group-hover:opacity-70" src="{{ $fauna['gambar'] }}" alt="{{ $fauna['alt_gambar'] ?? 'Ilustrasi '.$fauna['nama'] }}" loading="lazy">
+        <img class="absolute inset-0 size-full object-cover opacity-55 mix-blend-screen transition duration-500 group-hover:scale-105 group-hover:opacity-70" src="{{ $imageUrl }}" alt="{{ $fauna['alt_gambar'] ?? 'Ilustrasi '.$fauna['nama'] }}" data-fauna-image loading="lazy" decoding="async">
         <div class="absolute inset-x-4 bottom-4 z-10 flex items-end justify-between gap-3">
             <div><p class="text-xs text-white/75">{{ $fauna['kelompok'] }}</p><p class="mt-1 text-2xl" aria-hidden="true">{{ $fauna['ikon'] ?? '🌿' }}</p></div>
             <x-favorite-button :slug="$fauna['slug']" />

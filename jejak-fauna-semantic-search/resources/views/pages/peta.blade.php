@@ -14,7 +14,7 @@
                 <div class="mt-4 grid gap-3">
                     <label class="grid gap-1.5 text-xs font-semibold">Spesies<select class="field text-xs" data-map-filter="slug"><option value="">Semua fauna</option></select></label>
                     <label class="grid gap-1.5 text-xs font-semibold">Status konservasi<select class="field text-xs" data-map-filter="status"><option value="">Semua status</option><option>Kritis (CR)</option><option>Terancam (EN)</option><option>Rentan (VU)</option><option>Hampir Terancam (NT)</option></select></label>
-                    <label class="grid gap-1.5 text-xs font-semibold">Habitat<select class="field text-xs" data-map-filter="habitat"><option value="">Semua habitat</option><option>Hutan hujan tropis</option><option>Hutan rawa gambut</option><option>Hutan mangrove</option><option>Sungai</option><option>Tepi sungai</option></select></label>
+                    <label class="grid gap-1.5 text-xs font-semibold">Habitat<select class="field text-xs" data-map-filter="habitat"><option value="">Semua habitat</option></select></label>
                     <label class="flex items-center gap-2 border-t border-soft pt-3 text-xs"><input type="checkbox" class="accent-fresh-grown" data-map-reports checked> Tampilkan laporan warga</label>
                 </div>
             </div>

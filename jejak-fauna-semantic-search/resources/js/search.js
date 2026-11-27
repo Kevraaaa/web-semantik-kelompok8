@@ -1,24 +1,28 @@
 import { cariSemantik, getFauna, getFaunaDetail, getFaunaPage, getFilterOptions, getRekomendasi } from './api.js';
 
-document.addEventListener('error', (event) => {
-    const image = event.target;
-    if (!(image instanceof HTMLImageElement) || !image.closest('[data-fauna-card]') || image.dataset.fallbackApplied) {
-        return;
-    }
-
-    image.dataset.fallbackApplied = 'true';
-    image.src = '/images/fauna-placeholder.svg';
-}, true);
-
 const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;',
 }[char]));
+
+function commonsFilePageUrl(imageUrl) {
+    const prefix = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+    if (!imageUrl.startsWith(prefix)) {
+        return null;
+    }
+
+    const filename = decodeURIComponent(imageUrl.slice(prefix.length).split('?')[0]);
+    const pageTitle = encodeURIComponent(`File:${filename}`)
+        .replace('%3A', ':')
+        .replace(/%20/g, '_');
+
+    return `https://commons.wikimedia.org/wiki/${pageTitle}`;
+}
 
 function cardMarkup(animal, semanticReasons = []) {
     const habitat = animal.habitat?.slice(0, 2).join(' · ') || 'Habitat belum tercatat';
     return `<article class="fauna-card group overflow-hidden rounded-2xl border border-soft surface card-hover" data-fauna-card data-slug="${escapeHtml(animal.slug)}">
         <div class="fauna-visual relative h-52">
-            <img class="absolute inset-0 size-full object-cover opacity-55 mix-blend-screen transition duration-500 group-hover:scale-105" src="${escapeHtml(animal.gambar)}" alt="Gambar ${escapeHtml(animal.nama)}" loading="lazy">
+            <img class="absolute inset-0 size-full object-cover opacity-55 mix-blend-screen transition duration-500 group-hover:scale-105" src="${escapeHtml(animal.gambar)}" alt="Gambar ${escapeHtml(animal.nama)}" data-fauna-image loading="lazy" decoding="async">
             <label class="absolute left-3 top-3 z-10 flex cursor-pointer items-center gap-2 rounded-full bg-black/35 px-3 py-1.5 text-xs text-white backdrop-blur"><input type="checkbox" class="accent-fresh-grown" data-compare-check value="${escapeHtml(animal.slug)}"><span>Bandingkan</span></label>
             <div class="absolute inset-x-4 bottom-4 z-10 flex items-end justify-between"><div><p class="text-xs text-white/75">${escapeHtml(animal.kelompok)}</p><p class="mt-1 text-2xl" aria-hidden="true">${animal.ikon || '🌿'}</p></div><button type="button" class="grid size-9 place-items-center rounded-full border border-white/20 bg-black/25 text-lg text-white" data-favorite="${escapeHtml(animal.slug)}" aria-label="Tambahkan ${escapeHtml(animal.nama)} ke favorit" aria-pressed="false">♡</button></div>
         </div>
@@ -301,7 +305,7 @@ async function setupHome() {
     if (recommendations) {
         try {
             const items = await getRekomendasi('orangutan-kalimantan');
-            recommendations.innerHTML = items.slice(0, 4).map((animal) => `<a href="/eksplorasi/${encodeURIComponent(animal.slug)}" class="group grid min-w-20 shrink-0 justify-items-center gap-2 text-center"><span class="fauna-visual grid size-20 place-items-center rounded-full border border-soft text-3xl transition group-hover:-translate-y-1">${animal.ikon || '🌿'}</span><span class="text-xs text-muted group-hover:text-fresh-grown">${escapeHtml(animal.nama)}</span></a>`).join('');
+            recommendations.innerHTML = items.slice(0, 4).map((animal) => `<a href="/eksplorasi/${encodeURIComponent(animal.slug)}" class="group grid min-w-20 shrink-0 justify-items-center gap-2 text-center"><span class="fauna-visual relative grid size-20 place-items-center overflow-hidden rounded-full border border-soft text-3xl transition group-hover:-translate-y-1"><img class="absolute inset-0 size-full object-cover opacity-60" src="${escapeHtml(animal.gambar)}" alt="" data-fauna-image loading="lazy" decoding="async"><span class="relative z-10">${animal.ikon || '🌿'}</span></span><span class="text-xs text-muted group-hover:text-fresh-grown">${escapeHtml(animal.nama)}</span></a>`).join('');
         } catch (error) {
             console.error(error);
         }
@@ -316,19 +320,20 @@ async function setupDetail() {
     try {
         const animal = await getFaunaDetail(slug);
         const conservationStatus = animal.status_iucn || 'Status konservasi belum tercatat';
+        const imageSource = commonsFilePageUrl(animal.gambar);
         container.innerHTML = `<div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr]">
-            <div class="fauna-visual relative grid h-80 place-items-center overflow-hidden rounded-3xl text-8xl lg:h-[31rem]" role="img" aria-label="Ilustrasi ${escapeHtml(animal.nama)}"><img class="absolute inset-0 size-full object-cover opacity-50 mix-blend-screen" src="${escapeHtml(animal.gambar)}" alt=""><span class="relative z-10">${animal.ikon || '🌿'}</span></div>
+            <div><div class="fauna-visual relative grid h-80 place-items-center overflow-hidden rounded-3xl text-8xl lg:h-[31rem]" role="img" aria-label="Ilustrasi ${escapeHtml(animal.nama)}"><img class="absolute inset-0 size-full object-cover opacity-50 mix-blend-screen" src="${escapeHtml(animal.gambar)}" alt="" data-fauna-image decoding="async"><span class="relative z-10">${animal.ikon || '🌿'}</span></div>${imageSource ? `<p class="mt-2 text-xs text-muted"><a href="${escapeHtml(imageSource)}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2">Sumber dan lisensi gambar di Wikimedia Commons</a></p>` : ''}</div>
             <div class="grid content-center gap-4"><p class="eyebrow">${escapeHtml(animal.kelompok)}</p><h1 class="font-display text-4xl leading-tight sm:text-5xl">${escapeHtml(animal.nama)}</h1><p class="text-sm italic text-muted">${escapeHtml(animal.nama_ilmiah)}</p><div><span class="conservation-chip">${escapeHtml(conservationStatus)}</span></div><p class="mt-2 text-sm leading-7 text-muted">${escapeHtml(animal.deskripsi)}</p>
             <div class="flex flex-wrap gap-2"><button class="btn-secondary" data-favorite="${escapeHtml(animal.slug)}" type="button" aria-pressed="false">♡ Simpan favorit</button></div>
             <div class="mt-3 grid grid-cols-2 gap-3">${[['Habitat', animal.habitat], ['Makanan', animal.makanan], ['Ancaman', animal.ancaman], ['Wilayah', animal.wilayah]].map(([label, items]) => `<section class="rounded-xl border border-soft bg-[var(--page)] p-4"><h2 class="text-xs font-semibold text-fresh-grown">${label}</h2><ul class="mt-2 grid gap-1 text-xs leading-5 text-muted">${(items || []).length ? items.map((item) => `<li>• ${escapeHtml(item)}</li>`).join('') : '<li>Belum tercatat</li>'}</ul></section>`).join('')}</div>
             <section class="rounded-xl border border-soft bg-[var(--page)] p-4"><h2 class="text-xs font-semibold text-fresh-grown">Status konservasi & ancaman utama</h2><p class="mt-2 text-xs text-muted">Kategori saat ini: ${escapeHtml(conservationStatus)} <span class="text-amber-200">· Perlu verifikasi sumber IUCN.</span></p><p class="mt-2 text-xs leading-5 text-muted">${animal.ancaman.map(escapeHtml).join(' · ')}</p></section>
             </div></div>`;
-        document.querySelector('[data-detail-sources]').innerHTML = (animal.sumber || []).map((source) => `<li class="rounded-xl border border-soft bg-[var(--page)] p-3"><a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source)}</a></li>`).join('');
+        document.querySelector('[data-detail-sources]').innerHTML = (animal.sumber || []).map((source) => `<li class="rounded-xl border border-soft bg-[var(--page)] p-3"><a class="break-all" href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source)}</a></li>`).join('');
         const mapNode = document.querySelector('[data-detail-map]');
         if (mapNode) mapNode.dataset.mapSlug = animal.slug;
         const suggestions = await getRekomendasi(slug);
         document.querySelector('[data-detail-recommendations]').innerHTML = suggestions.length
-            ? suggestions.map((item) => `<a class="grid min-w-16 shrink-0 justify-items-center gap-2 text-center" href="/eksplorasi/${encodeURIComponent(item.slug)}"><span class="fauna-visual grid size-16 place-items-center rounded-full text-2xl">${item.ikon || '🌿'}</span><span class="text-xs text-muted">${escapeHtml(item.nama)}</span></a>`).join('')
+            ? suggestions.map((item) => `<a class="grid min-w-16 shrink-0 justify-items-center gap-2 text-center" href="/eksplorasi/${encodeURIComponent(item.slug)}"><span class="fauna-visual relative grid size-16 place-items-center overflow-hidden rounded-full text-2xl"><img class="absolute inset-0 size-full object-cover opacity-60" src="${escapeHtml(item.gambar)}" alt="" data-fauna-image loading="lazy" decoding="async"><span class="relative z-10">${item.ikon || '🌿'}</span></span><span class="text-xs text-muted">${escapeHtml(item.nama)}</span></a>`).join('')
             : '<p class="text-sm text-muted">Belum ada fauna terkait yang dapat ditampilkan.</p>';
         document.dispatchEvent(new CustomEvent('jf:results-rendered'));
     } catch (error) {

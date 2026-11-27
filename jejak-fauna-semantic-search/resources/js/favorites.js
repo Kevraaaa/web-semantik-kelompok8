@@ -15,6 +15,7 @@ function paintFavorites() {
     document.querySelectorAll('[data-favorite]').forEach((button) => {
         const active = saved.has(button.dataset.favorite);
         button.textContent = active ? '♥' : '♡';
+        button.classList.toggle('text-white', !active);
         button.classList.toggle('text-rose-200', active);
         button.setAttribute('aria-pressed', String(active));
         button.setAttribute('aria-label', `${active ? 'Hapus dari' : 'Tambahkan ke'} favorit`);

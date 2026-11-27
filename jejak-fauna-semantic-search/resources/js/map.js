@@ -1,4 +1,4 @@
-import { getFauna, getKalimantanBoundary, getLaporanWarga, getSebaran } from './api.js';
+import { getFauna, getFilterOptions, getKalimantanBoundary, getLaporanWarga, getSebaran } from './api.js';
 
 const center = [0.8, 114];
 let leafletPromise;
@@ -166,7 +166,7 @@ async function setupMainMap(node) {
                 const regionNames = Array.isArray(animal.wilayah) && animal.wilayah.length
                     ? animal.wilayah.join(', ')
                     : 'Wilayah belum tercatat';
-                marker.bindPopup(`<div class="flex items-center gap-2"><img src="${safe(animal.gambar)}" alt="" width="42" height="42" style="border-radius:8px;object-fit:cover"><div><strong>${safe(animal.nama)}</strong><br><em style="font-size:11px">${safe(scientificName)}</em><br><span style="font-size:11px">Status: ${safe(conservationStatus)}<br>Relasi wilayah RDF: ${safe(regionNames)}</span><br><a href="/eksplorasi/${encodeURIComponent(animal.slug)}" style="color:#eff4bd">Lihat detail →</a></div></div>`);
+                marker.bindPopup(`<div class="flex items-center gap-2"><img src="${safe(animal.gambar)}" alt="" data-fauna-image loading="lazy" decoding="async" width="42" height="42" style="border-radius:8px;object-fit:cover"><div><strong>${safe(animal.nama)}</strong><br><em style="font-size:11px">${safe(scientificName)}</em><br><span style="font-size:11px">Status: ${safe(conservationStatus)}<br>Relasi wilayah RDF: ${safe(regionNames)}</span><br><a href="/eksplorasi/${encodeURIComponent(animal.slug)}" style="color:#eff4bd">Lihat detail →</a></div></div>`);
                 marker.addTo(cluster);
                 faunaMarkers.push({ marker, animal, lat, lng, abundance: feature.properties.kelimpahan });
             });
@@ -213,8 +213,10 @@ async function setupMainMap(node) {
     };
 
     const select = document.querySelector('[data-map-filter="slug"]');
-    const fauna = await getFauna();
+    const habitatSelect = document.querySelector('[data-map-filter="habitat"]');
+    const [fauna, filterOptions] = await Promise.all([getFauna(), getFilterOptions()]);
     select.innerHTML += fauna.map((animal) => `<option value="${safe(animal.slug)}">${safe(animal.nama)}</option>`).join('');
+    Object.values(filterOptions.habitat).forEach((label) => habitatSelect.add(new Option(label, label)));
     controls.forEach((control) => control.addEventListener('change', paint));
     showReports?.addEventListener('change', paint);
     await paint();
